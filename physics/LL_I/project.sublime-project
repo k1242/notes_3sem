@@ -1,0 +1,12 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+    "settings" : {
+        "TEXroot": "notes_LL_I.tex",
+        "name": "1242"
+    }
+}

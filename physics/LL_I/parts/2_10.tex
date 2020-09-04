@@ -1,0 +1,89 @@
+\subsection{Механическое подобие}
+
+\begin{to_thr} 
+\label{thr1}
+    Если потенциальная энергия системы является однородной функцией $k$-й степени от декартовых координат, то уравнения движения допускают геометрически подобные траектории.
+\end{to_thr}
+
+\begin{center}
+    % \caption*{Несколько примеров к thr (\ref{thr1})}
+        \begin{tabular}{ccl}
+    \toprule
+            $t'/t$ & $k$ & ситуация \\
+    \midrule
+            $1$ 
+            & 2 & малые колебания \\
+            $\left(l'/l\right)^{1/2}$
+            & 1 & однородное силовое поле \\
+            \multirow{2}{*}{$\left(l'/l\right)^{3/2}$} & \multirow{2}{*}{-1} & ньютоновское притяжение \\
+            && кулоновское взаимодействие \\
+    \bottomrule
+        \end{tabular}
+\end{center}
+
+При чем все времена движения (между соответственными точками траекторий) относятся, как 
+    \begin{equation}
+         \frac{t'}{t} = \left(\frac{l'}{l} \right)^{1 - k/2},
+     \end{equation} 
+где $l'/l$ -- отношение линейных размеров двух траекторий. Аналогичное можно утверждать и для
+\begin{equation}
+    \frac{v'}{v} = \left(\frac{l'}{l} \right)^{k/2}, \hspace{0.5cm} 
+    \frac{E'}{E} = \left(\frac{l'}{l} \right)^{k}, \hspace{0.5cm} 
+    \frac{M'}{M} = \left(\frac{l'}{l} \right)^{1 + k/2}.
+\end{equation}
+
+\begin{proof}[$\triangle$]
+    Пусть $U(\alpha \vc{r}_1, \ldots, \alpha \vc{r}_n) = \alpha^k U(\vc{r}_1, \ldots, \vc{r}_n).$    
+    Рассмотрим преобразование $\vc{r}_a \to \alpha \vc{r}_a$, $t \to \beta t$. Все скорости изменятся в $\alpha / \beta$ раз, а $T$ -- в $\alpha^2 / \beta^2$ раз. Тогда
+    $$
+        \frac{\alpha^2}{\beta^2} = \alpha^k, \hspace{0.25cm} 
+        \text{т.е.} \hspace{0.25cm} \beta = \alpha^{1 - k/2},
+        \hspace{0.5cm} 
+        \Longrightarrow
+        \hspace{0.5cm} 
+        L \to \alpha^k L
+    $$
+    Что соответствует тому же лагранжиану системы.
+\end{proof}
+
+
+
+\begin{to_thr}[Вириальная теорема]
+     Если движение системы, потенциальная энергия котороя является однородной функцией координат, происходит в ограниченной области пространства, то 
+     \begin{equation}
+         \label{10_6} % или 10_7
+         2 \overline{T} = k \overline{U}, 
+         \hspace{0.5cm} 
+         \overset{\overline{T} + \overline{U} = \overline{E} = \overline{E}}{\underset{\Longrightarrow}{}} 
+         \hspace{0.5cm} 
+         \overline{U} = \frac{2}{k+2} E, \hspace{0.25cm} 
+         \overline{T} = \frac{k}{k+2} E.
+     \end{equation}
+\end{to_thr}
+
+\noindent
+В частности, для малых колебаний $(k=2)$ имеем $\overline{T} = \overline{U}$, а для ньютоновского взаимодействия $(k = -1)$ $2 \overline{T} = - \overline{U}$, при этом $E = - \overline{T}$.
+
+
+\begin{proof}[$\triangle$]
+    По теореме Эйлера об однородных функциях:
+    $$
+        \sum_a \frac{\partial L}{\partial \vc{v}_a} \vc{v}_a = 2T,
+        \hspace{0.5cm} 
+        \overset{\partial T / \partial \vc{v}_a = \vc{p}_a}{\underset{\Longrightarrow}{}} 
+        \hspace{0.5cm}  
+        2T = \sum_a \vc{p}_a \vc{v}_a = \frac{d}{dt} \left(
+            \sum_a \vc{p}_a \vc{r}_a
+        \right) - \sum_a \vc{r}_a \dot{p}_a.
+    $$
+
+    Предположим, что система совершает движение в конечной области пространства с конечными скоростями. Тогда величина $\sum \vc{r}_a \vc{p}_a$ ограничена, и среднее значение обращается в нуль. Тогда, согласно уравнениям Ньютона, 
+    \begin{equation}
+        2 t = \sum_a \overline{\vc{r}_a \frac{\partial U}{\partial \vc{r}_a}},
+        \hspace{0.5cm}
+        \overset{\text{по т. Эйлера}}{\underset{\Longrightarrow}{}} 
+        \hspace{0.5cm} 
+        2 \overline{T} = k \overline{U},
+    \end{equation}
+    в силу однородности $U(\vc{r}_1, \vc{r}_2, \ldots)$ $k$-й степени.
+\end{proof}

@@ -1,0 +1,59 @@
+\subsection{Функция Лагранжа свободной материальной точки}
+
+
+Посмотрим на вид $L$ для свободного движения материальной точке в ИСО. Пусть $K$движется относительно $K'$ с малой скоростью $\vc{\varepsilon}$. Так как уравнения движения во всех системах отсчета должны иметь один и тот же вид\footnote{
+    \red{Ещё раз, почему?}
+}, то $L(\vc{v}^2)$ перейдёт в $L' = L(\vc{v}^2) + \frac{d}{dt} f(\vc{q}, t)$.
+Тогда 
+$$
+    L' = L(\vc{v}^2 + 2 \vc{v} \vc{\varepsilon} + \vc{\varepsilon}^2), 
+    \hspace{0.5cm} \Rightarrow  \bigg/
+    \varepsilon^2 + \varepsilon + 1
+    \bigg/ \Rightarrow \hspace{0.5cm} 
+    L(\vc{v}'^2) = L(\vc{v}^2) + \frac{\partial L}{\partial \vc{v}^2} 2 \vc{v} \vc{\varepsilon},
+    \hspace{0.5cm} \Rightarrow  \bigg/
+    \frac{\partial L}{\partial \vc{v}^2} \neq f(\vc{v})
+    \bigg/ \Rightarrow \hspace{0.5cm} L = \frac{m}{2} \vc{v}^2,
+$$
+где $m$ -- постоянная.
+ 
+Из того что $L$ такого вида работает для бесконечно малых $\vc{\varepsilon}$ следует, что всё хорошо и для конечной скорости $V$. Действительно\footnote{
+    \red{Вторую часть проделать ручками!}
+},
+$$
+    L' = \frac{m}{2}  \vc{v}'^2 = \frac{m}{2} \left(\vc{v}^2 + 2 \vc{v} \vc{V} + \vc{V}^2\right), 
+    \hspace{0.5cm} 
+    \text{или}
+    \hspace{0.5cm} 
+    L' = L + \frac{d}{dt} \left(2 \frac{m}{2} \vc{r} \vc{V} + \frac{m}{2}  \vc{V}^2 t\right).
+$$
+Второй член является полной производной и может быть опущен (\red{?}).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Величина $m$~---~\textit{масса} материальной точки. В силлу аддитивности $L$, для системы невзаимодействующих точек
+\begin{equation*}
+    L = \sum_a \frac{m_a}{2} \vc{v}_a^2.
+\end{equation*}
+Собственно какой-то смысл несет только отношение масс. К слову, масса не бывает отрицательной.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+$$
+    \text{Полезно заметить, что }  \hspace{0.5cm}   \vc{v}^2 = \left(\frac{dl}{dt} \right)^2 = \frac{dl^2}{dt^2} .
+$$
+Поэтому для составления $L$ достаточно найти квадрат $dl$ в соответствующей системе координат. Например в:
+\begin{center}
+    \begin{tabular}{rllll}
+        \multicolumn{1}{l}{координатах:} && \multicolumn{1}{c}{$dl$} && \multicolumn{1}{c}{$L$} \\
+        % %
+        декартовых      &&  
+        $dl^2 = dx^2 + dy^2 + dx^2$ &&
+        $\frac{m}{2} \left(\dot{x}^2 + \dot{y}^2 + \dot{z}^2 \right)$; \\
+        % 
+        \phantom{42} \hspace{0.25cm} 
+        цилиндрических  &&  
+        $dl^2 = dr^2 + r^2 d\varphi^2 + dz^2$ &&
+        $\frac{m}{2} \left(\dot{r}^2 + r^2 \dot{\varphi}^2 + \dot{z}^2 \right)$; \\
+        % 
+        сферических  &&  
+        $dl^2 = dr^2 + r^2 d\theta^2 + r^2 \sin^2 \theta \d \varphi^2$ &&
+        $\frac{m}{2} \left(\dot{r}^2 + r^2 \dot{\theta}^2 + r^2 \sin^2 \theta \dot{\varphi}^2 \right)$. \\
+    \end{tabular}
+\end{center}

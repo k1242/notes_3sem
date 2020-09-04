@@ -1,0 +1,65 @@
+\subsection{Энергия}
+
+\begin{to_def} 
+    Существуют такие функции $f$, такие что $f(q_i, \dot{q}_i) \equiv \const$, зависящие только от начальных условий. Эти функции называют \textit{интегралами движения}.     
+\end{to_def}
+
+\begin{to_thr} 
+    Число независимых интегралов движения для замкнутой механической системы с $s$ степенями свободы равно $2s-1$.      
+\end{to_thr}
+
+\begin{proof}[$\triangle^{\text{\xmark}}$]
+    Общее решение уравнений движения содержит $2s$ произвольных переменных\footnote{
+        \red{Речь про $\vc{q}$ и $\vc{\dot{q}}$, да?}
+    }. Поскольку уравнения движения замкнутой системы не содержат времени явно\footnote{
+        \red{?}
+    }, то выбор начала отсчёта времени произволен, и одна из произвольных постоянных в решении уравнений всегда может быть выбрана в виде аддитивной постоянной $t_0$ во времени. Исключив из $2s$ функций $t+t_0$
+    \begin{align*}
+        q_i = q_i \left( t+t_0, C_1, \ldots, C_{2s-1} \right), \\
+        \dot{q}_i = \dot{q}_i \left( t+t_0, C_1, \ldots, C_{2s-1} \right),
+    \end{align*}
+    выразим $2s-1$ произвольных постоянных $C_1, \ldots, C_{2s-1}$ в виде функций от $q$ и $\dot{q}$ , которые и будут интегралами движения.
+\end{proof}
+
+Из них только несколько содержательных, постоянство которых связано с однородностью и изотропией пространства времени (\red{наверное}). Однако все интегралы движения аддитивны (при пренебрежимо малом взаимодействии).
+
+Начнем с закона сохранения, возникающего в связи с \textit{однородностью времени}. В следствии этой однородности $L$  замкнутой системы не зависит от времени. Поэтому\footnote{
+    Если бы $L$ зависела \textbf{явно} от времени, к правой части равенства добавился бы член $\partial L / \partial t$. \red{Не зависит \textbf{явно} -- частная производная 0, да?}
+}
+$$
+    \frac{dL}{dt} = \sum_i \frac{\partial L}{\partial q_i} \dot{q}_i + \sum_i \frac{\partial L}{\partial \dot{q}_i} \ddot{q}_i
+    \hspace{0.25cm} \overset{\eqref{2_6}}{\underset{\Longrightarrow}{}} \hspace{0.25cm}
+    \frac{dL}{dt}  = \sum_i \dot{q}_i \frac{d}{dt} \frac{\partial L}{\partial \dot{q}_i} +
+    \sum_i \frac{\partial L}{\partial \dot{q}_i} \ddot{q}_i
+     = \sum_i \frac{d}{dt} \left(\frac{\partial L}{\partial \dot{q}_i} \dot{q}_i\right)
+    \hspace{0.25cm} \Longleftrightarrow \hspace{0.25cm} 
+    \frac{d}{dt} \left(
+        \sum_i \dot{q}_i \frac{\partial L}{\partial \dot{q}_i} - L
+    \right) = 0.
+$$
+\begin{to_def} 
+    Величина 
+    \begin{equation}
+    \label{6_1}
+        \boxed{E = \sum_i \dot{q}_i \frac{\partial L}{\partial \dot{q}_i} - L}
+         \text{ --- \textit{энергия}}
+    \end{equation}
+    остаётся неизменной при движении замкнутой системы, т.е. является одним из интегралов движения. Аддитивность энергии непосредственно следует из аддитивности $L$. 
+\end{to_def}
+
+Механические системы, энергия которых сохраняются, иногда называют \textit{консервативными}. 
+Аналогичное утверждение ($E=\const$) верно для систем в постоянном поле, $L$ также явно не зависит от времени.
+
+В постоянном поле $L = T(q, \dot{q}) - U(q)$, где $T$ -- квадратичная функция $\dot{q}$. Применив теорему Эйлера об однородных функциях (см. \textit{thr} \ref{thr:E}), получим 
+$$
+    \sum_i \dot{q}_i \frac{\partial L}{\partial \dot{q}_i} = \sum_i \dot{q}_i \frac{\partial T}{\partial \dot{q}_i} = 2 T
+    \hspace{0.5cm}  \overset{\eqref{6_1}}{\underset{\Longrightarrow}{}} 
+    \hspace{0.5cm} 
+    \boxed{
+        E = T(q, \dot{q}) + U(q)
+    } 
+    \hspace{0.5cm} \overset{\text{в ДСК}}{\underset{\Longleftrightarrow}{}}  \hspace{0.5cm} 
+    E = \sum_a \frac{m_a}{2} v_a^2 + U(\vc{r}_1, \vc{r}_2, \ldots).
+$$
+
+Таким образом энергия системы разделяется на кинетическую $\equiv f(\dot{q})$ и потенциальную $\equiv f(q)$.

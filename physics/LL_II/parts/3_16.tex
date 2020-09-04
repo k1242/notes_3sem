@@ -1,0 +1,106 @@
+\subsection{Четырёхмерный потенциал поля}
+
+
+
+
+Действие для частицы в ЭМ поле -- \eqref{8_1} + взаимодействие частицы с полем. \textbf{Оказывается}, что это определяется одним параметром -- \textit{зарядом}\footnote{
+    О единицах измерения см. \S 4.
+} частицы $e$. Свойства поля характеризуются 4-вектором $A_i$, так называемым 4\textit{-потенциалом}, компоненты которого -- $f(\vc{x}, t)$. Эти величины входят в действие в виде члена
+$$
+    - \frac{e}{c} \int_{a}^{b} A_i dx^i,
+$$
+где функции $A_i(x_i)$ берутся в точках мировой линии частицы. Множитель $1/c$ -- для удобства. 
+
+Таким образом, действие для заряда в ЭМ поле имеет вид
+\begin{equation}
+    S = \int_{a}^{b} \left(
+        -mc \d s - \frac{e}{c} A_i \d x^i
+    \right).
+\end{equation}
+
+\begin{to_def} 
+     Три пространственные компоненты 4-вектора $A^i$ образуют трёхмерный вектор $\vc{A}$, называемый \textit{векторным потенциалом} поля. Временную же компоненту называю \textit{скалярным потенциалом}, обозначим её как $A^0 = \varphi$. Таким образом,
+    \begin{equation}
+        A^i = \left(\varphi, \vc{A} \right).
+    \end{equation}
+\end{to_def}
+
+Поэтому интеграл действия можно написать в виде
+$$
+    S = \int_{a}^{b} \left(-mc \d s + \frac{e}{c} \vc{A} \d \vc{r} - e \varphi \d t\right),
+$$
+или, вводя скорость частицы $\vc{v} = d \vc{r} / dt$ и переходя к интегрированию по времени, в виде
+\begin{equation}
+    S = \int_{t_1}^{t_2} \left(
+    - mc^2 \sqrt{1 - \frac{v^2}{c^2} } + \frac{e}{c}  \vc{A} \vc{v} - e \varphi
+    \right) \d t.
+\end{equation}
+Подынтегральное выражение есть функция Лагранжа для заряда в ЭМ поле:
+\begin{equation}
+\label{16_4}
+    L = - mc^2\sqrt{1 - \frac{v^2}{c^2} } + \frac{e}{c} \vc{A} \vc{v} - e \varphi.
+\end{equation}
+Отличие от \eqref{8_2} для свободной частицы в члене $\frac{e}{c} \vc{A} \vc{v} - e \varphi$, который и описывают взаимодействие заряда с полем.
+
+
+Производная $\partial L / \partial \vc{v}$ есть \textit{обобщенный импульс} частицы; обозначим его $\vc{P}$. Находим
+\begin{equation}
+\label{16_5}
+    \vc{P} = \frac{
+    m \vc{v}
+    }{
+    \sqrt{1 - v^2 / c^2}
+    } + \frac{e}{c} \vc{A} = \vc{p} + \frac{e}{c} \vc{A}.
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent
+\textbf{Про Гамильтониан}:
+
+\phantom{42}
+
+Из функции Лагранжа можно найти функцию Гамильтона частицы в поле по \textbf{известной общей} формуле 
+\begin{equation}
+    \mathscr{H} = \vc{v} \frac{\partial L}{\partial \vc{v}} - L.
+\end{equation}
+Подставляя сюда \eqref{16_4}
+\begin{equation}
+    \mathscr{H} = \frac{mc^2}{\sqrt{1 - v^2/c^2}} + e \varphi.
+\end{equation}
+Функция Гамильтона, однако, должна быть выражена не через скорость, а через обобщенный импульс частицы. По предыдущим двум формулам видно, что соотношение между $\mathscr{H}  - e\varphi$ и $\vc{P} - \frac{e}{c} \vc{A}$ -- такое же, как и в отсутствие поля (совпадение?), т.е.
+\begin{equation}
+\label{16_7}
+    \left(\frac{\mathscr{H} - e\varphi}{c} \right)^2 = m^2c^2 + \left(\vc{P} - \frac{e}{c} \vc{A}\right)^2,
+\end{equation}
+или иначе:
+\begin{equation}
+    \mathscr{H}  = \sqrt{ m^2 c^4 + c^2 \left(\vc{P} - \frac{e}{c} \vc{A} \right)^2} + e\varphi.
+\end{equation}
+
+Для малых скоростей, т.е. в классической механике, функция Лагранжа \eqref{16_4} переходит в 
+\begin{equation}
+    L = \frac{mv^2}{2}  + \frac{e}{c} \vc{A} \vc{v} - e \varphi.
+\end{equation}
+В этом приближении
+$$
+    \vc{p} = m \vc{v} = \vc{P} - \frac{e}{c} \vc{A},
+$$
+и мы находим следующее выражение для функции Гамильтона:
+\begin{equation}
+    \mathscr{H} = \frac{1}{2m} \left(\vc{P} - \frac{e}{c} \vc{A}\right)^2 + e \varphi.
+\end{equation}
+
+Наконец, выпишем уравнение Гамильтона--Якоби для частицы в электромагнитном поле. Оно получается заменой функции Гамильтона обобщенного импульса $\vc{P}$ на $\partial S / \partial \vc{r}$, а самого $\mathscr{H}$ -- на $-\partial S/\partial t$. Таким образом, получим из \eqref{16_7} 
+\begin{equation}
+    \left(
+        \text{grad} \, S - \frac{e}{c} \vc{A}
+    \right)^2 - \frac{1}{c^2} \left(\frac{\partial S}{\partial t} + e \varphi \right)^2 + m^2 c^2 = 0 
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+

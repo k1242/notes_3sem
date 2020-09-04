@@ -1,0 +1,34 @@
+\subsection{Центр инерции}
+
+Если система отсчёта $K'$ движется относительно $K$ со скоростью $\vc{V}$,то
+\begin{equation}
+    \vc{P} = \vc{P}' + \vc{V} \sum\nolimits_a m_a.
+\end{equation}
+
+В частности всегда существует такая $K'$, в которой $\vc{P}' = 0$. Скорость этой системы отсчёта равна
+\begin{equation}
+    \vc{V} = \frac{\vc{P}}{\sum m_a}  = \frac{\sum m_a \vc{v}_a}{\sum m_a} = \frac{d}{dt} \vc{R} = \frac{d}{dt} \left(\frac{\sum m_a \vc{r}_a}{\sum m_a} \right)
+    \text{, где $\vc{R}$ --- \textit{центр инерции} системы}
+\end{equation}
+
+Закон сохранения импульса замкнутой системы можно сформулировать как утверждение о том, что ее центр инерции движется прямолинейно и равномерно. Энергию покоящейся механической системы обычно называют \textit{внутренней энергией} $E_{\text{вн}}$. Полная же энергия системы может быть представлена в виде
+\begin{equation}
+\label{8_4} % and 8_5
+    E = \frac{\mu}{2} \vc{V}^2 + E_{\text{вн}} 
+    \hspace{0.5cm} \Leftarrow \hspace{0.5cm} 
+    E = E' + \vc{V} \vc{P}' + \frac{\mu}{2} \vc{V}^2.
+\end{equation}
+
+% доказательства на стр. 30
+
+Также можно посмотреть на действие в другой СО:
+\begin{equation}
+    L = L' + \vc{V} \vc{P}' + \frac{\mu}{2} \vc{V}^2
+    \hspace{0.25cm} 
+    \overset{\int \d t}{\underset{\Longrightarrow}{}} 
+    \hspace{0.25cm} 
+    S = S' + \mu \vc{V} \vc{R}' + \frac{\mu}{2} \vc{V}^2 t,
+    \hspace{0.25cm} \text{где $\vc{R}'$ --- центр инерции в $K'$.}
+\end{equation}
+
+

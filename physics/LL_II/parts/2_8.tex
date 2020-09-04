@@ -1,0 +1,35 @@
+\subsection{Принцип наименьшего действия}
+
+В силу необходимости инвариантности интеграла, действие для свободной частицы должно иметь вид
+$$
+    S = - \alpha \int_{a}^{b} ds,
+$$
+где интеграл берется вдоль мировой линии. В силу экстремальности интеграла $\alpha > 0$. 
+
+Действие можно представить в виде интеграла по времени, из значения собственного времени найдём
+\begin{equation}
+    S = \int_{t_1}^{t_2} L \d t,
+    \hspace{0.5cm} \bigg/
+        dt' = \frac{ds}{c} = dt \sqrt{1 - \frac{v^2}{c^2}}.
+    \bigg/ \hspace{0.5cm} 
+    S = - \int_{t_1}^{t_2} \alpha c \sqrt{1 - \frac{v^2}{c^2} }.
+\end{equation}
+При $c \to \infty$  выражение должно перейти в классическое выражение, тогда
+$$
+    L = -\alpha c \sqrt{1 - \frac{v^2}{c^2} } \approx - \alpha c + \frac{\alpha v^2}{2c}
+    \hspace{0.5cm} 
+        \Longrightarrow
+    \hspace{0.5cm} 
+    \alpha = mc.
+$$
+Таким образом, действие для свободной материальнной точки равно 
+\begin{equation}
+\label{8_1}
+    S = -mc \int_{a}^{b } \d s,
+\end{equation}
+а функция Лагранжа
+\begin{equation}
+\label{8_2}
+    L = -mc^2 \sqrt{1 - \frac{v^2}{c^2} }.
+\end{equation}
+

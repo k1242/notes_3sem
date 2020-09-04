@@ -1,0 +1,56 @@
+\subsection{Импульс}
+
+Теперь о сохранении, связанном с однородностью пространства (\red{наверное}).
+
+В силу этого свойства замкнутой системы не меняются при любом параллельном переносе системы. В таком случае рассмотрим сдвиг на бесконечно малые $\vc{\varepsilon}$ каждой точки системы, т.е. $\vc{r}_a \leadsto \vc{r}_a + \vc{\varepsilon}$. Изменение функции $L$ в результате бесконечно малого изменения координат при неизменных скоростях есть
+$$
+    \delta L = \sum_A \frac{\partial L}{\partial \vc{r}_a} \delta \vc{r}_a =
+    \vc{\varepsilon} \sum_a \frac{\partial L}{\partial \vc{r}_a}.
+$$
+Т.к. это верно $\forall \vc{\varepsilon}$, то 
+\begin{equation}
+\label{7_1}
+    \delta L = 0 \hspace{0.25cm} \Longleftrightarrow \hspace{0.25cm} 
+    \sum_a \frac{\partial L}{\partial \vc{r}_a} = 0,
+    \hspace{0.25cm} \overset{\eqref{5_2}}{\underset{\Longrightarrow}{}} 
+    \hspace{0.25cm} 
+    \sum_a \frac{d}{dt} \frac{\partial L}{\partial \vc{v}_a} =
+    \frac{d}{dt} \sum_a \frac{\partial L}{\partial \vc{v}_a} = 0.
+\end{equation}
+
+\begin{to_def} 
+    В замкнутой системе векторная величина 
+    \begin{equation}
+         \vc{P} = \sum_a \frac{\partial L}{\partial \vc{v}_a} 
+         \overset{\eqref{5_1}}{\underset{=}{}} 
+         \sum_a m_a \vc{v}_a
+     \end{equation}
+    остается неизменной при движении. Вектор $\vc{P}$ называется \textit{импульсом} системы. 
+\end{to_def}
+
+Стоит обратить внимание, что \eqref{7_1} о том, что $\partial L / \partial \vc{r}_a = - \partial U / \partial \vc{r}_a = \vc{F}_a$. То есть $\eqref{7_1} \Leftrightarrow \sum_a \vc{F}_a = 0$. Это, в принципе, и есть третий закон Ньютона.
+
+
+
+Если движении описывается $q_i$, то 
+\begin{equation}
+    p_i = \frac{\partial L}{\partial \dot{q}_i} 
+\end{equation}
+называются \textit{обобщенными импульсами}, а производные
+\begin{equation}
+    F_i = \frac{\partial L}{\partial q_i} 
+\end{equation}
+называются \textit{обобщенными силами}. Так уравнения Лагранжа имеют вид
+\begin{equation}
+    \dot{p}_i = F_i.
+\end{equation}
+
+
+
+
+
+
+
+
+
+

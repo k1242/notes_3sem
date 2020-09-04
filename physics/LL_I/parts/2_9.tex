@@ -1,0 +1,74 @@
+\subsection{Момент импульса}
+
+Поговорим про закон сохранения от \textit{изотропии пространства}. Введём $\delta \vc{\varphi}$, такой, что $(\delta \vc{\varphi})^2 = (\delta \varphi)^2$ и направление совпадает с осью поворота. Тогда 
+\begin{equation}
+    \delta \vc{r} = [\delta \vc{\varphi} \cdot \vc{r}], \hspace{0.5cm} 
+    \delta \vc{v} = [\delta \vc{\varphi} \cdot \vc{v}].
+\end{equation}
+При повороте $L \equiv \const$, т.е.
+$$
+    \delta L = \sum_a \left(
+        \frac{\partial L}{\partial \vc{r}_a} \delta \vc{r}_a + \frac{\partial L}{\partial \vc{v}_a} \delta \vc{v}_a
+    \right) = 0
+    \hspace{0.5cm}  
+        \overset{\partial L/ \partial {v}_a = {p}_a}{\underset{\partial L / \partial {r}_a = {\dot{p}}_a}{\Longrightarrow}} 
+    \hspace{0.5cm} 
+    \sum_a \left(
+        \vc{\dot{p}}_a [\delta \vc{\varphi} \cdot \vc{r}_a] 
+        + \vc{p}_a [\delta \vc{\varphi} \cdot \vc{v}_a]
+    \right) = 0,
+$$
+или, \red{производя циклическую перестановку множителей}  и вынося $\delta \vc{\varphi}$ за знак суммы, имеем
+$$
+    \delta \vc{\varphi} \sum\nolimits_a \left(
+        [\vc{r}_a \cdot \vc{\dot{p}}_a] + [\vc{v}_a \cdot \vc{p}_a]
+    \right) =
+    \delta \varphi \frac{d}{dt} \sum\nolimits_a [\vc{r}_a \cdot \vc{p}_a] = 0
+    \hspace{0.5cm} \overset{\text{т.к. } \forall \delta \vc{\varphi}}{\underset{\Longrightarrow}{}} \hspace{0.5cm} 
+    \frac{d}{dt} \sum\nolimits_a [\vc{r}_a \cdot \vc{p}_a] = 0.
+$$
+
+\begin{to_def} 
+    При движении системы сохраняется векторная величина
+    \begin{equation}
+         \vc{M} = \sum\nolimits_a [\vc{r}_a \cdot \vc{p}_a],
+     \end{equation} 
+     называемая \textit{моментом импульса} (или \textit{моментом}, \textit{вращательным моментом}, \textit{угловым моментом}) системы.
+\end{to_def}
+
+\noindent
+\fbox{
+    \begin{minipage}[t]{1\textwidth}
+        Этим исчерпываются (\red{почему?}) \textbf{аддитивные} интегралы движения. Таким образом, всякая замкнутая система имеет всего \textbf{семь} таких интегралов: $E$ и три компоненты векторов $\vc{P}$ и $\vc{M}$.
+    \end{minipage}
+}
+
+\phantom{42} 
+
+% на 32 странице доказательство
+Стоит заметить, что в другой смещённой СО ($\vc{r}_a = \vc{r}_a' + \vc{a}$)
+\begin{equation}
+    \vc{M} = \vc{M}' + [\vc{a} \cdot \vc{P}].
+\end{equation}
+Из этой формулы видно, что в случае, когда $\vc{P} = 0$, момент системы не зависит от выбора начала координат. 
+
+В случае же, когда $K'$ движется относительно $K$ со скоростью $V$ верно, что
+\begin{equation}
+    \vc{M} = \vc{M}' + \mu [\vc{R} \cdot \vc{V}].
+\end{equation}
+
+Если система $K'$ есть та, в которой система покоится как целое, то $\vc{V}$ есть скорость центра инерции, а $\mu \vc{V}$ -- её полный импульс $\vc{P}$ (относительно $K$). Тогда
+\begin{equation}
+    \vc{M} = \vc{M}' + [\vc{R} \cdot \vc{P}].
+\end{equation}
+Другими словами, $\vc{M}$ механической системы складывается из её <<собственного момента>> относительно СО: $V_{\text{ц.м.}}=0$, и момента $[\vc{R} \cdot \vc{P}]$, связанного с её движением как целого.
+
+Во внешнем же поле $\vc{M}$ сохраняется в проекции на такую ось, относительно которой данное поле симметрично. 
+
+% тут пропущен абзац, см. 34 страницу.
+
+Проекция момента на какую-либо ось ($z$) может быть найдена по формуле
+\begin{equation}
+    M_z = \sum\limits_a \frac{\partial L}{\partial \dot{\varphi}_a} = \sum\limits_a m_a r_a^2 \dot{\varphi}_a,
+\end{equation}
+где координата $\varphi$ есть угол поворота вокруг оси $z$. 

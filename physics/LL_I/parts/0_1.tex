@@ -1,0 +1,27 @@
+
+
+\begin{to_thr}[теорема Эйлера об однородных функциях]
+\label{thr:E}
+     Пусть дифференцируемая функция $f \colon \mathbb{R}^n \ni X \to \mathbb{R}$ такая, что $\forall \vc{r} \in X$, $\forall \lambda \in \mathbb{R}$ выполняется:
+     \begin{equation}
+     \label{E1}
+         f(\lambda \vc{r}) = \lambda^k f(\vc{r}), \text{ --- однородная функция, тогда} \hspace{0.5cm} 
+          \boxed{
+         \sum\nolimits_i r_i \frac{\partial f}{\partial r_i} = k f(\vc{r})
+         }.
+     \end{equation}
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+    Дифференцируя условие \eqref{E1}, по $\lambda$, получим соотношение
+    $$
+        \sum\nolimits_i \frac{\partial f}{\partial (\lambda r_i)} 
+        \frac{\partial (\lambda r_i)}{\partial \lambda} =
+        k \lambda^{k-1} f(\vc{r}),
+    $$
+    верное $\forall \lambda$. Достаточно принять $\lambda = 1$.
+\end{proof}
+
+
+
+

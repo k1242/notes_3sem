@@ -1,0 +1,46 @@
+\subsection{Уравнения Гамильтона}
+
+Лагранжиан удобен для выражений через обобщенные скорости и координаты. Можно ещё попробовать через импульсы. 
+Переход от одного набора независимых переменных к другому можно совершить путём \textit{преобразования Лежандра}. 
+
+Полный дифференциал функции Лагранжа как функции координат и скорости равен
+\begin{equation*}
+    dL = \sum\nolimits_i \frac{\partial L}{\partial q_i} d q_i + 
+    \sum\nolimits_i \frac{\partial L}{\partial \dot{q}_i} d \dot{q}_i 
+    \hspace{0.5cm} 
+    \Leftrightarrow
+    \hspace{0.5cm} 
+    dL = \sum \dot{p}_i \d q_i + \sum p_i \d \dot{q}_i.
+\end{equation*}
+Переписав второй член в другом виде, получим
+$$
+    \sum\nolimits_i p_i d \dot{q}_i = d\left(
+        \sum\nolimits_i p_i \dot{q}_i
+    \right) - \sum\nolimits_i \dot{q}_i d p_i,
+    \hspace{0.5cm} 
+    \hspace{0.5cm} 
+    d{\left(
+        \sum\nolimits_i p_i \dot{q}_i - L
+    \right)} = - \sum\nolimits_i \dot{p}_i \d q_i + \sum\nolimits_i q\delta_i \d p_i.
+$$
+
+\begin{to_def} 
+    Энергия системы, выраженная через координаты и импульсы
+    \begin{equation}
+        H(p, q, t) = \sum\nolimits_i p_i \dot{q}_i - L, \text{ --- \textit{гамильтоновая функция} системы}.
+    \end{equation} 
+\end{to_def}
+
+В частности, из дифференциального равенства, можно получить
+\begin{equation}
+    dH = - \sum\nolimits_i \dot{p}_i \d q_i + \sum \dot{q}_i \d p_i,
+    \hspace{0.5cm} 
+    \Longrightarrow
+    \hspace{0.5cm} 
+    \boxed{
+        \dot{q}_i = \frac{\partial H}{\partial p_i}, \hspace{0.25cm} 
+        \dot{p}_i = - \frac{\partial H}{\partial q_i} 
+    }
+\end{equation}
+
+Это -- искомые уравнения движения в переменных $q$ и $p$ --- \textit{уравнения Гамильтона}. Они составляют систему $2s$ дифференциальных уравнений первого порядка для $2s$ неизвестных функций $p(t)$  и $q(t)$, заменяющих собой $s$ уравнений первого порядка лагранжевого метода. Ввиду их формальной простоты эти уравнения называют \textit{каноническими}.
