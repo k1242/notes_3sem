@@ -1,0 +1,12 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+    "settings" : {
+        "TEXroot": "notes_DiffEqs.tex",
+        "name": "1242"
+    }
+}
