@@ -1,0 +1,101 @@
+\section{Задачи с II семинара}
+
+\subsection*{О геодезических на гиперболоиде.}
+
+Уравнение гиперболоида -- $x^2 + y^2 - z^2 = 1$.
+\begin{to_def} 
+    \textit{Геодезическая} -- линия в пространстве, по которой движется точка при нулевых компонентах ускорения в локальном базисе, задающем касательное пространство. 
+    $$
+        w_i = (\vc{w} \cdot \vc{g}_i) = 0.
+    $$
+\end{to_def}
+
+Пусть $q = \{\varphi, h=z\}$, тогда $z^y + y^2 = 1 + h^2$. Тогда
+$$
+    \vc{r} = 
+    \left(\begin{aligned}
+        x &= \sqrt{1 + h^2} \cos \varphi\\
+        y &= \sqrt{1+h^2} \sin \varphi \\
+        z &= h
+    \end{aligned}\right), \hspace{0.5cm} 
+    \vc{g}_\varphi = \frac{\partial \vc{r}}{\partial \varphi} = \sqrt{1 + h^2}
+    \begin{pmatrix}
+        -\sin\varphi \\ \cos \varphi \\ 0
+    \end{pmatrix}, \hspace{0.5cm} 
+    \vc{g}_h = \frac{\partial \vc{r}}{\partial h} = \begin{pmatrix}
+        h  / \sqrt{1 + h^2} \cdot  \cos\varphi \\
+        h  / \sqrt{1 + h^2}  \cdot \sin\varphi \\
+        1
+    \end{pmatrix}
+$$
+Метрический тензор
+$$
+    g_{ij} = \begin{pmatrix}
+        1 + h^2 & 0 \\
+        0 & \frac{1+2h^2}{1+h^2} 
+    \end{pmatrix}.
+$$
+Найдём $v$:
+$$
+    v^2 = g_{ji} v^i v^j = (1+h^2) \dot{\varphi}^2 + \frac{1+2h^2}{1+h^2} \dot{h}^2.
+$$
+Теперь можно домножить на $dt^2$ и найти коэффициенты, с которыми учитываем расстояния. То есть
+\begin{equation}
+    ds^2 = g_{ij} \d q^i \d q^j
+\end{equation}
+% см. Т.19 -- покажите, что пи
+
+
+Для ускорений:
+\begin{align*}
+    w_\varphi &= \frac{d}{dt} \left[(1+h^2) \dot{\varphi}\right] = 0; \\
+    w_h &= \frac{d}{dt} \left[\frac{1+2h^2}{1+h^2} h \right] - h \dot{\varphi}^2 -
+    \frac{\partial}{\partial h} \left(\frac{1+2h^2}{1+h^2} \right) \frac{\dot{h}^2}{2} = 0.
+\end{align*}
+Заметим, что
+$$
+    \left.\begin{aligned}
+        w_\varphi = 0 \\
+        w_h = 0
+    \end{aligned}\right\} \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    w_\tau = 0 \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    v^2 = \const, \hspace{0.5cm} \letus v^2  = 1.
+$$
+Ну, тогда перейдём к
+$$
+    \left.\begin{aligned}
+        w_\varphi = 0 \\
+        w_h = 0
+    \end{aligned}\right\}
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm} 
+    \left.\begin{aligned}
+        w_\varphi = 0 \\
+        v^2 = 1
+    \end{aligned}\right\} \text{ т.к. } 
+    w_\tau v = 0 = (\vc{w} \cdot \vc{v}) = w_i v^i = (w_\varphi \dot{\varphi} + w_h \dot{h} ) = w_h \dot{h}
+    \Rightarrow
+    \left[\begin{aligned}
+        \dot{h} = 0 \\
+        w_h = 0
+    \end{aligned}\right.
+$$
+Так перейдём к уравнению
+$$
+    \frac{c^2}{1+h^2} + \frac{1+2h^2}{1+h^2}  \dot{h}^2 = 1
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \dot{h}^2 = \frac{1 + h^2 - c^2}{1 + 2h^2} .
+$$
+И сменим параметризацию $h(t) \to h(\varphi)$.
+$$
+    \frac{dh}{d\varphi} = \frac{\dot{h}}{\dot{\varphi}} =
+     \frac{1+h^2}{c} \sqrt{\frac{1 + h^2 - c^2}{1 + 2h^2}}.
+$$
+Получили двухпараметрическое\footnote{
+    Потому что константа интегрирования.
+} семейство геодезических. 
+
+Посмотрим на частные случаи. Например, $h == h_0$. Тогда\footnote{
+    \red{Проверить!}
+} $w_h = 0 \Leftrightarrow h_0 = 0$, $c = \pm 1$.
+Или, $c =1 / \sqrt{2} \Rightarrow dh/d\varphi = 1 + h^2$. 
+Тогда $h = \tg \varphi$.

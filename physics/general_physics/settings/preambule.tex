@@ -1,0 +1,113 @@
+% file's preambule
+
+
+% connect packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[T2A]{fontenc}                   %!? закрепляет внутреннюю кодировку LaTeX
+\usepackage[utf8]{inputenc}                 %!  закрепляет кодировку utf8
+\usepackage[english,russian]{babel}         %!  подключает русский и английский
+\usepackage{amsmath}                        %!  |
+\usepackage{amssymb,textcomp, esvect,esint} %!  |важно для формул 
+\usepackage[margin=2cm]{geometry}           %!  фиксирует оступ на 2cm
+\usepackage{amsfonts}                       %!  математические шрифты
+\usepackage{amsthm}                         %!  newtheorem и их сквозная нумерация
+\usepackage{graphicx}                       %?  графическое изменение текста
+\usepackage{indentfirst}                    %   добавить indent перед первым параграфом
+\usepackage{xcolor}                         %   добавляет цвета
+\usepackage{enumitem}                       %!  задание макета перечня.
+\usepackage[unicode, pdftex]{hyperref}      %!  оглавление для панели навигации по PDF-документу + гиперссылки
+\usepackage{booktabs}                       %!  добавляет книжные линии в таблицы
+\usepackage{hypcap}                         %?  адресация на картинку, а не на подпись к ней
+\usepackage{abraces}                        %?  фигурные скобки сверху или снизу текста
+\usepackage{caption}                        %-  позволяет корректировать caption 
+\usepackage{multirow}                       %   объединение ячеек в таблицах
+\usepackage{pifont}                         %!  нужен для крестика
+\usepackage{cancel}                         %!  аутентичное перечеркивание текста
+\usepackage{ulem}                           %!  перечеркивание текста
+\usepackage{tikz}                           %!  высокоуровневые рисунки (кружочек)
+\usepackage{titling}                        %-  автоматическое заглавие 
+\usepackage{blindtext}                      %-  слепой текст
+\usepackage{fancyhdr}                       %   добавить верхний и нижний колонтитул
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% add (renew) commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand{\d}{\, d}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+
+\newcommand{\vc}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\T}{^{\text{T}}}
+
+\newcommand{\diag}{\mathop{\mathrm{diag}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\Spec}{\mathop{\mathrm{Spec}}\nolimits}
+\newcommand{\sign}{\mathop{\mathrm{sign}}\nolimits}
+\newcommand{\tr}{\mathop{\mathrm{tr}}\nolimits}
+\newcommand{\rg}{\mathop{\mathrm{rg}}\nolimits}
+
+\newcommand{\const}{\text{const}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\xmark}{\ding{55}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% some tikz commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter %%%%%%%%%%%%%%% КРУЖОЧЕК %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*{\encircled}[1]{\relax\ifmmode\mathpalette
+\@encircled@math{#1}\else\@encircled{#1}\fi}
+\newcommand*{\@encircled@math}[2]{\@encircled{$\m@th#1#2$}}
+\newcommand*{\@encircled}[1]{%
+  \tikz[baseline,anchor=base]{\node[draw,circle,outer sep=0pt,
+                                        inner sep=.2ex] {#1};}}
+\makeatother
+
+\usepackage{arydshln} %%%%%%%%%%%%%%% ЛИНИИ В МАТРИЧКЕ %%%%%%%%%%%%%%%
+\makeatletter
+  \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+    \hskip -\arraycolsep
+    \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% create environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newtheorem{to_thr}{Thr}[section]
+\newtheorem{to_suj}[to_thr]{Suj}
+\newtheorem{to_lem}[to_thr]{Lem}
+\newtheorem{to_com}[to_thr]{Com}
+\newtheorem{to_con}[to_thr]{Con}
+\theoremstyle{definition}
+\newtheorem{to_def}[to_thr]{Def}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% add some colors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{grey}{HTML}{666666}
+\definecolor{linkcolor}{HTML}{0000CC}
+\definecolor{urlcolor}{HTML}{006600}
+\hypersetup{
+    pdfstartview=FitH,  
+    linkcolor=linkcolor,
+    urlcolor=urlcolor, 
+    colorlinks=true,
+    citecolor=blue}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% add page header
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE,LO]{\textsc{Ф\raisebox{-1.5pt}{и}з\TeX}}
+% \fancyhead[LE,RO]{ОбщеФиз}
+\fancyhead[CO,CE]{\leftmark}
+\fancyfoot[LE,RO]{\textcolor{grey}{\texttt{\thepage}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

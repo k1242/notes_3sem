@@ -1,0 +1,63 @@
+\section{Кинематика точки}
+
+Пусть $\vc{r}(t), t \in \mathbb{R}$ -- движение точки и траектория движения.
+\begin{to_def} 
+    
+    \begin{equation}
+        \text{\textit{Скорость}:}  \hspace{0.5cm}  \vc{v} = \frac{d \vc{r}}{d t};
+        \hspace{1cm} 
+        \text{\textit{ускорение}:} \hspace{0.5cm}  \vc{w} = \frac{d \vc{v}}{d t} = \frac{d^2 \vc{r}}{d t^2}.
+     \end{equation} 
+\end{to_def}
+
+\subsection{Естественный трёхгранник}
+Из геометрии $\letus s(t)$ -- длина кривой. Тогда 
+\begin{equation}
+\label{dl}
+    \vc{v} = \underbrace{\frac{d \vc{r}}{d s}}_{\vc{\tau}} \frac{ds}{dt} = v \vc{\tau}. 
+\end{equation}
+Дифференцируя \eqref{dl}
+\begin{equation}
+    \vc{w} = \frac{d \vc{v}}{d t} \vc{\tau} + v \underbrace{\frac{d \vc{\tau}}{ds}}_{\vc{n} / \rho}  \frac{ds}{dt} = 
+   \underbrace{ \frac{dv}{dt} \vc{\tau}}_{\vc{w_{\tau}}} + \underbrace{\frac{v^2}{\rho} \vc{n}}_{\vc{w_{n}}}.
+\end{equation}
+где $(\vc{\tau}, \vc{n}, \vc{b})$ -- базис, преследующий точку.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Компоненты скорости и ускорения}
+
+Есть локальный базис. Тогда компоненты скорости
+\begin{equation}
+    \vc{v} = \frac{d \vc{r}}{dt} = \frac{\partial \vc{r}}{\partial q^i} \frac{d q^i}{dt} = \dot{q}^i \vc{g}_i = v^i \vc{g}_i 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} v^i = \dot{q}^i.
+\end{equation}
+Для компоненты ускорения:
+\begin{equation*}
+    w_i = (\vc{w} \cdot \vc{g}_i) = \frac{d}{dt} (\vc{v} \cdot \vc{g}_i) - (\vc{v} \cdot \frac{d \vc{g}_i}{dt}).
+\end{equation*}
+Но, во-первых:
+\begin{equation*}
+\label{I}
+    \frac{d \vc{g}_i}{dt} = \frac{d}{dt} \frac{\partial \vc{r}}{\partial q^i} =
+    \frac{\partial}{\partial q^i} \frac{d \vc{r}}{dt} = \frac{\partial \vc{v}}{\partial q^i} .
+\end{equation*}
+Во-вторых:
+\begin{equation}
+\label{II}
+    \vc{v} = \dot{g}^i \vc{g}_i \hspace{0.25cm}  \bigg|\frac{\partial}{\partial \dot{q}^k} 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{\partial \vc{v}}{\partial \dot{q}^k} = \frac{\partial}{\partial \dot{q}^k}
+    (\underbrace{\dot{g}^1 \vc{g}_1}_{0} + \underbrace{\dot{g}^2 \vc{g}_2}_{\vc{g}_2} + \underbrace{\dot{g}^3 \vc{g}_3}_{0})  = \vc{g}_k
+\end{equation}
+Тогда
+\begin{equation}
+    w_i = \frac{d}{dt} (\vc{v} \cdot \frac{\partial \vc{v}}{\partial \dot{q}^i} ) - 
+    (\vc{v} \cdot \frac{\partial \vc{v}}{\partial \dot{q}^i}) =
+    \frac{d}{dt} \frac{\partial (\vc{v} \cdot \vc{v})}{\partial \dot{q}^i} \frac{1}{2} - \frac{\partial (\vc{v} \cdot \vc{v})}{\partial \dot{q}^i} \frac{1}{2} =
+    {
+    \frac{d}{dt} \frac{\partial (v^2/2)}{\partial \dot{q}^i} - \frac{\partial (v^2/2)}{\partial q^i}
+    }  \hspace{0.15cm} \Rightarrow \hspace{0.15cm} 
+    \boxed{
+    mw_i = \frac{d}{dt} \frac{\partial T}{\partial \dot{q}^i} - \frac{\partial T}{\partial q^i}}
+\end{equation}
