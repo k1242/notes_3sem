@@ -129,20 +129,32 @@ $$
 
 
 \subsubsection*{Т5.}
-Для первого выражения:
-\begin{equation}
-    \left.\begin{aligned}
-        \frac{\partial \vc{g}^j}{\partial q^k} = \frac{\partial g^{ij}}{\partial q^k} \vc{g}_i + \frac{\partial \vc{g}_i}{\partial q^k} g^{ij}; \\ 
-        \vc{g}_i \frac{\partial (\vc{g}^j \cdot \vc{g}^i)}{\partial q^k} = 
-        \delta_i^i \frac{\partial \vc{g}^j}{\partial q^k} + \frac{\partial \vc{g}^i}{\partial q^k} \delta_i^j
-        = 
-        2 \frac{\partial \vc{g}^j}{\partial q^k}
-    \end{aligned}\right\}
-    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
-    2 \left(\vc{g}_i \cdot \frac{\partial \vc{g}^j}{\partial q^k} \right) + \Gamma_{ijk} g^{ij} = \left(\vc{g}_i  \cdot \frac{\partial \vc{g}^j}{\partial q^k} \right)
-    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
-    (1) = - \Gamma_{ijk} g^{ij}.
-\end{equation}
+Для первого выражения, обозначим $(\vc{g}_i \cdot \frac{\partial \vc{g}^j}{\partial q^k}) \overset{\mathrm{def}}{=} \Xi_{ik}^j$. 
+$$
+    \Gamma_{ijk} = \left(\vc{g}_i, \frac{\partial \vc{g}_j}{\partial q^k}\right) 
+    = \left(\vc{g}_i, \frac{\partial (g_{jn}\vc{g}^n)}{\partial q^k}\right) =
+    g_{jn}\underbrace{\left(\vc{g}_i \cdot \frac{\partial \vc{g}^n}{\partial q^k} \right)}_{\Xi_{ik}^j} +
+    \frac{\partial g_{jn}}{\partial q^k} \underbrace{\left(\vc{g}_i \cdot \vc{g}^n\right)}_{\delta_i^n} = g_{jn} \Xi_{ik}^j + \underbrace{\Gamma_{ijk} + \Gamma_{jik}}_{\partial g_{jn} / \partial q^k}.
+$$
+Домножив обе части на $g^{nj}$, получим
+$$
+    \Xi_{ik}^j g_{jn} g^{nj} = \boxed{(\vc{g}_i \cdot \frac{\partial \vc{g}^j}{\partial q^k}) = - \Gamma_{jik} g^{jn}}
+$$
+
+
+% \begin{equation}
+%     \left.\begin{aligned}
+%         \frac{\partial \vc{g}^j}{\partial q^k} = \frac{\partial g^{ij}}{\partial q^k} \vc{g}_i + \frac{\partial \vc{g}_i}{\partial q^k} g^{ij}; \\ 
+%         \vc{g}_i \frac{\partial (\vc{g}^j \cdot \vc{g}^i)}{\partial q^k} = 
+%         \delta_i^i \frac{\partial \vc{g}^j}{\partial q^k} + \frac{\partial \vc{g}^i}{\partial q^k} \delta_i^j
+%         = 
+%         2 \frac{\partial \vc{g}^j}{\partial q^k}
+%     \end{aligned}\right\}
+%     \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
+%     2 \left(\vc{g}_i \cdot \frac{\partial \vc{g}^j}{\partial q^k} \right) + \Gamma_{ijk} g^{ij} = \left(\vc{g}_i  \cdot \frac{\partial \vc{g}^j}{\partial q^k} \right)
+%     \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
+%     (1) = - \Gamma_{ijk} g^{ij}.
+% \end{equation}
 
 Для второго выражения рассмотрим значение квадрата произведения при фиксированных $i \neq j \neq k$:
 $$
