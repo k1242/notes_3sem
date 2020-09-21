@@ -132,13 +132,15 @@ $$
 Для первого выражения:
 \begin{equation}
     \left.\begin{aligned}
-        \frac{\partial \vc{g}^j}{\partial q^k} = \frac{\partial g^{ig}}{\partial q^k} \vc{g}_i + \frac{\partial \vc{g}_i}{\partial q^k} g^{ig}; \\ 
-        \vc{g}_i \frac{\partial (\vc{g}^j \cdot \vc{g}^i)}{\partial q^k} = 2 \frac{\partial \vc{g}^i}{\partial q^k} \vc{g}^j \vc{g}_i = 
-        2 \frac{\partial \vc{g}^i}{\partial q^k}
+        \frac{\partial \vc{g}^j}{\partial q^k} = \frac{\partial g^{ij}}{\partial q^k} \vc{g}_i + \frac{\partial \vc{g}_i}{\partial q^k} g^{ij}; \\ 
+        \vc{g}_i \frac{\partial (\vc{g}^j \cdot \vc{g}^i)}{\partial q^k} = 
+        \delta_i^i \frac{\partial \vc{g}^j}{\partial q^k} + \frac{\partial \vc{g}^i}{\partial q^k} \delta_i^j
+        = 
+        2 \frac{\partial \vc{g}^j}{\partial q^k}
     \end{aligned}\right\}
-    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
-    2 \left(\vc{g}_i \cdot \frac{\partial \vc{g}^i}{\partial q^k} \right) + \Gamma_{ijk} = \left(\vc{g}_i  \cdot \frac{\partial \vc{g}^i}{\partial q^k} \right)
-    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
+    2 \left(\vc{g}_i \cdot \frac{\partial \vc{g}^j}{\partial q^k} \right) + \Gamma_{ijk} g^{ij} = \left(\vc{g}_i  \cdot \frac{\partial \vc{g}^j}{\partial q^k} \right)
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
     (1) = - \Gamma_{ijk} g^{ij}.
 \end{equation}
 
