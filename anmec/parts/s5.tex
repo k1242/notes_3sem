@@ -1,0 +1,61 @@
+\section{Основные теоремы динамики}
+
+\subsection{Аксиоматика}
+
+...
+
+
+\subsection{Основные теоремы динамики}
+
+Пусть $\vc{Q}$ -- количество движения, $\vc{\mathrm{K}}_{A}$ -- кинематический момент относительно полюса $A$. Далее, $T$ -- механическая энергия, $\delta A^{\text{всех}} = \sum \left(\vc{F}_i \cdot d \vc{r}_i \right)$ и $- d \Pi = \delta A$, где $\Pi$ -- потенциальная энергия. 
+
+\begin{table}[h]
+    \centering
+    % \caption*{}
+        \begin{tabular}{lcr}
+    \toprule
+            Величина & Thr об изменение & Первые интегралы системы \\
+    \midrule
+            $\vc{Q} = \sum m_i \vc{v}_i$ & 
+            $d \vc{Q} / dt = \vc{R}^{\text{внеш}}$ &
+            $\vc{Q} = \const$
+            \\
+            $\vc{\mathrm{K}}_{A} = \sum \vc{r}_{A_i} \times (m_i \vc{v}_i)$ &
+            $d \vc{\mathrm{K}}_A / dt = \vc{M}_A^{\text{внеш}} + \vc{Q} \times \vc{v}_A$ &
+            $\vc{K}_A = \const$
+            \\
+            $T = \sum m_i v_i^2 / 2$ &
+            $dT = \delta A^{\text{всех}}$ &
+            $T + \Pi = \const$ \\
+    \bottomrule
+        \end{tabular}
+    \label{tab:}
+\end{table}
+
+
+\subsection{Вычисление динамических величин}
+
+\subsubsection*{Формула переноса полюса}
+$$
+    \vc{R}_A = \sum \left(\vv{AB} + \vc{r}_{Bi}\right) \times m_i \vc{v}_i =
+    \vv{AB} \times \sum m_i \vc{v}_i + \sum \vc{r}_{Bi} \times m_i \vc{v}_i
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \boxed{
+        \vc{K}_A = \vc{K}_B + \vc{Q} \times \vv{BA}
+    } 
+$$
+
+\subsubsection*{Теорема Кёнига}
+Выберем некотору СК (книгову СК), движущуюся поступательно.
+$$
+    T = \frac{1}{2} m v_C^2 + T_{c \xi \eta \zeta}^r.
+$$
+В частности, для твёрдого тела
+$$
+    T_{c \xi \eta \zeta}^r = \sum \frac{1}{2} m_i (v_i^r)^2 = 
+    \sum \frac{1}{2} m_i \omega^2 \rho_{Ci}^2 = \frac{\omega^2}{2} \sum m_i \rho^2_{Ci} = \frac{1}{2} J_\omega \omega^2.
+$$
+Тогда, для твёрдого тела,
+$$
+    T = \frac{1}{2} m v_C^2 + \frac{1}{2} J_\omega \omega^2
+$$

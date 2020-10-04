@@ -73,6 +73,19 @@
     \let\@ifnextchar\new@ifnextchar
   \array{#1}}
 \makeatother
+
+\def\letuscom{%
+\mathord{\setbox0=\hbox{$\exists$}%
+     \hbox{\kern 0.125\wd0%
+           \vbox to \ht0{%
+              \hrule width 0.75\wd0%
+              \vfill%
+              \hrule width 0.75\wd0}%
+           \vrule height \ht0%
+           \kern 0.125\wd0}%
+   }%
+}
+\newcommand{\letus}{\raisebox{-1.2pt}{$\letuscom$}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

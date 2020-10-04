@@ -1,0 +1,83 @@
+\subsection{Задачи с III семинара}
+\subsubsection*{Задача 2.12}
+Знаем, что $\omega_1, \omega_2 = \const$.
+Во-первых свяжем подвижную систему координат с пушкой: <<$\vc{\omega}_1 + \vc{\omega}_2$>>
+Во-вторых,
+$$
+    \vc{v}^a = \vc{v}^e + \vc{v}^r,
+    \hspace{0.5cm} 
+    \vc{v}^r = \begin{pmatrix}
+        0 \\ v_0 \cos \alpha \\ v_0 \sin \alpha
+    \end{pmatrix}
+$$. 
+Тогда
+$$
+    \vc{v}^e = (\vc{\omega}_1 + \vc{\omega}_2) \times \vv{O'M} = \begin{pmatrix}
+        \omega_1 \\ 0 \\ \omega_2
+    \end{pmatrix} \times
+    \begin{pmatrix}
+        0 \\ l \cos \alpha \\ l \sin \alpha
+    \end{pmatrix}.
+$$
+Теперь про ускорения, 
+$$
+    \vc{\mathrm{w}}^a = \vc{\mathrm{w}}^e + \vc{\mathrm{w}}^r + \vc{\mathrm{w}}^c.
+$$
+В частности верно, что
+$$
+    \vc{\mathrm{w}}^c = 2 \vc{\omega} \times \vc{v}^r = 2 \begin{pmatrix}
+        \omega_1 \\ 0 \\ \omega_2
+    \end{pmatrix} \times
+    \begin{pmatrix}
+        0 \\ v_0 \cos \alpha \\ v_0 \sin \alpha
+    \end{pmatrix},
+    \hspace{0.5cm} 
+    \vc{\mathrm{w}}^r = \vc{\mathrm{w}}_O = \begin{pmatrix}
+        0 \\ \mathrm{w}_0 \cos \alpha \\ \mathrm{w}_0 \sin \alpha
+    \end{pmatrix}.
+$$
+Для углового ускорения (можно ввести новую подвижную систему координат или ...), верно что
+$$
+    \vc{\varepsilon} = 
+    \frac{d}{dt} \left(\vc{\omega}_1 + \vc{\omega}_2 \right) = \vc{\omega}_2 \times \vc{\omega}_1,
+$$
+а для переносного ускорения, по формуле Ривальса, 
+$$
+    \vc{\mathrm{w}}^e = \vc{\varepsilon} \times \vv{O'M} + (\vc{\omega}_1 + \vc{\omega}_2) \times \left(
+        (\vc{\omega}_1 + \vc{\omega}_2) \times \vv{O'M}
+    \right).
+$$
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsubsection*{Другая задача}
+
+Введём систему координат, связанную со стержнем $\eta\xi$. Верно, что
+$$
+    \vc{v}^a_{M'} = \vc{v}^e_{M'} + \vc{v}^r_{M'}, \hspace{0.5cm} \text{ где } \vc{v}^e_{M'} = \vc{v}_{M'},
+    \hspace{0.5cm} \vc{v}_{M'}^r = \dot{\xi} \vc{e}_{\xi},
+    \hspace{0.5cm} \vc{v}^a_{M'} = 0.
+$$
+Но $\vc{v}_M \| \vc{e}_{\xi} \| AB$.
+
+\subsubsection*{Задача 3.29}
+
+Найдём ускорение точки $M$, 
+$$
+    \vc{\mathrm{w}}_M = \vc{\mathrm{w}}_O + \underbrace{\vc{\varepsilon} \times \vv{OM}}_{0} + \vc{\omega} \times \left(\vc{\omega} \times \vv{OM}\right) = \vc{\mathrm{w}}_O - \omega^2 \vv{OM}.
+$$
+Введём систему координат, связанную с диском $\eta\xi$. Верно, что
+$$
+    \vc{\mathrm{w}}_{O'}^a = \vc{\mathrm{w}}_{O'}^e + \vc{\mathrm{w}}_{O'}^r + \cancel{\vc{\mathrm{w}}_{O'}^c}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    0 = \vc{\mathrm{w}}_O + \omega^2 R \vc{e}_\eta
+$$
+Собирая всё вместе, получим
+$$
+    \vc{\mathrm{w}}_M = - \omega^2 R \vc{e}_\eta - \omega^2 |OM| \vc{e}_\xi
+$$
+
+% \resizebox{\textwidth}{!}{
+%     \input{img_v/1.pdf_tex}
+% }

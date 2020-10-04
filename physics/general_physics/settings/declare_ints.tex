@@ -1,0 +1,50 @@
+\makeatletter
+\def\upintkern@{\mkern-7mu\mathchoice{\mkern-3.5mu}{}{}{}}
+\def\upintdots@{\mathchoice{\mkern-4mu\@cdots\mkern-4mu}%
+ {{\cdotp}\mkern1.5mu{\cdotp}\mkern1.5mu{\cdotp}}%
+ {{\cdotp}\mkern1mu{\cdotp}\mkern1mu{\cdotp}}%
+ {{\cdotp}\mkern1mu{\cdotp}\mkern1mu{\cdotp}}}
+\newcommand{\upiint}{\DOTSI\protect\UpMultiIntegral{2}}
+\newcommand{\upiiint}{\DOTSI\protect\UpMultiIntegral{3}}
+\newcommand{\upiiiint}{\DOTSI\protect\UpMultiIntegral{4}}
+\newcommand{\upidotsint}{\DOTSI\protect\UpMultiIntegral{0}}
+\newcommand{\UpMultiIntegral}[1]{%
+  \edef\ints@c{\noexpand\upintop
+    \ifnum#1=\z@\noexpand\upintdots@\else\noexpand\upintkern@\fi
+    \ifnum#1>\tw@\noexpand\upintop\noexpand\upintkern@\fi
+    \ifnum#1>\thr@@\noexpand\upintop\noexpand\upintkern@\fi
+    \noexpand\upintop
+    \noexpand\ilimits@
+  }%
+  \futurelet\@let@token\ints@a
+}
+\makeatother
+
+\DeclareFontFamily{OMX}{mdbch}{}
+\DeclareFontShape{OMX}{mdbch}{m}{n}{ <->s * [0.8]  mdbchr7v }{}
+\DeclareFontShape{OMX}{mdbch}{b}{n}{ <->s * [0.8]  mdbchb7v }{}
+\DeclareFontShape{OMX}{mdbch}{bx}{n}{<->ssub * mdbch/b/n}{}
+
+\DeclareSymbolFont{uplargesymbols}{OMX}{mdbch}{m}{n}
+\SetSymbolFont{uplargesymbols}{bold}{OMX}{mdbch}{b}{n}
+\DeclareMathSymbol{\upintop}{\mathop}{uplargesymbols}{82}
+\DeclareMathSymbol{\upointop}{\mathop}{uplargesymbols}{"49}
+
+\DeclareFontEncoding{MDB}{}{}
+\DeclareFontFamily{MDB}{mdbch}{}
+\DeclareFontShape{MDB}{mdbch}{m}{n}{ <->s * [0.8]  mdbchrmb }{}
+\DeclareFontShape{MDB}{mdbch}{b}{n}{ <->s * [0.8]  mdbchbmb }{}
+\DeclareFontShape{MDB}{mdbch}{bx}{n}{<->ssub * mdbch/b/n}{}
+\DeclareFontSubstitution{MDB}{cmr}{m}{n}
+\DeclareSymbolFont{mathdesignB}{MDB}{mdbch}{m}{n}%
+\SetSymbolFont{mathdesignB}{bold}{MDB}{mdbch}{b}{n}%
+\DeclareMathSymbol{\upintclockwise}{\mathop}{mathdesignB}{128}
+\DeclareMathSymbol{\upointclockwise}{\mathop}{mathdesignB}{130}
+\DeclareMathSymbol{\upointctrclockwise}{\mathop}{mathdesignB}{132}
+\DeclareMathSymbol{\upoiint}{\mathop}{mathdesignB}{134}
+\DeclareMathSymbol{\upoiiint}{\mathop}{mathdesignB}{136}
+
+\makeatletter
+\newcommand{\upint}{\DOTSI\upintop\ilimits@}
+\newcommand{\upoint}{\DOTSI\upointop\ilimits@}
+\makeatother

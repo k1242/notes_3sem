@@ -1,0 +1,34 @@
+\section{Энергия электрического поля}
+
+Рассмотрим систему из двух зарядов $q_1$ и $q_2$.  Тогда энергия взаимодействия
+$$
+    W = q_1 \varphi_{21} = q_2 \varphi_{12} = \frac{1}{2} \left(q_1 \varphi_{21} + q_2 \varphi_{12}\right).
+$$
+Или, в общем случае
+$$
+    W = \frac{1}{2} \sum_{ij} W_{ij} = \frac{1}{2} \left(
+        q_i \varphi^j_i
+    \right) = \frac{1}{2} \sum q_i \varphi_i,
+$$
+где под $\varphi_i$ имеется ввиду потенциал $q_i$ заряда. В случае непрерывно заряженного тела
+$$
+    W = \frac{1}{2} \int \varphi \rho \d V.
+$$
+
+Например, для конденсатора
+$$
+    W = \frac{1}{2} \varphi_1 \int_{(1)} \d q + \frac{1}{2} \varphi_2 \int_{(2)} \d q = \frac{1}{2} q (\varphi_2 - \varphi_1) = \frac{1}{2} qU = \frac{cU^2}{2} = \frac{q^2}{2c}.
+$$
+
+Вопрос: где локализована энергия? Ответ: в зарядах или в поле.  В частности, для конденсатора
+$$
+    W = \frac{1}{2} cU^2 = \frac{1}{2} \frac{\varepsilon S E^2 d^2}{4\pi d} = 
+    \underbrace{\frac{\varepsilon E^2}{8\pi}}_{\mathcal W_{\text{Э}}}  V,
+$$
+где $\mathcal W_{\text{Э}} = \varepsilon E^2 / 8 \pi$ -- \textit{объемная плотность} электрической энергии. В общем же случае
+\begin{equation}
+     W_{\text{Э}} = \int \mathcal W_{\text{Э}} \d V.
+\end{equation}
+
+
+

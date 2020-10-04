@@ -25,14 +25,27 @@ $$
 
 
 Теперь дойдём до двух теорем (кусочки уравнений Максвелла), описывающих электростатическое поле. 
-\begin{to_thr}[теорема Гаусса]
+
+\phantom{42}
+
+\begin{minipage}[h]{0.6\textwidth}
+    \begin{to_thr}[теорема Гаусса]
     Для потока $\vc{E}$ через замкнутую поверхность $S$ верно, что
-    \begin{equation}
+    \begin{align}
         \oint_S E_n \d S =
-        \oint_S (\vc{E} \d \vc{S}) 
-        = 4 \pi q_{\textnormal{вн}}.
-    \end{equation}
+        \boxed{
+         \upoint_S (\vc{E} \d \vc{S}) 
+            = 4 \pi q_{\textnormal{вн}}.   
+        }
+    \end{align}
 \end{to_thr}
+\end{minipage}
+\hfill
+\begin{minipage}{0.3\textwidth}
+\begin{center}
+    \incfig{1}
+\end{center}
+\end{minipage}
 
 
 \begin{proof}[$\triangle$]

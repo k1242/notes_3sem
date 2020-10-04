@@ -148,11 +148,11 @@ $$
 $$
 Можно вывести ускорение точки твёрдого тела
 \begin{align*}
-    \vc{\mathrm{w}}_A &= \vc{\mathrm{w}}_O + \frac{d \vc{\omega}}{dt} \times \vc{r} + \vc{r} \times \frac{d \vc{r}}{dt}, \\
+    \vc{\mathrm{w}}_A &= \vc{\mathrm{w}}_O + \frac{d \vc{\omega}}{dt} \times \vc{r} + \vc{\omega} \times \frac{d \vc{r}}{dt}, \\
     \vc{\mathrm{w}}_A &= \vc{\mathrm{w}}_O + \vc{\varepsilon} \times \vc{r} + \vc{\omega} \times \left(\vc{\omega} \times \vc{r} \right)
     \hspace{0.5cm} \text{--} \hspace{0.5cm} \text{\textbf{формула Ривальса},}
 \end{align*}
-где $\vc{\varepsilon} = d \vc{\mathrm{w}} / d t$ -- \textit{угловое ускорение}.
+где $\vc{\varepsilon} = d \vc{\omega} / d t$ -- \textit{угловое ускорение}.
 
 
 
@@ -169,7 +169,10 @@ $$
 
 Сейчас легко доказать thr. \eqref{thr_moz}, точнее надо показать существование такой прямой $MN$, все точки которой имеют скорости, $\parallel \vc{\omega}$.
 
-
+Выберем некоторый полюс, $O$, со скоростью $\vc{v}_O$ и угловой скоростью $\vc{\omega}$. Тогда верно, что
+$$
+    \vc{v}_O + \vc{\omega} \times \vv{OS} = p \vc{\omega}, \hspace{0.5cm} (p \neq 0).
+$$
 
 
 

@@ -28,13 +28,24 @@
 \usepackage{titling}                        %-  автоматическое заглавие 
 \usepackage{blindtext}                      %-  слепой текст
 \usepackage{fancyhdr}                       %   добавить верхний и нижний колонтитул
+
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%% ИНТЕГРАЛЫ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{settings/declare_ints}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 % add (renew) commands
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
 \renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand{\div}{\mathop{\mathrm{div}}\nolimits}
 \renewcommand{\d}{\, d}
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
@@ -42,6 +53,8 @@
 \newcommand{\vc}[1]{\mbox{\boldmath $#1$}}
 \newcommand{\T}{^{\text{T}}}
 
+\newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits}
+\newcommand{\rot}{\mathop{\mathrm{rot}}\nolimits}
 \newcommand{\diag}{\mathop{\mathrm{diag}}\nolimits}
 \newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
 \newcommand{\Spec}{\mathop{\mathrm{Spec}}\nolimits}
@@ -52,6 +65,9 @@
 \newcommand{\const}{\text{const}}
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\xmark}{\ding{55}}
+
+\renewcommand{\int}{\upint}
+\renewcommand{\oint}{\upoint}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -81,12 +97,17 @@
 \newtheorem{to_thr}{Thr}[section]
 \newtheorem{to_suj}[to_thr]{Suj}
 \newtheorem{to_lem}[to_thr]{Lem}
+\newtheorem{to_law}[to_thr]{Law}
 \newtheorem{to_com}[to_thr]{Com}
 \newtheorem{to_con}[to_thr]{Con}
 \theoremstyle{definition}
 \newtheorem{to_def}[to_thr]{Def}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newcommand{\incfig}[1]{%
+    % \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
 
 % add some colors
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

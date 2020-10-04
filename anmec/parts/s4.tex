@@ -1,0 +1,256 @@
+\section{Сложное движение точки и твёрдого тела}
+
+\subsection{Сложение скоростей и ускорений}
+
+\begin{to_def} 
+\phantom{42}
+
+    \textit{Абсолютной скоростью (ускорением)}  называют скорость (ускорение) относительно неподвижной системы координат. 
+
+    \textit{Относительной скоростью (ускорением)}  называют скорость (ускорение) относительно подвижной системы координат.
+
+    \textit{Переносной скоростью (ускорением)} такой точки $A'$, которая в рассматриваемый момент времени совпадает с точкой $A$, но которая не движется относительно подвижной системы координат.
+    называют абсолютную скорость (ускорение).
+\end{to_def}
+
+\begin{to_thr}[сложение скоростей]
+     Пусть $a$ -- абсолютная скорость, $e$ -- переносная, $r$ -- относительная.
+     \begin{equation}
+         \vc{v}^a = \vc{v}^e + \vc{v}^r
+     \end{equation}
+\end{to_thr}
+\begin{to_thr}[сложение ускорений]
+      Пусть $a$ -- абсолютное, $e$ -- переносное, $r$ -- относительное, $c$ -- кориолисово.
+     \begin{equation}
+         \vc{\mathrm{w}}^a = \vc{\mathrm{w}}^e + \vc{\mathrm{w}}^r + \vc{\mathrm{w}}^c.
+     \end{equation}
+\end{to_thr}
+\begin{proof}[$\triangle$]
+Запишем скорость $\vc{v}_A^a$ относительно двух систем координат:
+\begin{align*}
+    \vv{OA} = \vc{r} \text{ в $xyz$}, \hspace{0.25cm} \vv{OA} = \vc{\rho} \text{ в $\xi\eta\zeta$},
+    \hspace{0.5cm} &\overset{d / dt}{\Rightarrow} \hspace{0.5cm} 
+    \vc{v}_A = \vc{v}_O + \dot{R} \vc{\rho} + R \vc{\dot{\rho}}.
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm} 
+    \vc{v}_A^a = {\vc{v}_O + \vc{\omega} \times \vc{r}} + \vc{v}_A^r \\
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \vc{v}_A = \vc{v}_O + \vc{\omega} \times (R \vc{\rho}) + R \vc{\dot{\rho}}
+    \hspace{0.25cm} \overset{d / dt}{\Rightarrow} \hspace{0.25cm} 
+    \vc{\mathrm{w}}_A^a &= \vc{\mathrm{w}}_O + \vc{\varepsilon} \times \vc{r} + \vc{\omega} \times (
+        \underbrace{\dot{R} \vc{\rho}}_{\vc{\omega}\times \vc{r}}
+         + R \vc{\dot{\rho}}
+    ) + \dot{R} \vc{\dot{r}} + R \vc{\dot{\rho}} = \\
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+&= \vc{\mathrm{w}}_A^e + \vc{\omega} \times R \vc{\dot{r}} + \underbrace{\dot{R} R^{-1}}_{\vc{\omega} \times}
+\underbrace{R \vc{\dot{\rho}}}_{\vc{v}_a^r} + \underbrace{R \vc{\ddot{\rho}}}_{\vc{\mathrm{w}}_A^r} =
+\vc{\mathrm{w}}_A^e + \vc{\mathrm{w}}_A^r + \boxed{2 \vc{\omega} \times \vc{v}_A^r}
+\end{align*}
+\end{proof}
+
+Теперь немного про твёрдое тело, зная, что $\vc{\omega}^r = \omega_{\xi} \vc{e}_\xi + \omega_\eta \vc{e}_\eta + \omega_\zeta \vc{e}_\zeta$, найдём\footnote{
+    Получить!
+} угловое ускорение $\varepsilon^a$
+$$
+    \vc{\varepsilon}^a = \vc{\varepsilon}^e + \frac{d \vc{\omega}^r}{dt} =
+    \vc{\varepsilon}^e + \frac{d}{dt} \left(\omega^i \vc{e}_i\right) = 
+    \vc{\varepsilon} +
+    \underbrace{\dot{\omega}^i \vc{e}_i}_{\vc{\varepsilon}^r} + 
+    \underbrace{\omega^i \dot{\vc{e}}_i}_{\vc{\omega}^e \times \vc{\omega}^r} =
+    \vc{\varepsilon}^e + \vc{\varepsilon}^r  + \vc{\omega}^e \times \vc{\omega}^r.
+$$
+
+
+
+\subsection{Главный момент и главный вектор}
+
+Имеется $m$ мгновенно поступательных движений $\vc{v}_1, \ldots, \vc{v}_m$ и $n$ мгновенно вращательных движений\footnote{
+    Скользящий вектор -- это ?
+}
+$\vc{\omega}_1, \ldots, \vc{\omega}_n$. Уже знаем, что $\forall j$ мы можем представить 
+$\vc{v}_j$ как пару $\vc{\omega}_j', \vc{\omega}_j''$. Получается, что $\vc{v}_1, \ldots, \vc{v}_m, \vc{\omega}_1, \ldots, \vc{\omega}_n$ представим в виду $2m+n$ мгновенных вращений. 
+
+Введём два важных вектора
+\begin{align*}
+    \vc{\Omega} &= \sum_{i=1}^n \vc{\omega}_i &\text{-- суммарный вектор мгновенных угловых скоростей, \textit{главный вектор}}; \\
+    \vc{V} &= \sum_{j=1}^m \vc{v}_j + \sum_{i=1}^n \vc{r}_i \times \vc{\omega}_i
+    &\text{-- суммарный вектор мгновенных поступательных движений, \textit{главный момент}}.
+\end{align*}
+Таким обрахом свели $\vc{v}_1, \ldots, \vc{v}_m, \vc{\omega}_1, \ldots, \vc{\omega}_n$ к паре $\vc{\Omega}, \vc{V}$, соответствующей выбранному центру приведения.
+
+\phantom{42}
+
+\incfig{2}
+Найдём $\vc{V}_{O'}$:
+$$
+    \vc{V}_{O'} = \sum_{j=1}^m \vc{v}_j + \sum_{i=1}^n \vc{r}_i' \times \vc{\omega}_i =
+    \sum_{j=1}^m \vc{v}_j + \sum_{i=1}^n \left(\vv{O'O} + \vc{r}_i \right) \times \vc{\omega}_i =
+    \underbrace{
+        \sum_{j=1}^m \vc{v}_j + \sum_{i=1}^n \vc{r}_i \times \vc{\omega}_i
+    }_{\vc{V}_0} +
+    \vv{O'O} \times
+    \underbrace{
+        \sum_{i=1}^n \vc{\omega}_i
+    }_{\vc{\Omega}} = \vc{V}_0 +   \vv{O'O} \times \vc{\Omega}.
+$$
+
+\begin{table}[h]
+    \centering
+    \caption{Простейшие типы движений.}
+        \begin{tabular}{cccl}
+    \toprule
+            $(\vc{V}_0, \vc{\Omega})$ & $\vc{\Omega}$ & $\vc{V}_0$ & \multicolumn{1}{c}{простейшее мгновенное движение}\\
+    \midrule
+            $\neq 0$ & $\neq 0$ & $\neq 0$ 
+            & мгновенно винтовое движение\\
+            \multirow{2}{*}{$0$} & \multirow{2}{*}{$\neq 0$} & 0 
+            & мгновенное вращение, ось $\ni O$\\
+            && $\neq 0$ & мгновенное вращение, ось $\not \ni O$ \\
+            $0$ & $0$ & $\neq 0$ 
+            & мгновенно поступательное движение \\
+            $0$ & $0$ & $0$ 
+            & мгновенный покой \\
+    \bottomrule
+        \end{tabular}
+    \label{tab:}
+\end{table}
+
+
+\subsection{Общие основания кинематики системы}
+
+\subsubsection*{Свободные и несвободные системы. Связи.}
+
+Рассмотрим некоторые частные случаи кинематических связей в системе.
+
+\incfig{3}
+
+В общем случае связь запишем, как
+$$
+    f(\vc{r}_\nu, \vc{v}_\nu, t) \geq 0.
+$$
+В частности, при $f(\vc{r}_\nu, \vc{v}_\nu, t) = 0$, связь называет \textit{двухсторонней}, или \textit{удерживающей}. При неравенстве, соотвественно, связь \textit{односторонняя}, \textit{освобождающая}.
+Связь вида $f(\vc{r}_\nu, t) = 0$ называется \textit{геометрической}, \textit{конечная}, \textit{голономная}. Связь вида $f(\vc{r}_\nu, \vc{v}_\nu, t) = 0$ называется \textit{дифференциальной}, или \textit{кинематической}. Иногда кинематическая связь может быть представлена как геометрическая, такая связь называется \textit{интегрируемой}. 
+
+\begin{to_def} 
+     Если на систему материальных точек не наложены дифференциальные неинтегрируемые связи, то она называется голономной. Если же среди связей, наложенных на систему есть дифференциальные неинтегрируемые связи, то система называется неголономной.
+\end{to_def}
+
+Хотелось бы построить некоторую общую теория для случая, когда этих связей несколько. 
+В частности пусть есть $r$ геометрических связей.
+\begin{equation}
+\label{eqs1}
+    f_\alpha (\vc{r}, t) = 0, \hspace{0.5cm} (\alpha = 1, \ldots, r),
+\end{equation}
+И несколько дифференциальных линейных связей
+\begin{equation}
+\label{eqs2}
+    \sum_{\nu=1}^N \vc{a}_{\beta \nu} (\vc{r}_1, \ldots, \vc{r}_N, t) \cdot \vc{v}_\nu + a_\beta  (\vc{r}_1, \ldots, \vc{r}_N, t) = 0,
+    \hspace{0.5cm} (\beta = 1, \ldots, s)
+\end{equation}
+Стоит сказать, что
+$$
+    3N - r - s \geq 1.
+$$
+
+\begin{to_def} 
+     Геометрические связи называются стационарными или склерономными, если $t$ не входит в их уравнения \eqref{eqs1}. Дифференциальные связи \eqref{eqs2} называются \textit{стационарными} или \textit{склерономными} если функции $\vc{a}_{\beta\nu}$ не зависят явно от $t$, а функции $a_\beta \equiv 0$. Система называется \textit{склерономной}, если она либо свободная, либо на нее наложены только стационарные связи. Система называется \textit{реономной}, если среди наложенных на нее связей есть хотя бы одна нестационарная.
+\end{to_def}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{Ограничения, налагаемые связями на положения, скорости, ускорения и перемещения точек системы.}
+
+Пусть задан некоторый момент $t = t*$. Тогда \textit{возможными положениями} назовём $\vc{r}_\nu$ такие, что для них верно \eqref{eqs1}, \eqref{eqs2}. 
+
+Какие возможны скорости?
+\begin{equation}
+    \label{eqs3}
+    \sum_{\nu=1}^N \frac{\partial f_\alpha}{\partial \vc{r}_\nu} \cdot \vc{v}_\nu +   \frac{\partial f_\alpha}{\partial t} = 0, \hspace{0.5cm} (\alpha = 1, \ldots, r).
+\end{equation}
+
+Совокупность векторов $\vc{v}_\nu = \vc{v}_\nu^*$, удовлетворяющая линейным
+уравнениям \eqref{eqs2} и \eqref{eqs3} в возможном для данного момента времени положении
+системы, назовем возможными скоростями. 
+
+Какие возможны ускорения?
+\begin{align}
+\label{eqs4}
+    \eqref{eqs3}, \eqref{eqs2}
+    \hspace{0.25cm} \overset{d / dt}{\Rightarrow} \hspace{0.25cm} 
+    & \sum_{\nu=1}^N \frac{\partial f_\alpha}{\partial \vc{r}_\nu} \cdot \vc{\mathrm{w}}_\nu +
+    \sum_{\nu, \mu=1}^N \frac{\partial^2 f_\alpha}{\partial \vc{r}_\nu \partial \vc{r}_\mu} \vc{v}_\mu \cdot \vc{v}_\nu + 2 \sum_{k=1}^N \frac{\partial^2 f_\alpha}{\partial t \partial \vc{r}_\nu} \vc{v}_\nu + \frac{\partial^2 f_\alpha}{\partial t^2}  = 0 
+    \hspace{0.25cm} &\alpha \in [1, r]\\
+\label{eqs5}
+    & \sum_{\nu=1}^N \vc{a}_{\beta\nu} \cdot \vc{\mathrm{w}}_\nu + \sum_{\nu, \mu =1}^N \frac{\partial \vc{a}_{\beta\nu}}{\partial \vc{r}_\mu} \vc{v}_\mu \cdot \vc{v}_\nu + \sum_{\nu=1}^N \frac{\partial \vc{a}_{\beta\nu}}{\partial t} \cdot \vc{v}_\nu + \sum_{\nu=1}^N \frac{\partial a_\beta}{\partial \vc{r}_\nu} \cdot \vc{v}_\nu + \frac{\partial  a_\beta}{\partial t} = 0
+     \hspace{0.25cm} &\beta \in [1, s]
+\end{align}
+
+Совокупность векторов $\vc{\mathrm{w}}_\nu =\vc{\mathrm{w}}_\nu^*$, удовлетворяющая линейным
+уравнениям \eqref{eqs4} и \eqref{eqs5} в возможном для данного момента времени положении
+системы (+скорости), назовем возможными скоростями. 
+
+Рассмотрим возможные перемещения $\Delta \vc{r}_\nu$ системы за $\Delta t$ из её возможного положения $\vc{r}_\nu^*$ в момент $t=t^*$. Тогда 
+\begin{equation}
+    \Delta \vc{r}_\nu = \vc{v}^* \Delta t + \frac{1}{2} \vc{\mathrm{w}}_\nu^* (\Delta t)^2 + \ldots
+    \hspace{0.5cm} (\nu = 1, \ldots, N).
+\end{equation}
+Пренебрегая нелинейными членами, получим, что $\Delta \vc{r}_\nu = \vc{v}_\nu^* \Delta t$. Тогда, домножив \eqref{eqs2}, \eqref{eqs3} на $\Delta t$, получим систему уравнений, которой удовлетворяют линейные по $\Delta t$ возможные перемещения:
+\begin{align}
+\label{eqs7}
+    \sum_{\nu=1}^N \frac{\partial f_\alpha}{\partial \vc{r}_\nu} \cdot \Delta \vc{r}_\nu + \frac{\partial f_\alpha}{\partial t} \Delta t &= 0,
+    \hspace{0.5cm} &(\alpha = 1, \ldots, r), \\
+\label{eqs8}
+    \sum_{\nu=1}^N \vc{a}_{\beta\nu} \cdot \Delta \vc{r}_\nu + a_\beta \Delta t &= 0,
+    \hspace{0.5cm} &(\beta = 1, \ldots, s),
+\end{align}
+где функции $\vc{a}_{\beta\nu}, a_\beta$ и частные производные вычисляются при $t=t^*, \; \vc{r}_\nu = \vc{r}_\nu^*$.
+
+
+\subsubsection*{Действительные и виртуальные перемещения}
+Пусть задано положение системы для $t, \vc{r}, \vc{v}, \vc{\mathrm{w}}$. Тогда для $t = t^* + dt$ запишем, что
+\begin{equation}
+\label{eqs9}
+    \vc{r}_\nu (t^* + dt) - \vc{r}_\nu (t^*) = \vc{v}_{\nu_0}^* \d t + \frac{1}{2} \vc{\mathrm{w}}^*_{\nu_0} (dt)^2 + \ldots,
+\end{equation}
+где $\vc{\mathrm{w}}_{\nu_0}^*$ -- ускорения точек системы при $t = t^*$. Величины \eqref{eqs9} -- \textit{действительные (истинные) перемещения} точек системы за время $dt$. Тогда получим систему уравнений, аналогичную \eqref{eqs7}, \eqref{eqs8}:
+\begin{align}
+\label{eqs10}
+    \sum_{\nu=1}^N \frac{\partial f_\alpha}{\partial \vc{r}_\nu} \cdot d \vc{r}_\nu + \frac{\partial f_\alpha}{\partial t} d t &= 0,
+    \hspace{0.5cm} &(\alpha = 1, \ldots, r), \\
+\label{eqs11}
+    \sum_{\nu=1}^N \vc{a}_{\beta\nu} \cdot d \vc{r}_\nu + a_\beta d t &= 0,
+    \hspace{0.5cm} &(\beta = 1, \ldots, s).
+\end{align}
+
+
+Помимо действительных перемещений есть \textit{виртуальные}. Ими называется совокупность величин $\delta \vc{r}_\nu$, удовлетворяющая линейным однородным уравнениям
+\begin{align}
+\label{eqs12}
+    \sum_{\nu=1}^N \frac{\partial f_\alpha}{\partial \vc{r}_\nu} \cdot \delta \vc{r}_\nu  &= 0,
+    \hspace{0.5cm} &(\alpha = 1, \ldots, r), \\
+\label{eqs13}
+    \sum_{\nu=1}^N \vc{a}_{\beta\nu} \cdot \delta \vc{r}_\nu  &= 0,
+    \hspace{0.5cm} &(\beta = 1, \ldots, s),
+\end{align}
+Если система склерономна, то действительное перемещение будет одним из виртуальных.
+
+\begin{to_def} 
+    \textit{Синхронное варьирование} -- переход из одного положения в другое, при фиксированном времени
+    $$
+        \vc{r}_\nu^* \to \vc{r}_\nu^* + \delta \vc{r}_\nu.
+    $$
+    При синхронном варьировании мы не рассматриваем процесс движения и сравниваем допускаемые связями
+    бесконечно близкие положения (конфигурации) системы для данного фиксированного момента времени.
+\end{to_def}
+
+Рассмотрим две совокупности возможных перемещений с одним и тем же значением величины $\Delta t$. Согласно разложению по Тейлору,
+\begin{align*}
+    \Delta_1 \vc{r}_\nu = \vc{v}_{\nu_1}^* \Delta t + \frac{1}{2} \vc{\mathrm{w}}_{\nu_1}^* (\Delta t)^2 + \ldots, \\
+    \Delta_2 \vc{r}_\nu = \vc{v}_{\nu_2}^* \Delta t + \frac{1}{2} \vc{\mathrm{w}}_{\nu_2}^* (\Delta t)^2 + \ldots, 
+\end{align*}
+и рассмотрим их разность
+$$
+        \Delta_1 \vc{r}_\nu - \Delta_2 \vc{r}_\nu = (\vc{v}_{\nu_1}^* \Delta t - \vc{v}_{\nu_2}^* \Delta t) + \left(\frac{1}{2} \vc{\mathrm{w}}_{\nu_1}^* (\Delta t)^2 - \frac{1}{2} \vc{\mathrm{w}}_{\nu_2}^* (\Delta t)^2\right) + \ldots.
+$$
+
+
+

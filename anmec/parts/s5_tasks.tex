@@ -1,0 +1,73 @@
+\subsection{Задачи с V семинара}
+\subsubsection*{Задача 6.28}
+
+Допустим диск катится по шероховатой поверхности.
+$$
+\left\{\begin{aligned}
+    m \vc{W}_c &= \vc{F} + \vc{T} + m \vc{g} + \vc{N} \\
+    \frac{d \vc{\mathrm{K}}_c}{dt}  &= \vv{CB} \times \vc{F} + \vv{CA} \cdot \vc{T}
+\end{aligned}\right. 
+\hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+\left\{\begin{aligned}
+    m W_c &= F + T \\
+    N &= mg \\
+    \frac{m R^2}{2} \varepsilon &= FR - TR.
+\end{aligned}\right.
+$$
+Далее,
+$$
+    \vc{\mathrm{K}}_C = \sum \vc{r}_{ci} \times M_i (\vc{v}_c + \vc{\omega} \times \vc{r}_{ci}) = \left(\sum \vc{r}_{ci} m_i\right) \times \vc{v}_c + \sum m_i \vc{r}_{ci} \times (\vc{\omega}\times \vc{r}_{ci}) = \vc{\omega} \sum m_i r^2_{ci} = \underbrace{\frac{mR^2}{2}}_{J_c} \vc{\omega}.
+$$
+
+Выпишем закон сухого трения/закон Кулона в плоском случае
+$$
+    \left\{\begin{aligned}
+        \vc{T} &= - \mu N \frac{\vc{v}_A}{v_A}, &v_A \neq 0, \\
+        |\vc{T}| &\leq \mu N, &v_A = 0
+    \end{aligned}\right.
+$$
+Пусть проскальзывания нет.
+\begin{align*}
+    v_c = \omega R \hspace{0.5cm} &\Rightarrow \hspace{0.5cm} 
+    w_c = \varepsilon R. \\
+    \frac{3}{2} mR\varepsilon = 2 F
+    \hspace{0.5cm} &\Rightarrow \hspace{0.5cm} 
+    \varepsilon = \frac{4F}{2mR}; \hspace{0.5cm} w_c = \frac{4F}{2m}     \\
+    \text{а) } &F = \frac{1}{3} mg, \hspace{0.5cm} T = m w_c - F = \frac{4}{3} F - F = \frac{1}{9}  mg < \mu N \\
+    \text{б) } &F = mg, \hspace{0.5cm} T = \frac{1}{3}  mg > \mu N, \text{ не ок.}
+\end{align*}
+Значит проскальзывание есть, то есть возьмём $T = \pm mg / 8$. Тогда
+$$
+    \vc{v}_A = \vc{v}_C + \vc{\omega} \times \vv{CA} = 
+    \begin{pmatrix}
+        w_c t \\ 0\\0   
+    \end{pmatrix} + \begin{pmatrix}
+        0 \\ 0 \\ \varepsilon t
+    \end{pmatrix} \times \begin{pmatrix}
+        0 \\ -R \\ 0
+    \end{pmatrix} = \begin{pmatrix}
+        (w_c + \varepsilon R)t \\ 0\\ 0
+    \end{pmatrix} > 0.
+$$
+Подставляя, получим
+$$
+    w_c = \frac{7}{8} g, \hspace{0.5cm} \varepsilon = \frac{9g}{4R} .
+$$
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{Задача 7.4}
+
+Найдём $T = T_{\text{ст}} + T_{\text{д}} + T_{\text{о}}$. 
+\begin{align*}
+    T_{\text{ст}} &= \frac{1}{2} \frac{ml^2}{3} \omega^2, \\
+    T_{\text{д}} = \frac{1}{2} m v_C^2 + \frac{J_C \omega_{\text{д}}^2}{2},
+    \hspace{0.5cm} 
+    \vc{v}_C = \vc{v}_K + \omega_{\text{д}} \times \frac{\vv{KC}}{r} 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    T_{\text{д}} &= \frac{3}{4} m \omega^2 l^2.
+\end{align*}
+
+

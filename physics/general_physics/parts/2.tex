@@ -1,0 +1,97 @@
+\section{Потенциал электрического поля.}
+
+\begin{minipage}{0.6\textwidth}
+\begin{to_thr}[Теорема о циркуляции]
+    Для заряда, при квазистатическом перемещении, верно, что
+    \begin{align}
+      A_{\text{замкн}} = \boxed{
+            \oint_{(L)} (\vc{E} \cdot d \vc{l}) = 0
+        }  \\
+        \label{rote}
+        \rot \vc{E} = 0
+    \end{align}
+\end{to_thr}
+
+\end{minipage}
+\hfill
+\begin{minipage}[contentpos=t]{0.3\textwidth}
+\begin{center}
+        \incfig{2}
+\end{center}
+\end{minipage}
+
+
+\begin{proof}[$\triangle$]
+\textcolor{grey}{
+    \begin{minipage}[t]{0.9\textwidth}
+        \begin{enumerate}[label = \Roman*.]
+            \item Рассмотрим поле точечного заряда $Q$ и перемещение с $\vc{r}$ до $\vc{r} + d \vc{l}_r + (d \vc{l} - d \vc{l}_r)$. Тогда $d A = (\vc{E} \cdot d \vc{l}) = \frac{Q}{r^2} dl_r$, то есть $A \equiv A(r_1, r_2)$.
+            \item Для поля в принципе вышесказанное верно по принципу суперпозиции.
+        \end{enumerate}
+    \end{minipage}
+}
+
+\phantom{42}
+\end{proof}
+
+
+\begin{to_def} 
+    \textit{Разностью потенциалов} $\varphi_1 - \varphi_2$ между точками $\vc{r}_1$ и $\vc{r}_2$ называется $A = \int_{r_1}^{r_2} \vc{E} d \vc{l}$,  при перемещении единичного положительного заряда. Потенциал определен с точностью до произвольной аддитивной постоянной. 
+\end{to_def}
+
+В частности, для точечного заряда, при $\varphi_{\infty} = 0$, верно
+$$
+    \varphi (r) =
+    \int_r^\infty \frac{Q(r)}{r^2} \d r
+    = \frac{Q}{r} .
+$$
+А для двух зарядов, $+q, -q$
+\begin{align*}
+    \varphi = -\frac{q}{r_1} + \frac{q}{r_2} = q \frac{(r_1-r_2)}{r_1 r_2} 
+    \hspace{0.5cm} \overset{r \gg l}{\underset{\Rightarrow}{}} \hspace{0.5cm} 
+    \varphi = \frac{1}{r^2}  \frac{(\vc{p} \cdot \vc{r})}{r} 
+\end{align*}
+
+
+\subsection{Дифференциальная форма записи}
+Вектор напряженности электростатического поля
+\begin{equation}
+\label{gradphi}
+\boxed{
+    \vc{E} = - \grad \varphi.
+}
+\end{equation}
+Действительно,
+$$
+    d \varphi = - (\vc{E} \cdot d \vc{l}) = \frac{\partial \varphi}{\partial x^i} d x_i = d \vc{l} \cdot \nabla \varphi, \text{ где } \nabla \varphi \equiv  \grad \varphi.
+$$
+А теперь рассмотрим некоторый элементарный параллелепипед. Тогда поток через левую грань это $- E_x \d y \d z$, а через правую это $\left(E_x + \frac{\partial E_x}{\partial x} dx\right) \d y \d z$. Тогда суммарный поток через мааленький параллелепипед равен $dV \, \partial E / \partial x$, а теорема Гаусса примет вид
+\begin{equation}
+\label{dive}
+    \left(\frac{\partial E}{\partial x} + \frac{\partial E}{\partial y} + \frac{\partial E}{\partial z} \right) \d V = 4 \pi \rho \d V
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \boxed{
+        \div \vc{E} = 4 \pi \rho
+    }.
+\end{equation}
+
+\subsection{Граничные условия на заряженной поверхности}
+\begin{minipage}[c]{0.45\textwidth}
+\noindent
+    По теореме Гаусса верно, что
+    \begin{align*}
+        E_{2n_2} \cancel{\Delta S} + E_{1n_1} \cancel{\Delta S} &= 4\pi\sigma \cancel{\Delta S}, \\
+        E_{2n} - E_{1n} &= 4\pi\sigma
+    \end{align*}
+\noindent
+    По теореме циркуляции верно, что
+    \begin{align*}
+        E_{2l} \cancel{\Delta} l - E_{1l} \cancel{\Delta} l &= 0 \\
+        E_{2l} - E_{1l} &= 0.
+    \end{align*}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.45\textwidth}
+    \incfig{3}
+\end{minipage}
+
