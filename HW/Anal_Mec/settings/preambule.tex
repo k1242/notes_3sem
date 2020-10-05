@@ -30,7 +30,12 @@
 \usepackage{fancyhdr}                       %   добавить верхний и нижний колонтитул
 \usepackage{wrapfig}                        %! обтекание таблиц и рисунков
 
-\usepackage{esvect}
+\usepackage{esvect}                         % векторы над буквами
+
+\usepackage{import}                         % рисунки в Inkscape
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -60,6 +65,11 @@
 \newcommand{\xmark}{\ding{55}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+\newcommand{\incfig}[1]{%
+    % \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
 
 % some tikz commands
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
