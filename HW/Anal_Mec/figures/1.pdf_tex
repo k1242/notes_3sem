@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{144.30322482bp}%
+    \setlength{\unitlength}{156.93415003bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,19 +50,20 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.79042855)%
+  \begin{picture}(1,0.57877233)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{1.pdf}}%
-    \put(0.29397822,0.4825817){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$O$\end{tabular}}}}%
+    \put(0.26969915,0.34755634){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$O$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{1.pdf}}%
-    \put(0.28485553,0.23424691){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$A$\end{tabular}}}}%
+    \put(0.2613107,0.11920891){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$A$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{1.pdf}}%
-    \put(0.28485553,0.13379758){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$C$\end{tabular}}}}%
+    \put(0.2613107,0.02684429){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$C$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{1.pdf}}%
-    \put(0.3933494,0.48762986){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{v}$\end{tabular}}}}%
+    \put(0.36107238,0.35219819){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{v}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{1.pdf}}%
-    \put(0.37157743,0.32001085){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{r}$\end{tabular}}}}%
-    \put(0.45278653,0.73710129){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{\omega}$\end{tabular}}}}%
+    \put(0.34105274,0.19807008){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{r}$\end{tabular}}}}%
+    \put(0.49682926,0.52583206){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{\omega}$\end{tabular}}}}%
+    \put(0.14868997,-0.03457355){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\text{к задаче T9.}$\end{tabular}}}}%
   \end{picture}%
 \endgroup%
