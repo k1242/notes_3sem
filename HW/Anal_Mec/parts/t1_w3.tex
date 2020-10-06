@@ -418,9 +418,9 @@ $$
     \end{aligned}\right\}
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
     \left.\begin{aligned}
-        \omega_1 &= v \varkappa \\
-        \omega_2 &= 0 \\
-        \omega_3 &= v / \rho
+        \omega_\tau &= v \varkappa \\
+        \omega_\nu &= 0 \\
+        \omega_\beta &= v / \rho
     \end{aligned}\right\}
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
     \boxed{
@@ -476,7 +476,7 @@ $$
 
 \begin{wrapfigure}{r}{0.25\textwidth}
   \begin{center}
-        \vspace{-10 mm}
+        \vspace{-20 mm}
         \includegraphics[width=0.8\linewidth]{img/2_15.png}
   \end{center}
 \end{wrapfigure}
@@ -484,9 +484,9 @@ $$
 Для началача найдём, что
 $$
     \left.\begin{aligned}
-        \vv{OP} = \vc{r}_p &= \vc{a} \cdot (1 + \sin \omega_0 t) \\
-        \vc{v}_p &= \vc{a} \cdot \omega_0 \cos \omega_0 t \\
-        \vc{\mathrm{w}}_p &= -\vc{a} \cdot \omega_0^2 \sin \omega_0 t
+        \vv{OP} = \vc{r}_p^r &= \vc{a} \cdot (1 + \sin \omega_0 t) \\
+        \vc{v}_p^r &= \vc{a} \cdot \omega_0 \cos \omega_0 t \\
+        \vc{\mathrm{w}}_p^r &= -\vc{a} \cdot \omega_0^2 \sin \omega_0 t
     \end{aligned}\right\} \text{ в СО стержня, где }
     \vc{a} = a \begin{pmatrix}
         \sin \omega t \\
@@ -497,12 +497,86 @@ $$
 
 Запишем абсолютную скорость $\vc{v}_p^a$ точки $P$,
 $$
-    \ldots
+    \vc{v}_p^a = \vc{\omega} \times \vc{r}_p^r + \vc{v}_p^r =
+    a \omega (1 + \sin \omega_0 t) \begin{pmatrix}
+        -\cos \omega t \\
+        \sin \omega t \\
+        0 
+    \end{pmatrix}
+    + a \omega_0 \cos \omega_0 t \begin{pmatrix}
+        \sin \omega t \\
+        \cos \omega t \\
+        0
+    \end{pmatrix}
+$$
+Тогда норма $\vc{\|v}_p^a\|$ такая, что
+$$
+    \|\vc{v}_p^a\|^2 = a^2 \left(
+        \omega^2 (1+\sin \omega_0 t) +
+        \omega_0^2 \cos \omega_0 t
+    \right).
 $$
 Запишем абсолютное ускорение $\vc{\mathrm{w}}_p^a$ точки $P$,
 $$
-    \ldots
+    \vc{\mathrm{w}}_p^a = - \omega^2 \vc{r}_p^r + 0 + \vc{\omega} \times  \vc{\omega} \times \vc{r}_p^r + 2 \vc{\omega} \times \vc{v}_p^r + \vc{\mathrm{w}}_p^r
+    =
+    \left(a (\omega^2 + \omega_0^2) \sin \omega_0 t + \omega^2\right) \begin{pmatrix}
+        - \sin \omega t \\
+        - \cos \omega t \\
+        0
+    \end{pmatrix}
+    +
+    2 a \omega \omega_0 \cos \omega_0 t
+    \begin{pmatrix}
+        - \cos \omega t \\
+        \sin \omega t \\
+        0
+    \end{pmatrix}.
 $$
+Тогда норма $ \|\vc{\mathrm{w}}_p^a\|^2 $ такая, что
+$$
+    \|\vc{\mathrm{w}}_p^a\|^2 = \left(
+        a (\omega^2 + \omega_0^2) \sin \omega_0 t + \omega^2
+    \right)^2 +
+    4 a^2 \omega^2 \omega_0^2 \cos^2 \omega_0 t.
+$$
+
+
+\subsubsection*{2.19}
+
+Для начала найдём и выразим все интересные нам векторы:
+$$
+    \left.\begin{aligned}
+        \varphi         &= \varphi_0 \sin \omega_0 t            \\
+        \dot{\varphi}   &= \varphi_0 \omega_0 \cos \omega_0 t   \\
+        \ddot{\varphi}  &= - \varphi_0 \omega_0^2 \sin \omega_0 t \\
+    \end{aligned}\right\},
+    \vc{\mathrm{w}}_0 = - \begin{pmatrix}
+        \omega^2 r \sin \varphi \\ 0 \\ 0
+    \end{pmatrix},
+    \vc{\omega}_m = \begin{pmatrix}
+        0 \\ - \dot{\varphi} \\ 0
+    \end{pmatrix},
+    \vv{BA} = r \begin{pmatrix}
+        \sin \varphi \\ 0 \\ - \cos \varphi
+    \end{pmatrix},
+    \vc{\varepsilon}^r = \begin{pmatrix}
+        0 \\ -\ddot{\varphi} \\ 0
+    \end{pmatrix},
+$$
+
+% \begin{wrapfigure}{r}{0.25\textwidth}
+%   \begin{center}
+%         \vspace{-5 mm}
+%         \includegraphics[width=0.8\linewidth]{img/2_19.png}
+%   \end{center}
+% \end{wrapfigure}
+
+\noindent
+где $\vc{\omega}_m$ -- угловая скорость маятника.
+
+
+
 
 
 
