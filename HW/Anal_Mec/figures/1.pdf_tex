@@ -54,12 +54,12 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{1.pdf}}%
-    \put(0.26969915,0.34755634){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$O$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{1.pdf}}%
     \put(0.2613107,0.11920891){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$A$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{1.pdf}}%
     \put(0.2613107,0.02684429){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$C$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{1.pdf}}%
+    \put(0.26107238,0.35219819){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$B$\end{tabular}}}}%
     \put(0.36107238,0.35219819){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{v}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{1.pdf}}%
     \put(0.34105274,0.19807008){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{r}$\end{tabular}}}}%
