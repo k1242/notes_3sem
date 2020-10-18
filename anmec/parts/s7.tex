@@ -1,0 +1,129 @@
+\section{Движение точки в ценральном поле}
+\subsection{Уравнение Бине}
+
+\begin{to_def} 
+    Полем центральных сил называется поле, в котором сила действующая на точку такая, что 
+    $$
+    \vc{F}(\vc{r}) = \vc{F}(r) \frac{\vc{r}}{r}.
+    $$
+\end{to_def}
+
+Логично перейти к $(r, \varphi, \theta)$. Тогда
+$$
+    m \vc{\mathrm{w}} = F(r) \frac{\vc{r}}{r} 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        m \vc{\mathrm{w}}_r &= F(r) \\
+        m \vc{\mathrm{w}}_\varphi &= 0 \\
+        m \vc{\mathrm{w}}_\theta &= 0
+    \end{aligned}\right.
+$$
+Тперье, получсется, знаем, что
+$$
+    \vc{\mathrm{w}}_\theta = - \ddot{r\theta} + 2 \dot{r} \theta + r \sin \theta \cos \theta \dot{\varphi}^2 = 0,
+$$
+и, учитывая, что $\theta(0) = \pi / 2$, $\dot{\theta}(0)=0$, тогда $\theta(t)=\pi/2$, это с точки зрения диффуров. А с точки зрения физики кинетический момент сохраняется, то есть
+$$
+    \vc{\mathrm{K}}_0 = m \vc{r} \times \vc{v} = \const.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \vc{r}, \vc{v} \in \text{постоянной плоскости.}
+$$
+Тогда $\theta$ мы можем просто выбросить. 
+
+Приходим к системе уравнений
+\begin{equation}
+    \left\{\begin{aligned}
+        m \left( \ddot{r} - r \dot{\varphi}^2 \right) &= F(r) \\
+        m \frac{d}{dt} (r^2 \dot{\varphi}) &= 0
+    \end{aligned}\right.
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        m \left( \ddot{r} - r \dot{\varphi}^2 \right) &= F(r) \\
+        r^2 \dot{\varphi} &= \frac{\mathrm{K}_0}{m} = \const.
+    \end{aligned}\right. 
+\end{equation}
+Это, собственно, соответсвует закону Кеплера о сохранение секториальной скорости.
+
+Первое уравнение как-то не очень, перейдём от $d/dt$ к $d/d\varphi$. Тогда $r(t) \to u(\varphi) = \frac{1}{r}$ -- переменная Бине.
+$$
+    \dot{r} = \frac{d(1/u)}{dt} = - c u',
+$$
+а для второй производной
+$$
+    \ddot{r} = - c^2 u^2 u''.
+$$
+Тогда уравнение перепишем, как
+$$
+    -c^2 u^2 u'' - c^2 u^3 = \frac{F(u)}{m},
+$$
+получая диффур вида
+\begin{equation}
+\boxed{
+    u'' + u = \frac{-F(u)}{m c^2 u^2} 
+}
+    \hspace{0.5cm} \text{-- уравнение Бине}.
+\end{equation}
+Так мы свели всё к гармоническому осцилятору.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Метрика Шварцшильда}
+
+Заметим (Эйнштейн заметил), что
+
+\incfig{4}
+
+\noindent
+тогда 
+$$
+    d s^2 = \left(1 - \frac{a}{r} \right) \d \tau^2
+    -
+    \left(1 - \frac{a}{r} \right)^{-1} \d r^2
+    -
+    (r \sin \theta)^2 \d \varphi^2 - r^2 \d \theta^2.
+$$
+Здесь 4 независимых переменных $(\tau, r,  \varphi, \theta)$, где три из сферических координат, а $\tau$ -- физическое время. 
+
+Также введен радиус Шварцшильда $a = 2 GM$.
+
+Движение точек рассматриваем, как движение по геодезическим, то есть $\vc{\mathrm{w}}_i = 0$, где $i \in \{\tau, r, \varphi, \theta\}$, и положим $v^2=1$. Из раннее полученного, $\theta (t) = \pi / 2$, то есть в некотором смысле движение плоское.
+\begin{align}
+    v^2 &= 
+    \left(
+    \frac{ds}{dt} \right)^2 = \left(1 - \frac{a}{r} \right) \dot{\tau}^2
+    - \left(1 - \frac{a}{r} \right)^{-1} \dot{r}^2 - r^2 \dot{\varphi}^2 = 1 \\
+    \vc{\mathrm{w}}_\tau &=
+    \frac{d}{dt} \frac{\partial (v^2/2)}{\partial \dot{\tau}} -
+    \underbrace{\frac{\partial (v^2/2)}{\partial \tau}}_{0} =
+    \frac{d}{dt} \left[\left(
+               1 -  \frac{a}{r} 
+            \right) \dot{\tau}\right] = 0 \\
+    \vc{\mathrm{w}}_\varphi &= 
+    - \frac{d}{dt} \left[
+        r^2 \dot{\varphi}
+    \right] = 0
+\end{align}
+Тогда у нас есть первый интеграл
+\begin{equation}
+    \left(1 - \frac{a}{r} \right) \dot{\tau} = \mathcal D.
+\end{equation}
+И другой первый интеграл
+\begin{equation}
+    r^2 \dot{\varphi} = \mathcal C.
+\end{equation}
+Подставляя, получим, что
+\begin{equation}
+    \mathcal D^2 - \mathcal C^2 u'^2 = 1 - au + \mathcal C^2 u^3 (1 - au).
+\end{equation}
+Применяя $d/d\varphi$ и полагая $\mathcal C = c$, получим 
+\begin{equation}
+     u'' + u = \frac{3}{2} a u^2 + \frac{a}{2c^2} = - \frac{F}{mc^2u^2}.
+ \end{equation} 
+
+Получается, что мы можем или говорить про движение по геодезическим в метрике Шварцшильда, или движение в центральном поле с силой
+\begin{equation}
+    F =  - m \left(\frac{3}{2} a c^2 u^4 + \frac{a}{2} u^2\right).
+\end{equation}
+
+
+

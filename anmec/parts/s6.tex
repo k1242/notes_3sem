@@ -1,0 +1,65 @@
+\section{Основные теоремы динамики в неИСО}
+
+Знаем, что
+$$
+    \vc{\mathrm{w}}_i^a = \vc{\mathrm{w}}_i^e + \vc{\mathrm{w}}_i^c + \vc{\mathrm{w}}_i^r.
+$$
+Подставляя это во II закон Ньютона получим, что
+\begin{equation}
+    m_i \vc{\mathrm{w}}_i^r = \vc{F}_i - m_i \vc{\mathrm{w}}_i^e - m_i \vc{\mathrm{w}}_i^c.
+\end{equation}
+
+Ниже введём некоторые определения, а именно $\vc{J}_i^e$ -- \textit{переносная сила инерции}, $\vc{J}_i^c$ -- \textit{кориолисова сила инерции}. Далее $\vc{\mathrm{w}}_0$ -- ускорение центра масс. 
+
+\begin{table}[h]
+    \centering
+    % \caption*{}
+        \begin{tabular}{cll}
+    \toprule
+            \multicolumn{1}{c}{Величина} & \multicolumn{1}{c}{Thr об изменение} & \multicolumn{1}{c}{Определения} \\
+    \midrule
+            \multirow{2}{*}{                
+                $\vc{Q}$
+            } & 
+            \multirow{2}{*}{
+                $\dot{\vc{Q}} = \vc{R}^{\text{внеш}} + \vc{J}^e + \vc{J}^c$
+            } &
+            $\vc{J}^e = - \sum m_i \vc{\mathrm{w}}_i^e = - m_0 \vc{\mathrm{w}}_0^e$
+            \\
+            &&
+            $\vc{J}^c = - \sum m_i \vc{\mathrm{w}}_i^c = - m_0 \vc{\mathrm{w}}_0^c$
+            \\
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            &&\\
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \multirow{2}{*}{
+                $\vc{\mathrm{K}}_{A}$
+            } &
+                $\dot{\vc{\mathrm{K}}}_A = \vc{M}_A^{\text{внеш}} + \vc{M}_A^e + \vc{M}_A^c +$
+            &
+            $\vc{M}_A^c = - \sum \vc{r}_{Ai} \times m_i \vc{\mathrm{w}}_i^c$ 
+            \\
+            &
+            $\phantom{
+                \dot{\vc{\mathrm{K}}}_A = 
+            } + \vc{Q}^r \times \vc{v}_A^r$
+            & $\vc{M}_A^e = - \sum \vc{r}_{Ai} \times m_i \vc{\mathrm{w}}_i^e$ 
+            \\
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            &&\\
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \multirow{2}{*}{$T$} &
+            \multirow{2}{*}{$dT = \delta A^{\text{вс}, r} + \delta A^{e, r}$ }
+            &
+            $\delta A^{\text{вс}, r}  = \sum 
+                F_i \d \vc{r}_i^r$ \\
+            && $\delta A^{e, r} \,\, = \sum - m_i \vc{\mathrm{w}}_i^e \cdot d \vc{r}_i^r$ \\
+    \bottomrule
+        \end{tabular}
+    \label{tab:}
+\end{table}
+
+Для кинетической энергии в изменение нет слагаемого от кориолисовых сил, в силу
+$$
+    \delta A_i^{c, r} = -m_i (2 \vc{\omega} \times \vc{v}_0^r) \cdot \left(\vc{v}_0^r \d t\right) \equiv 0.
+$$

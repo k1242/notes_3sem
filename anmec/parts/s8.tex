@@ -1,0 +1,240 @@
+\section{Элементы механики сплошных сред (МСС)}
+
+\subsection{Переменные Лагранжа и Эйлера}
+
+Пусть каждой точке среды соответсвует $\xi^1, \xi^2, \xi^3$, собственно $(\xi, t)$ -- \textit{лгранжевы переменные}. \textit{Закон движения среды} в таком случае это
+\begin{equation}
+    \vc{r} (\xi, t),
+\end{equation}
+скорость же
+$$
+    \vc{v} = \frac{\partial \vc{r}(\xi, t)}{\partial t},
+    \hspace{0.5cm} 
+    \vc{\mathrm{w}} = \frac{\partial \vc{v} (\xi, t)}{\partial t},
+$$
+и так далее.
+
+Альтернативно можеем задать $(x, t)$ -- эйлерово описание. Тогда
+$$
+    \vc{v}(x, t), \vc{\mathrm{w}}(x, t) 
+    \hspace{0.5cm} \text{-- поля скоростей и ускорений.}
+$$
+
+В частности, представляя движение по шоссе, полоса 1,2,3 и участок трассы -- эйлерово описание среды.
+Если же мы будем следить за каждой машиной, то это будет лагранжево описание.
+
+
+\subsubsection*{Задача 1}
+
+Пусть 
+$$
+    v_1 = \frac{-x_2}{\sqrt{x_1^2 + x_2^2}}, \hspace{0.5cm} 
+    v_2 = \frac{x_1}{\sqrt{x_1^2 + x_2^2}}.
+$$
+Найти $\vc{r} (\xi, t)$. Легко получить, что
+$$
+    \dot{x}_1^2 + \dot{x}_2^2 = 1.
+$$
+Тогда
+$$
+    x_1 = \frac{1}{\omega} \cos \left(\omega t + \alpha\right),
+    \hspace{0.5cm} 
+    x_2 = \frac{1}{\omega} \sin \left(\omega t + \alpha\right).
+$$
+Переменные запишутся как
+$$
+    \xi_1 = \frac{\cos \alpha}{\omega}, \hspace{0.5cm} 
+    \xi_2 = \frac{\sin \alpha}{\omega} 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \omega = (\xi_1^2 + \xi_2^2)^{-1/2},
+    \alpha = \arcsin (\omega \xi_2).
+$$
+Получается, что
+$$
+    \vc{r}(\xi, t) = \frac{1}{\omega}  \begin{pmatrix}
+        \cos (\omega t + \alpha) \\
+        \sin (\omega t + \alpha)
+    \end{pmatrix}.
+$$
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Деформации}
+
+Пусть
+$$
+    \vc{r} = \begin{pmatrix}
+        x_1 \\ x_2 \\ x_3
+    \end{pmatrix},
+    \hspace{0.5cm} 
+    \vc{r}' = \begin{pmatrix}
+        x_1' \\ x_2' \\ x_3'
+    \end{pmatrix},
+    \hspace{0.5cm} 
+    \vc{u} = \vc{r}' - \vc{r},
+$$
+где $\vc{u}$ -- вектор дифформации. Тогда
+$$
+    d x_i' = dx_i + du_i = dx_i + \frac{\partial u_i}{\partial x_k} \d x_k.
+$$
+Введём некоторый $ds'$
+$$
+    (ds')^2 = dx_i' \d x_i'; \hspace{0.5cm} ds^2 = \d x_i \d x_i.
+$$
+Подставляя, получим, что
+$$
+    (ds')^2 = ds^2 + 2 \frac{\partial u_i}{\partial x_k} \d x_i \d x_k +
+    \left(
+        \frac{\partial u_i}{\partial x_k} \d x_k
+    \right) \left(
+        \frac{\partial u_i}{\partial x_k} \d x_k
+    \right) 
+    \approx
+    ds^2 + 2 \varepsilon_{ik} \d x_i \d x_k,
+$$
+где $\varepsilon_{ik}$ -- \textit{тензор малых дефформаций}:
+$$
+    \varepsilon_{ik} = \frac{1}{2} \left(
+        \frac{\partial u_i}{\partial x_k} + \frac{\partial u_k}{\partial x_i} 
+    \right),
+$$
+который в главных осях диагонален.
+
+Тогда
+$$
+    ds' = \sqrt{
+        1 + 2 \varepsilon_{ii} 
+    } dx_i.
+$$
+В общем смысл в том, что
+$$
+    \frac{dx_i' - dx_i}{dx_i} \approx 1 + \frac{1}{2} (2\varepsilon_{ii}) - 1 = \varepsilon_{ii}.
+$$
+Или
+$$
+    \frac{dV' - dV}{dV} = \tr \varepsilon = \sum_{i=1}^3 \frac{\partial u_i}{\partial x_i} = \mathrm{div}\, \vc{u}.
+$$
+Тогда, в частности,
+$$
+    \mathrm{div}\, \vc{u} = 0
+    \hspace{0.5cm} 
+    \text{--} \hspace{0.5cm}  \text{несжимаемая среда}.  
+$$
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Напряжение}
+
+\begin{minipage}[c]{0.5\textwidth}
+    
+Ну, собственно,
+$$
+    \vc{F} = \begin{pmatrix}
+        F_1 \\ F_2 \\ F_3
+    \end{pmatrix}, \hspace{0.5cm} 
+    \int F_i \d V = \int \frac{\partial \sigma_{ik}}{\partial x} \d V =
+    \oint \sigma_{ik} \d A_k
+    .
+$$
+Кстати, 
+\begin{equation}
+    \sigma_{ik} = \sigma_{ki}.
+\end{equation}
+
+
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.4\textwidth}
+    \begin{center}
+        \incfig{5}
+    \end{center}
+\end{minipage}
+
+
+
+\subsection{Обобщенный закон Гука}
+
+Пусть $E$ -- модуль Юнга, $\mu$ -- коэффициент Пуассона. Тогда
+$$
+    \varepsilon_{11} = \frac{\sigma_{11}}{E}, \hspace{0.5cm} 
+    \varepsilon_{22} = \varepsilon_{33} = - \frac{\mu}{E} \sigma_{11}.
+$$
+Перепишем это в виду
+$$
+    \varepsilon_{11} = \frac{\sigma_{11}}{E}  - \frac{\mu}{E} \sigma_{22} -
+    \frac{\mu}{E} \sigma_{33} = \frac{1+\mu}{E} \sigma_{11} - \frac{\mu}{E} \tr \sigma.
+$$
+Или, в матричном виде
+$$
+    \begin{pmatrix}
+        \varepsilon_{11} & 0 & 0\\
+        0 & \varepsilon_{22} & 0 \\
+        0 & 0 & \varepsilon_{33}
+    \end{pmatrix} =
+    \frac{1+\mu}{E} 
+    \begin{pmatrix}
+        \sigma_{11} & 0 & 0\\
+        0 & \sigma_{22} & 0 \\
+        0 & 0 & \sigma_{33}
+    \end{pmatrix} -
+    \frac{\mu}{E} \tr \sigma 
+    \begin{pmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+    \end{pmatrix}.
+$$
+В тензорном виде
+$$
+    \varepsilon_{ik} = \frac{1+\mu}{E} \sigma_{ik} - \frac{\mu}{E} \delta_{ik} \tr \sigma .
+$$
+Выразим $\varepsilon$:
+$$
+    \tr \varepsilon = \frac{1+\mu}{E} \tr \sigma - \frac{3\mu}{E} \tr \sigma
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \tr \sigma = \frac{E}{1-2\mu} \tr \varepsilon.
+$$
+Так и получаем \textit{обобщенный закон гука}:
+\begin{equation}
+    \sigma_{ik} = \frac{E}{1+\mu} \left[
+        \varepsilon_{ik} + \frac{\mu}{1 - 2\mu} \delta_{ik} \tr \varepsilon 
+    \right]
+\end{equation}
+
+\subsubsection*{Задача: самосжимающийся шар}
+Запишем
+$$
+    \frac{\partial \sigma_{ik}}{\partial x_k} = - f_i.
+$$
+Тогда, после некоторых преобразований, получим, что
+$$
+    \frac{\partial \sigma_{ik}}{\partial x_k} =
+    \frac{E}{1+\mu}  \left[
+        \frac{1}{2} \Delta \vc{u} + \frac{1}{2(1-2\mu)} \grad \div \vc{u}
+    \right].
+$$
+
+Вспомним, что
+$$
+    \Delta \vc{u} = \grad \div \vc{u} - \cancel{\rot \rot \vc{u}} = \grad \div \vc{u}.
+$$
+Перейдём к уравнению
+\begin{equation}
+    \frac{d}{dr} \left(
+        \frac{1}{r^2} \frac{d (r^2 u)}{r} = kr.
+    \right)
+\end{equation}
+Верно, что
+$$
+    \frac{d (r^2 u)}{dr} = \frac{kr^4}{2} + c_1 r^2.
+$$
+
+Логично, что на границе $\sigma_{11} = 0$. То есть
+$$
+    \sigma_{11} = \frac{E}{1+\mu} \left[\varepsilon_{11} + \frac{\mu}{1-2\mu} \tr \varepsilon \right] = 0.
+$$
+Но $\varepsilon_{rr} = du / dr = \varepsilon_{11}$, $\tr \varepsilon = \div \vc{u}$, из этого можем найти $c_1$.

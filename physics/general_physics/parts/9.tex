@@ -1,0 +1,104 @@
+\section{Магнитное поле в намагничивающихся средах}
+
+\subsection{Уравнения максвелла для магнитного поля в веществе}
+
+Посмотрим на рамку с током в магнитном поле. Для неё верно, что суммарная сила, действующая на рамку,
+$$
+    \vc{B} \oint \d \vc{F} = \frac{I}{c} \oint [\d \vc{l} \times \vc{B}] = 
+    \frac{I}{c}  \left[\oint \d \vc{l} \times \vc{B}\right] =
+     0.
+$$
+Однако момент, действующий на рамку, не равен 0,
+$$
+    S = a b, \hspace{0.5cm} F = \frac{I}{c} b B 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    M = \frac{IS}{c} \sin \alpha
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \vc{p}_m = \frac{IS}{c} \vc{n}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \vc{M} = \left[\vc{p}_m \times \vc{B}\right].
+$$
+
+Посмотрим теперь на рамку в неоднородном магнитном поле. Рассмотрим рамку такую, что $\vc{p}_m \parallel \vc{B}$, тогда $\vc{I} \d \vc{l}$ имеет проекцию на $\vc{n}$, получается, что
+$$
+    F_x = (p_m)_x \frac{\partial B_x}{\partial x}.
+$$
+
+
+Возвращая к полю, предполагается, что внутри молекул формируются \textit{молекулярные токи}, создающие дополнительный магнитный момент, а при наличие внешнего поля происходит ориентация этих моментов. Тогда теорема о циркуляции магнитного поля в веществе запишется, как
+\begin{equation}
+    \oint_{(L)}
+    \left(\vc{B} \cdot \d \vc{l} \right)
+    = \frac{4\pi}{c} \left(
+        I_{\text{пров}} + I_{\text{мол}}
+    \right).
+\end{equation}
+Стоит заметить, что в теории Максвелла имеется ввиду, что
+$$
+    \vc{B} = \vc{<B}_{\mu}>.
+$$
+
+Характеристика, описывающая состояние намагниченного вещества в точке -- магнитный дипольный момент, единице объема:
+$$
+    \vc{\mathcal I} = \frac{1}{\Delta V} \sum_{\Delta V}
+    \left(\vc{p}_m\right)_i.
+$$
+
+Можем записать, что
+\begin{equation}
+    \oint \mathcal I_l \d l = \frac{I_{\text{мол}}}{c} .
+\end{equation}
+Тогда уравнение перепишется, как
+\begin{equation}
+    \oint_{(L)} \left( \vc{B} \d \vc{l} \right) = \frac{4\pi}{c} I_{\text{пров}} + 4\pi \oint_{(L)} \left(\vc{\mathcal  I} \d \vc{l} \right).
+\end{equation}
+
+\begin{equation}
+    \oint_{(L)}
+    \underbrace{\left( 
+    \vc{B} - 4 \pi \vc{\mathcal I} 
+    \right)}_{\vc{H}}
+     \d \vc{l} = \frac{4\pi}{c} I_{\text{пров}}, 
+\end{equation}
+
+здесь принимается определение $\boxed{\vc{H} = \vc{B} - 4 \pi  \vc{\mathcal  I}}$ -- \textit{напряженность магнитного поля}. 
+
+Далее нас интересует линейная намагничиваемость:
+$$
+    \vc{\mathcal I} = \varkappa \vc{H},
+$$
+где $\varkappa$ -- магнитная восприимчивость. Тогда можем записать, что
+\begin{equation}
+    \vc{H} \underbrace{\left(
+        1 + 4 \pi \varkappa
+    \right)}_{\mu} = \vc{B},
+\end{equation}
+что записано в системе Гаусса. В СИ верно, что
+$$
+    \vc{H} = \frac{\vc{B}}{\mu_0} - \vc{\mathcal I} .
+$$
+
+\subsection{Различные вещества}
+
+\begin{enumerate}[label = \Roman*.]
+    \item Парамагнетики, $\varkappa \in [10^{-3}, 10^{-6}]$, пример: алюминий. 
+    \item Диамагнетики, $\varkappa < 0$ , пример: золото, серебро, см. модель Ланжевена.
+    \item Ферромагнетики, $\varkappa \in [10^3, 10^6]$, пример: железо, никель.
+\end{enumerate}
+
+
+
+
+\subsection{Граничные условия}
+
+
+Рассмотрим границу двух веществ с $\mu_1$ и $\mu_2$. Тогда
+$$
+    \vc{B}_{1n} = \vc{B}_{2n},
+$$
+а для тангенциальной компоненты 
+$$
+    H_{2\tau} - H_{1\tau} = \frac{4\pi}{c} i_N.
+$$
+
+ 

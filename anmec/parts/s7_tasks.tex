@@ -1,0 +1,43 @@
+\subsection{Задачи с VII семинара}
+\subsubsection*{8.27}
+Потенциальная энергия частицы
+$$
+    \Pi(r) = -\frac{\alpha}{r} + \frac{\beta}{r^2},
+$$
+где $\alpha, \beta > 0$.
+Найдём силу, как
+$$
+    \vc{F} = - \grad \Pi 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+     F = - \frac{d \Pi}{dr}  = -\frac{\alpha}{r^2} + 2 \frac{\beta}{r^3} = -\alpha u^2 + 2\beta u^3.
+$$
+Уравнение движения в центральном поле запишется, как
+$$
+    u'' + \underbrace{
+    \left(1 + \frac{2\beta}{mc^2} \right)
+    }_{\omega^2}
+    u = \underbrace{\frac{\alpha}{mc^2}}_{a}.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    u'' + \omega^2 u = a.
+$$
+Тогда
+$$
+    u = u_{\text{общ}} + u_{\text{частн}} = A \cos \left(
+        \omega \varphi + \psi
+    \right) + \frac{a}{\omega^2} .
+$$
+Наконец, выражая $r$, получим
+$$
+    r = \left(
+        \frac{a}{\omega^2} + A \cos \left(\omega \varphi + \psi\right)
+    \right)^{-1} =
+    \bigg/
+    \begin{aligned}
+        p &= \omega^2 / a \\
+        e &= A \omega^2 / a
+    \end{aligned}
+    \bigg/ =
+    \frac{p}{1 + e \cos \left(\omega \varphi + \psi\right)}
+    =
+    \frac{p}{1 + e \cos \left(\omega \varphi\right)}
+$$
