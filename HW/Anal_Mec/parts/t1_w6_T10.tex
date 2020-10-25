@@ -1,0 +1,106 @@
+\subsubsection*{Т10*.}
+
+В ОТО движение в центральном поле тяжести описывается как движение в метрике Шварцшильда:
+$$
+    d s^2 = \left(1 - \frac{a}{r} \right) \d \tau^2
+    -
+    \left(1 - \frac{a}{r} \right)^{-1} \d r^2
+    -
+    (r \sin \theta)^2 \d \varphi^2 - r^2 \d \theta^2.
+$$
+Здесь 4 независимых переменных $(\tau, r,  \varphi, \theta)$, где три из сферических координат, а $\tau$ -- физическое время,
+также введен радиус Шварцшильда $a = 2 GM$.
+
+Движение точек рассматриваем, как движение по геодезическим, то есть $\vc{\mathrm{w}}_i = 0$, где $i \in \{\tau, r, \varphi, \theta\}$. Движение будет в некотором смысле происходить в одной плоскости, так что пусть $\theta (t) = \pi / 2$. Так мы получим следующую систему уравнений:
+\begin{equation}
+    \left\{
+        \begin{aligned}
+            v^2 &= 
+            \left(
+            \frac{ds}{dt} \right)^2 = \left(1 - \frac{a}{r} \right) \dot{\tau}^2
+            - \left(1 - \frac{a}{r} \right)^{-1} \dot{r}^2 - r^2 \dot{\varphi}^2 \\
+            \vc{\mathrm{w}}_\tau &=
+            \frac{d}{dt} \frac{\partial (v^2/2)}{\partial \dot{\tau}} -
+            \underbrace{\frac{\partial (v^2/2)}{\partial \tau}}_{0} =
+            \frac{d}{dt} \left[\left(
+                       1 -  \frac{a}{r} 
+                    \right) \dot{\tau}\right] = 0 \\
+            \vc{\mathrm{w}}_\varphi &= 
+            - \frac{d}{dt} \left[
+                r^2 \dot{\varphi}
+            \right] = 0
+        \end{aligned}
+    \right.
+\end{equation}
+Таким образом получим пару первых интегралов системы, в частности
+\begin{align*}
+    \left(1 - \frac{a}{r} \right) \dot{\tau} &= \mathcal D,
+    \\ r^2 \dot{\varphi} &= \mathcal C.
+\end{align*}
+Подставляя их в выражение для скорости, получим, что
+\begin{equation*}
+\left(
+1 - \frac{a}{r} 
+\right)^{-1} \mathcal D^2 -
+\left(1 - \frac{a}{r} \right)^{-1} \dot{\vc{r}}^2 - \frac{c^2}{r^2}  = v^2.
+\end{equation*}
+По замене Бине 
+$$
+    r = \frac{1}{u}, \hspace{0.5cm} 
+    \dot{r} = r' \dot{\varphi} = \left(\frac{1}{u} \right)' c u^2 =
+    - u' c,
+$$
+перейдём к функции $u(\varphi)$:
+\begin{equation}
+    2 c^2 u'' + c^2 (2u - 3 au^2) = v^2.
+\end{equation}
+Преобразуя, получим
+\begin{equation}
+\boxed{
+    u'' + u = \frac{a}{2c^2} v^2 + \frac{3}{2} au^2
+}.
+\end{equation}
+
+
+Найдём теперь видимый радиус черной дыры -- минимальное значение прицельного параметра, при котором луч, проходящий через окрестность черной дыры не падает на центр. Для светового луча верно, что $\dot{s}^2=v^2=0$, тогда
+$$
+    u'' + u = \frac{3}{2} a u^2.
+$$
+Интегрируя, получим
+$$
+    \frac{u'^2}{2} + \frac{u^2}{2} = \frac{au^3}{2} + c'.
+$$
+Посмотрим теперь на поведение света при $u \to 0$ верно, что $r\varphi \to b$, тогда 
+$$
+    \frac{dr}{d\varphi} = - \frac{r}{\varphi} 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{du}{d\varphi} = - \frac{dr}{d\varphi} \frac{1}{r^2} = \frac{r}{\varphi} \frac{1}{r^2} = \frac{1}{r \varphi}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    u'\big|_{t=0} = \frac{1}{b} 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    c' = \frac{1}{2b^2} 
+$$
+Переписав, получим
+$$
+    u'^2 = au^3 - u^2 + \frac{1}{b^2}.
+$$
+Вблизи точки с критическим $u$ верно, что $\dot{r} \sim 0$, тогда нас интересует экстремум функции $au^3 - u^2 + b^{-2}$, тогда
+$$
+    3 a u^2 - 2 u = 0
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{1}{r_{\text{min}}} = \left(\frac{3}{2} a\right)^{-1}.
+$$
+Условие падения -- уменьшение радиуса (увеличиение $u$) при $r=r_{\text{min}}$:
+$$
+    u'^2_{\text{min}} = \frac{1}{a^2} \left(
+        \frac{8}{27} - \frac{4}{9} 
+    \right) + \frac{1}{b^2} =
+    -\frac{4}{27a^2}  + \frac{1}{b^2}  \geq 0
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    b^2 \leq \frac{27}{4} a^2
+$$
+Тогда минимальное значение прицельного параметра, при котором луч, проходящий через окрестность черной дыры не падает на центр
+\begin{equation}
+    \boxed{b_{\text{min}} = \frac{3\sqrt{3}}{2} a},
+\end{equation}
+что и является видимым радиусом черной дыры.

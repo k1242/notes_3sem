@@ -1,0 +1,199 @@
+\subsection{Дифференциальная форма}
+
+В линейной алгебре есть ковекторы, а вот в дифференциальной геометрии ковекторные поля суть дифференциальные 1-формы.
+
+\begin{to_def} 
+    \textit{Дифференциальная 1-форма} -- это  ковекторное поле.
+\end{to_def}
+
+\begin{to_def} 
+    \textit{Дифференциал} функции $f$ от векторного поля $X$ это
+    $
+        d f (X) \overset{\mathrm{def}}{=}  X f.
+    $
+\end{to_def}
+
+Что это нам даёт? Ну, во-первых, пусть $\set{x}{n}$ -- некоторые координаты. 
+$$
+    X = X^i \frac{\partial }{\partial x^i}.
+$$
+Тогда
+$$
+    df(X) = Xf = X^i \frac{\partial f}{\partial x^i}.
+$$
+Но, заметим, что $\frac{\partial }{\partial x^1}, \ldots, \frac{\partial }{\partial x^n}$ -- базис в каждой точке. Рассмотрим теперь $f = x^i$ и $X = \frac{\partial }{\partial x^j} $, тогда
+\begin{equation}
+    d x^i \left(\frac{\partial }{\partial x^j} \right)
+    =
+    \frac{\partial x^i}{\partial x^j} = \delta^i_j.
+\end{equation}
+Из этого следует, что $\set{dx}{n}$ -- двойственный к $\frac{\partial }{\partial x^1}, \ldots, \frac{\partial }{\partial x^n}$ базис в $V^*$.
+Тогда в этом базисе
+$$
+    d f = \omega_i \d x^i.
+$$
+Заметим, что
+$$
+\underbrace{\omega_i \d x^i }_{df}
+    \left(
+        \frac{\partial }{\partial x^j} 
+    \right) = \omega_i \delta^i_j = \omega_j,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \omega_j = df \left(\frac{\partial }{\partial x^j} \right) =
+    \frac{\partial f}{\partial x^j}.
+$$
+Тогда
+\begin{equation}
+    df = \frac{\partial f}{\partial x^i} \d x^i.
+\end{equation}
+Получается ковектор $df$ расписывается по базису
+$dx^i$
+ двойственного пространства с координатами $\partial f / \partial x^i$.
+
+А для общей 1-формы
+$$
+    \omega = \omega_i \d x^i,
+$$
+где $\set{\omega}{n}$ -- координаты $\omega$ в локальной системе координат.
+
+\begin{to_def} 
+    $\omega$  гладкая, если $\forall X$, где $X$ -- гладкое поле, верно, что
+    $\omega(X)$ -- гладкая функция.
+\end{to_def}
+
+\begin{to_lem} 
+    $\omega = \omega_i \d x^i$  -- гладкая $\Leftrightarrow$ $\omega_i$ -- гладкая форма $\forall i$.
+\end{to_lem}
+
+
+\subsection{Билинейные формы}
+
+Пространство билинейных форм на $V$ -- $V^* \otimes V^* = S^2 V^* \oplus \Lambda^2 V^*$. Что ж, в $V*$ базис $\set{\vc{e}}{n}$, в $S^2 V^*$ базис 
+$$
+    e^i \cdot e^j (X, Y) = \frac{1}{2} \left(
+        X^i Y^j + X^j Y^i
+    \right),
+$$
+а скалярное произведение
+$$
+    g = g_{ij} dx^i \cdot dx^j.
+$$
+В кососимметрических же $\Lambda^2 V^*$ базис
+\begin{equation}
+    e^i \wedge e^j (X, Y) = X^i Y^j - X^j Y^i,
+    \hspace{0.5cm} 1 \leq i \leq j \leq n.
+\end{equation}
+В таком случае, если есть некоторая кососимметрическая $\omega$, то
+$$
+    \omega = \sum_{i < j} \omega_{ij} \d x^i \wedge dx^j.
+$$
+
+\begin{to_def} 
+     Поле кососимметрических билинейных форм -- дифференциальные 2-формы.
+\end{to_def}
+
+Возьмём два поля и засунем в 2-форму, получим функцию. 
+
+\subsection{Полилинейные формы}
+
+Пусть $V$ -- векторное пространство, $\Lambda^k V^k$ -- векторное пространство кососимметрических полилинейных функций от $k$ векторов. 
+$$
+    \omega\left(
+        X_1, \ldots, X_k
+    \right) \in \mathbb{R}.
+$$
+Введём некоторое внешнее умножение
+$$
+    \wedge \colon
+    \Lambda^k V^* \times \Lambda^l V^* \to \Lambda^{k+l} V^*.
+$$
+Пусть $\sigma \in \Lambda^k V^*$, $\tau \in \Lambda^l V^*$, тогда
+$$
+    \sigma \wedge \tau \left(X_1, \ldots, X_{k+l}\right)
+    =
+    \frac{1}{k! l!} \sum_{\pi \in S_{k+l}} \sign (\pi) 
+    \
+    \sigma
+    \left(
+        X_{\pi(1)}, \ldots, X_{\pi(k)} 
+    \right)
+    \
+    \tau
+    \left(
+        X_{\pi(k+1)},\ldots,X_{\pi(k+l)}
+    \right).
+$$
+
+Если в $V$ базис $\vc{e}_1, \ldots, \vc{e}_k$, то в $\Lambda^k V$ в качестве базиса можно взять
+$$
+    e^{i_1} \wedge \ldots \wedge e^{i_k},
+    \hspace{0.5cm} 
+    i_1 < \ldots < i_k.
+$$
+
+\begin{to_def} 
+    Дифференциальная $k$-форма -- поле полилинейных кососимметрических форм от $k$ векторов, при чем
+    \begin{equation}
+        \omega = \sum_{i_1 < \ldots < i_k} \omega_{i_1,\ldots,i_k}
+        e^{i_1} \wedge \ldots \wedge e^{i_k},
+    \end{equation}
+    где $\omega_{i_1,\ldots,i_k} = \omega\left(\vc{e}_{i_1}, \ldots, \vc{e}_{i_k} \right)$ -- гладкие функции.. 
+\end{to_def}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Внешний дифференциал}
+
+Обозначим $\Omega^k (U)$ -- пространство дифференциальных $k$-форм на некоторой $U \in \mathbb{A}^n$. Также будем говорить, что $X^\infty (U) = \Omega^0 (u)$ -- 0-формы. У нас уже есть такое отображение
+$$
+    \Omega^0 (U) \overset{d}{\longrightarrow} \Omega^1 (U) \overset{?}{\longrightarrow} \ldots
+$$
+Ну и введём тогда операцию внешнего дифференцирования
+\begin{equation}
+    d \colon
+    \Omega^k (U) \to \Omega^{k+1} (U).
+\end{equation}
+Введём её аксиоматически\footnote{
+\texttt{
+    Формы образуют градуированную алгебру. Это такой эмпирический факт: в градуированной алгебре дифференциал должен быть с таким знаком и счастьей будет.
+}
+}
+\begin{align*}
+    &1) \quad d \left(\omega_1 + \omega_2\right) = d \omega_1 + d \omega_2; \\
+    &2) \quad d(\sigma \wedge \tau) = (d \sigma) \wedge \tau + (-1)^{|\sigma|} 
+    \sigma \wedge (d \tau); \\
+    &3) \quad d^2 = 0,  \text{ т.е. } d(d\omega) = 0; \\
+    &4) \quad f \in \Omega^0 (U) = C^{\infty} (U)
+    \hspace{0.15cm} \Rightarrow \hspace{0.15cm} 
+        d f(X) = Xf.
+\end{align*} 
+
+
+\begin{to_thr} 
+    Внешний дифференциал $d$ существует и единственнен. 
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+    \begin{minipage}[t]{0.9\textwidth}
+        \begin{enumerate}[label = \Roman*.]
+            \item Пусть существует внешний дифференциал. Тогда получим, что
+            \begin{equation}
+            \label{d}
+                    d \omega = d \left(
+                    \sum_{i_1 < \ldots < i_k} \omega_{i_1, \ldots, i_k} dx^{i_1} \wedge \ldots \wedge dx^{i_k}
+                    \right) =
+                    \sum_{i_1 < \ldots < i_k} 
+                    \frac{\partial \omega_{i_1, \ldots, i_k}}{\partial x^i} 
+                    dx^i \wedge dx^{i_1} \wedge \ldots \wedge dx^{i_k}.
+            \end{equation}
+                Собственно, подобный ответ является единственным. 
+                \item Докажем теперь существование. Пусть $\set{x}{n}$ -- координаты, тогда определим $d$, как \eqref{d}. Легко показать, что такое определение удоволетворяет всем свойствам.
+        \end{enumerate}
+    \end{minipage}
+
+\phantom{42}
+\end{proof}
+
+
+% \subsection{Векторозначная форма}
+

@@ -133,12 +133,19 @@ $$
 $$
     \Gamma_{ijk} = \left(\vc{g}_i, \frac{\partial \vc{g}_j}{\partial q^k}\right) 
     = \left(\vc{g}_i, \frac{\partial (g_{jn}\vc{g}^n)}{\partial q^k}\right) =
-    g_{jn}\underbrace{\left(\vc{g}_i \cdot \frac{\partial \vc{g}^n}{\partial q^k} \right)}_{\Xi_{ik}^j} +
-    \frac{\partial g_{jn}}{\partial q^k} \underbrace{\left(\vc{g}_i \cdot \vc{g}^n\right)}_{\delta_i^n} = g_{jn} \Xi_{ik}^j + \underbrace{\Gamma_{ijk} + \Gamma_{jik}}_{\partial g_{jn} / \partial q^k}.
+    g_{jn}
+    \underbrace{
+        \left(\vc{g}_i \cdot \frac{\partial \vc{g}^n}{\partial q^k} \right)
+        }_{\Xi_{ik}^n} +
+    \frac{\partial g_{jn}}{\partial q^k} \underbrace{\left(\vc{g}_i \cdot \vc{g}^n\right)}_{\delta_i^n} 
+    =
+     g_{jn} \Xi_{ik}^n + \underbrace{\Gamma_{ijk} + \Gamma_{jik}}_{\partial g_{jn} / \partial q^k}.
 $$
-Домножив обе части на $g^{nj}$, получим
+Домножив обе части на $g^{jm}$, получим
 $$
-    \Xi_{ik}^j g_{jn} g^{nj} = \boxed{\left(\vc{g}_i \cdot \frac{\partial \vc{g}^j}{\partial q^k}\right) = - \Gamma_{jik} g^{jn}}
+    \Xi_{ik}^n g_{nj} g^{jm} =
+    \Xi_{ik}^n \delta_n^m = \Xi_{ik}^m = 
+     \boxed{\left(\vc{g}_i \cdot \frac{\partial \vc{g}^m}{\partial q^k}\right) = - \Gamma_{jik} g^{jm}}
 $$
 
 

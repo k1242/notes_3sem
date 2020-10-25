@@ -1,0 +1,57 @@
+\subsubsection*{Т11.}
+
+Движение среды происходит по закону ($\tau = \const > 0$),
+$$
+    \vc{r} = \begin{pmatrix}
+        x & y & z
+    \end{pmatrix}\T, \hspace{0.5cm} 
+    x = \xi_1 \left(1 +   \frac{t}{\tau} \right), \hspace{0.5cm} 
+    y = \xi_2 \left(1 + 2 \frac{t}{\tau} \right), \hspace{0.5cm} 
+    z = \xi_3 \left(1 +\frac{t^2}{\tau^2}\right).
+$$
+Тогда поля скорости и ускорения в лагранжевом описании
+$$
+    \vc{v} = \dot{\vc{r}} =
+    \frac{1}{\tau} 
+    \begin{pmatrix}
+        \xi_1 & 2 \xi_2 & 2 \dfrac{t}{\tau} \xi_3      
+    \end{pmatrix}\T,
+    \hspace{0.5cm} 
+    \vc{\mathrm{w}} = \ddot{\vc{r}} = \dfrac{1}{\tau^2} \begin{pmatrix}
+        0 & 0 & 2 \xi_3
+    \end{pmatrix}\T.
+$$
+
+Пусть деформация произвола через малый промежуток времени $dt$, тогда $\vc{u} = \vc{v} \d t$. Представим $\partial \vc{u} / \partial \vc{r}$, как сумму симметричного и косо-симметричного
+$$
+    \frac{\partial \vc{u}}{\partial \vc{r}} = u_{ij} + \varphi_{ij},
+$$
+где
+$$
+    u_{ij} = \frac{1}{2} \left(
+    \frac{\partial u_i}{\partial x^j} + \frac{\partial u_j}{\partial x^i} 
+    \right),
+    \hspace{0.5cm} 
+    \varphi_{ij} = \frac{1}{2} \left(
+        \frac{\partial u_i}{\partial x^j} - \frac{\partial u_j}{\partial x^i} 
+    \right).
+$$
+Подставим $\vc{v}$ в эйлеровом описании
+$$
+    \vc{v} = \begin{pmatrix}
+        \dfrac{x}{\tau+t} &
+        \dfrac{2y}{\tau+t} &
+        \dfrac{2tz}{\tau^2+t^2} 
+    \end{pmatrix}\T,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    u_{ij} =
+    \diag\left(
+        \frac{1}{t+\tau}, \ \frac{2}{\tau+t}, \ \frac{2t}{\tau^2+t^2} 
+    \right)_{ij}\d t,
+    \hspace{0.5cm} 
+    \varphi_{ij} = 0.
+$$
+Вращательное движение отсутствует.
+
+
+Как можно заметить из выражения для $\vc{v}$ неподвижными будут частицы с $\xi_1 = 0, \ \xi_2 = 0, \xi_3 = 0$, в начальный момент времени неподвижными будут все частицы с $\xi_3 = 0$.

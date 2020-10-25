@@ -8,7 +8,7 @@
 \usepackage[english,russian]{babel}         %!  подключает русский и английский
 \usepackage{amsmath}                        %!  |
 \usepackage{amssymb,textcomp, esvect,esint} %!  |важно для формул 
-\usepackage[margin=1.5cm]{geometry}           %!  фиксирует оступ на 2cm
+\usepackage[margin=2cm]{geometry}           %!  фиксирует оступ на 2cm
 \usepackage{amsfonts}                       %!  математические шрифты
 \usepackage{amsthm}                         %!  newtheorem и их сквозная нумерация
 \usepackage{graphicx}                       %?  графическое изменение текста
@@ -28,14 +28,14 @@
 \usepackage{titling}                        %-  автоматическое заглавие 
 \usepackage{blindtext}                      %-  слепой текст
 \usepackage{fancyhdr}                       %   добавить верхний и нижний колонтитул
-\usepackage{wrapfig}                        %! обтекание таблиц и рисунков
 
-\usepackage{import}
-\usepackage{xifthen}
-\usepackage{pdfpages}
-\usepackage{transparent}
+\usepackage{import}                         %|
+\usepackage{xifthen}                        %|
+\usepackage{pdfpages}                       %|
+\usepackage{transparent}                    %| вставка ink figures
+\usepackage{rotating}
 
-\usepackage{esvect}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -50,28 +50,21 @@
 \newcommand{\vc}[1]{\mbox{\boldmath $#1$}}
 \newcommand{\T}{^{\text{T}}}
 
-\newcommand{\incfig}[1]{%
-    \def\svgwidth{\columnwidth}
-    \import{./figures/}{#1.pdf_tex}
-}
-
 \newcommand{\diag}{\mathop{\mathrm{diag}}\nolimits}
-\newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits}
-\renewcommand{\div}{\mathop{\mathrm{div}}\nolimits}
-\newcommand{\rot}{\mathop{\mathrm{rot}}\nolimits}
 \newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
 \newcommand{\Spec}{\mathop{\mathrm{Spec}}\nolimits}
 \newcommand{\sign}{\mathop{\mathrm{sign}}\nolimits}
 \newcommand{\tr}{\mathop{\mathrm{tr}}\nolimits}
 \newcommand{\rg}{\mathop{\mathrm{rg}}\nolimits}
+\newcommand{\set}[2]{{#1}^{1}, \ldots, {#1}^{#2}}
 
 \newcommand{\const}{\text{const}}
-% \newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\xmark}{\ding{55}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-% some tikz commands
+% some commands
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makeatletter %%%%%%%%%%%%%%% КРУЖОЧЕК %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand*{\encircled}[1]{\relax\ifmmode\mathpalette
@@ -90,18 +83,12 @@
   \array{#1}}
 \makeatother
 
-\def\letuscom{%%%%%%%%%%%%%%%%%%%%%% ПУСТЬ %%%%%%%%%%%%%%%%%%%%%%%%%%
-\mathord{\setbox0=\hbox{$\exists$}%
-     \hbox{\kern 0.125\wd0%
-           \vbox to \ht0{%
-              \hrule width 0.75\wd0%
-              \vfill%
-              \hrule width 0.75\wd0}%
-           \vrule height \ht0%
-           \kern 0.125\wd0}%
-   }%
+%%%%%%%%%%%%%%%%%% ВСТАВКА РИСУНКО ИЗ INKSCAPE %%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
 }
-\newcommand{\letus}{\raisebox{-1.2pt}{$\letuscom$}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -115,6 +102,7 @@
 \theoremstyle{definition}
 \newtheorem{to_def}[to_thr]{Def}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 % add some colors
@@ -137,6 +125,6 @@
 \fancyhf{}
 \fancyhead[RE,LO]{\textsc{Ф\raisebox{-1.5pt}{и}з\TeX}}
 \fancyhead[LE,RO]{Хоружий К.А.}
-% \fancyhead[CO,CE]{\leftmark}
+\fancyhead[CO,CE]{\leftmark}
 \fancyfoot[LE,RO]{\textcolor{grey}{\texttt{\thepage}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

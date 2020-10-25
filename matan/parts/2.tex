@@ -1,0 +1,118 @@
+\subsection{Обратный образ}
+
+Пусть
+$$
+    X^n \overset{F}{\longrightarrow} X^k \overset{\varphi}{\to} \mathbb{R}.
+$$
+Или можем рассмотреть отображение
+$$
+    X^n \overset{F^* \varphi}{\longrightarrow} \mathbb{R},
+    \hspace{0.5cm} 
+    \text{где }
+    \hspace{0.5cm} 
+    F^* \varphi  \overset{\mathrm{def}}{=} \varphi \circ F,
+$$
+что и является обратным образом.
+
+Пусть теперь $P \in X^n$ отображается в $F(P) \in X^k$. Пусть $W(P) \in X^n$, постороим $d_p F(W)$ -- вектор $F(P) \in X^k$. Пусть $\varphi \in C^\infty (X^k)$, тогда
+\begin{equation}
+    \underbrace{d_P F(W)}_{\text{вектор}}
+     \ \varphi \overset{\mathrm{def}}{=} W(F^* \varphi).
+\end{equation}
+
+\begin{to_def} 
+    $d_P F$  -- \textit{дифференциал} $F$  в точке $P$.
+\end{to_def}
+
+Пусть $\varphi \circ \Psi = \varphi(v^1, \ldots, v^k)$ в координатах $v^1, \ldots, v^k$. Тогда
+$$
+    F^* \varphi = \varphi(F)
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    F^* \varphi (\set{u}{k}) = 
+    \underbrace{
+        \varphi
+        (v^1 (\set{u}{n}), \ldots, v^k (\set{u}{n}))
+    }_{F^* \varphi \text{ в координатах } \set{u}{n}}
+    = \varphi \circ F \circ \Phi,
+$$
+где $\Phi$ -- координатное отображение. Теперь вектор $W$ 
+$$
+    W = W^1 \frac{\partial }{\partial u^1} + \ldots + W^n \frac{\partial }{\partial u^n} = W^i \frac{\partial }{\partial u^i} .
+$$
+Соответсвенно, по определению
+\begin{equation}
+    d_P F(W) \ \varphi \overset{\mathrm{def}}{=} W F^* \varphi,
+\end{equation}
+расписывая, получим
+\begin{equation*}
+    W F^* \varphi
+    =
+    W^i \frac{\partial }{\partial u^i} \varphi(v^1(\set{u}{n}), \ldots)
+    =
+    W^i \frac{\partial \varphi}{\partial v^j} \frac{\partial v^j}{\partial u^i} 
+    =
+    \underbrace{
+        \frac{\partial v^j}{\partial u^i} W^i \frac{\partial }{\partial v^j} 
+    }_{
+        d_p F (W)
+    } \ \varphi.
+\end{equation*}
+А это кто? А вот матрица Якоби $F$, записанного в координатах $\set{v}{k}$
+\begin{equation}
+    \begin{bmatrix}
+        d_P F(W) \, ^1 
+        \\
+        \raisebox{4pt}{\vdots}
+        \\
+        d_P F(W) \, ^k
+    \end{bmatrix} =
+    \begin{pmatrix}
+        &&\\
+        &\dfrac{\partial v^j}{\partial u^i} &\\
+        &&
+    \end{pmatrix}
+    \begin{pmatrix}
+        W^1 \\ 
+        \raisebox{4pt}{\vdots}
+        \\ W^n
+    \end{pmatrix}
+\end{equation}
+Тогда выясняется, что $d_P F$ -- линейное отображение. Действительно,
+$$
+    d_P F(W_1 + W_2) \varphi = (W_1 + W_2) F^* \varphi =
+    W_1 D^* \varphi + W_2 F^* \varphi =
+    \left(
+        d_P F(W_1) + d_P F(W_2)
+    \right) \varphi. 
+$$
+
+\subsection{Тензор}
+
+Есть пространство $V$ с векторами и двойственное $V^*$ с ковекторами, пространство линейных функций.
+Тогда $\vc{e}_1, \ldots, \vc{e}_n$ -- базис в $V$, $\vc{e}^1, \ldots, \vc{e}^n$ -- двойственный базис в $V^*$, т.е. $\vc{e}^i \vc{e}_j = \delta^i_j$. 
+
+Для начала скажем, что $W$ -- вектор и он же линейная функция на ковекторах. 
+$$
+    W(\xi) = \xi(W) = \langle W, \xi \rangle,
+$$
+что называется спариванием вектора и ковектора.
+
+Пусть есть некоторая $B(W, Y)$ -- билинейная функция от двух векторов. А теперь посмотрим на линейный оператор $A \colon V \to V$, билинейную функцию от вектора и ковектора.
+$$
+    A(W, \xi) = \langle A(W), \xi \rangle
+$$
+Обобщим до понятия тензора:
+$$
+    T \colon 
+    \underbrace{V^* \otimes \ldots \otimes V^* }_{p}
+    \otimes 
+    \underbrace{V \otimes \ldots \otimes V }_{q}
+    \to \mathbb{R},
+$$
+где $T$ полилинейная функция от $p$ ковекторов и $q$ векторов, тензор типа $p, q$. Они образуют линейное пространство
+$$
+    T \in     
+    \underbrace{V \otimes \ldots \otimes V}_{p}
+    \otimes 
+    \underbrace{V^* \otimes \ldots \otimes V^*}_{q} = \mathbb{T}^p_q (V).
+$$

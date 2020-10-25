@@ -1,0 +1,56 @@
+\subsection*{Задача №3}
+
+Искать центр вращения -- дело гиблое, лучше посмотрим с точки зрения $A$ на точку $C$ -- центр масс, расположенный в ${A} + \vv{AB}/2$. С учётом того, что в начальный момент времени все скорости равны 0, получим
+\begin{equation}
+    \vc{\mathrm{w}}_C = \vc{\mathrm{w}}^e + \vc{\mathrm{w}}^r_C,
+\end{equation}
+где $\vc{\mathrm{w}}^e = \vc{\mathrm{w}}_A$, а $\vc{\mathrm{w}}^r_C$ -- вращение с угловым ускорением $\vc{\varepsilon}$ точки $C$ относительно точки $A$, другими словами
+\begin{equation}
+    \vc{\mathrm{w}}^r_C = \vc{\varepsilon} \times \vv{AC}.
+\end{equation}
+По теореме об изменение кинетического момента
+\begin{equation}
+\label{cat}
+    J_C \vc{\varepsilon} = \vc{M}_C^e + 0 = \vv{CA} \times \vc{T} = \vc{T} \times \vv{AC}.
+\end{equation}
+По теореме об изменение количества движения
+\begin{equation}
+\label{IIN}
+    m \vc{\mathrm{w}}_C = \vc{R}^{e} = \vc{T} + m \vc{g}.
+\end{equation}
+Осталось выбрать хорошие оси и покоординатно это записать.
+
+Так как не очень хочется задумываться об ускорении точки $A$, выберем ось $OX \bot \vc{\mathrm{w}}_A$, получается повернутую на $\alpha$ от $\vv{AB}$ в начальный момент времени, $OY$ выберем так, чтобы $\omega_z > 0$, тогда
+$$
+    \vc{\varepsilon} = \begin{pmatrix}
+        0 \\ 0 \\ \varepsilon
+    \end{pmatrix},
+    \hspace{0.5cm} 
+    \vv{AC} = \begin{pmatrix}
+        L \cos \alpha \\ L \sin \alpha \\ 0
+    \end{pmatrix},
+    \hspace{0.5cm} 
+    \vc{\mathrm{w}}_A = \begin{pmatrix}
+        0 \\ {\mathrm{w}}_a \\ 0
+    \end{pmatrix},
+    \hspace{0.5cm} 
+    \vc{\mathrm{w}}_C^r = \vc{\varepsilon} \times \vv{AC} = \begin{pmatrix}
+        - \varepsilon L \sin \alpha \\
+        \varepsilon L \cos \alpha \\
+        0
+    \end{pmatrix},
+$$
+Момент инерции для однородного стержня $J_c = m L^2 / 3$, в таком случае из проекции \eqref{cat} на ось $OZ$ найдём
+\begin{equation}
+    J_C \varepsilon = T L \sin \alpha
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \varepsilon = \frac{3T\sin\alpha}{mL}.
+\end{equation}
+Перепишем \eqref{IIN} в проекции на ось $OX$ и подставим $\varepsilon$:
+$$
+    - \varepsilon L \sin \alpha = \frac{T}{m} - g \cos \alpha,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \boxed{
+        T = mg \frac{\sin \alpha}{1 + 3 \sin^2 \alpha} 
+    }.
+$$

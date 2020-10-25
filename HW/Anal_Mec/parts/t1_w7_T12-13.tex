@@ -1,0 +1,164 @@
+
+\subsubsection*{Т12 и Т13. (Теория)}
+
+В равновесии силы внутренних напряжений должны взаимно компенсироваться, т.е.
+\begin{equation}
+    \frac{\partial \sigma_{ik}}{\partial x_k} = -F_i = 0.
+\end{equation}
+Также мы знаем обобщенный закон Гука:
+\begin{equation}
+    \sigma_{ik} = \frac{E}{1+\sigma} \left[
+        u_{ik} + \frac{\sigma}{1-2\sigma} u_{ll} \ \delta_{ik}
+    \right],
+\end{equation}
+где $\sigma \in [0, 1/2]$ -- коэффициент Пуассона, а $E$ -- модуль Юнга.
+Зная, что $u_{ik}$ -- симметричный тензор
+$$
+    u_{ik} = \frac{1}{2} \left(
+        \frac{\partial u_i}{\partial x_k} + \frac{\partial u_k}{\partial x_i} 
+    \right),
+$$
+получим
+$$
+    \frac{E}{2(1+\sigma)} \frac{\partial^2 u_i}{\partial x_k^2}  +
+    \frac{E}{2(1+\sigma)(1-2\sigma)} \frac{\partial^2 `u_l}{\partial x_i \partial x_l} = 0,
+$$
+что перепишем в векторных обозначениях, в силу $\Delta \vc{u} = \partial^2 u_i / \partial x_k^2$, а $\partial u_l / \partial x_l = \div \vc{u}$, тогда
+$$
+    \Delta \vc{u} + \frac{1}{1-2\sigma} \grad \div \vc{u} = 0.
+$$
+Вспомнив, что $\grad \div \vc{u} = \Delta \vc{u} + \rot \rot \vc{u}$,
+\begin{equation}
+\label{7_5}
+    \grad \div \vc{u} - \frac{1-2\sigma}{2(1-\sigma)} \rot \rot \vc{u} = 0.
+\end{equation}
+
+
+\subsubsection*{Т12 и Т13. (общий случай)}
+
+Внешние и внутренние радиусы толстостенной сферы равны $R_1$ и $R_2$, внутри сферы действует давление $p_1$, снаружи действует $p_2$. Найдём деформацию и тензор напряжений для этой сферы.
+
+Введём сферические координаты с началом в центре шара. В силу радиальности $\vc{u} \equiv \vc{u} (\vc{r})$, следует, что $\rot u = 0$, тогда уравнение \eqref{7_5} примет вид
+\begin{equation}
+    \grad \div \vc{u} = 0,
+\end{equation}
+с учётом \eqref{div}, 
+$$
+    \div \vc{u} = \frac{1}{r^2} \frac{d (r^2 u)}{r} = \const \equiv 3 a,
+$$
+тогда
+$$
+    d (r^2 u) = 3 a r^2 \d r
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    u = ar + \frac{b}{r^2}.
+$$
+Выпишем  компоненты тензора деформации в сферических координатах:
+$$
+    u_{rr} = \frac{\partial u_r}{\partial r},
+     \hspace{0.5cm} 
+    u_{\theta} = \frac{1}{r} \frac{\partial u_{\theta}}{\partial \theta} + \frac{u_r}{r},
+    \hspace{0.5cm} 
+    u_{\varphi\varphi} = 
+    \frac{1}{r \sin \theta} \frac{\partial u_{\varphi}}{\partial \varphi} 
+    +
+    \frac{u_\theta}{r} \ctg \theta + \frac{u_r}{r}.
+$$
+В остальные не входит $u_r$, соответственно они равны $0$. В частности, для нашего случая
+\begin{align}
+   u_{rr} = a - \frac{2b}{r^3}, \hspace{0.5cm} u_{\theta\theta} = u_{\varphi\varphi} = \frac{u_r}{r} = a+\frac{b}{r^3}.
+\end{align}
+Также можем найти (диагональный) тензор напряжений :
+\begin{align}
+    \sigma_{rr} 
+    &= 
+    \frac{E}{(1+\sigma)(1-2\sigma)} 
+    \left[
+    \vphantom{\frac{1}{2}}
+    (1-\sigma) u_{rr} + 2 \sigma u_{\theta\theta}
+    \right] 
+    = \frac{E}{1-2\sigma} a - \frac{2E}{1+\sigma} \frac{b}{r^3},
+    \\
+    \sigma_{\theta\theta} 
+    &= 
+    \frac{E}{(1+\sigma)(1-2\sigma)} 
+    \left[
+    \vphantom{\frac{1}{2}}
+    (1 + \sigma) u_{\theta\theta} + \sigma u_{rr}
+    \right] =
+    \sigma_{\varphi\varphi}.
+\end{align}
+Также мы знаем следующие граничные условия:
+$$
+    \sigma_{rr} \big|_{r=R_1} = -p_1,
+    \hspace{0.5cm} 
+    \sigma_{rr} \big|_{r=R_2} = -p_2,
+$$
+получаем
+\begin{equation}
+\boxed{
+    a = \frac{p_1 R_1^3 - p_2 R_2^3}{R_2^3-R_1^3} \frac{1-2\sigma}{E},
+    \hspace{0.5cm} 
+    b = \frac{R_1^3 R_2^3 (p_1-p_2)}{R_2^3-R_1^3} \frac{1+\sigma}{2E}.
+}
+\end{equation}
+
+\subsubsection*{Т12 и Т13. (тонкая сферическая оболочка)}
+
+Рассмотрим теперь случай, когда $h = R_2 - R_1 \ll R$.
+$$
+    a \approx
+        \frac{R}{3h} 
+        \frac{1-2\sigma}{E} 
+        (p_1-p_2),
+    \hspace{0.5cm} 
+    b \approx
+        \frac{R^4}{3h} (p_1-p_2) \frac{1+\sigma}{2E}.
+$$
+Тогда деформация
+$$
+    \left(\text{пусть }\varkappa = \frac{R^2}{3h} (p_1-p_2), \text{ тогда}\right)
+    \hspace{0.5cm} 
+    u = \varkappa \frac{1-2\sigma}{E} + \varkappa \frac{1+\sigma}{2E} =
+    \frac{r^2(1-\sigma)}{2Eh} (p_1-p_2).
+$$
+Чуть интереснее выражение для $\sigma_{rr}$ (введено обозначение $p = p_1-p_2$):
+$$
+    \sigma_{rr} = \frac{R_1^3}{R_2^3-R_1^3} 
+    \bigg(
+        \underbrace{p_1-p_2 - p_2 \frac{3h}{R} - \frac{R_2^2}{r^3} (p_1-p_2)}_{
+        p (1 - R_2^2/r^3)
+        }
+    \bigg),
+$$
+посмотрим, однако, на среднее по $r$ значение. 
+$$
+    \frac{1}{h} (R_1+h)^3 \int_{R_1}^{R_1+h} \frac{1}{r^3} \d r
+    =
+    \frac{R_1 + h}{2} \left(
+        \frac{2}{R_1} + \frac{h}{R_1^2} 
+    \right),
+$$
+тогда
+$$
+    \frac{R_1^3}{R_2^3-R_1^3} 
+    \left\langle p \left(1- \frac{R_2^2}{r^3}   \right) \right\rangle
+    =\boxed{
+        \langle\sigma_{rr}\rangle = 
+        \frac{1}{2} \left(
+        \vphantom{\frac{1}{2} }
+        p_1+p_2
+        \right).
+    }
+$$
+Найдём остальные компоненты
+$$
+    \sigma_{\theta\theta} = \sigma_{\varphi\varphi} = 
+    \frac{3}{2}
+    \left(
+        \frac{R_1^3}{R_2^3-R_1^3} 
+    \right) 
+    \left(
+        \vphantom{\frac{1}{2} }
+        p_1-p_2
+    \right)  = \frac{1}{2} \frac{R}{h} (p_1-p_2).
+$$

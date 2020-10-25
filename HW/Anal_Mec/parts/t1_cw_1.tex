@@ -1,0 +1,75 @@
+\subsection*{Задача №1}
+Введём координаты так, чтобы $OX \parallel \omega$, и $OY \parallel \vv{OO}_1 \equiv \vc{l}$. Запишем скорость точки $O_1$ двумя способами
+\begin{equation}
+    \vc{v}_{O_1} = \vc{\omega} \times \vc{l} =
+    \vc{\omega}_0 \times \vc{r}.
+\end{equation}
+Скорость точки $B$
+$$
+    \vc{v}_B^r = 2 \vc{\omega}_0 \times \vc{r},
+$$
+Ускорение точки $B$
+\begin{equation}
+    \vc{\mathrm{w}}_B^a
+    =
+    \vc{\mathrm{w}}_B^r 
+    +
+    \vc{\mathrm{w}}_B^e
+    +
+    \vc{\mathrm{w}}_B^c. 
+\end{equation}
+Что ж, по порядку
+\begin{align*}
+    \vc{\mathrm{w}}_B^r  
+    &=
+    2 \vc{\omega}_0 \times \left(
+        \vc{\omega}_0 \times \vc{r}
+    \right)
+    = 
+    \begin{pmatrix}
+        - \omega_0^2 r& 0& 0
+    \end{pmatrix}\T,
+    \\
+    \vc{\mathrm{w}}_B^e 
+    &=
+    \vc{\omega} \times \left(\vc{\omega} \times \vc{l}\right) 
+    = 
+    \begin{pmatrix}
+        0& -\omega^2 l& 0
+    \end{pmatrix}\T,
+    \\
+    \vc{\mathrm{w}}_B^c
+    &= 2 \vc{\omega} \times \vc{v}_B^r =
+    4 \vc{\omega} \times \left(\vc{\omega}_0 \times \vc{r}\right)
+    = 
+    \begin{pmatrix}
+        0& -4\omega\omega_0 r& 0
+    \end{pmatrix}\T,
+\end{align*}
+где подразумевается, что
+$$
+    \omega = \begin{pmatrix}
+        \omega \\ 0 \\ 0
+    \end{pmatrix}, \hspace{0.5cm} 
+    \omega_0 = \begin{pmatrix}
+        0 \\ -\omega_0 \\ 0
+    \end{pmatrix},\hspace{0.5cm} 
+    \vc{l} = \begin{pmatrix}
+        0 \\ l \\ 0
+    \end{pmatrix},\hspace{0.5cm} 
+    \vc{r} = \begin{pmatrix}
+        r \\ 0 \\ 0
+    \end{pmatrix}.
+$$
+Также имеет смысл найти из первого уравнения ${\omega}_0$ и собрать всё вместе
+$$
+    \omega_0 = \frac{l}{r} \omega,
+    \hspace{1cm} \Rightarrow \hspace{1cm} 
+    \vc{\mathrm{w}}_B^a = 
+    -
+    \begin{pmatrix}
+     \omega^2 l^2 / r \\
+     5 \omega l \\
+     0    
+    \end{pmatrix}.
+$$

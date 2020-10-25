@@ -1,0 +1,86 @@
+\subsection{Обращение с обратным образом (?)}
+
+На данный момент у нас есть отображения для $U \in \mathbb{R}^n$ и $V \in \mathbb{R}^k$, считая $U \overset{F}{\longrightarrow} V$
+
+\vspace{-5mm}
+
+\begin{minipage}[t]{0.45\textwidth}
+\begin{align*}
+    C^{\infty} (U) &\overset{F^*}{\longleftarrow} C^{\infty} (V) \\
+    T_P U &\overset{d_P F}{\longrightarrow} T_{F(P)} V
+\end{align*}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\begin{align*}
+    U &\overset{F}{\longrightarrow} V \overset{\varphi}{\to} \mathbb{R} \\
+    U &\overset{F^* \varphi}{\longrightarrow} \mathbb{R},
+    \hspace{0.5cm} 
+    \text{где }
+    \hspace{0.5cm} 
+    F^* \varphi  \overset{\mathrm{def}}{=} \varphi \circ F,
+\end{align*}
+\end{minipage}
+
+\vspace{-3mm}
+
+\begin{equation}
+    \overbrace{
+        d_P F(
+            \underbrace{X}_{\in T_P U}
+            )
+    }^{\in T_{F(P)} V}
+    \underbrace{\varphi}_{\in C^{\infty} (V)} 
+    =
+    X 
+    \underbrace{F^* \varphi}_{\in C^\infty (U)}.
+\end{equation}
+
+С формами ситуация схожая с функциями, то есть
+$$
+    C^\infty (V) = \Gamma^0 (V),
+$$
+получается
+\begin{align*}
+    \Omega^k (U) \overset{F^*}{\longleftarrow} \Omega^k (V), \\
+    T_U U \overset{d_P F}{\longrightarrow} T_{F(P)} (V).
+\end{align*}
+Теперь пусть $X_1, \ldots, X_k$ -- векторное поле на $U$, тогда
+$$
+    (F^* \omega) (X_1, \ldots, X_k) = \omega\left(
+        d F(X_1), \ldots, d F(X_k)
+    \right).
+$$
+Собственно, факт:
+\begin{equation}
+    d F^* \omega = F^* \d \omega.
+\end{equation}
+И ещё факт
+\begin{equation}
+    F^* (\sigma \wedge \tau) = F^* \sigma \wedge F^* \tau.
+\end{equation}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Плоские кривые}
+Кривые должны быть гладкими, но этого недостаточно. Поэтому требуем и \textit{регулярность}:
+\begin{equation}
+    \forall x, y \colon F(x, y) = 0
+    \hspace{0.5cm} 
+    \left(
+        \frac{\partial F}{\partial x}, \frac{\partial F}{\partial y} 
+    \right) \neq (0, 0),
+\end{equation}
+а в параметрическом задание
+\begin{equation}
+    \forall t \in (a, b)
+    \hspace{0.5cm} 
+    \dot{\vc{r}} (t) = (\dot{x} (t), \dot{y}(t)) \neq (0, 0).
+\end{equation}
+
+Пусть $F(x, y) = 0$ -- регулярная гладкая неявно заданная кривая. Тогда в окрестности любой своей точки её можно задать как регулярную гладкую параметрическую кривую. 
+
+
+
+

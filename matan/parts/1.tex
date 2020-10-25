@@ -1,0 +1,141 @@
+\subsection{Векторы как дифференцирование функций}
+
+Что такое вектор? С одной стороны можем посмотреть на производную функции по направлению
+\begin{equation}
+    \partial_{X} f(A) = \lim_{\varepsilon \to 0} \frac{1}{\varepsilon} 
+    \left(
+        f(A + \varepsilon X) - F(A) \vphantom{\frac{1}{2}}
+    \right).
+\end{equation}
+Что очень просто выглядит в декартовых координатах
+$$
+    \partial_X f(A) =
+    \lim_{\varepsilon \to 0} \ldots =
+    \frac{d}{d\varepsilon} f\left(
+        A^1 + \varepsilon X^1, \ldots, A^n + \varepsilon XN
+    \right) \bigg|_{\varepsilon=0} =
+    \frac{\partial f}{\partial x^1} \left(A^1, \ldots, A^n\right) X^1 +
+    \ldots +
+    \frac{\partial f}{\partial x^n} \left(A^1, \ldots, A^n\right).
+$$
+Таким образом
+\begin{equation}
+    \partial_X f(A) = X^i \frac{\partial f}{\partial x^i} (A).
+\end{equation}
+Таким образом построили отображение
+\begin{equation*}
+    X \mapsto \partial_X \big|_A.
+\end{equation*}
+Выпишем несколько свойств такого оператора
+\begin{align*}
+    \partial_X (f+g)(A) &= \partial_X f(A) + \partial_X g(A) \\
+    \partial_X (fg) (A) &=   (\partial_X f(A)) g(A) + f(A) (\partial_X g(A)).
+\end{align*}
+Что соответсвует правилу Лейбница.
+
+\subsection{Дифференцирование как вектор}
+
+Теперь зайдём с другой стороны. Рассмотрим $C^{\infty} (\mathbb{R}^n)$. Рассмотрим отображение $D$
+\begin{equation*}
+    D \colon C^\infty (U) \to \mathbb{R},
+\end{equation*}
+удоволетворяющее свойствам
+\begin{align*}
+    D(f+g) &= Df + Dg \\
+    D(fg) &= (Df) \cdot g(A) + f(A) \cdot (Dg).
+\end{align*}
+Что и назовём дифференцированием в точке $A$. 
+
+Легко показать, что $D (\const )= 0$, $D \lambda f = \lambda D f$ и $f(A)=g(A)=0 \Rightarrow D(fg)=0$. Вспомним теперь формулу Тейлора в координатах $u^1, \ldots, u^n$.
+$$
+    f(u^1, \ldots, u^n) = f(A^1, \ldots, A^n)
+    +
+    \frac{\partial f}{\partial u^i} (A^1, \ldots, A^n) \cdot (u^i - A^i)
+    +
+    h_{ij} (u^1, \ldots, u^n) (u^i - A^i) \cdot (u^j - A^j).
+$$
+Тогда
+\begin{equation*}
+    D(f) = 0 + \underbrace{D(u^i - A^i) }_{X^i}
+    \frac{\partial f}{\partial u^i}(A^1, \ldots, A^n).
+\end{equation*}
+Таким образом
+\begin{equation}
+    Df = X^i \frac{\partial f}{\partial u^i} \left(A^1, \ldots, A^n\right).
+\end{equation}
+Итого
+\begin{enumerate}
+    \item В ДСК $X \mapsto \partial_X \big|_A$.
+    \item В ДСК $D$ имеет вид $\partial_X \big|_A$ для некоторого $X$.
+    \item Получили взаимно-однозначное соответствие векторы -- дифференцирование.
+    \item Определим векторы, как дифференцирование. Это определение 
+    \texttt{инвариантно}.
+    \begin{equation}
+        X = X^i \frac{\partial }{\partial u^i},
+    \end{equation}
+    где $(X^1, \ldots, X^n)$ -- координаты вектора в координатах $(u^1, \ldots, u^n)$.
+\end{enumerate}
+
+
+\subsection{Замена координат}
+Допустим выбрали некоторые $(u^1, \ldots, u^n)$ и $(v^1, \ldots, v^n)$.
+Тогда
+$$
+    D = X^i \frac{\partial }{\partial u^i} = Y^j \frac{\partial }{\partial v^j}.
+$$
+По правилу дифференцирования сложной функции
+$$
+    \frac{\partial f}{\partial u^i} = \frac{\partial v^j}{\partial u^i} \frac{\partial f}{\partial v^j},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    X^i \frac{\partial }{\partial u^i} = 
+    \underbrace{X^i \frac{\partial v^j}{\partial u^i} }_{Y^j}
+    \frac{\partial }{\partial v^j} .
+$$
+Получили формулу изменения координат вектора при смене системы\footnote{
+    \texttt{<<В Царство небесное войдут только те кто думают про вектор, как про дифференцирование, потому что там нет координат.>>}
+} координат
+\begin{equation}
+    Y^j = \frac{\partial v^j}{\partial u^i} X^i
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm} 
+    Y = J X.
+\end{equation}
+
+
+
+\subsection{Коммутатор}
+
+Для матриц известен коммутатор вида
+$$
+    \left[A, B\right] = AB - BA.
+$$
+Аналогично для дифференцирования
+\begin{align*}
+    \left[\partial_X, \partial_Y \right] f
+    =
+    \partial_X \partial_Y f - \partial_Y \partial_X f 
+    =
+    X^i \frac{\partial }{\partial u^i}
+     \left(Y^j \frac{\partial f}{\partial u^j} \right)
+    -
+    Y^j \frac{\partial }{\partial u^j} 
+    \left(X^i \frac{\partial f}{\partial u^i} \right) 
+    = X^i \frac{\partial Y^j}{\partial u^i} \frac{\partial f}{\partial u^i} 
+    -
+    Y^j \frac{\partial X^i}{\partial u^j} \frac{\partial f}{\partial u^j}
+\end{align*}
+Таким образом
+\begin{equation}
+    \left[\partial_X, \partial_Y \right] f
+    =
+    \left[
+        X^i \frac{\partial Y^j}{\partial u^i} - Y^i \frac{\partial x^j}{\partial u^i} 
+    \right] \frac{\partial f}{\partial u^i} .
+\end{equation}
+Это, как ни странно, дифференциальный оператор первого порядка. Это значит что есть такое векторное поле $\left[X, Y\right]$, что
+$$
+    \partial_{\left[X, Y\right]} = \left[\partial_X, \partial_Y\right] f.
+$$
+Таким образом $\left[X, Y\right]$ существует и равен
+\begin{equation}
+    \left[X, Y\right] =   X^i \frac{\partial Y^j}{\partial u^i} - Y^i \frac{\partial x^j}{\partial u^i}.
+\end{equation}

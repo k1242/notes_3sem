@@ -1,0 +1,99 @@
+\subsection*{Задача №2}
+
+Мы знаем как изменяется со временем угловая скорость:
+\begin{equation}
+    \omega(t) = \vc{\omega}_\text{н} + \int_{0}^{t} \vc{\varepsilon}(t) \d t.
+\end{equation}
+Знаем, что
+\begin{equation}
+\label{_12}
+    \vc{v}_O = \vc{\omega} \times \vc{r},
+    \hspace{0.5cm} 
+    d \vc{\omega} = \vc{\varepsilon} \d t 
+    =
+     - k \vc{\omega} \times \vc{r} \d t.
+\end{equation}
+
+
+Введём систему ккординат, $OX$ которой в начальный момент времени такое, что $\vc{v}_0 \parallel OX$, а $OY$ нормально к поверхности. Тогда 
+$$
+    \vc{\omega}_\text{н} = \begin{pmatrix}
+        {\omega}_\text{н} \sin \alpha & {\omega}_\text{н} \cos \alpha & 0
+    \end{pmatrix}\T,
+    \hspace{0.5cm} 
+    \vc{r} = \begin{pmatrix}
+        0 & r & 0
+    \end{pmatrix}\T,
+$$
+а из \eqref{_12} получим дифференциальное уравнение
+$$
+    d \begin{pmatrix}
+        \omega_x \\ \omega_y \\ \omega_z
+    \end{pmatrix} 
+    = 
+    - k \begin{pmatrix}
+        - \omega_z r \\ 0 \\ \omega_x r
+    \end{pmatrix} \d t
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        d\omega_x &= k \omega_z r \d t\\
+        d\omega_y &= 0\\
+        d\omega_z &= - k \omega_x r \d t\\
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \omega_z \d \omega_z = -\omega_x \d \omega_x.
+$$
+Решая, находим
+\begin{equation}
+    \omega_z^2 + \omega_x^2 = C^2 = \omega_{\text{н}}^2 \sin^2 \alpha,
+\end{equation}
+где $C$ мы находим из момента $t=0$.
+
+Подставляя значение для $\omega_z$, получим
+$$
+    \d \omega_x = kr \sqrt{c^2 - \omega_x^2} \d t,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \omega_x = C \sin (krt + C_t) = 
+    \bigg/
+    \begin{aligned}
+        \omega_x(0) &= {\omega}_\text{н} \sin \alpha \\
+        \Rightarrow C_t &= \pi / 2        
+    \end{aligned}
+    \bigg/
+    = {\omega}_\text{н} \sin (\alpha ) \cos (krt).
+$$
+Собирая всё вместе, получаем, что
+\begin{equation}
+    \vc{\omega} = \begin{pmatrix}
+        {\omega}_\text{н} \sin (\alpha) \cos(krt) \\
+        {\omega}_\text{н} \cos (\alpha) \\
+        {\omega}_\text{н} \sin (\alpha) \sin(krt) 
+    \end{pmatrix}.
+\end{equation}
+Найдём теперь $\vc{r}_O (t)$:
+$$
+    d \vc{r}_O = \vc{v}_O \d t = \vc{\omega} \times \vc{r} \d t
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \vc{r}_O =
+    \frac{1}{k} 
+    \begin{pmatrix}
+        {\omega}_\text{н} \sin(\alpha) \cos(krt) \\
+        0 \\
+        {\omega}_\text{н} \sin(\alpha) \sin(krt)
+    \end{pmatrix} + \vc{C}_r,
+$$
+где $\vc{C}_r$ находим из условия $\vc{r}_O(t=0)= \vc{r}$. Ввёдем также некоторые обозначения для удобства записи,
+\begin{equation}
+    \varkappa = \frac{1}{k} {\omega}_\text{н} \sin \alpha,
+    \hspace{0.5cm} 
+    \varphi = krt,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \vc{r}_O(t) =
+    \varkappa 
+    \begin{pmatrix}
+        \cos \varphi - 1 \\
+        r / \varkappa \\
+        \sin \varphi
+    \end{pmatrix}.
+\end{equation}
+В таком случае траектория будет окружностью, в плоскости $zx$ с центром в $(-\varkappa, 0)$ и радиусом $\varkappa$.

@@ -1,0 +1,115 @@
+\subsubsection*{Т14*. (решение для криволинейных координат, образующих ортогональный базис) }
+
+
+Хотелось бы выразить лапласиан $\Delta p$ через частные производные в произвольной криволинейной системе координат. Легко показать, что
+\begin{equation}
+    \Delta p = \div \grad p.
+\end{equation}
+Так что начнём с вида $\div \vc{v}$ и $\grad f$ в криволинейной системе координат. Понадеемся, что достаточно рассмотреть случай криволинейных координат, образующих ортогональный базис в каждой точке пространства. 
+
+В криволинейных координатах базисные направления сформированы векторами $\vc{g}_i (\vc{r}) \overset{\mathrm{def}}{=} \partial \vc{r} / \partial q^i$. Для удобства введём единичные орты координатных направлений для ортогональной системы
+\begin{equation}
+\label{b1}
+    \vc{e}_1 (q) = \left(
+        \frac{1}{\sqrt{g_{11}}}, 0, 0
+    \right), \hspace{0.5cm} 
+    \vc{e}_2 (q) = \left(
+        0, \frac{1}{\sqrt{g_{22}}}, 0
+    \right), \hspace{0.5cm} 
+    \vc{e}_3 (q) = \left(
+        0, 0, \frac{1}{\sqrt{g_{33}}}
+    \right).
+\end{equation}
+Тогда
+\begin{align}
+\label{b2}
+    d q^j (\vc{e}_i) = \frac{1}{\sqrt{g_{ii}}} \delta^i_j,
+    \hspace{0.5cm} 
+    dq^i \wedge d q^j (\vc{e}_k, \vc{e}_l) = \frac{1}{\sqrt{g_{ii} g_{jj}}} \delta^{i}_{k} \delta^j_l.
+\end{align}
+
+
+Известно, что градиент функции соответствует дифференциальной 1-форме. 
+Её (по вектору $\vc{A}$) можно записать как $\omega^1_{A} = a_i \d q^i$.
+С учётом введеного базиса можно записать, что 
+$ \vc{A} = A^i \vc{e}_i, \; \forall \vc{A} \in T \mathbb{R}_q^3. $
+Из \eqref{b2} получим, что
+$$
+    \omega^1_A (\vc{e}_i) = (\vc{A} \cdot \vc{e}_i) = A^i = \frac{a_i}{\sqrt{g_{ii}}},
+$$
+следовательно $a_i = A^i \sqrt{E_i}$, и, соответственно
+\begin{equation}
+    \omega^1_A = A^i \sqrt{g_{ii}} dq^i.
+\end{equation}
+Аналогично, пусть теперь $\grad f = A^i \vc{e}_i$. По определению
+$$
+    \omega^1_{\grad f} = d \omega_f^0 = d f = \frac{\partial f}{\partial q^i} d q^i.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \boxed{
+        \grad f = \frac{1}{\sqrt{g_{ii}}}  \frac{\partial f}{\partial q^i} \vc{e}_i.    
+    }
+$$
+
+Теперь найдём $\div \vc{B}$, как дифференциальную 3-форму. Для начала поймём, что для вектора $\vc{B} (q) = (B^i \vc{e}_i) (q)$ форма
+\begin{equation}
+\label{wb2}
+    \omega^2_{B} = b_1 dq^2 \wedge dt^3 + b_2 dq^3 \wedge dt^1 + b_3 dq^1 \wedge dt^2
+\end{equation}
+имеет следующий вид:
+$$
+    \omega^2_B (\vc{e}_2, \vc{e}_3) = (\vc{B}, \vc{e}_2, \vc{e}_3) = B^1.
+$$
+С другой стороны, из \eqref{b2} и \eqref{wb2},
+$$
+    \omega^2_B (\vc{e}_2, \vc{e}_3) =
+    b_1 dq^2 \wedge dq^3 (\vc{e}_2, \vc{e}_3) = \frac{b_1}{\sqrt{g_{22} g_{33}}}.
+$$
+Получаем, что $b_1 = B^1 \sqrt{g_{22} g_{33}}$, аналогично можем получить, что
+$b_2 = B^2 \sqrt{g_{11} g_{33}}$, $b_3 = B^3 \sqrt{g_{11} g_{22}}$.
+
+Теперь, из определения, получаем
+$$
+    \omega^3_{\div B} = d \omega^2_B = 
+    \underset{P(i,g,k)=1}{\sum_{i \neq j \neq k}^3}
+    % \left(
+    \frac{\partial \sqrt{g_{jj} g_{kk}} B^i}{\partial q^i}
+    % \right)
+    dq^i \wedge dq^j \wedge dq^k.
+$$
+Тогда
+\begin{equation}
+\label{div}
+    \div \vc{B} = \frac{1}{\sqrt{\det g}} 
+    \left(
+        \frac{\partial \sqrt{g_{22} g_{33}} B^1}{\partial q^1} +
+        \frac{\partial \sqrt{g_{33} g_{11}} B^1}{\partial q^2} +
+        \frac{\partial \sqrt{g_{11} g_{22}} B^1}{\partial q^3} 
+    \right)
+\end{equation}
+Собирая всё вместе получаем, что
+\begin{equation}
+    \Delta f = \div
+    \left(
+        \frac{1}{\sqrt{g_{ii}}}  \frac{\partial f}{\partial q^i} \vc{e}_i
+    \right) =
+    \frac{1}{\det g} 
+    \underset{P(i,g,k)=1}{\sum_{i \neq j \neq k}^3}
+    \left(
+        \frac{\partial }{\partial q^i} \left[
+            \sqrt{\frac{g_{jj} g_{kk}}{g_{ii}} } \frac{\partial f}{\partial q^i} 
+        \right] 
+    \right).
+\end{equation}
+
+В частности, для полярных
+$$
+    g_{ij} = \diag\left(1, r^2, 1\right)
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+        \Delta f = \frac{1}{r} \frac{\partial }{\partial r} 
+    \left(r \frac{\partial f}{\partial r} \right) +
+    \frac{1}{r^2} \frac{\partial^2 f}{\partial \varphi^2}  + \frac{\partial^2 f}{\partial z^2} .
+$$
+
+
+
+

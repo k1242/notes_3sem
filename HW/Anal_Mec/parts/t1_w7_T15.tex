@@ -1,0 +1,69 @@
+\subsubsection*{Т15*.}
+
+Запишем ковариантную производную вектора и ковектора:
+\begin{equation}
+    \nabla_j v_m = \frac{\partial v_m}{\partial q^i} - \Gamma_{kj}^i v_i,
+    \hspace{0.5cm} 
+    \nabla_k v^j = \frac{\partial v^i}{\partial q^k} + \Gamma_{kj}^i v^j.
+\end{equation}
+В таком случае
+$$
+    \omega_{ij} =
+    \frac{1}{2} \left(
+    \vphantom{\frac{1}{2} }
+    \nabla_i v_j - \nabla_j v_i
+    \right) =
+     \frac{1}{2} \left(
+        \frac{\partial v_j}{\partial q^i} + \Gamma_{ji}^k v_k - \frac{\partial v_i}{\partial q^j}  - \Gamma_{ij}^k v_k
+    \right) =
+    \frac{1}{2} \left(
+        \frac{\partial v_j}{\partial q^i} - \frac{\partial v_i}{\partial q^j} 
+    \right),
+$$
+что и требовалось доказать.
+
+Перейдём к следующему заданию. Корректнее сказать, что \textbf{псевдо}вектор вихря $\omega$ может быть представлен $\omega_{ij} \vc{e}^i \vc{e}^j$, т.к. при выводе критически важно, что
+\begin{equation}
+    \left[\vc{e}^1 \times \vc{e}^2\right] = \vc{e}^3,
+\end{equation}
+соотвественно $\vc{\omega}$ не инвариантен к зеркальному отображению базиса. 
+
+Судя по символу Леви-Чевиты речь идёт о трёхмерной задаче, так что нам достаточно показать что 
+\begin{equation}
+    \vc{\omega} = \omega_{ij} \left[\vc{e}^i \times \vc{e}^j\right], 
+    \hspace{0.5cm} 
+    \text{ где } 
+    \hspace{0.5cm} 
+    \omega_{ij} = \begin{pmatrix}
+        0 & \omega^3 & -\omega^2 \\
+        -\omega^3 & 0 & \omega^1  \\
+        \omega^2 & - \omega^1 & 0 \\
+    \end{pmatrix}_{ij}, 
+    \vc{\omega} = \begin{pmatrix}
+        \omega^1 \\ \omega^2 \\ \omega^3
+    \end{pmatrix}
+     \hspace{0.5cm}    
+    \text{ и }
+    \hspace{0.5cm} 
+    \omega^\gamma = \frac{1}{2} \varepsilon^{\gamma \alpha\beta} \omega_{\alpha \beta},
+\end{equation}
+что проверяется прямой подстановкой:
+$$
+    \vc{\omega} = \omega^3 
+    \underbrace{
+    \left[\vc{e}^1 \times \vc{e}^2\right]
+    }_{
+    \vc{e}^3
+    }  +
+    \left(-\omega^3 \right)
+    \underbrace{
+    \left[\vc{e}^2 \times \vc{e}^1\right]
+    }_{
+    -\vc{e}^3
+    }  + \ldots 
+    = \begin{pmatrix}
+        \omega^1 \\ \omega^2 \\ \omega^3
+    \end{pmatrix}.
+$$
+
+
