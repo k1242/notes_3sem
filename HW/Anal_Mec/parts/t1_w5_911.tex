@@ -1,0 +1,27 @@
+\subsubsection*{9.11}
+
+Точка $A$ подвеса математического маятника длины $l$ совершает вертикальные колебания по закону
+$$
+    \vv{OA} = \vc{a} \sin (\omega t) = \vc{r}_A,
+    \hspace{0.5cm} 
+    \vc{a} \omega \cos (\omega t) = \vc{v}_A,
+    \hspace{0.5cm} 
+    - \vc{a} \omega^2 \sin (\omega t) = -\vc{\mathrm{w}}^e.
+$$
+Тогда по II закону Ньютона для неИСО
+\begin{equation}
+    m \vc{\mathrm{w}}^r = \vc{F} + m \vc{g} - m \vc{\mathrm{w}}^e.
+\end{equation}
+Пусть ось $OX$ противонаправлена силе натяжения нити $\vc{F}$, $OY$ в плоскости движения, тогда, введём $\vc{g}' = \vc{g}-\vc{\mathrm{w}}^e$ и получим
+\begin{align*}
+    &OX: \ \  m \mathrm{w}_x = - F + m g' \cos \varphi  = 0,\\
+    &OY: \ \  m \mathrm{w}_y = mg' \sin \varphi,
+\end{align*}
+Так приходим к уравнению вида
+\begin{equation}
+    \ddot{\varphi} +  \frac{1}{L} \left(
+    \vphantom{\frac{1}{2} }
+        g - a \omega^2 \sin \left(\omega t\right)
+    \right) \sin (\varphi)= 0.
+\end{equation}
+В частности, заметим, что $\varphi(t)\equiv0$ и $\varphi(t) \equiv \pi$ являются частными решениями этого уравнения.

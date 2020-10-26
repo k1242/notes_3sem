@@ -1,0 +1,26 @@
+\subsubsection*{9.27}
+Посмотрим на систему с точки зрения вращающейся с угловой скоростью $\vc{\omega}_0$ плоскости, тогда по теореме об изменение количества движения в неИСО
+\begin{equation}
+    m \vc{\mathrm{w}}^r = \vc{R} - m \vc{\mathrm{w}}^e - m \vc{\mathrm{w}}^c.
+\end{equation}
+Выберем в качестве полюса тела центр масс $A$, тело вращается относительно него с $\vc{\omega}$, тогда 
+$$
+    - \frac{1}{2} \vc{F}^C  = 
+    \sum_i m_i \left(
+        \vc{\omega}_0 \times (\vc{v}_A + \vc{\omega} \times \vv{Ci})
+    \right) = m \vc{\omega}_0 \times \vc{v}_A +
+    \vc{\omega}_0 \times \left(
+        \vc{\omega} \times \big(
+        \cancel{\sum m_i \vc{r}_i}
+        \big)
+    \right) = m \vc{\omega}_0 \times \vc{v}_A.
+$$
+Аналогично для переносной
+$$
+    -\vc{F}^e = \sum m_i \vc{\omega} \times \vc{v}_i^r =
+    \sum_i m_i \vc{\omega} \times \vc{\omega} \times \vc{r}_i =
+    \vc{\omega} \times \vc{\omega} \times \left(
+        \sum_i m_i \vc{r}_i
+    \right) = m \vc{\omega} \times \left(\vc{\omega} \times \vc{r}_A\right).
+$$
+Таким образом переносные и кориолисовы силы приводятся к равнодействующим, проходящим через центр масс фигуры.

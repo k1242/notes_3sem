@@ -1,2 +1,92 @@
-\subsubsection*{Задача №4}
+\subsubsection*{Задача №4 (I)}
 
+Запишем кинетический момент относительно точки $A$,
+\begin{equation}
+    \vc{K}_A = \sum_i \vc{r}_{Ai} \times (m_i \vc{v}_i),
+\end{equation}
+и выразим скорость, как
+$$
+    \vc{v}_i = \vc{\omega}_0 \times  \vc{r}_{Ai} + \vc{\omega} \times \left(
+    \vc{l} + \vc{r}_{Ai}
+    \right),
+$$
+где $\vc{l}$ -- радиус вектор от $O$ до $A$, $\vc{\omega}_0 \colon \vc{\omega}_0 \times \vc{r} = \vc{v}$, $\vc{r}$ -- вектор от $A$ до центра масс $B$.
+Тогда
+$$
+    \vc{K}_A = 
+    \underbrace{
+        \sum_i m_i \vc{r}_{Ai} \times \vc{\omega}_0 \times \vc{r}_{Ai}
+    }_{K_1}
+    \ + \
+    \underbrace{
+        \left(\sum_i \vc{r}_{Ai} m_i\right) \times \vc{\omega} \times \vc{l}
+    }_{K_2}
+    \ + \
+    \underbrace{
+        \sum_i m_i \vc{r}_{Ai} \times \vc{\omega} \times \vc{r}_{Ai}
+    }_{K_3}.
+$$
+В частности, раскрывая двойное векторное,
+$$
+    \vc{K}_1 = \vc{\omega}_0 \sum_i m_i r_{Ai}^2 = \frac{3}{2} m r^2 \vc{\omega}_0,
+    \hspace{0.5cm} 
+    \vc{K}_2 = \vc{r} \times \vc{\omega} \times \vc{l}.
+$$
+Третье слагаемое, аналогично первому,
+$$
+    \vc{K}_3 = \vc{\omega} \frac{3}{2} m r^2 -
+    \underbrace{
+    \sum_i m_i \vc{r}_{Ai} \left(\vc{r}_{Ai} \cdot \vc{\omega}\right)
+    }_{K_4}
+    ,
+$$
+где последнее слагаемое сохранит только $y$ компонену $\parallel \vc{i}$ (где $\vc{i}$ -- единичный вектор), соответсвенно
+$$
+    \vc{K}_4 = \vc{i} \omega \int_{0}^{2r} \rho(h) h^2 \d h,
+$$
+где
+$$
+    \rho(h) \colon \hspace{0.5cm} 
+    \int_{0}^{2r} 
+    \underbrace{
+    \alpha \sqrt{2 Rh - h^2} 
+    }_{\rho(h)}
+    \d h 
+    = m.
+$$
+
+
+
+\subsubsection*{Задача №4 (II)}
+
+Теперь относительно точки $O$:
+По всей видимости речь о 
+$$
+    \vc{K}_O^r = \sum_i \vc{r}_i \times (m_i \vc{v}^r_i) =
+    \sum_i \left(\vc{l} + \vc{r}_{Ai}\right) \times (m_i \vc{v}^r_i)
+    ,
+$$
+где
+$$
+    \vc{v}^r_i = \vc{\omega}_0 \times \vc{r}_{Ai}.
+$$
+Тогда
+$$
+    \vc{K}_O^r = 
+    \vc{l} \times \vc{\omega}_0 \times \left(\sum_i m_i \vc{r}_i \right)
+    +
+    \sum_i \vc{r}_{Ai} m_i \times \vc{\omega}_0 \times \vc{r}_{Ai}
+    =
+    \cancel{
+        \vc{l} \times \vc{\omega}_0 \times \vc{r}
+    } +
+    \vc{\omega}_0 \frac{3}{2} mr^2 - 
+    \sum_i m_i
+    \vc{r}_{Ai} \cancel{\left(\vc{r}_{Ai} \cdot \vc{\omega}_0\right)}
+    .
+$$
+Тогда
+$$
+    \vc{K}_O^r = 
+    \vc{\omega}_0 \frac{3}{2} mr^2.
+$$

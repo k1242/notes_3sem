@@ -1,0 +1,74 @@
+
+\subsubsection*{9.16}
+
+Невесомый стержень вращается с постоянной угловой скоростью $\vc{\omega}$ вокруг оси $Oz$, перпендикулярной плоскости рисунка. По диску катится диск радиуса $r$ и массы $m$, в начальный момент точки $O$ и $A$ совпадали, а диск покоился.
+
+Перейдём в СО стержня, тогда 
+\begin{equation}
+    m\vc{\mathrm{w}}_d^r =
+     m\vc{\mathrm{w}}_d^a - m\vc{\mathrm{w}}_d^c - m\vc{\mathrm{w}}_d^e.
+\end{equation}
+Так как движение происходит без проскальзывания, сила трения не совершает работу. С учётом II закона Ньютона в неИСО, и тем что сила Кориолиса не изменяет кинетическую энергию системы, получим, что внешний момент
+\begin{equation}
+    \vc{M}_i = \vc{R}_i \times \left(
+        m_i \vc{g} 
+        - 
+        m_i \vc{\omega} \times \vc{\omega} \times \vc{r}_i
+    \right),
+    \hspace{0.5cm} 
+    \vc{r}_i = \vv{OA} + \vc{R}_i,
+\end{equation}
+Тогда
+$$
+    \vc{M}_i =
+    m_i \vc{R}_i \times \vv{OA} \omega^2 -
+    m_i \vc{R}_i \times \vc{\omega} \left(\vc{\omega} \cdot \vv{OA}\right) + m_i \vc{R}_i \times \vc{g},
+$$
+Суммируя, по теореме об изменение кинетического момент, получим, что
+$$
+    I \vc{\varepsilon}_d = \sum \vc{M}_i = m \omega^2  \ \vv{AB} \times \vv{OA} + m \ \vv{AB} \times \vc{g}.
+$$
+Пусть $L$ -- пройденное расстояние, в проекции на ось, сонаправленную с $\vc{\omega}_d^r$,
+$$
+    \frac{d \omega_d^r}{dt} =
+    \frac{2}{3} \frac{L}{R} \omega^2 + \frac{2}{3} \frac{g}{R} \cos \varphi,
+$$
+интегрируя, с учётом начальных условий,
+\begin{equation}
+    (\omega_d^{r})^2 (L) =
+    \frac{2}{3} \frac{L^2}{R^2} \omega^2 + \frac{4}{3} \frac{L}{R^2} \, g \cos \varphi.
+\end{equation}
+
+Запишем теперь Кориолисову силу, как
+$$
+    \vc{F}^c_i = - 2 \omega \times (\vc{\omega} \times \vc{r}_i) m_i
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \vc{F}^c = - 2 \vc{\omega} \times
+    \left(
+        \vc{\omega}_d^r \times \vv{AB} 
+    \right) \ m.
+$$
+Догда записав II закон Ньютона на ось, сонаправленную с $\vc{N}$, получим
+\begin{equation}
+    0 = N - mg\sin\varphi - R m \omega^2  + 2 m \omega \omega_d^r R
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    {
+        N = mg \sin \varphi + Rm \omega^2-
+        2 m\omega \sqrt{
+            \frac{2}{3} \omega^2 L^2 + \frac{4}{3} g L \cos \varphi 
+        }
+    }    
+\end{equation}
+Аналогично записав уравнение в проекции на ось, сонаправленную с $\vc{F}_\text{тр}$, найдём
+\begin{equation}
+    m {\mathrm{w}} = m \varepsilon R = F_{\text{тр}} + L m \omega^2 + mg \cos \varphi,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    {
+        F_{\text{тр}} = \frac{m}{3} \left(
+            \vphantom{\frac{1}{2}}
+            L\omega^2 + g \cos \varphi
+        \right)
+    }.
+\end{equation}
+
+
