@@ -1,0 +1,243 @@
+\section{Геометрия масс твёрдого тела}
+
+\subsection{Тензор инерции}
+
+Движение тела может быть разбито на поступательное плюс вращательное. 
+Есть три классические величины: $\vc{Q} = m \vc{v}_C, \ T=\frac{mv^2}{2} + T_{...}^{...}, \ \vc{K}$. Мгновенная ось вращения проходит через точку $O$. 
+$$
+    \vc{v}_i = \vc{\omega} \times \vc{r}_i \equiv \widetilde r_i \vc{\omega},
+    \hspace{0.5cm} \widetilde{r_i} = \begin{pmatrix}
+        0 &z_i &- y_i \\
+        -z_i & 0 & x_i \\
+        y_i & -x_i & 0\\
+    \end{pmatrix}.
+$$
+Известно, что
+$$
+    v_i^2 = \left(
+        \widetilde{r_i} \vc{\omega}
+    \right)\T \left(
+        \widetilde{r_i} \vc{\omega}
+    \right) = \vc{\omega}\T \widetilde{r_i}\T \widetilde{r_i} \vc{\omega}.
+$$
+Так приходим к
+\begin{to_def} 
+Тензором величину назовём величину 
+\begin{equation}
+    \hat J_0 = \sum m_i \widetilde{r_i}\T \widetilde{r_i}.
+\end{equation}
+\end{to_def}
+Тогда кинетическую энергию запишем, как
+\begin{equation}
+    T = \frac{1}{2} \vc{\omega}\T 
+        \hat J_0 \vc{\omega}.
+\end{equation}
+Но опыт кричит о том, что там момент инерции, действительно
+\begin{equation}
+    J_e = \vc{e}\T \hat J_0 \vc{e}.
+\end{equation}
+Найдём его элементы:
+\begin{equation}
+    \widetilde{r_i}\T \widetilde{r_i} = \begin{pmatrix}
+        y_1^2 + z_i^2 & -x_i y_i & - x_i z_i \\
+        -x_i y_i & x_i^2 + y_i^2 & - y_i z_i \\
+        -x_i z_i & -y_i z_i & x_i^2 + y_i^2 \\
+    \end{pmatrix} = \hat j_i,
+\end{equation}
+суммируя, получим
+\begin{equation}
+    \hat J_0 = \begin{pmatrix}
+        J_x & - J_{xy} & -J_{xz} \\
+        -J_{xy} & J_y & -J_{yz} \\
+        -J_{xz} & -J_{yz} & J_z \\
+    \end{pmatrix},
+\end{equation}
+где $J_x$ -- \textit{осевые моменты инерции}, а $J_{xy}$ -- центробежные момент инерции. 
+
+Но, в силу симметричности тензора, существуют такие оси, что
+\begin{equation}
+    \hat J_0 = \begin{pmatrix}
+        J_x & 0 & 0 \\
+        0 & J_y & 0 \\
+        0 & 0 & J_z \\
+    \end{pmatrix}.
+\end{equation}
+
+\subsection{Кинетический момент}
+
+
+Кинетический момент найдём из
+\begin{equation}
+    T = \frac{1}{2} \sum m_i \vc{v}_i \left[\vc{\omega} \times \vc{r}_i\right]
+    =
+    \frac{\vc{\omega}}{2} \sum m_i \vc{r}_i \times \vc{v}_i = 
+    \frac{1}{2} \vc{\omega} \cdot \vc{K}_O,
+\end{equation}
+тогда
+\begin{equation}
+    \boxed{
+        \vc{K}_O = \hat J_O \vc{\omega}
+    }.
+\end{equation}
+
+% \subsubsection*{Интерпретация №1}
+На самом деле
+\begin{align*}
+    \hat J_0 \colon \vc{\omega} \in \mathbb{R}^3 \to \vc{K}_O \in \mathbb{R^3}, \\
+    \vc{\omega}, \Omega \colon \vc{r} \in \mathbb{R}^3 \to \vc{v} \in \mathbb{R}^3.
+\end{align*}
+% \subsubsection*{Интерпретация №2}
+Вообще, получается $\vc{K}_O \nparallel \vc{\omega}$.
+
+
+Введём оси $\xi\eta\zeta$, тогда в них
+\begin{equation}
+    \hat{J}_0 = \diag (A, B, C),
+    \hspace{0.5cm} 
+    \vc{\omega} = \begin{pmatrix}
+        p \\ q \\ r
+    \end{pmatrix},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    T = \frac{1}{2} \left(
+        Ap^2 + B q^2 + C r^2
+    \right),
+    \hspace{0.5cm} 
+    \vc{K}_O = \begin{pmatrix}
+        Ap \\ Bq \\ Cr
+    \end{pmatrix}.
+\end{equation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Компоненты тензора инерции в других СО}
+
+
+\subsubsection{Поворот}
+
+
+Во-первых, посмотрим на поворот
+$$
+    T = \frac{1}{2}  \vc{\omega}_{1}\T \hat{J}_{O1} \vc{\omega}_1 =
+    \frac{1}{2} \vc{\omega}\T \hat J_{O2} \vc{\omega}_2,
+    \hspace{0.5cm} 
+    \vc{\omega}_1 = R \vc{\omega}_2,
+$$
+Тогда
+\begin{equation}
+    \boxed{
+        \hat J_{O1} = R^{-1} \hat J_{O2} R
+    }.
+\end{equation}
+
+
+
+\subsubsection{Параллельный перенос (Т. Гюйгенса-Штейнера)}
+
+Запишем
+\begin{equation}
+    \hat J_O = \hat J_C + m \ \hat j_{CO},
+\end{equation}
+если $\vv CO = (\xi \eta \zeta)$, то
+\begin{equation}
+    \hat j_{CO} =
+    \begin{pmatrix}
+        \eta^2 + \zeta^2 & - \xi \eta & - \xi \zeta \\
+        - \xi \eta & \xi^2 + \zeta^2 & - \eta \zeta \\
+        - \xi \zeta & - \eta \zeta & \xi^2 + \eta^2 \\
+    \end{pmatrix}
+\end{equation}
+
+\subsection{Цилиндр}
+
+Перейдём к переменным $r, \varphi, z$, тогда, например
+\begin{equation}
+    J_z=
+    \int
+    \left(x^2 + y^2\right) \rho \d V=
+    \frac{M}{\pi R^2 H} 
+    \iiint r^2 r \d r \d \varphi \d z.
+\end{equation}
+Считая, получим
+\begin{equation}
+    \hat{J}_C = \diag\left(
+        \frac{MR^2}{4} +\frac{MH^2}{12}, \
+        \frac{MR^2}{4} + \frac{MH^2}{12}, \
+        \frac{MR^2}{2}  
+    \right).
+\end{equation}
+
+В частности, при $\vv{CA} = \begin{pmatrix}
+    R & 0 & -H/2
+\end{pmatrix}\T$, получим
+$$
+    \hat J_A = \hat J_C + m \hat j_{CA} =
+    \begin{pmatrix}
+        A & 0 & \frac{1}{2} MRH \\
+        0 & B & 0 \\
+        \frac{1}{2} MRH & 0 & C
+    \end{pmatrix}.
+$$
+Теперь приведем к главным осям, поворотом относительно оси $z$:
+\begin{equation*}
+    \hat J_A' = \diag\left(A', B', C'\right) =
+    R\T \hat J_A R,
+    \hspace{0.5cm} 
+    R = \begin{pmatrix}
+        \cos \alpha & 0 & \sin \alpha \\
+        0 & 1 & 0 \\
+        -\sin\alpha & 0 & \cos \alpha \\
+    \end{pmatrix}.
+\end{equation*}
+Решая, получим
+$$
+    \tg 2 \alpha = 4 \sqrt{3}.
+$$
+Подставляя, найдём
+$$
+    \hat J_A' = \frac{mR^2}{4}  \diag\left(2, 9, 9\right).
+$$
+Ну или просто к главным осям привести можно, через собственные числа.
+
+\subsection{Диск}
+
+Есть некоторая квадратная рама (полное условие см. дополнение). Для простоты положим $\omega_1 = \omega_2 = \omega$.
+ Найдём $T, \vc{N}_A, \vc{N}_B$. 
+
+ Во-первых,
+ $$
+     T = \frac{1}{2} m V_O^2 + \frac{1}{2} \vc{\Omega}\T \hat{J}_O \vc{\Omega},
+ $$
+где $v_O = \omega a / 2$.
+Выберем такие оси, что
+$$
+    \hat J_O = \frac{1}{4} mR^2 \diag\left(1,1,2\right) .
+$$
+Посчитаем теперь $\vc{\Omega}$:
+$$
+    \vc{\Omega} = \begin{pmatrix}
+        O & \omega \sqrt{2}/2 & \omega \sqrt{2}/2 + \omega
+    \end{pmatrix}\T.
+$$
+Из теоремы об изменение импульса
+$$
+    m \vc{\mathrm{w}}_O = \vc{N}_A + \vc{N}_B,
+    \hspace{0.5cm} 
+    m \frac{\omega^2 \ a^2/4}{a/2}  = N_A + N_B.
+$$
+А ещё знаем, что
+\begin{align*}
+    \frac{d}{dt} \vc{K}_A =
+    \vc{\omega}_1 \times \left[
+    \left(
+        \hat J_O + m \hat{j}_{OA}
+    \right) \vc{\Omega}
+    \right]
+    = \vv{AB} \times \vc{N}_B. \\
+    \frac{d}{dt} \vc{\mathrm K}_A =
+    \vc{\omega}_1 \times \left[
+    \left(
+        \hat J_O + m \hat{j}_{OA}
+    \right) \vc{\Omega}
+    \right]
+    = \vv{AB} \times \vc{\mathrm N}_B. 
+\end{align*}
