@@ -1,52 +1,86 @@
 \subsection{Движение точки в центральном поле сил}
 
-
-\subsubsection*{8.21}
-
-В приближении $m \ll M$, запишем, что
-$$
-    \vc{F}(r) = \frac{kQq}{r^2} \frac{\vc{r}}{r} = \varepsilon u^2 \frac{\vc{r}}{r},
-$$
-% Для такого движения мы знаем, что
-% $$
-%     \frac{1}{u} = r = \frac{p}{1 - e \cos \varphi}.
-% $$
-В силу того, что $\dot{\varphi} = cu^2$, то из момента, когда $\dot{\varphi} = v_0 / r$, найдём $c=v_0 d$.
-Уравнение Бине примет вид
+\subsubsection*{8.36}
+Для начала выразим $a$ и $b$ через $h$ и $H$:
 \begin{equation}
-    u'' + u = \frac{kQq}{mv_0^2 d^2} 
-    \overset{\mathrm{def}}{=} \varkappa.
-\end{equation}
-При $\varphi \to 0$, получим, что
-$$
-    u_0 \cos \varphi_0 = -\varkappa.
-$$
-Дифференцируя же по времени, получим
-$$
-    \dot{u} = - u_0 \sin (\varphi - \varphi_0) \dot{\varphi}
+    r_1 + r_2 = H+h 
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
-    \dot{r} = u_0 v_0 d \sin \left(\varphi - \varphi_0\right),
-$$
-Таким образом
-$$
+    b = \frac{H+h}{2}, \hspace{0.5cm} a = \sqrt{Hh}.
+\end{equation}
+Запишем теперь уравнение Бине
+\begin{equation}
+    u'' + u = \frac{F}{mc^2u^2} = \frac{\alpha}{mc^2},
+\end{equation}
+т.к. $F(u) = \alpha u^2$. Тогда
+\begin{equation}
+    u'' = (u - \frac{\alpha}{mc^2} )
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    u - \frac{\alpha}{mc^2} = A \cos \varphi + B \sin \varphi
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    r = \frac{1}{\frac{\alpha}{mc^2} - A\cos \varphi} 
+    \overset{\mathrm{def}}{=} \frac{p}{1-e\cos \varphi} .
+\end{equation}
+Из граничных условия находим, что
+\begin{equation}
+\left\{\begin{aligned}
+    r(\varphi = 0) &= H = \frac{p}{1-e}.
+    r(\varphi = \pi) &= h = \frac{p}{1+e}.
+\end{aligned}\right.
+\hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+e = \frac{H-h}{H+h}; \hspace{0.5cm} p = \frac{2Hh}{H+h}.
+\end{equation}
+
+
+
+\subsubsection*{8.48}
+
+Рассмотрим движение в поле с силой
+\begin{equation}
+    F = - \frac{\alpha}{m^2} \psi (\varphi) - \frac{\beta}{r^3} .
+\end{equation}
+Запишем уравнение Бине:
+\begin{equation}
+    u'' + u=
+    \frac{F(u)}{mc^2u^2} = \frac{-\alpha u^2 \psi - \beta u^3}{mc^2 u^2} 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    u'' + 
+    \underbrace{\left(1 + \frac{\beta}{mc^2} \right)}_{\omega^2}
+    u = 
+    \underbrace{-\frac{\alpha}{mc^2}  }_{-B}
+    \psi(\varphi).
+\end{equation}
+Методом вариации постоянных, получм
+\begin{equation}
+    u(\varphi) = C_1 (\varphi) \cos (\omega \varphi) + C_2 (\varphi) \sin (\omega \varphi).
+\end{equation}
+Тогда
+\begin{equation}
+    u' = C_1' \cos \omega \varphi - \omega C_1 \sin \omega \varphi + C_2 \sin \omega \varphi + \omega C_2 \cos \omega \varphi.
+\end{equation}
+В силу предоставленной нам свободы, потреуем для простоты и адекватности выкладок
+\begin{equation}
+    C_1 \cos \omega \varphi + C_2 \sin \omega \varphi \equiv 0
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    u' = - \omega C_1 \sin \omega \varphi + \omega_2 C_2 \cos \omega \varphi.
+\end{equation}
+Найдём из нашего условия и условия диф. уравнения $C_1$ и $C_2$:
+\begin{equation}
     \left\{\begin{aligned}
-        u_0 &= 1 / d \sin \varphi_0 \\
-        u_0 &= - \varkappa  \cos \varphi_0
-    \end{aligned}\right. ,
+        C_1' &= - \frac{1}{\omega} \psi(\varphi) \sin \omega t \\
+        C_2' &=  \frac{1}{\omega} \psi (\varphi) \cos \omega t
+    \end{aligned}\right.
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
-    \tg \varphi_0 = - \frac{1}{\kappa d}.
-$$
-Теперь при $u \to 0$, получим
-$$
-    \theta' - \varphi_0 = \arccos \left(\frac{-\varkappa}{u_0} \right),
-    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
-    \theta = \pi - \theta = \pi - 2 \arctg \frac{1}{\varkappa d} 
-    =
-    2 \arctg \left(\varkappa d\right),
-$$
-Таким образом приходим к выражению
-\begin{equation}
-    \theta = 2 \arctg \left(\varkappa d\right).
+    \left\{\begin{aligned}
+        C_1 &= - \frac{1}{\omega} \int_0^\varphi \psi(\varphi) \sin \omega \tau \d \tau + \tilde C_1 \\
+        C_2 &=  \frac{1}{\omega} \int_0^\varphi \psi(\varphi) \cos \omega \tau \d \tau + \tilde C_2
+    \end{aligned}\right.
 \end{equation}
+Из  формулы синуса суммы, получим
+\begin{equation}
+    u(\varphi) = C_1 \sin \omega \varphi + C_2 \cos \omega \varphi +
+    \frac{1}{\omega} \int_0^t \sin \omega(\varphi-\tau) \psi(\varphi) \d \tau,
+\end{equation}
+где $\omega(\varphi) = \sqrt{1 + \beta/mc^2}$.
 
+\input{parts/t1_w6_821}
 \input{parts/t1_w6_T10}

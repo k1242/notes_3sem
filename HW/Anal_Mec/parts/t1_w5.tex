@@ -1,9 +1,169 @@
 \subsection{Основные теоремы динамики}
 
+\subsubsection*{5.10}
+
+Парметризуем систему движением по оси $z \parallel \vc{g}$, тогда
+\begin{equation}
+    m \dot{v} = \beta v^2 - mg \frac{R^2}{(R+z)^2}.
+\end{equation}
+Что аналогично диф. уравнению
+\begin{equation}
+    \ddot{z} = \frac{\beta}{m} \dot{z}^2 - g \frac{R^2}{(R+z)^2} .
+\end{equation}
+Решим диф. уравнение заменой $\dot{z} = p(v) \equiv v$, тогда $\ddot{z} = p'p$.
+Пусть теперь $y = v^2$, $x'/2 = p'p$, тогда приходим к однородному диф. уравнению
+\begin{equation}
+    \frac{1}{2} y' - \frac{\beta}{m} x = \frac{-gR^2}{(R+z)^2}.
+\end{equation}
+Решая, получим, что
+\begin{equation}
+    C(z) = -2g \int \left(1 + \frac{z}{R} \right)^{-2} \exp\left(-\frac{2\beta}{m} z\right) \d z + C_0.
+\end{equation}
+Из начальных условия  находим $C_0$, получая
+\begin{equation}
+    v^2 = v_0^2 \exp\left(-\frac{2\beta}{m} \left(H-h\right)\right)
+    -2gR^2 \exp\left(\frac{2\beta}{m} h\right)
+    \int_{H}^{h} \left(R+z\right)^{-2} \exp\left(-\frac{2\beta}{m} z\right)\d z.
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{6.13}
+
+Из теоремы об изменение количества движения, ц.м. системы покоится. Т.к. на систему не действуют внешние силы с ненулевым относительно вертикальной оси моментом, то по теореме об изменение кин. момента, он сохраняется $K_0 = K_1$. 
+
+Далее всё запишем  в проекции на вертикальную ось. В начальный момент времени
+\begin{equation} 
+     K_0 = I \omega_0 = \frac{3}{10} k m r^2 \omega_0.
+ \end{equation} 
+При достижении шариком пола
+\begin{equation}
+    K_1 = I'\omega' + m (kl^2) \omega'.
+\end{equation}
+По т. Штейнера
+\begin{equation}
+    I'\omega' = I \omega' + kml^2 = \frac{3}{10} kmr^2 \omega' _ kml^2\omega'.
+\end{equation}
+Собирая всё вместе получаем, что
+\begin{equation}
+    3k (k+1) \omega_0 = \left(
+        3k(k+1) + 10k
+    \right) \omega'
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \boxed{
+        \omega'= \frac{3(k+1)}{3k + 13} \omega_0
+    }
+\end{equation}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{6.25}
+
+Кинетический момент 
+\begin{equation}
+    \frac{d}{dt} \vc{K}_A = \vc{M}_A^e + \vc{Q} \times \vc{v}_A,
+\end{equation}
+где $A$ -- мгновенный центр скоростей, $\vc{v}_A = 0$. Тогда, в проекции на вертикальную ось, получим, что
+\begin{equation}
+    \frac{d}{dt} \vc{K}_A = \vc{M}_A^e = \vc{l} \times \vc{F}_{\text{тр}}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \vc{K}_A\big|_z = \const.
+\end{equation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection*{6.35}
+Для точек пластины $\vc{r}_{AC} = \vc{r}_C - \vc{r}_A$, $\vc{v}_i = \vc{v}_A + \vc{\omega} \times \vc{r}_{Ai}$. Соответственно
+\begin{equation}
+    \vc{K}_A = \sum_i \vc{r}_{Ai} \times m_i \left(
+        \vc{v}_A + \vc{\omega} \times \vc{r}_Ai
+    \right) =
+    \vc{v}_A \times \sum_i \left(\vc{r}_A - \vc{r}_i\right) m_i
+    +
+    \sum_i \vc{r}_{Ai} \times (m_i \vc{\omega} \times \vc{r}_{Ai}).
+\end{equation}
+Раскрывая по правилу Лагранжа, получим, что
+\begin{equation}
+    \vc{K}_A = m \left(
+        \vv{AC} \times \vc{v}_A
+    \right) + I_A \vc{\omega},
+    \hspace{0.5cm} 
+    \text{Q.E.D.}
+\end{equation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{7.4}
+Во-первых запишем кинетическую энергию системы, как
+\begin{equation}
+    T_{\text{сист}} = T_{\text{диска}} + T_{\text{стержня}}.
+\end{equation}
+Начнем с простого,
+\begin{equation}
+    T_{\text{ст}} = \frac{1}{2} \left(
+        M \frac{l^2}{3} \omega^2
+    \right).
+\end{equation}
+Точка $K$ -- мгновенный центр скоростей, то
+\begin{equation}
+    \vc{v}_d = \vc{\omega} \times \vc{l} = \vc{\omega}_d \times \vc{r}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \omega_d = \omega \frac{l}{r}.
+\end{equation}
+Аналогично для обруча
+\begin{equation} 
+    \vc{v}_{\text{об}} = \vc{\omega}_{\text{об}} \times \vc{\rho} = \vc{\omega} \times \vv{OB}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \omega_{\text{об}} = \omega \frac{R-\rho}{\rho} .
+\end{equation}
+Теперь можем записать для диска 
+\begin{equation}
+    T_{\text{д}} = \frac{1}{2} I_d \omega_d^2 + \frac{mv_0^2}{2} =
+    \frac{3}{4} m \omega^2 l^2.
+\end{equation}
+И, наконец, для обруча,
+\begin{equation}
+    T_{\text{об}} = \frac{1}{2} \mu \omega^2 (R-\rho) + \frac{1}{2} \mu \rho^2 \omega^2 \frac{(R-\rho)^2}{\rho^2} = \mu (R-\rho)^2 \omega^2.
+\end{equation}
+Собирая всё вместе, получим
+\begin{equation}
+    \boxed{
+        T = \omega^2
+        \left(
+            \mu \left(l+r-\rho\right)^2 + \frac{3}{4} m l^2 + \frac{1}{6} M l^2
+        \right)
+    }
+\end{equation}
+
+
+\subsubsection*{7.12}
+
+Изначально, известно, что
+\begin{equation}
+    \left\{\begin{aligned}
+        F_x &=  yz \sin \omega t\\
+        F_y &= x z \sin \omega t\\
+        F_z &= xy \sin \omega t\\
+    \end{aligned}\right.
+\end{equation}
+Проверим, что поле потенциально
+\begin{equation}
+    \rot \vc{F} = 0.
+\end{equation}
+Да, действитеьно потенциально. Тогда выбрав в качетсве $0$ потенциальной энергии $U$ нулевой момент времени, получим
+\begin{equation}
+    U = \int_{x_0}^{x} F_x \d x +
+    \int_{y_0}^{y} F_y \d y +
+    \int_{z_0}^{z} F_z \d z
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \boxed{
+        U = xyz \sin \omega t
+    }
+\end{equation}
 
 \input{parts/t1_w5_911}
 \input{parts/t1_w5_916}
 \input{parts/t1_w5_927}
-% \input{parts/t1_w5_932} %-
+\input{parts/t1_w5_932} %-

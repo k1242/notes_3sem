@@ -1,19 +1,40 @@
-% \subsubsection*{9.32}
+\subsubsection*{9.32}
 
-% Шарик движется так, что скорость всех его точек параллельны плоскости, которая вращается с угловой скоростью $\omega(t)$ вокруг неподвижной оси, лежащей вэтой плоскости. 
+Шарик движется так, что скорость всех его точек параллельны плоскости, которая вращается с угловой скоростью $\omega(t)$ вокруг неподвижной оси, лежащей вэтой плоскости. 
 
-% В плоскости введем координаты так, что
-% $$
-%     \vc{\omega} = \begin{pmatrix}
-%         0 \\ 0 \\ \omega
-%     \end{pmatrix},
-%     \hspace{0.5cm} 
-%     \vc{a} = \begin{pmatrix}
-%         \sin \omega t \\
-%         \cos \omega t \\
-%         0
-%     \end{pmatrix},
-%     \vc{v} = \begin{pmatrix}
-        
-%     \end{pmatrix}
-% $$
+В плоскости введем координаты так, что
+$$
+    \vc{\omega} = \begin{pmatrix}
+        0 \\ 0 \\ \omega
+    \end{pmatrix},
+    \hspace{0.5cm} 
+    \vc{a} = \begin{pmatrix}
+        \sin \omega t \\
+        \cos \omega t \\
+        0
+    \end{pmatrix}, \hspace{0.5cm} 
+    \vc{v} = \begin{pmatrix}
+        v_y (t) \tg \omega t \\
+        v_y(t) \\
+        v_z (t) \\
+    \end{pmatrix}.
+$$
+По условию 
+$$\vc{v} \cdot (\vc{n}) = 0,
+\hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+v_x \cos \omega t = v_y \sin \omega t,
+$$
+где $\vc{n}$ -- нормаль к плоскости, равная, например $
+(-\cos \omega t, \ \sin \omega t, \ 0)\T
+$.
+Знаем, что
+\begin{equation}
+    \vc{\mathrm{w}}^r = \vc{\mathrm{w}}^a - \vc{\mathrm{w}}^e - \vc{\mathrm{w}}^c,
+    \hspace{0.5cm} 
+    \vc{v}^r = \vc{v}^a - \vc{v}^c = \vc{v}^a - \vc{\omega}\times \vc{r}
+\end{equation}
+Тогда
+\begin{equation}
+    \ddot{\vc{r}} = \vc{\mathrm{w}}^a - 2 \vc{\omega}\times
+    (\vc{v}^a - \vc{\omega}\times \vc{r}) + \vc{\omega} \times \left(\vc{\omega} \times \vc{r}\right) + \vc{\varepsilon} \times \vc{r}.
+\end{equation}

@@ -1,5 +1,48 @@
 \section{Магнитное поле в вакууме}
 
+\subsection{Сила Ампера}
+
+
+Ампер ввел элементы тока, тогда
+\begin{equation}
+    d \vc{F} = K_1 I \left[d \vc{l} \times \vc{B}\right],
+\end{equation}
+где $\vc{B}$ -- \textit{индукция магнитного поля}, силовая характеристика магнитного поля.
+
+
+\subsection{Закон Био-Савара}
+Ещё один эксперементальный факт:
+\begin{equation}
+    d \vc{B} = K_2 I \frac{\left[d \vc{l} \times \vc{r}\right]}{r^3} .
+\end{equation}
+Осталось поговорить про коэффициенты\footnote{
+        В системе Гаусса $I, q, \Delta \varphi$ измерется в СГСЭ, а $B, H, L, M$ в СГСМ.
+    } $K_1$ и $K_2$. 
+Из $I^{(\text{М})} = \frac{1}{c} I^{(\text{Э})}$, получим
+
+\begin{minipage}[t]{0.45\textwidth}
+     в СГСМ:
+    \begin{align*}
+        d \vc{F} &= I \left[ \vc{l} \times \vc{B}\right] \\
+        d \vc{B} &= I \ \frac{\left[d \vc{l} \times \vc{r}\right]}{r^3} .
+    \end{align*}    
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+    в системе Гаусса:
+    \begin{align*}
+        d \vc{F} &= \frac{I}{c} 
+         \left[d \vc{l} \times \vc{B}\right] \\
+        d \vc{B} &= \frac{I}{c} 
+         \ \frac{\left[d \vc{l} \times \vc{r}\right]}{r^3} .
+    \end{align*}    
+\end{minipage}
+
+Подставляя $\vc{j} = n q \vc{v}$, получим формулу следующего раздела.
+
+
+\subsection{Сила Лоренца}
+
 
 \begin{to_law} 
     Сила, действующая на движущийся точечный заряд $q$ в магнитном поле, получен обобщением опытных фактов,
@@ -24,4 +67,7 @@ $$
     \right),
 $$
 где $\vc{F}$ -- сила Лоренца.
+
+
+
 
