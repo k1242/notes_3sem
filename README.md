@@ -7,7 +7,7 @@
 [*общая физика*](https://github.com/k1242/notes_3sem/blob/master/physics/general_physics/general_physics.pdf));
 
 * **аналитической механике**;
-([*заметки с семинара*](https://github.com/k1242/notes_3sem/blob/master/anmec/anmec_notes.pdf),
+([*заметки с семинара*](https://github.com/k1242/notes_3sem/blob/master/anmec/anmec_notes_v2.pdf),
 [*задание*](https://github.com/k1242/notes_3sem/blob/master/HW/Anal_Mec/Khoruzhii_AM_HW.pdf));
 
 * ...
