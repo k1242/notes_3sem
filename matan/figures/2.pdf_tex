@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{598.12498558bp}%
+    \setlength{\unitlength}{596.23313123bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,15 +50,26 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.1027006)%
+  \begin{picture}(1,0.12237233)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{2.pdf}}%
-    \put(0.52260185,0.03720903){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{r}_i'$\end{tabular}}}}%
-    \put(0.40582856,0.00925164){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$O$\end{tabular}}}}%
-    \put(0.56421857,0.00612418){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$O'$\end{tabular}}}}%
-    \put(0.42409744,0.05249654){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{r}_i$\end{tabular}}}}%
-    \put(0.57784609,0.09302252){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{\omega}_i$\end{tabular}}}}%
+    \put(0.33928843,0.10962376){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$u^k$\end{tabular}}}}%
+    \put(0.42948452,0.00931049){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$u^1$\end{tabular}}}}%
+    \put(0.42354861,0.10746338){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbb{R}^k$\end{tabular}}}}%
+    \put(0.63949331,0.00307513){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x_1$\end{tabular}}}}%
+    \put(0.55436486,0.10946581){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x_n$\end{tabular}}}}%
+    \put(0.62654599,0.10579236){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbb{R}^n$\end{tabular}}}}%
+    \put(0.47586662,0.09557657){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{2.pdf}}%
+    \put(0.52873942,-0.00736761){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$...$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{2.pdf}}%
+    \put(0.31750255,-0.00517243){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$...$\end{tabular}}}}%
+    \put(0.38425,0.08901731){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$D$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{2.pdf}}%
+    \put(0.62574046,0.07122795){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$A$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{2.pdf}}%
+    \put(0.3459056,0.0337914){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$u_0^1, \ldots, u^k_0$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{2.pdf}}%
   \end{picture}%
 \endgroup%

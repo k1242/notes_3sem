@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.0 (4035a4fb49, 2020-05-01), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file '2.pdf' (pdf, eps, ps)
+%% Accompanies image file '1.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{598.12498558bp}%
+    \setlength{\unitlength}{596.23313123bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,15 +50,21 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.1027006)%
+  \begin{picture}(1,0.13269633)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{2.pdf}}%
-    \put(0.52260185,0.03720903){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{r}_i'$\end{tabular}}}}%
-    \put(0.40582856,0.00925164){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$O$\end{tabular}}}}%
-    \put(0.56421857,0.00612418){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$O'$\end{tabular}}}}%
-    \put(0.42409744,0.05249654){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{r}_i$\end{tabular}}}}%
-    \put(0.57784609,0.09302252){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{\omega}_i$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{2.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{1.pdf}}%
+    \put(0.33928843,0.11994776){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$u^k$\end{tabular}}}}%
+    \put(0.42854111,0.04196215){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$u^1$\end{tabular}}}}%
+    \put(0.42354861,0.11778738){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbb{R}^k$\end{tabular}}}}%
+    \put(0.64127224,0.04275155){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x_1$\end{tabular}}}}%
+    \put(0.55436486,0.1197898){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$x_n$\end{tabular}}}}%
+    \put(0.62654599,0.11611635){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\mathbb{R}^n$\end{tabular}}}}%
+    \put(0.47618114,0.09395055){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$r$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{1.pdf}}%
+    \put(0.52873942,0.00295638){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$...$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{1.pdf}}%
+    \put(0.31750255,0.00515157){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$...$\end{tabular}}}}%
+    \put(0.38425,0.0993413){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$D$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

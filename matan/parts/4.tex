@@ -26,9 +26,8 @@
 
 \begin{equation}
     \overbrace{
-        d_P F(
+        d_P F
             \underbrace{X}_{\in T_P U}
-            )
     }^{\in T_{F(P)} V}
     \underbrace{\varphi}_{\in C^{\infty} (V)} 
     =
@@ -63,7 +62,7 @@ $$
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Плоские кривые}
+\subsection{Кривые}
 Кривые должны быть гладкими, но этого недостаточно. Поэтому требуем и \textit{регулярность}:
 \begin{equation}
     \forall x, y \colon F(x, y) = 0
@@ -79,8 +78,282 @@ $$
     \dot{\vc{r}} (t) = (\dot{x} (t), \dot{y}(t)) \neq (0, 0).
 \end{equation}
 
-Пусть $F(x, y) = 0$ -- регулярная гладкая неявно заданная кривая. Тогда в окрестности любой своей точки её можно задать как регулярную гладкую параметрическую кривую. 
+Пусть $F(x, y) = 0$ -- регулярная гладкая неявно заданная кривая. Тогда в окрестности любой своей точки её можно задать как регулярную гладкую параметрическую кривую. В самом деле,
+$$
+    F(x_0, y_0) = 0, \hspace{0.5cm} \left(
+        \frac{\partial F}{\partial x}, \frac{\partial F}{\partial y} \bigg|_{(x_0, y_0)} \neq 0
+    \right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \exists \varphi \in U(x_0, y_0) \colon F(x, y) \Leftrightarrow x = \varphi(y).
+$$
+
+А вот пусть теперь есть гладкая регулярная параметризованная регулярная кривая $(x, y)(t) \colon (\dot{x}, \dot{y})\neq 0$. Пусть $\dot{x}\neq0$, тогда по \underline{тереме об обратной функции} $t = t(x)$. 
+
+
+\subsection{Явно заданные поверхности}
+
+
+Регулярная (не особая) гладкая $k$-мерна поверхность в $n$-мерном афинном пространстве, заданная параметрически. 
+
+
+\incfig{1}
+
+\noindent
+Формально, 
+$$
+    r \colon D \in \mathbb{R}^k \to \mathbb{R}^n,
+    \hspace{0.5cm} \text{при чем} \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        &1) \text{ гладкость: } & \vc{r} \equiv [x^1 (\set{u}{k}), \ldots, x^n(\set{u}{k})] \\
+        &2) \text{ регуярность: } & \rg (\partial x^i / \partial u^j) = k.
+    \end{aligned}\right.
+$$
+где подразумевается $r \in C^\infty (D, \mathbb{R}^n)$. Регулярность же, по сути, это утверждение о том что в $J$ существует невырожденный минор $k \times k$. 
+
+Пусть это $(\partial x^i / \partial u^j)$, где $i, j = 1, \ldots, k$. Тогда,  по теореме об обратной функции, в окрестности этой точки 
+\begin{align*}
+    u^1 &= u^1 (\set{x}{k}) \\
+    &\ldots \\
+    u^k &= u^k (\set{x}{k}).
+\end{align*}
+Тогда, это просто график отображения 
+\begin{align*}
+    x^{k+1} &= x^{k+1} (u^1 (\set{x}{k}), \ldots, u^k\left(x_1, \ldots, x^k\right)) \\
+    \ldots\\
+    x^{n} &= x^{n} (u^1 (\set{x}{k}), \ldots, u^k\left(x_1, \ldots, x^k\right)) \\
+\end{align*}
+такого, что
+$$
+    \mathbb{R}^k \to \mathbb{R}^{n-k}
+$$
+Так, например, для сферы, можно выразить $z = \sqrt{1 - x^2 - y^2}$.
 
 
 
 
+\subsection{Неявно заданные поверхности}
+Гладкая регулярная $k$-мерная поверхность в $n$-мерном афинном пространстве, заданная неявно.  Тогда есть $n-k$ уравнений
+\begin{align*}
+    \left\{\begin{aligned}
+        F^1 (\set{x}{n})&=0\\
+        &\ldots\\
+        F^{n-k} (\set{x}{n}) &= 0
+    \end{aligned}\right.
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm} 
+    \vc{F} \colon \mathbb{R}^n \to \mathbb{R}^{n-k}, \hspace{0.25cm} \vc{F}=0.
+\end{align*}
+Аналогично мы требуем гладкость: $F^i \in C^\infty \left(\mathbb{R}^n\right)$, и регулярность в тех точках, где $\vc{F}=0$. Условие регулярности в таком случае
+\begin{equation}
+    \rg \left(\frac{\partial F^i}{\partial x^j} \right) = n-k.
+\end{equation}
+
+\begin{to_lem} 
+     Гладкая регулярная неявно заданная поверхность, может рассматриваться, как параметрическая.
+\end{to_lem}
+
+\begin{proof}[$\triangle$]
+    \begin{minipage}[t]{0.9\textwidth}
+        \begin{enumerate}[label = \Roman*.]
+            \item Пусть в точке $P$ 
+            $$
+                \rg \left(\frac{\partial F^i}{\partial x^j} \right) = n-k.
+            $$
+            \item Тогда можем считать, что есть невырожденный минор $\rg \left(\frac{\partial F^i}{\partial x^j} \right) (P)$, где $i = 1, \ldots, n-k$ и $j = k+1, \ldots, n$.
+            \item По теореме о неявной функции 
+            $$
+                \left\{\begin{aligned}
+                    x^{k+1} &= x^{k+1} (\set{x}{k})\\
+                    &\ldots \\
+                    x^{n} &= x^n (\set{x}{k})
+                \end{aligned}\right.
+                \hspace{0.5cm} \text{---} \hspace{0.5cm} \text{гладкие}.
+            $$
+            \item Тогда понятно, как утроен параметрический вид:
+            $$
+                \left.\begin{aligned}
+                    x^1 &= u^1 \\
+                    \ldots \\
+                    x^k &= u^k \\
+                    x^{k+1} &= x^{k+1} (\set{u}{k}) \\
+                    \ldots \\
+                    x^{n} &= x^n (u^1, \ldots, u^k)
+                \end{aligned}\right\}
+                \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+                J = \begin{pmatrix}
+                    1 & \ldots & 0 \\
+                    \vdots & \ddots & \vdots \\
+                    0 & \ldots & 1 \\
+                    & * & 
+                \end{pmatrix},
+                \hspace{0.5cm} 
+                \rg J = k.
+            $$
+        \end{enumerate}
+    \end{minipage}
+
+\phantom{42}
+\end{proof}
+
+\begin{to_def} 
+    Назовем $\set{x}{n}$ \textit{координатами объемлющего пространства}, а $\set{u}{k}$ \textit{локальными координатами}.
+\end{to_def}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Гладкие функции и пути на поверхности}
+
+
+\subsubsection*{Функции}
+
+
+\begin{to_def} 
+     Пусть есть гладкая функция $F(\set{x}{n})$ -- гладкая в окрестности $\Sigma$, тогда $F\big|_\Sigma$ -- \textit{гладкая} на поверхности $\Sigma$.
+\end{to_def}
+
+\begin{to_def} 
+    Пусть  $f(\set{u}{k})$ -- гладкая, тогда $f$ -- гладкая функция на $\Sigma$. 
+\end{to_def}
+
+Докажем равносильность двух следующих определений. 
+
+
+\begin{proof}[$\triangle$]
+    \begin{minipage}[t]{0.9\textwidth}
+        \begin{enumerate}[label = \Roman*.]
+            \item[$\Rightarrow$] Пусть $F(\set{x}{n})$ -- гладкая, тогда и $F(x^1(\set{u}{k}),\ldots,x^n(\set{u}{k}))$ -- гладкая.
+            \item[$\Leftarrow$] Пусть есть $f(\set{u}{k})$ -- гладкая, тогда и $f(u^1(\set{x}{k}), \ldots, u^k(\set{x}{k}))$ -- тоже гладкая. 
+        \end{enumerate}
+    \end{minipage}
+
+\phantom{42}
+\end{proof}
+
+\subsubsection*{Пути}
+
+\begin{to_def} 
+     Путь $\vc{r}(u^1(t), \ldots, u^k (t))$ гладкий, если $u^i$ -- гладкие.
+\end{to_def}
+
+\begin{to_def} 
+     Если $x^1 (t), \ldots, x^n(t)$ -- гладкие, такие что $[x^1(t), \ldots, x^n(t)] \in \Sigma$, то и путь $\vc{r}$ гладкий.
+\end{to_def}
+
+Эти определения равносильны. Получается, что пути можно описывать как в глобальных, так и в локальных координатах. Далее ограничимся рассмотрением путей в локальных координатах, \texttt{ничего при этом не потеряв}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Векторы на поверхности}
+
+Точка $A$ имеет локальные координаты $\set{u_0}{k}$, то есть $A = \vc{r}(\set{u_0}{k})$.
+
+\phantom{42}    
+
+\incfig{2}
+    
+
+\noindent
+Если мы посмотрим на путь точки $A$, то увидим (считая, что в $t=0$ $\vc{r}=A$).
+$$
+    \vc{r}(t) = \vc{r}(\set{u}{k})(t)
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{dr}{dt} = r_{u^i} (u^1(t), \ldots, u^k(t)) \cdot \dot{u}^i(t).
+$$
+где подразумевается, что
+$$
+    r_{u^i} = \frac{\partial \vc{r}}{\partial u^i} 
+    = \left(\frac{\partial x^1}{\partial u^i} , \ldots, \frac{\partial x^n}{\partial u^i} \right).
+$$
+При $t=0$, увидим
+$$
+    \frac{dr}{dt} \bigg|_{t=0} = 
+    \underbrace{r_{u^i} (\set{u_0}{k}) }_{
+    \text{векторы}
+    }
+    \underbrace{
+     \dot{u}^i(0)
+    }_{
+    \text{числа}
+    }
+    ,
+$$
+где векторы зависят только от точки $A$, а числа зависят от конкретной кривой.
+Получается, что есть некоторые пространство, порожденное этими векторами.
+
+\begin{to_def} 
+    Назовём \textit{касательным пространством} к $\Sigma$ в точке $A$
+$$
+    T_A \Sigma = \sp \left(
+        r_{u^1} (A), \ldots, r_{u^k} (A)
+    \right).
+$$
+\end{to_def}
+
+Пусть есть некоторый вектор $\vc{V}$
+$$
+    \vc{V} = \alpha^i r_{u^i} (A).
+$$
+Он может быть получен кривой $u^i = u^1_0 + \alpha^1 t$. Получается, что $T_A \Sigma$ состоит в точности из векторов скорости кривых в точке $A$. 
+
+\begin{to_lem} 
+    Размерность $\dim T_A \Sigma = k$.  
+\end{to_lem}
+
+\begin{proof}[$\triangle$]
+    Действительно, по условию регулярности
+    $$
+        \rg (r_{u^i}) = \rg \left(\frac{\partial x^i}{\partial u^j} \right) 
+        \overset{\mathrm{reg}}{=} 
+         k.
+    $$
+    \texttt{В этом и состоит геометрический смысл условия регулярности.}
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Замена локальных координат}
+
+С одной стороны понятно, что множество всех кривых на поверхности $D$ инвариантно.  С другой стороны интересно посмотреть, что же происходит с векторами.
+$$
+    \left\{\begin{aligned}
+        v^1 &= v^1 (x^1(\set{u}{k}), \ldots, x^k (\set{u}{k})) \\
+        &\ldots \\
+        v^k &= v^k (x^1(\set{u}{k}), \ldots, x^k (\set{u}{k}))
+    \end{aligned}\right.
+    \hspace{0.5cm} \text{---} \hspace{0.5cm} 
+    \text{диффеоморфизм.}
+$$
+Действительно, Якобиан композиции равен произведению Якобианов, получается композия двух невырожденных преобразований будет невырождена.
+$$
+    r_{u^i} = \frac{\partial r}{\partial v^j} \frac{\partial v^j}{\partial u^i} =
+    \underbrace{\frac{\partial v^j}{\partial u^i} }_{J}
+    r_{v^i},
+$$
+получается, что матрица перехода от базиса $r_{v^j}$ к $r_{u^i}$ -- матрица Якоби $J$ замены координат.
+$$
+    \forall V \in T_A \Sigma
+    \hspace{0.5cm} 
+    V = V^i r_{v^i} = 
+    \underbrace{V^i \frac{\partial r^j}{\partial u^i} }_{\widetilde{V}^j}
+    r_{v^j}.
+$$
+Тогда
+\begin{equation}
+    V = \widetilde{V}^j r_{v^j}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \widetilde{V}^j = \frac{\partial v^j}{\partial u^i} V^i.
+\end{equation}
+Оказывается, что если 
+$$
+\begin{pmatrix}
+    \widetilde{V}^1 \\
+    \ldots \\
+    \widetilde{V}^k \\ 
+\end{pmatrix} = 
+    \left(\frac{\partial v^j}{\partial u^i}\right)_{(A)} \begin{pmatrix}
+        V^1 \\
+        \ldots \\
+        V^k
+    \end{pmatrix}.
+$$

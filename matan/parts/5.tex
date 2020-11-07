@@ -1,0 +1,129 @@
+\subsection{Производная по направлению}
+
+Раньше определили
+$$
+    \partial_V f(A) = \lim_{\varepsilon \to 0} \frac{f(A + \varepsilon V) - f(A)}{\varepsilon},
+$$
+но сложность в том, что $A + \varepsilon V \notin \Sigma$. 
+Но гладкую функцию с поверхности может всегда продлить в некоторую окрестность поверхности. Это продолжение $F$ не единственно. 
+
+\begin{to_def} 
+    Определим
+    $$
+         \partial_V f(A) \overset{\mathrm{def}}{=} \partial_V F(A),
+    $$ 
+    при чём def инвариантно к выбору $F$.
+\end{to_def}
+
+\begin{proof}[$\triangle$]
+    \begin{minipage}[t]{0.9\textwidth}
+        \begin{enumerate}[label = \Roman*.]
+            \item Мы дифференцируем только вдоль касательных векторов к $\Sigma$, следовательно существует кривая $\gamma$ на $\Sigma$ такая, что
+            \begin{align*}
+                &1) \ \forall t \; \gamma(t) \in \Sigma \\
+                &2) \ \gamma(0) = A \\
+                &3) \ \ddot{\gamma}(0) = V.
+            \end{align*}
+            \item Тогда
+            $$
+                \underbrace{\frac{d}{dt} f(\gamma(t)) \bigg|_{t=0}}_{
+                *
+                } = 
+                \frac{d}{dt} F(\gamma(t)) \bigg|_{t=0} =
+                \frac{\partial F}{\partial x^i} (\set{x}{n}) \dot{x}^i (t) \bigg|_{t=0} =
+                \frac{\partial F}{\partial x^i} (A) V^i = 
+                \underbrace{\partial_V F(A)}_{
+                **
+                }
+                ,
+            $$
+            считая $\gamma(t) = [x^1(t),\ldots, x^n(t)]$.
+            \item Но, т.к. $*$ не зависит от выбора $F$, то и $**$ не зависит от выбора $F$. Тогда $\partial_V f(A)$ определена корректно.
+            \item К слову, $**$ не зависит от выбора пути, тогда и $*$ не зависит от выбора пути.
+        \end{enumerate}
+    \end{minipage}
+
+\phantom{42}
+\end{proof}
+
+Получается мы можем определить понятие  дифференцирования гладкой функции на поверхности в точке.
+
+\begin{to_def} 
+     Для $f\colon \Sigma \to \mathbb{R}$ достаточно быть определенной в некоторой окрестности точки $A$. Скажем, что $D$ -- дифференцирование на $\Sigma$ в точке$A$, если
+    \begin{align*}
+        &1) \ Df \in \mathbb{R} \\
+        &2) \ D(f+g) = Df + Dg \\
+        &3) \ D(fg) = (Df) \cdot g(A) + f(A) \cdot (Dg).
+    \end{align*}
+    Пусть $\set{u}{k}$ -- локальные координаты в окрестности точки $A$.
+\end{to_def}
+
+
+\begin{to_lem} 
+     Для $\forall D \ \exists \set{V}{K}$ такой, что
+     $$
+         Df = \frac{\partial f}{\partial u^i} (A) V^i.
+     $$
+\end{to_lem}
+
+Пусть есть некоторый касательный вектор $W \in T_A \Sigma$
+$$
+    W = W^i r_{u^i} (A).
+$$
+Тогда можно рассматривать путь $\gamma(t)$ в локальных координатах такой, что
+$
+    \gamma(0) = A, \ \dot{\gamma}(0) = W,
+$
+то есть для $A = (\set{u_0}{k})$ и $\gamma(t) = \left[
+    u^1(t), \ldots, u^k(t)
+\right]$ верно, что
+$$
+    u^i(0) = u^i_0, \hspace{0.5cm} \dot{u}^i(0) = W^i.
+$$
+Тогда
+$$
+    \partial_W f(A) = \frac{d}{dt} f(\gamma(t)) \bigg|_{t=0}
+    =
+    \frac{\partial f}{\partial u^i} (A) \ W^i.
+$$
+
+Получается, что \textbf{каждый} касательный вектор $W$ даёт дифференцирование $\partial_W \big|_A$, и \textbf{каждое} дифференцирование в $A$ получается из касательного вектора. Поэтому будем писать просто
+\begin{equation}
+    \boxed{
+    W = \partial_W = W^i \frac{\partial }{\partial u^i} .
+    }
+\end{equation}
+
+
+\subsection{Двойственность}
+
+Раз есть касательные векторы, то есть и кососимметрические полилинейные функии на них. 
+Так приходим к следующей двойственной структуре:
+
+$\cdot$ $T_P \Sigma$ -- \textit{касательное пространство} к $\Sigma$ в $P$,
+
+$\cdot$ $T_P^* \Sigma \overset{\mathrm{def}}{=}  \left(T_P \Sigma\right)^*$ -- \textit{кокасательное пространство} к $\Sigma$ в $P$.
+
+\noindent
+Получаются векторное поле $X$: $X(P) \in T_P \Sigma$, и ковекторное поле $\xi$:
+$\xi (P) \in T_P^* \Sigma$.
+
+Если $\set{u}{k}$ -- локальные координаты на $\Sigma$, то
+$$
+    \frac{\partial }{\partial u^i} = r_{u^i}
+    \hspace{0.5cm} \text{---} \hspace{0.5cm} 
+    \text{базис в } T_P \Sigma.
+$$
+Соответственно,
+$$
+    du^1, \ldots, du^k
+    \hspace{0.5cm} \text{---} \hspace{0.5cm} 
+    \text{базис в } T_P^* \Sigma.
+$$
+А вот
+$$
+    \underset{ i_1 < \ldots < i_q}{ du^{i_1} \wedge \ldots \wedge du^{i_q}}
+    \hspace{0.5cm} \text{---} \hspace{0.5cm} 
+    \text{базис в } \Lambda^q T_P^* \Sigma,
+$$
+где $\Lambda^q T_P^* \Sigma$ -- пространство $q$-форм.

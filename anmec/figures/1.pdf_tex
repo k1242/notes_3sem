@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{596.24999065bp}%
+    \setlength{\unitlength}{595.27559055bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,21 +50,21 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.2221241)%
+  \begin{picture}(1,1.41428571)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{1.pdf}}%
-    \put(0.07421384,0.01801294){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$g_{ij} = (\vc{g}_i, \vc{g}_j)$\end{tabular}}}}%
-    \put(0.88490336,0.04191242){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\xi$\end{tabular}}}}%
+    \put(0.07181548,0.81771324){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$g_{ij} = (\vc{g}_i, \vc{g}_j)$\end{tabular}}}}%
+    \put(0.88383201,0.84165184){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\xi$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{1.pdf}}%
-    \put(0.512435,0.1860901){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eta$\end{tabular}}}}%
+    \put(0.51075396,0.98606553){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\eta$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{1.pdf}}%
-    \put(0.51572337,0.03876772){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$B$\end{tabular}}}}%
-    \put(0.6886782,0.00354756){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M'$\end{tabular}}}}%
+    \put(0.51404771,0.83850199){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$B$\end{tabular}}}}%
+    \put(0.68728565,0.80322418){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$M'$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{1.pdf}}%
-    \put(0.80943159,0.00795011){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$A$\end{tabular}}}}%
+    \put(0.80823669,0.80763394){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$A$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{1.pdf}}%
-    \put(0.05983256,0.20663669){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{\mathrm{w}}_M = ^2 R \vc{e}_\eta - \omega^2 |OM| \vc{e}_\xi$\end{tabular}}}}%
+    \put(0.05741065,1.00664575){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{\mathrm{w}}_M = ^2 R \vc{e}_\eta - \omega^2 |OM| \vc{e}_\xi$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{1.pdf}}%
   \end{picture}%
 \endgroup%

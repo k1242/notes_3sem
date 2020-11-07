@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.0 (4035a4fb49, 2020-05-01), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file '2.pdf' (pdf, eps, ps)
+%% Accompanies image file '8.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{598.12498558bp}%
+    \setlength{\unitlength}{446.47499084bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,15 +50,8 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.1027006)%
+  \begin{picture}(1,1.41424499)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{2.pdf}}%
-    \put(0.52260185,0.03720903){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{r}_i'$\end{tabular}}}}%
-    \put(0.40582856,0.00925164){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$O$\end{tabular}}}}%
-    \put(0.56421857,0.00612418){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$O'$\end{tabular}}}}%
-    \put(0.42409744,0.05249654){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{r}_i$\end{tabular}}}}%
-    \put(0.57784609,0.09302252){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{\omega}_i$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{2.pdf}}%
   \end{picture}%
 \endgroup%
