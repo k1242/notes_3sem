@@ -1,0 +1,190 @@
+\section{Уравнения Лагранжа}
+
+% inkscape --export-type="pdf" --export-latex D:\Kami\git_folder\notes_3sem\anmec\figures\7.svg
+
+\subsection{Конфигурационное многообразие}
+
+
+Каждую материальную точку можем определить $\vc{r}_1, \ldots, \vc{r}_N$ -- итого $\mathbb{R}^{3N}$. Но есть некоторые ограничения вида
+\begin{equation*}
+    f_i (\vc{r}, t) = 0.
+\end{equation*}
+Вложим в фазовое пространство многообразие $M$, в котором локально всё хорошо. Тогда
+$\dim M = n$ -- число степеней свободы, а параметризация $q_1, \ldots, q_N$ -- криволинейные координаты. В каждой $A \in M$ верно, что $\dot{\vc{q}} \in TM_A$, то есть
+\begin{equation}
+    TM = \bigcup_q T_qM \ni (q, \dot{q})
+\end{equation}
+
+\subsubsection*{Примеры:}
+Для маятника, например, его множеством положений будет окружность. Для маятника в пространстве это будет сфера. И для маятника с $l(t) = \sin \omega t + 2$ это тоже будет окружность! То есть многообразие может быть не стационарно. 
+
+А вот для стержня в пространстве $M = \mathbb{R}^2 \times S^1$. 
+Твёрдое тело с неподвижной точкой? 
+По теореме Эйлера о конечном повороте, достаточно задать орт и угол. Для орта это будет $S^2$, а для угла отрезок $[-\pi, \pi]$. Берем шар и заклеиваем все диаметрально-противоположные точки -- конфигурационное многообразие $SO(3) \sim RP^3$. 
+
+% см. поверхность бойя
+
+\subsection{О связях}
+
+Например для окружности $\dot{x} = \dot{\varphi} r \ \Rightarrow \ x = \varphi r + \const$. А вот для сферы все не так радужно. Получается системы бывают \textit{голономные} ($f_i (q, \dot{q}, t) = 0$ интегрируемые) и \textit{неголономные}  ($f_i (q, \dot{q}, t) = 0$ неинтегрируемые). 
+
+Давайте запишем второй закон Ньютона:
+\begin{equation*}
+    m_i \vc{\mathrm{w}}_i = \vc{F}_i + \vc{R}_i, \hspace{0.5cm} \bigg|_{\cdot \d \vc{r}_i}
+\end{equation*}
+где $\vc{R}_i$ -- реакции связи. Хотим записать уравнение в общековариантном виде.
+Но
+\begin{equation*}
+    d \vc{r}_i = \frac{\partial \vc{r}_i}{\partial q^k} \cancelto{\delta}{d} q_k + 
+    \cancel{\frac{\partial \vc{r}_i}{\partial t} \d t} =
+    \frac{\partial \vc{r}_i}{\partial q^k} \delta q_k
+    ,
+    \hspace{0.5cm} 
+    \text{--- \ виртуальные перемещения}.
+\end{equation*}
+То есть мы <<замораживаем>> время, так чтобы $\vc{R} \cdot \delta \vc{r} = 0$. На таких перемещениях работа реакция связи равна 0.
+\begin{equation}
+    \left[
+        \sum m_i \left(\omega_i \cdot \frac{\partial \vc{r}_i}{\partial q_k} \right)
+        -
+        \left(\vc{F}_i \cdot \frac{\partial \vc{r}_i}{\partial q_k} \right)
+        -
+        \underbrace{
+        \left(
+            \vc{R}_i \cdot \frac{\partial \vc{r}_i}{\partial q_k} 
+        \right)}_{\cdot \delta q_k \to 0}
+    \right] \cdot \delta q_k = 0
+\end{equation}
+Другими словами
+\begin{equation*}
+    \left[
+        \frac{d}{dt} \frac{\partial }{\partial \dot{q}_k} \sum m_i \frac{v_i^2}{2} 
+        -
+        \frac{\partial }{\partial q_k} \sum m_i \frac{v_i^2}{2} -
+        \sum \vc{F}_i \frac{\partial \vc{r}_i}{\partial q_k} 
+    \right] \delta q_k = 0.
+\end{equation*}
+Тогда
+\begin{equation}
+    \sum_k
+    \left[
+        \frac{d}{dt} \frac{\partial T}{\partial \dot{q}_k} 
+        - \frac{\partial T}{\partial q_k} - Q_k
+    \right] \delta q_k = 0.
+\end{equation}
+Проблема остается в неголономных системах, где $\delta q_k$ не являются независимыми, получается, что \textbf{уравнения Лагранжа справедливы для голономных систем}.
+
+
+\subsection{Обобщенная сила}
+Во-первых
+\begin{equation*}
+    \delta  A = \sum_i \vc{F}_i \cdot \delta \vc{r}_i =
+    \sum_i \vc{F}_i \sum_k \frac{\partial \vc{r}_i}{\partial q_k} \delta q_k =
+    \sum_k \sum_i \left(
+        \vc{F}_i \cdot \frac{\partial \vc{r}_i}{\partial q_k} 
+    \right) \delta q_k =
+    \sum_k 
+    \underbrace{\frac{\delta A_k}{\delta q_k} }_{Q_k} \delta q_k.
+\end{equation*}
+Тогда пусть $\Pi (q, t) \colon Q_k = - \partial \Pi / \partial q_k$.  Тогда
+\begin{equation}
+    \frac{d}{dt} \frac{\partial (T-\Pi)}{\partial \dot{q}_k} - \frac{\partial (T - \Pi)}{\partial q_k}  = 0,
+\end{equation}
+где вводим
+\begin{equation*}
+    L = T - \Pi, \hspace{0.5cm} \text{--- \ \textit{лагранжиан}.}
+\end{equation*}
+Приходим к 
+\begin{equation}
+\boxed{
+    \frac{d}{dt} \frac{\partial L}{\partial \dot{q}_k} - \frac{\partial L}{\partial q_k} = 0, \hspace{0.5cm} k = 1, \ldots, n
+}
+\end{equation}
+системе уравнений на $2n$ переменных.
+
+
+
+
+\subsection{Алгоритм на примере типичной задачи (12.37)}
+\begin{proof}[$\triangle$]
+    \begin{minipage}[t]{0.9\textwidth}
+        \begin{enumerate}[label = \Roman*.]
+            \item \textbf{Определить количество степеней свободы.} \\
+            В частности цилинд без проскальзывания и свободный цилиндр -- 2 степени свободы, а в качестве координат $q = (x, \varphi)$.
+            \item \textbf{Посчитать кинетическую энергию.}
+            \begin{equation*}
+                T = \frac{1}{2} M \dot{x}^2 + \frac{1}{2} m V_c^2 + \frac{1}{2} J \omega^2.               
+            \end{equation*}
+            Но, по замечательной формуле,
+            \begin{equation*}
+                V_c^2 = (\vc{v}^e_c)^2 + (\vc{v}^r_c)^2 + 2 (\vc{v}_c^e \cdot \vc{v}_c^r) =
+                \dot{x}^2 + \dot{\varphi}^2 (R-r)^2 + 2 \dot{x} \dot{\varphi} (R- r) \cos \varphi.
+            \end{equation*}
+            Собираем всё вместе
+            \begin{align*}
+                T &= 
+                \frac{M + m}{2} \dot{x}^2 + \frac{m}{2} \left(
+                    \dot{\varphi}^2 (r-r)^2 + 2 \dot{\varphi} (R-r) \dot{x} \cos \varphi
+                \right) +
+                \frac{mr^2}{4} \frac{\dot{\varphi}^2 (R-r)^2}{r^2} = \\
+                &= \frac{M+m}{2} \dot{x}^2 + \frac{3}{4} m \dot{\varphi}^2 (R-r)^2 + m \dot{x} \dot{\varphi} (R-r) \cos \varphi.
+            \end{align*}
+            \item \textbf{Найти потенциальную энергию или обобщенные силы}. \\
+            \begin{equation*}
+                \Pi = \frac{1}{2} cx^2 + mg (R-r) (1 - \cos \varphi).
+            \end{equation*}
+            \item \textbf{Найти лагранжиан} $L = T - \Pi$.
+            \item \textbf{Дифференцировать.} \\
+\begin{equation*}
+                \left.\begin{aligned}
+                \frac{\partial L}{\partial \dot{x}} &= (m+M) \dot{x} + m \dot{\varphi} (R-r) \cos \varphi, \\
+                \frac{\partial L}{\partial x} &= cx. \\
+            \end{aligned}\right\}
+            \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+            (m+M) \ddot{x} + m \ddot{\varphi} (R-r) \cos \varphi - m \dot{f}^2 (R-r) \sin \varphi - cx = 0.
+\end{equation*}
+        \end{enumerate}
+    \end{minipage}
+
+\phantom{42}
+\end{proof}
+
+
+\subsection{\xmark Законы сохранения}
+Во-первых теперь ЗСЭ выглядит так:
+\begin{equation}
+    \sum \frac{\partial L}{\partial \dot{q}_k} \dot{q}_k - L = \const.
+\end{equation}
+Что работает, когда время не входит в $L$. Аналогично для импульса, когда $x$ не входит в $L$.
+
+\subsubsection*{Задача 12.64}
+
+Кольцо вращается с постоянной угловой скоростью\footnote{
+    \texttt{Это не свобода, а склерономная связь}.
+}
+\begin{proof}[$\triangle$]
+    \begin{minipage}[t]{0.9\textwidth}
+        \begin{enumerate}[label = \Roman*.]
+            \item Степени свободы:
+            \begin{equation*}
+                n=1, \ q = \varphi.
+            \end{equation*}
+            \item Кинеическая энергия
+            \begin{equation*}
+                T = \frac{m}{2} 
+                \left(
+                    \dot{\varphi}^2 R^2  + \omega R \sin \varphi)^2
+                \right).
+            \end{equation*}
+            \item Потенциальная энергия
+            \begin{equation*}
+                \Pi = 
+                \frac{1}{2} cR^2 (\varphi - \varphi_0)^2 + mg R \cos \varphi.
+            \end{equation*}
+            \item Дифференцируем
+            
+        \end{enumerate}
+    \end{minipage}
+
+\phantom{42}
+\end{proof}
