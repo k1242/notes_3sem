@@ -8,7 +8,7 @@
 
 * **аналитической механике**;
 ([*заметки с семинара*](https://github.com/k1242/notes_3sem/blob/master/anmec/anmec_notes_v2.pdf),
-[*I задание*](https://github.com/k1242/notes_3sem/blob/master/HW/Anal_Mec/Khoruzhii_AM_HW_1.pdf)),
+[*I задание*](https://github.com/k1242/notes_3sem/blob/master/HW/Anal_Mec/Khoruzhii_AM_HW_1.pdf),
 [*II задание*](https://github.com/k1242/notes_3sem/blob/master/HW/Anal_Mec/Khoruzhii_AM_HW.pdf));
 
 * ...
