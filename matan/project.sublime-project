@@ -1,12 +1,22 @@
 {
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"python\" -u \"$file\""
+		}
+	],
 	"folders":
 	[
 		{
 			"path": "."
 		}
 	],
-    "settings" : {
-        "TEXroot": "UIM_varan_3sem.tex",
-        "name": "1242"
-    }
+	"settings":
+	{
+		"TEXroot": "UIM_varan_3sem.tex",
+		"name": "1242"
+	}
 }

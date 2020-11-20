@@ -1,0 +1,92 @@
+\subsubsection*{11.72}
+
+Решим чуть более общую задачу о движении тяжелого симметричного волчка с неподвижней нижней точкой. Начало координат $O$ совпадает с неподвижной точкой волчка, расстояние до центра масс равно $l$. 
+
+Запишем кинематические и динамические уравнения Эйлера
+\begin{equation*}
+    \left\{\begin{aligned}
+        p &= \dot{\varphi} \sin \theta \sin \psi + \dot{\theta} \cos \psi,\\
+        q &= \dot{\varphi} \sin \theta \cos \psi - \dot{\theta} \sin \psi,\\
+        r &= \dot{\varphi} \cos \theta + \dot{\psi}.
+    \end{aligned}\right.,
+    \hspace{0.6cm} 
+    \left\{\begin{aligned}
+        I_1 \dot{p} + (I_3-I_2) q r &= - M_{\xi} \\
+        I_2 \dot{q} + (I_1-I_3) p r &= - M_{\eta} \\
+        I_3 \dot{r} + (I_2-I_1) p q &= - M_{\zeta} \\
+    \end{aligned}\right.,   
+    \hspace{0.6cm} 
+    \hat{J}_O = \dmat{3}{I_1}{I_1}{I_3}, \hspace{0.6cm} 
+    \vc{\omega} = \begin{pmatrix}
+        p \\ q \\ r
+    \end{pmatrix}.
+\end{equation*}
+Кинетическая энергия волчка (с учетом параллельного переноса тензора инерции с центра масс к точке $O$)
+\begin{equation*}
+    T = \vc{\omega}\T \hat{J}_O \vc{\omega} = 
+    \frac{I_1+ml^2}{2} \left(\dot{\theta}^2+\dot{\varphi}^2\sin^2 \theta\right) + \frac{1}{2} I_3 \left(\dot{\psi}+ \dot{\varphi} \cos \theta \right)^2.
+\end{equation*}
+Потенциальная энергия, соответсвенно, равна
+\begin{equation*}
+    \Pi = mgl \cos \theta.
+\end{equation*}
+Собирая вместе, находим
+\begin{equation*}
+    L = T - \Pi.
+\end{equation*}
+Понятно, что $K_3 = \const$, докажем также что $K_z = \const$. Действительно,
+\begin{equation*}
+    \frac{d K_z}{d t} = {\vc{M}_A}\bigg|_Z + \cancel{\vc{Q} \times \vc{v}_O} = 0
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    K_z = \const.
+\end{equation*}
+Явно выпишем их
+\begin{equation}
+\label{ll1}
+    \left\{\begin{aligned}
+        K_3 &= {\partial L}/{\partial \dot{\psi}} = I_3\left(\dot{\psi} + \dot{\varphi} \cos \theta\right) \\
+        K_z &= {\partial L}/{\partial \dot{\varphi}} = 
+        \left((I_1+ml^2) \sin^2 \theta + I_3 \cos^2 \theta\right) \dot{\varphi} + I_3 \dot{\psi} \cos \theta.
+    \end{aligned}\right.
+\end{equation}
+Кроме того, в системе сохраняется энергия
+\begin{equation*}
+    E = T + \Pi = \frac{1}{2} (I_1 + ml^2) \left(\dot{\theta}^2+\dot{\varphi}^2 \sin^2 \theta\right) 
+    + \frac{1}{2} I_3 \left(\dot{\psi} + \dot{\varphi} \cos \theta\right)^2 + mgl\cos \theta.
+\end{equation*}
+Из \eqref{ll1} находим явные выражения для $\dot{\varphi}$ и $\dot{\theta}$ 
+\begin{align*}
+    \dot{\varphi} &= \frac{K_z - K_3 \cos \theta}{(I_1 + ml^2)\sin^2\theta} ,\\
+    \dot{\psi} &= \frac{K_3}{I_3}  - \cos \theta \frac{K_z - K_3 \cos \theta}{(I+ml^2)\sin^2 \theta} .
+\end{align*}
+Подставляя это в выражения для энергии $E$ получим
+\begin{equation}
+    E  = \frac{1}{2} (I_1 + ml^2) \dot{\theta}^2 +
+    \frac{
+        (K_z - K_3 \cos \theta)^2
+    }{
+        2 (I_1 + ml^2) \sin^2 \theta
+    } + \frac{K_3^2}{2I_3} + mgl \cos \theta.
+\end{equation}
+Таким образом мы находим 
+\begin{equation}
+    \dot{\theta} = \frac{d \theta}{d t} = f_{\dot{\theta}}(E, K_z, K_3)
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    t = \int_{\theta_0}^\theta \frac{d \theta}{f_{\dot{\theta}}(E, K_z, K_3)},
+\end{equation}
+что и является нашим искомым решением в квадратурах. Конкретно для №11.72 следует положить $I_3=0$ и, в силу доступного для стержня произволя, $\dot{\psi}=0$. Слагаемые вида $K_3/I_3$ в таком случае просто не возникнут, решение сохранится.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

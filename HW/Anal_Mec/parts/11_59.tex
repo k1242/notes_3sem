@@ -1,0 +1,48 @@
+\subsubsection*{11.59}
+
+Есть твёрдое тело в отсутсвие внешних сил с $\vc{K}_O = \const$ и $A = B \neq C$. Выберем в качестве оси динамической симметрии ось $O\zeta$. Запишем динамические уравнения Эйлера
+\begin{equation*}
+    \left\{\begin{aligned}
+        A \dot{p} + (C-A) qr &= 0 \\
+        A \dot{q} - (C-A) pr &= 0 \\
+        C \dot{r} &= 0
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    C \dot{r} = 0, \hspace{0.5cm} Cr_0 = K_O \cos \theta = \const
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        r(t) &= r_0 &= \const\\
+        \theta(t) &= \theta &= \const
+    \end{aligned}\right.
+\end{equation*}
+Посмотрим теперь на $\|\vc{K}_O\|$
+\begin{equation*}
+    K_O^2 = A^2 (p^2 + q^2) + (K_O \cos \theta)^2
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    p^2 + q^2 = \left(\frac{K_0 \sin \theta}{A} \right)^2.
+\end{equation*}
+Теперь посмотрим на $\vc{\omega}$
+\begin{equation*}
+    \vc{\omega} = \dot{\vc{\varphi}} + \dot{\vc{\psi}} + \cancel{\dot{\vc{\theta}}},
+\end{equation*}
+проецируя всё на базис $O\xi\eta\zeta$ нахожим, что
+\begin{equation*}
+    \left\{\begin{aligned}
+        r &= \dot{\varphi} + \dot{\psi} \cos \theta \\
+        \sqrt{p^2 + q^2} &= \dot{\psi} \sin \theta       
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+   \left\{\begin{aligned}
+       \dot{\psi} &= {K_O}/{A} &= \const \\
+       \dot{\varphi} &= r_0 \left(1 - {C}/{A} \right) &=\const
+   \end{aligned}\right.
+\end{equation*}
+Теперь мы готов записать \textit{параметры регулярной прецессии в случае Эйлера}:
+\begin{equation}
+\label{regp}
+    \cos \theta = \frac{Cr_0}{K_0}, \hspace{0.5cm}
+    \dot{\psi} = \frac{K_O}{A}, \hspace{0.5cm} 
+    \dot{\varphi} = r_0 \left( 1- \frac{C}{A}  \right),
+    \hspace{1cm} 
+    K_O = \sqrt{C^2 r_0^2 + A^2 (\omega^2_0 - r_0^2)}.
+\end{equation}

@@ -1,0 +1,109 @@
+\subsubsection*{11.63}
+
+Для начала поймём куда диск движется, точнее найдем (или хотя бы сделаем шаги в эту сторону) мгновенную ось вращения проходящую через точку $A$ и некоторую точку $C$.
+
+Для начала посмотрим на геометрию системы (введя неизвестные $a, b, c$):
+\begin{equation*}
+    \vv{AB} = \begin{pmatrix}
+        -r \\ -r \\ 0
+    \end{pmatrix},
+    \hspace{0.25cm} 
+    \vv{AD} = \begin{pmatrix}
+        r \\ -r \\ 0
+    \end{pmatrix},
+    \hspace{0.25cm} 
+        \vv{CA} = \begin{pmatrix}
+        a \\ b \\ c
+    \end{pmatrix},
+    \hspace{0.5cm} 
+    \left\{\begin{aligned}
+    \vc{v}_A &= \vc{\omega} \times \vv{CA} = 0\\
+    \vc{v}_B &= \vc{\omega} \times \vv{CB} \\
+    \vc{v}_A &= \vc{\omega} \times \vv{CD}
+    \end{aligned}\right.,
+    \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        \vv{CD} &= \vv{CB} + \vv{BD} \\
+        \vv{CD} &= \vv{CA} + \vv{AD} \\
+        \vv{CB} &= \vv{CA} + \vv{AB}
+    \end{aligned}\right.,
+\end{equation*}
+Для удобства далее будем считать $\vc{\omega} = {k} \vv{CA}$. Посчитаем векторы скоростей в нашеих обозначениях
+\begin{equation*}
+    \vc{v}_D = kr \begin{pmatrix}
+        c \\ c \\ -b - a
+    \end{pmatrix}
+    \vc{v}_B = k \vv{CA} \times \vv{AB} = k r
+    \begin{pmatrix}
+        c \\ - c \\ b-a
+    \end{pmatrix}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    a = b
+\end{equation*}
+Так как мы знаем абсолютные значения скоростей точек, то запишем
+\begin{equation*}
+    v_D^2 - v_B^2 = v_0^2 = 4 a^2 k^2
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    a = \frac{v_0}{2rk}.
+\end{equation*}
+Подставив теперь значения $a$ в $v_B^2$ получим
+\begin{equation*}
+    v_B^2 = 2 k^2 c^2 r^2 = v_0^2
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    c = \frac{v_0 \sqrt{2}}{2kr},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \vc{\omega} = k \begin{pmatrix}
+        a \\ b \\ c
+    \end{pmatrix} = \frac{v_0}{2r} \begin{pmatrix}
+        1 \\ 1 \\ \sqrt{2}
+    \end{pmatrix}
+\end{equation*}
+Теперь найдём скорость центра масс
+\begin{equation*}
+    \vc{v}_O = \vc{\omega} \times \vc{r}_{CO} = 
+    \vc{\omega} \times \left(
+        \vc{r}_{CA} + \vv{AO}
+    \right) = \vc{\omega} \times \begin{pmatrix}
+        0 \\ - r \\ 0
+    \end{pmatrix} = 
+    \frac{v_0}{2} \begin{pmatrix}
+        -\sqrt{2} \\ 0 \\ 1
+    \end{pmatrix},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \vc{r}_O(t) = 
+    \begin{pmatrix}
+        v_0 t / \sqrt{2} \\
+        0 \\
+        -gt^2/2+v_0 t / 2
+    \end{pmatrix}.
+\end{equation*}
+Теперь мы знаем как будет двигаться в условиях гравитации наш диск (его центр масс)! 
+
+Теперь посмотрим на вращение диска относительно центра масс. Для этого пересядем в СО падающую с $\vc{g}$, теперь $\vc{M}_O = \vc{0}$ и мы пришли к случаю Эйлера (который подробно был рассмотрен в задаче №11.59).
+
+Для начала вспомним, что для диска кинетический момент
+\begin{equation*}
+    \vc{K}_O = \hat{J}_O \vc{\omega} = 
+    \frac{m r^2}{4} \dmat{3}{1}{1}{2} 
+    \begin{pmatrix}
+        1 \\ 1  \\ \sqrt{2} 
+    \end{pmatrix}
+    \frac{v_0}{2r}  = \frac{mrv_0}{8} \begin{pmatrix}
+        1 \\ 1 \\ 2 \sqrt{2}
+    \end{pmatrix} = \const,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    K_O = \frac{\sqrt{10}}{8} mrv_0.
+\end{equation*}
+Зная $\vc{K}_O$ можем найти ось прецессии $\vc{e} \parallel \vc{K}_O$
+\begin{equation*}
+    \vc{e} = \frac{1}{\sqrt{10}} \left(1, \ 1, \ 2 \sqrt{2}\right).
+\end{equation*}
+Подставляя параметры системы в уравнения \eqref{regp}, найдём
+\begin{equation*}
+    \dot{\psi} = \frac{K_O}{A} = \frac{\sqrt{10}}{2} \frac{v_0}{r} ,
+    \hspace{1cm} 
+    \dot{\varphi} = r_0 \left(1 - \frac{C}{A} \right) =  
+    -\frac{v_0 \sqrt{2}}{2r},
+    \hspace{1cm} 
+    \cos \theta = \frac{Cr_0}{K_O} = \frac{2\sqrt{5}}{5}.
+\end{equation*}

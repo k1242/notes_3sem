@@ -1,0 +1,361 @@
+Параллельный перенос на поверхностях -- штука непростая. Хотелось бы двигаться в сторону внутренней геометрии и уходить от объемлющего пространства. 
+Есть некоторая наивная идея. Давай возьмём вектор $X$ в точках $A$ и $B$. Спроецируем $X$ на пространство с помощью $P_B(X)$. Тогда в $\Sigma^k \subset \mathbb{R}^n$ увидим, что длины не сохраняются. 
+
+Другой вариант, посмотрим на $\gamma(t) \in \Sigma$ и $Y(t) \in T_{\gamma(t)} \Sigma$. Рассмотрим $Y(t)$ в $\gamma(t)$ и $Y(t), Y(t+\varepsilon)$ в $\gamma(t=\varepsilon)$. 
+
+\subsection{Определение параллельного поля}
+
+
+\begin{to_def} 
+    \textit{Поле} $Y(t)$ \textit{параллельно} вдоль кривой $\gamma(t)$, если
+    \begin{equation*}
+        \P_{\gamma(t+\varepsilon)}  Y(t) = 
+        Y(t+\varepsilon) + \o(\varepsilon), 
+    \end{equation*}
+    при $\varepsilon \to 0$. 
+\end{to_def}
+
+Пусть $Y(t) \parallel \gamma(t)$.
+\begin{equation*}
+    \P_{\gamma(t+\varepsilon)} Y(t+\varepsilon) - \P_{\gamma(t+\varepsilon)} Y(t)
+    = \o(\varepsilon),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \underbrace{\P_{\gamma(t+\varepsilon)} }_{
+    \P_{\gamma(t)} + \varepsilon Q + o(\varepsilon)
+    }
+    \underbrace{
+        \left(
+            Y(t+\varepsilon) - Y(t)
+        \right) 
+    }_{
+    \varepsilon \frac{dY}{dt} (t) + \o(\varepsilon)
+    }    
+    = \o(\varepsilon),
+\end{equation*}
+раскрыв скобки, приходим к
+\begin{equation}
+    \varepsilon P_{\gamma(t)} \left(\frac{dY}{dt} \right) = \o(\varepsilon), 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}  
+    \P_{\gamma(t)} \left(\frac{dY}{dt} \right) = \o(1),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \boxed{
+        \P_{\gamma(t)} \left(\frac{dY}{dt} \right) = 0.
+    }
+\end{equation}
+ при $\varepsilon \to 0$.
+ Вспомнив, что
+ \begin{equation}
+     \frac{d f(\gamma(t))}{dt} = \partial_{\dot{\gamma}} f,
+ \end{equation}
+ приходим к
+ \begin{equation}
+     \P_{\gamma(t)} \left(
+        \partial_{\dot{\gamma}} Y
+     \right) = 0
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+     \boxed{
+         \nabla_{\dot{\gamma}} Y = 0
+     },
+ \end{equation}
+ так мы пришли к \textit{уравнению параллельного переноса}.
+
+Пусть $\set{u}{k}$ -- локальные координаты, $\gamma(t) = \left(u^1(t),\ldots,u^k(t)\right)$ -- кривая, $\dot{\gamma}(t) = \left(
+    \dot{u}^1(t), \ldots, \dot{u}^k(t)
+\right)$ -- направляющий вектор кривой. Вспомним, что
+\begin{equation*}
+    \nabla_X Y = 
+    X^i \left(
+        \frac{\partial Y^l}{\partial u^i} + Y^j \Gamma_{ij}^l
+    \right) \frac{\partial }{\partial u^l},
+\end{equation*}
+и подставив $X = \dot{\gamma}, \ X^i = \dot{u}^i (t)$
+\begin{equation*}
+    \nabla_{\dot{\gamma}} Y = 0
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \dot{u}^i (t) \frac{\partial Y^l}{\partial u^i} + \dot{u}^i (t) Y^j \Gamma_{ij}^{l} = 0, \hspace{0.5cm} l = 1, \ldots, k
+\end{equation*}
+Посмотрим чуть подробнее на
+\begin{equation*}
+    \frac{\partial Y^l}{\partial u^i}  \dot{u}^i (t) = 
+    \frac{\partial Y^l}{\partial u^i} \frac{d u^i}{d t} =
+    \frac{d Y^l}{dt}, 
+\end{equation*}
+таким образом
+\begin{equation}
+    \dot{Y}^l + \Gamma_{ij}^{l} \left(
+         u^1(t), \ldots, u^k(t)
+    \right) \dot{u}^i (t) Y^j (t) = 0
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm} 
+    \dot{Y}^l + \Gamma_{ij}^{l} \dot{u}^i Y^j = 0.
+\end{equation}
+
+Что у нас тут известно? Известны $u^1(t), \ldots, u^k(t)$ -- наша кривая $\gamma$, известны $\Gamma_{ij}^{l} (u^1(t), \ldots, u^k(t))$. Неизвестными остаются $Y^1(t), \ldots, Y^k(t)$. Получается система \textbf{линейных} дифференциальных уравнений I-го порядка на  $Y^1(t), \ldots, Y^k(t)$. Возникает задача Коши:
+\begin{equation}
+    \left\{\begin{aligned}
+        &\dot{Y}^l + \Gamma_{ij}^{l} \dot{u}^i Y^j = 0, &l=1,\ldots,k\\
+        &Y^l(t_0) = Y_0^l, &l=1,\ldots,k
+    \end{aligned}\right.
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        \nabla_{\dot{\gamma}} Y &= 0\\
+        Y(t_0) &= Y_0
+    \end{aligned}\right.
+\end{equation}
+
+\begin{to_thr} 
+    Пусть $\Sigma$ -- поверхность, $\gamma(t)$ -- кривая на $\Sigma$, $Y_0 \in T_{\gamma(t_0)} \Sigma$. Тогда на всей $\gamma$ существует и единственно параллельное вдоль $\gamma$ векторное поле $Y(t)$, такое что $Y(t_0) = Y_0$.
+\end{to_thr}
+
+\subsection{Определение параллельного переноса}
+
+
+\begin{to_def} 
+    Результат параллельного переноса касательного в точке $A$ вектора $Y_0$ в точку $B$ вдоль кривой $\gamma(t)$, такой что $\gamma(t_0)=A, \ \gamma(t_1) = B$, -- это вектор $Y(t_1)$ единственного параллельного вдоль $\gamma(t)$ векторного поля $Y(t)$, такого что $Y(t_0)=Y_0$.
+\begin{equation*}
+    Y(t_1) = \Pi_{A \overset{\gamma}{\mapsto}  B}  Y_0
+\end{equation*}
+\end{to_def}
+
+\begin{to_lem} 
+    При параллельном переносе сохраняются длины и углы. 
+\end{to_lem}
+
+\begin{proof}[$\triangle$]
+    
+Пусть $Y, Z$ -- параллельны вдоль $\gamma$. Посмотрим на $\langle Y, Z \rangle (t)$
+\begin{equation*}
+    \frac{d }{d t} \langle Y(t), Z(t) \rangle =
+    \partial_{\dot{\gamma}} \langle Y, Z\rangle
+    = 
+    \langle \nabla_{\dot{\gamma}} \cdot Y, Z\rangle +
+    \langle Y, \nabla_{ \dot{\gamma}} \cdot Z \rangle = 0,
+\end{equation*}
+в силу того, что $Y, Z$ -- параллельные поля.
+\end{proof}
+
+В частности, (для петли) $A = \gamma(t_0) = \gamma(t_1)$ верно, что для $\Pi_{A \overset{\gamma}{\mapsto}  A} \colon T_A \Sigma \mapsto T_A \Sigma$ параллельный перенос -- ортогональный линейный оператор. В частности, если поверхность ориентируемая, то всё хорошо. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Другой сюжет}
+
+Из линейности
+\begin{equation*}
+    Y(t) = \Pi(t) Y_0 (t)
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    Y^l(t) = \Pi^l_m (t) Y_0^m.
+\end{equation*}
+Подставляя в 
+\begin{equation*}
+    \left\{\begin{aligned}
+        &\dot{Y}^l + \Gamma_{ij}^{l} \dot{u}^i Y^j = 0, &l=1,\ldots,k\\
+        &Y^l(t_0) = Y_0^l, &l=1,\ldots,k
+    \end{aligned}\right.
+\end{equation*}
+приходим к
+\begin{equation*}
+\left\{\begin{aligned}
+    \dot{\Pi}^l_m Y_0^m + \Gamma_{ij}^{l} \dot{u}^i \Pi_m^j Y_o^m &= 0 \\
+    \Pi_m^l(t_0) Y_o^m &= Y_0^l
+\end{aligned} \right.
+\hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+\left\{\begin{aligned}
+    \dot{\Pi}^l_m  + \Gamma_{ij}^{l} \dot{u}^i \Pi_m^j  &= 0 \\
+    \Pi_m^l(t_0) &= \delta^l_m
+\end{aligned} \right.
+\end{equation*}
+Так мы пришли к задаче Коши на матрицу оператора параллельного переноса. 
+
+
+Просто решая диффур такого вида придём к
+\begin{equation}
+    \left\{\begin{aligned}
+        \dot{y} (t) + a(t) y(t) &= 0 \\
+        y(t_0) &= y_0
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    y(t) = y_0 \exp\left(-\int_{t_0}^{t} a(t) \d t \right).
+\end{equation}
+Одно трагическое \texttt{но} -- матрицы не коммутируют. Вот если бы коммутировали, то
+\begin{equation*}
+    \Pi (t) = \exp
+    \left(
+        - \int_{t_0}^{t} \Gamma(\dot{\gamma}) \d t
+    \right),
+\end{equation*}
+где 
+\begin{equation}
+    \Gamma_{ij}^{l} \dot{u}^i 
+    \overset{\mathrm{?}}{=} 
+     \Gamma_{j}^{l} (\dot{\gamma}).
+\end{equation}
+Вообще решение этой штуки пишется через \textit{мультипликативный интеграл}. Но, в ОНБ, т.к. матрицы из $\mathrm{SO}(2)$ коммутируют, более того кососимметрические матрицы $2\times2$ тоже коммутируют.
+\texttt{Мораль}: в ОНБ касательных векторных полей на двумерной поверхности верно, что
+\begin{equation}
+    \Pi (t) = \exp
+    \left(
+        - \int_{t_0}^{t} \Gamma(\dot{\gamma}) \d t
+    \right).
+\end{equation}
+
+В лекции №9 выяснили, что
+\begin{equation*}
+    d \Gamma^1_2 = \mathrm{K} 
+    \underbrace{e^1 \wedge e^2}_{dS}.
+\end{equation*}
+Применим это к петле на двумерие, где $\Gamma$ кососимметрична
+\begin{equation*}
+    \Pi(t_1) = \exp\left[
+        -\int_{t_0}^{t_1}
+        \skmat{2}{\Gamma_2^1(\dot{\gamma})}{}{}
+        \d t
+    \right]  =
+    \exp
+    \begin{pmatrix}
+        0 & -\int_{t_0}^{t_1}\Gamma_2^1(\dot{\gamma}) \\
+        +\int_{t_0}^{t_1}\Gamma_2^1(\dot{\gamma}) & 0 \\
+    \end{pmatrix}.
+\end{equation*}
+
+Посмотрим теперь на $\Gamma_2^1 = P\d u + Q \d v$, с учётом формулы Грина
+\begin{equation*}
+    \oint_{\gamma} P \d u + Q \d v = 
+    \iint_\Omega
+     \left(
+        \frac{\partial Q}{\partial u} - \frac{\partial P}{\partial v} 
+    \right) 
+    \d u \wedge \d v
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    d(P \d u + Q \d v) = \left(
+        \frac{\partial Q}{\partial u} - \frac{\partial P}{\partial v} 
+    \right)
+\end{equation*}
+получим, по \eqref{exp1}
+\begin{equation*}
+    \int_{t_0}^{t_1}
+    \Gamma^1_2  (\dot{\gamma}) \d t = 
+    \iint_\Omega \d \Gamma_2^1 = \iint_\Omega \mathrm{K} \d S
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
+    \Pi (t_1) = 
+    \exp
+    \begin{pmatrix}
+        0 & \iint_\Omega \mathrm{K} \d S \\
+        -\iint_\Omega \mathrm{K} \d S & 0
+    \end{pmatrix}
+    = 
+    \begin{pmatrix}
+        \cos \alpha & - \sin \alpha \\
+        \sin \alpha & \cos \alpha \\        
+    \end{pmatrix},
+\end{equation*}
+где $\alpha = \iint_\Omega K \d S$.
+Утверждение, которое легко проверить, но не будем
+\begin{equation}
+\label{exp1}
+     \exp 
+    \begin{pmatrix}
+        0 & \alpha \\
+        \alpha & 0
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        \cos \alpha & - \sin \alpha \\
+        \sin \alpha & \cos \alpha \\
+    \end{pmatrix}.
+ \end{equation} 
+
+\begin{to_thr} 
+    При параллельном переносе вдоль границы области $\Omega$ на двумерной поверхности вектор поворачивается на угол  $\alpha = \iint_\Omega K \d S$.
+\end{to_thr}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Геодезические}
+
+Нормальная кривизна $k_n = |(\id - \P) (\ddot{\gamma} )| = |B(\dot{\gamma}, \dot{\gamma})|$, где $\dot{} = d / ds$, $s$ -- натуральный параметр. Геодезическая кривизна $k_g = |\P(\ddot{\gamma})| = |\nabla_{\dot{\gamma}} \dot{\gamma}|$. По теореме пифагора $k = \sqrt{k_n^2 + k_g^2}$, принимая во внимание, что $k_n \equiv k_n(\dot{\gamma})$, то среди всех кривых\footnote{
+    Это одно из описаний таких кривых, как решения некоторой экстремальной задачи.
+} с заданной касательной прямой, наименьшую имеет такая, у которой геодезическая кривизна $k_g = 0$.
+\begin{equation*}
+    k_g = 0 
+    \ \Leftrightarrow \
+    \|\nabla_{\dot{\gamma}}\| = 0
+    \ \Leftrightarrow \
+    \nabla_{\dot{\gamma}} = 0.
+\end{equation*}
+
+\begin{to_def} 
+    \textit{Уравнение геодезической} 
+    \begin{equation}
+         \boxed{
+             \nabla_{\dot{\gamma}} \dot{\gamma} = 0
+         }, 
+     \end{equation}
+    а кривая, которая удовлетворяет этому уравнению называется геодезической.
+\end{to_def}
+
+\begin{to_lem} 
+    Если $k_n = 0$, то кривая -- решение уравнения геодезических при натуральной параметризации. 
+\end{to_lem}
+
+Заметим, что $\nabla_{\dot{\gamma}} \dot{\gamma} = 0$, это уравнение напоминает уравнение параллельного переноса, в частности
+\begin{equation*}
+    \nabla_{\dot{\gamma}} \dot{\gamma} = 0
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \dot{\gamma} \text{ параллельно вдоль } \gamma
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \|\dot{\gamma}\| = \const.
+\end{equation*}
+
+
+\begin{to_def} 
+    Если $s$ -- натуральный параметр, то $t = a s + b$, где $a, b$ константы, называется \textit{натуральный аффинный параметр}. 
+\end{to_def}
+
+\begin{to_lem} 
+    Пусть $\gamma(t)$ -- решение уравнения геодезических $\nabla_{\gamma'_t} \gamma'_t  = 0.$ Тогда $t$ -- натуральный аффинный параметр.
+\end{to_lem}
+\begin{proof}[$\triangle$]
+    Если $\nabla_{\gamma'_t} \gamma'_t  = 0$, то $\|\gamma'_t\|=
+    \|d \gamma / d t\| = c$, тогда пусть $t = s/c$
+    \begin{equation*}
+        \frac{d \gamma}{d s} = \frac{d \gamma}{d t} \frac{d t}{d s} = \frac{1}{c} \frac{d \gamma}{d t} 
+        \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+        \bigg\|\frac{d \gamma}{d s} \bigg\| = 
+        \bigg\| \frac{1}{c} \frac{d \gamma}{d t}  \bigg\| = \frac{c}{c} = 1,
+    \end{equation*}
+    таким образом $t = s/c$ -- аффинный натуральный параметр.
+\end{proof}
+
+\begin{to_lem} 
+    Пусть $\gamma(t)$ -- решение уравнения геодезических 
+    $\nabla_{\dot{\gamma}} \dot{\gamma} = 0$. Тогда геодезическая кривизна этой кривой $k_g = 0$.
+\end{to_lem}
+
+\begin{proof}[$\triangle$]
+    ... 
+    % 1:23:00 10 лекции, 
+    % https://www.youtube.com/watch?v=iBXNPKCezzo&list=PLp9ABVh6_x4E3nHQjBlF_LRUnvKmMnuVH&index=10&ab_channel=%D0%92%D0%B8%D0%B4%D0%B5%D0%BE%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B8%D0%9D%D0%B5%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%BE%D0%B3%D0%BE%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%D0%A3%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%82%D0%B5%D1%82%D0%B0
+\end{proof}
+
+\noindent
+Таким образом геодезические -- это в точности кривые с $k_g = 0$ в различных аффинных натуральных параметризациях.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Теперь вспомним, что $\nabla_{\dot{\gamma}} Y = 0 \Leftrightarrow \dot{Y}^l +\Gamma_{ij}^{l} \dot{u}^i Y^j = 0$. Посмотрим теперь на $\nabla_{\gamma'_t} \gamma'_t  = 0$, то есть подставим вместо $Y = \dot{\gamma} \Rightarrow Y^l = \dot{u}^l \Rightarrow \dot{Y}^l = \ddot{u}^l$:
+\begin{equation}
+    \ddot{u}^l + \Gamma_{ij}^{l} \dot{u}^i \dot{u}^j = 0,
+    \hspace{0.5cm} 
+    l = 1, \ldots, k
+\end{equation}
+это \textit{уравнения геодезических в координатах}, система \textbf{нелинейных} ОДУ II-го порядка на неизвестные (неизвестна кривая) $u^1(t), \ldots, u^k(t)$. Точнее
+\begin{equation*}
+    \ddot{u}^l(t) + 
+    \underbrace{
+        \Gamma_{ij}^{l} (u^1(t), \ldots, u^k(t))
+        }_{\text{нелинейная вещь}}
+    \dot{u}^i(t) \dot{u}^j (t)
+    = 0,
+    \hspace{0.5cm} 
+    l = 1, \ldots, k
+\end{equation*}

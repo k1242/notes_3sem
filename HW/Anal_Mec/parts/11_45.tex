@@ -1,0 +1,61 @@
+\subsubsection*{11.45}
+Твердое тело с неподвижной точкой движется под действием момента 
+\begin{equation*}
+    \vc{M}_O = \vc{a} \times \vc{\omega},
+\end{equation*}
+где вектор $\vc{a}$ вращается вместе с твёрдым телом.
+Хотим перейти к динамическим уравнениям Эйлера, так что
+\begin{equation*}
+    \hat{J}_O = \dmat{3}{A}{B}{C}, \hspace{0.5cm} 
+    \vc{\omega} = \begin{pmatrix}
+        p \\ q \\ r
+    \end{pmatrix},
+    \hspace{0.5cm} 
+    \vc{a} = \begin{pmatrix}
+        a_\xi \\ a_\eta \\ a_\zeta
+    \end{pmatrix}, 
+    \hspace{0.5cm} 
+    \vc{M}_O = \begin{pmatrix}
+        a_\eta r - a_\zeta q \\
+        a_\zeta p - a_\xi r \\
+        a_\xi r - a_\eta p
+    \end{pmatrix}.
+\end{equation*}
+Для начала попробуем в лоб, домножив динамические уравнения эйлера на $p, q, r$ соответсвенно
+\begin{equation*}
+    \left\{\begin{aligned}
+        A \dot{p} + (C-B) q r &= - M_{\xi} \\
+        B \dot{q} + (A-C) p r &= - M_{\eta} \\
+        C \dot{r} + (B-A) p q &= - M_{\zeta} \\
+    \end{aligned}\right.,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    A \dot{p} p + B \dot{q} q + C \dot{r} r = 0.
+\end{equation*}
+Не густо. 
+
+Пойдём в чуть более низкоуровневую запись
+\begin{equation*}
+    \frac{d \vc{K}_O}{d t} = \dot{K}_{Oi} \vc{e}_i + \vc{\omega} \times \vc{K}_O = \vc{a} \times \vc{\omega}.
+\end{equation*}
+Т.к. $\dot{a}_{i} \vc{e}_i = 0$, то
+\vspace{-1mm}
+\begin{equation*}
+    (\dot{K}_{Oi} + \dot{a}_{i}) \vc{e}_i + \vc{\omega} \times (\vc{K}_O+\vc{a}) = 0
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
+    \frac{d }{d t} \left(\vc{K}_O + \vc{a}\right) = 0
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
+    \boxed{
+       \vc{K}_0 + \vc{a}   = \const
+    } \text{ --- первый I интеграл}.
+\end{equation*}
+Теперь, т.к. $\vc{\omega} \bot \vc{M}_O$ предположим, что $T = \const$. Действительно
+\begin{equation*}
+    d T = \partial A = \cancel{\left(
+        \vc{R} \cdot \vc{v}_O
+    \right)} \d t +
+    \cancel{\left(\vc{M})_O \cdot \vc{\omega}\right)} \d t = 0
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \boxed{
+        T = \const
+    }  \text{  -- второй I интеграл.}
+\end{equation*}

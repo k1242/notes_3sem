@@ -8,7 +8,7 @@
 \usepackage[english,russian]{babel}         %!  подключает русский и английский
 \usepackage{amsmath}                        %!  |
 \usepackage{amssymb,textcomp, esvect,esint} %!  |важно для формул 
-\usepackage[margin=2cm]{geometry}           %!  фиксирует оступ на 2cm
+\usepackage[margin=1.5cm]{geometry}           %!  фиксирует оступ на 2cm
 \usepackage{amsfonts}                       %!  математические шрифты
 \usepackage{amsthm}                         %!  newtheorem и их сквозная нумерация
 \usepackage{graphicx}                       %?  графическое изменение текста
@@ -28,14 +28,14 @@
 \usepackage{titling}                        %-  автоматическое заглавие 
 \usepackage{blindtext}                      %-  слепой текст
 \usepackage{fancyhdr}                       %   добавить верхний и нижний колонтитул
+\usepackage{wrapfig}                        %! обтекание таблиц и рисунков
 
-\usepackage{import}                         %|
-\usepackage{xifthen}                        %|
-\usepackage{pdfpages}                       %|
-\usepackage{transparent}                    %| вставка ink figures
-\usepackage{rotating}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
 
-
+\usepackage{esvect}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -43,10 +43,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
 \renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
-\renewcommand{\sp}{\mathop{\mathrm{span}}\nolimits}
-\renewcommand{\P}{\mathop{\mathrm{P}}\nolimits}
-\renewcommand{\o}{\mathop{\mathrm{o}}\nolimits}
-\renewcommand{\ldots}{... \,}
 \renewcommand{\d}{\, d}
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
@@ -54,24 +50,30 @@
 \newcommand{\vc}[1]{\mbox{\boldmath $#1$}}
 \newcommand{\T}{^{\text{T}}}
 
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
 \newcommand{\diag}{\mathop{\mathrm{diag}}\nolimits}
+\newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits}
+\renewcommand{\div}{\mathop{\mathrm{div}}\nolimits}
+\newcommand{\rot}{\mathop{\mathrm{rot}}\nolimits}
 \newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
-\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
 \newcommand{\Spec}{\mathop{\mathrm{Spec}}\nolimits}
 \newcommand{\sign}{\mathop{\mathrm{sign}}\nolimits}
 \newcommand{\tr}{\mathop{\mathrm{tr}}\nolimits}
 \newcommand{\rg}{\mathop{\mathrm{rg}}\nolimits}
-\newcommand{\set}[2]{{#1}^{1}, \ldots, {#1}^{#2}}
 
 \newcommand{\const}{\text{const}}
-\newcommand{\red}[1]{\textcolor{red}{#1}}
+% \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\xmark}{\ding{55}}
 
 \input{settings/matrixes}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-% some commands
+% some tikz commands
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makeatletter %%%%%%%%%%%%%%% КРУЖОЧЕК %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newcommand*{\encircled}[1]{\relax\ifmmode\mathpalette
@@ -90,12 +92,18 @@
   \array{#1}}
 \makeatother
 
-%%%%%%%%%%%%%%%%%% ВСТАВКА РИСУНКО ИЗ INKSCAPE %%%%%%%%%%%%%%%%%%%%%%%
-\newcommand{\incfig}[1]{%
-    \def\svgwidth{\columnwidth}
-    \import{./figures/}{#1.pdf_tex}
+\def\letuscom{%%%%%%%%%%%%%%%%%%%%%% ПУСТЬ %%%%%%%%%%%%%%%%%%%%%%%%%%
+\mathord{\setbox0=\hbox{$\exists$}%
+     \hbox{\kern 0.125\wd0%
+           \vbox to \ht0{%
+              \hrule width 0.75\wd0%
+              \vfill%
+              \hrule width 0.75\wd0}%
+           \vrule height \ht0%
+           \kern 0.125\wd0}%
+   }%
 }
-
+\newcommand{\letus}{\raisebox{-1.2pt}{$\letuscom$}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -105,11 +113,27 @@
 \newtheorem{to_suj}[to_thr]{Suj}
 \newtheorem{to_lem}[to_thr]{Lem}
 \newtheorem{to_com}[to_thr]{Com}
-\theoremstyle{definition}
 \newtheorem{to_con}[to_thr]{Con}
+\theoremstyle{definition}
 \newtheorem{to_def}[to_thr]{Def}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+\newenvironment{itemize*}
+{
+    \begin{itemize}
+        \setlength{\itemsep}{1pt}
+        \setlength{\parskip}{1pt}}
+    {\end{itemize}
+}
+
+\newenvironment{enumerate*}
+{
+    \begin{enumerate}
+        \setlength{\itemsep}{1pt}
+        \setlength{\parskip}{1pt}}
+    {\end{enumerate}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 % add some colors
@@ -128,11 +152,10 @@
 
 % add page header
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[RE,LO]{\textsc{Ф\raisebox{-1.5pt}{и}з\TeX}}
-\fancyhead[LE,RO]{Хоружий К.А.}
-\fancyhead[CO,CE]{\leftmark}
-\fancyfoot[LE,RO]{\textcolor{grey}{\texttt{\thepage}}}
-\setlength{\headheight}{13pt} % во избежания warning
+% \pagestyle{fancy}
+% \fancyhf{}
+% \fancyhead[RE,LO]{\textsc{Ф\raisebox{-1.5pt}{и}з\TeX}}
+% \fancyhead[LE,RO]{НАЗВАНИЕ}
+% \fancyhead[CO,CE]{\leftmark}
+% \fancyfoot[LE,RO]{\textcolor{grey}{\texttt{\thepage}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

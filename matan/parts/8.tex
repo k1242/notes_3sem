@@ -1,0 +1,316 @@
+Мы знаем, что такое $\partial_X f$ -- определенная на аффинном протсранстве, поверхности и многообразии. Рассмотрим
+\begin{equation*}
+    \partial_X Y (A) = \lim_{\varepsilon \to 0} \frac{Y(A + \varepsilon X) - Y(A)}{\varepsilon},
+\end{equation*}
+что работает в аффинном пространстве или для касательных $x$ на поверхностях в аффинном пространстве (для касательного $X$). 
+
+Например, когда 
+\begin{equation*}
+    Y = (\set{Y}{n})\T,
+    \hspace{0.5cm} 
+    (\partial_X Y)^i = \partial_X Y^i = X^i \frac{\partial Y^i}{\partial x^i}.
+\end{equation*}
+
+\begin{to_con} 
+    Если $X, \ Y$ -- векторные поля в аффинном пространстве, то
+    \begin{equation*}
+         \left[X, Y\right] = \partial_X Y - \partial_Y X.
+     \end{equation*} 
+\end{to_con}
+
+\begin{proof}[$\triangle$]
+    Т.к.
+\begin{equation*}
+    \left[X, Y\right]^i = X^i \frac{\partial Y^i}{\partial x^i} - Y^i \frac{\partial X^i}{\partial x^i}.
+\end{equation*}
+\end{proof}
+
+\begin{to_lem} 
+    Если $X, Y$ -- касательные векторные поля на $\Sigma \subset \mathbb{R}^n$, то $[X, Y]$ -- тоже касательное векторное поле. 
+\end{to_lem}
+
+Размерность $\dim T_A \Sigma = \dim \Sigma = k$, нормальное пространство $N_A \Sigma = \left(T_A \Sigma\right)^{\bot}$, тогда $\dim N_A \Sigma = n - k$. Пусть есть вектор $V$, тогда $V = P(V) + (\id - P)(V)$, где $P$ -- ортогональный проектор на касательное пространство $T_A \Sigma$
+\begin{equation}
+    P_A \colon \mathbb{R}^n  \mapsto \mathbb{R}^n,
+\end{equation}
+который гладко зависит от точки $A$, т.к. $r_{u^1}, \ldots, r_{u^k}$ гладко зависят от $A$, но этот базис можем привести к ОНБ, гладкими преобразованиями. 
+
+\begin{to_lem} 
+    $P$ -- гладкое поле операторов. 
+\end{to_lem}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Деривационные формулы Гаусса-Вейнгартена}
+
+
+\noindent
+$Y$ -- касательное векторное поле, $\xi$ -- нормальное векторное поле, $X$ -- касательный вектор (в точке $A$). 
+\begin{align}
+    \partial_X Y &= 
+    \underbrace{P(\partial_X Y) }_{\nabla_X Y} + 
+    \underbrace{(\id - P)(\partial_X Y)}_{B(X, Y)} \\
+    \partial_X \xi &= 
+    \underbrace{P(\delta_X \xi)}_{-W_\xi (X)}
+    +
+    \underbrace{(\id - P)(\partial_X \xi)}_{\nabla^{N\Sigma}_X \xi}
+\end{align}
+\begin{to_def} 
+Далее $\Gamma (T \Sigma)$ -- \textit{множество касательных векторных полей} на $\Sigma$, а $\Gamma (N\Sigma)$ -- \textit{множество нормальных векторным полей} (на $\Sigma$).
+\end{to_def}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Вторая квадратичная форма}
+
+
+\begin{to_def} 
+     \textit{Вторая квадратичная форма} $B(X, Y)  = (\id - P) (\partial_X Y).$
+\end{to_def}
+
+\noindent
+В частности, её свойства:
+\begin{align*}
+    % 
+    \text{I}&) \ \ \ \ B \colon T_A \Sigma \times \Gamma(T\Sigma) \mapsto N_A \Sigma
+    ;\\ 
+    \text{II}&) \ \ \ \ \text{при $X$} \in \Gamma(T\Sigma) \hspace{0.5cm} 
+    B \colon \Gamma(T\Sigma) \times \Gamma(T \Sigma) \mapsto \Gamma (N \Sigma)
+    ;\\ 
+    \text{III}&) \ \ \ \ B \text{ линейна по $X$}
+    ;\\ 
+    \text{IV}&) \ \ \ \ X, Y \in \Gamma(T\Sigma) \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    B(X, Y) =  B(Y, X)
+    ;\\ 
+    \text{V}&) \ \ \ \ B(X, Y) (A) \text{ зависит только от $X(A)$ и $Y(A)$}.
+    ;\\ 
+    \text{VI}&) \ \ \ \ B \colon T_A \Sigma \times T_A \Sigma \mapsto N_A \Sigma.
+    ;\\ 
+    \text{VII}&) \ \ \ \ B(X, Y) \text{ линейна по } Y.
+\end{align*}
+
+\begin{proof}[$\triangle_{\text{IV}}$]
+                \begin{equation*}
+                B(X, Y) - B(Y, X) = 
+                (\id - P) \left(\partial_X Y - \partial_Y\right)
+                =
+                (\id - P)
+                \underbrace{(\left[X, Y\right])}_{\text{касат. поле}} = 0
+            \end{equation*}
+\end{proof}
+
+\begin{to_lem} 
+    $B$ -- симметрическая билинейная форма со значениями в нормальном векторном пространстве.  
+\end{to_lem}
+
+Пусть $e_1, \ldots, e_k$ -- базис в касательных векторных полях. Т.е. это такие векторные поля, что в любой точке $A$ векторы $e_1(A), \ldots, e_k(A)$ -- базис в $T_A \Sigma$.
+Аналогично пусть $\eta_1, \ldots, \eta_{n-k}$ -- базис в нормальных векторных полях.
+\begin{align*}
+    X &= X^i e_i,  &i = 1, \ldots, k \\
+    Y & = Y^j e_j &j = 1, \ldots, k \\
+    B(X, Y) &= B(X^i e_i, Y^j e_j) = X^i Y^j 
+    \underbrace{B(e_i, e_j)}_{\text{н. в. поле}} = 
+    X^i Y^j  b_{ij}^\nu \eta_{\nu}, 
+    & \nu = 1, \ldots, n-k
+\end{align*}
+где $b_{ij}^k$ -- \textit{локальные коэффициенты} $B$. 
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Ковариантная производная и связность}
+
+
+\begin{to_def} 
+    \textit{Связностью в касательном расслоении к поверхности} назовём $\nabla$. \textit{Ковариантной производной} $Y$ вдоль $X$ в касательном расслоении к поверхности назовём
+    \begin{equation}
+         \nabla_X Y = P(\partial_X Y).
+     \end{equation} 
+\end{to_def}
+
+
+Что оно деает? Во-первых
+\begin{equation*}
+    \nabla \colon T_A \Sigma \times \Gamma (T \Sigma) \mapsto T_A \Sigma,
+\end{equation*}
+или, если $X$ -- касательное поле, то
+\begin{equation*}
+    \nabla \colon \Gamma(T \Sigma) \times \Gamma(T \Sigma) \mapsto 
+    \Gamma(T \Sigma).
+\end{equation*}
+Во-вторых $\nabla_X Y$ линейна $X$, т.е. 
+\begin{align*}
+    \nabla_{X_1 + X_2} Y &= \nabla_{X_1} Y + \nabla_{X_2} Y,\\
+    \nabla_{fX} Y &= f \nabla_X Y
+\end{align*}
+А ещё линейная по $Y$ 
+\begin{equation*}
+    \nabla_X (Y_1 + Y_2) = \nabla_X Y_1 + \nabla_X Y_2.
+\end{equation*}
+Также верно тождество Лейбница.
+\begin{equation}
+    \nabla_X (fY) = \partial_X f Y + f \partial_X Y.
+\end{equation}
+Действительно,
+\begin{equation*}
+    \nabla_X (fY) = P(\partial_X (fY)) = P (\partial_X f Y + f \partial_X Y).
+\end{equation*}
+Также верна симметричность
+\begin{equation}
+    \nabla_X Y - \nabla_Y X = \left[X, Y\right].
+\end{equation}
+В силу того, что
+\begin{equation*}
+    \nabla_X Y - \nabla_Y X = 
+    P([X, Y]) = [X, Y].
+\end{equation*}
+И последнее,
+\begin{equation*}
+    \partial_X \left(Y,\ Z\right) = \left(\partial_X Y,\ Z \right)
+    + \left(Y,\ \partial_X Z\right).
+\end{equation*}
+Хорошо.
+
+В координатах $X = X^i e_i, \ Y Y^j e_j$, где $i, j = 1, \ldots, k$.
+\vspace{-5mm}
+\begin{align*}
+    &\nabla_X Y = \nabla_{X^ie_i} (Y^j e_j) = X^i \nabla_{e_i} \left(Y^j e_j\right) 
+    =
+     X^i \bigg (
+        \left(\partial_{e_i} Y^j\right)e_j + 
+        Y^j \overbrace{\nabla_{e_i} e_j}^{
+            \Gamma_{ij}^{l} e_l
+        }
+    \bigg)
+    = 
+    X^i \left(
+        \partial_{e_i} Y^l + Y^j \Gamma_{ij}^{l} 
+    \right) e_l \\
+    \Leftrightarrow \hspace{0.5cm} 
+    &\boxed{
+        \left(\nabla_X Y\right)^l = X^i \left(\partial_{e_i} Y^l + Y^j \Gamma_{ij}^{l} \right)
+    }
+\end{align*}
+Если мы выберем базис (голономный базис), который состоит из
+\begin{equation*}
+    e_1 = \frac{\partial }{\partial u^1} , \ldots, e_k = \frac{\partial }{\partial u^k},
+\end{equation*}
+то
+\begin{equation*}
+    \left(\nabla_X Y\right)^l = X^i \left(\frac{\partial Y^l}{\partial u^i}  + Y^j \Gamma_{ij}^{l} \right).
+\end{equation*}
+
+\begin{to_def} 
+    $\Gamma_{ij}^{l}$  -- символ Кристофеля, коэффициенты разложения ковариантной производной координатных векторов 
+    $\partial_i$ по базису $\nabla_{\partial_j} \partial_i = \Gamma_{ij}^{k} \partial_k$.
+\end{to_def}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{to_def} 
+    Назовем $\nabla^{N\Sigma}$ \textit{связностью в нормальном расслоении к поверхности}, а
+    \begin{equation}
+         \nabla_X^{N\Sigma} \xi \equiv \nabla_X \xi = \left(\id - P\right) \left(\partial_X \xi\right),
+     \end{equation} 
+     \textit{ковариантной производной} $\xi$ вдоль $X$ в нормальном расслоении.
+\end{to_def}
+
+Как это работает?
+\begin{align*}
+    \nabla^{N\Sigma} \colon T_A \Sigma \times \Gamma (N \Sigma) \mapsto N_A \Sigma; \\
+    \nabla^{N\Sigma} \colon  \Gamma (N \Sigma) \times \Gamma (N \Sigma) \mapsto  \Gamma (N \Sigma). \\
+\end{align*}
+Аналогично раннему, это производная линейная по первому и второму аргументу, работает тождество Лейбница, согласовано с метрикой -- всё хорошо.  Но оно не симметрично!
+
+
+В координатах $X = X^i e_i$ c $i = 1, \ldots, k$ и $\xi = \xi^\nu \eta_\nu$ с $\nu = 1, \ldots, n-k$. Тогда
+\begin{equation*}
+    \nabla_X^{N\Sigma} = X^i \bigg( 
+        \left(\partial_{e_i \xi^\nu}\right) \eta_\nu + \xi^\nu 
+        \overbrace{\nabla_{e_i}^{N \Sigma} \eta_\nu}^{K^\mu_{i\nu}\eta_\mu}
+    \bigg) 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \boxed{
+        \nabla_X^{N\Sigma} = X^i \left(
+            \partial_{e_i} \xi^\mu + \xi^\nu K^\mu_{i\nu}
+        \right) \eta_\mu
+    }.
+\end{equation*}
+
+\begin{to_def} 
+    $K^\mu_{i\nu}$ -- \textit{локальные коэффициенты связности} в нормальном расслоении.
+\end{to_def}
+
+
+
+
+
+\subsection{Оператор Вейнгартена (Shape operator)}
+
+\begin{to_def} 
+    Оператор Вейнгартена -- $W_\xi (X) = - P(\partial_X \xi)$.
+\end{to_def}
+
+Что он делает?
+\begin{equation*}
+    W \colon \Gamma(N\Sigma) \times T_A \Sigma \to T_A \Sigma.
+\end{equation*}
+В частности
+\begin{equation*}
+    \left(W_{\xi} (X), \ Y\right) = \left(B(X, Y), \ \xi\right).
+\end{equation*}
+
+\begin{proof}[$\triangle$]
+    ...
+\end{proof}
+
+К слову, $W_X \xi (A)$  зависит только от $\xi(A)$ и $X(A)$, т.е.
+\begin{equation*}
+    W\colon N_A \Sigma \times T_A \Sigma \mapsto T_A \Sigma,
+\end{equation*}
+но если зафиксировать $\xi$, то
+\begin{equation*}
+    W_\xi \colon T_A \Sigma \mapsto T_A \Sigma.
+\end{equation*}
+% 01:16:59 -- умер.
+Можно это всё расписать в координатах. 
+\begin{equation*}
+    W_\xi (X) = X^i \xi^\nu \omega_{\nu i}^j e_j.
+\end{equation*}
+Подставив в $\left(W_\xi (X),\ Y\right) = \left(B(X, Y), \ \xi\right)$, считая $X = e_i, \ \xi = \eta_\nu, \ Y = e_j$. 
+\begin{equation*}
+    \omega_{\nu i}^l 
+    \underbrace{\left(e_l , \ e_j\right)}_{g_{lj}} 
+    =
+    b_{ij}^\mu 
+    \underbrace{\left(\eta_\mu, \eta_\nu\right)}_{g_{\mu \nu}}
+    ,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \boxed{
+        \omega_{\nu i}^l g_{lj} = b_{ij}^\mu g_{\mu \nu}
+        \ \Rightarrow \ 
+        \omega_{\nu i}^m = b_{ij}^\mu g_{\mu \nu} g^{j m}.
+    }
+\end{equation*}
+где $g_{lj}$ -- матричный элемент матрицы $I_A = \left(,\right) \big|_{T_A \Sigma}$, то есть матрицы первой квадратичной формы, метрики касательного расслоения. А вот $g_{\mu \nu}$ -- элемент матрицы $(,)  \big|_{N_A \Sigma}$, метрики в  нормальном расслоении. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Другой вариант тех же формул}
+Пусть $x = e_i, \ Y = e_j, \xi = \eta_\nu$. Тогда
+\begin{align*}
+    \partial_{e_i} e_j = \Gamma_{ij}^{l} e_l + b_{ij}^\nu \eta_\nu \\ 
+    \partial_{e_i} \eta_\nu = - b_{ij}^\mu g_{\mu \nu} g^{jm} e_m + K_{i\nu}^\mu \eta_\mu.
+\end{align*}
+
+
+\subsubsection*{Плоская кривая в нормальном параметре}
+
+

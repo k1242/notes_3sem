@@ -1,0 +1,71 @@
+\subsubsection*{11.118}
+
+Как и в решение к №11.72 у нас симметричный волчок. Требуется определить начальную угловую скорость прецессии $\dot{\varphi}_0$, чтобы $\dot{\theta}=0$. 
+Формально можем поставить задачу несколько иначе, какой должен быть момент внешних сил $\vc{M}_O$ чтобы происходила регулярная прецессия $\dot{\theta}=0$?
+
+Для начала введём отдельно $\vc{\omega}_1 \parallel O\xi$ и $\vc{\omega}_2 \parallel OZ$.
+ По раннее проделанной работе с регулярной прецессией, мы знаем, что $K_z$ и $K_3$ постоянны, соответсвенно $\omega_1, \omega_2, \omega = \const$.
+ Аналогично случаю Эйлера (см. №???)
+ \begin{equation*}
+     (K_O)_\xi = Cr, \hspace{0.5cm} (K_O)_Z = A \sqrt{q^2 + q^2}.
+ \end{equation*}
+ То есть $\vc{K}_O \in O\xi Z$ и $K_O=\const$. Но, т.к. плоскость $O\xi Z$ вращаеся с угловой скорсотью $\vc{\omega}_2$ то и вектор $\vc{K}_O$ аналогично. Тогда для $\vc{M}_O$ верно, что
+ \begin{equation}
+     \frac{d \vc{K}_O}{d t} = \vc{\omega}_2 \times \vc{K}_O = \vc{M}_O.
+ \end{equation}
+ Нетрудно показать, что
+ \begin{equation*}
+     \vc{\omega}_2 \times \vc{K}_O = 
+     \frac{\vc{\omega}_2\times \vc{\omega}_1}{\|\vc{\omega}_2\times \vc{\omega}_1\|} \omega_2 \sin \theta
+     \left(
+        C (\omega_1 + \omega_2 \cos \theta) - A \omega_2 \cos \theta
+     \right) 
+ \end{equation*}
+ Т.к. $\|\omega_2 \times \omega_1\| = \omega_1 \omega_2 \sin \theta$, то
+ \begin{equation}
+ \label{ggg}
+    \vc{M}_O = 
+     (\vc{\omega}_2 \times \vc{\omega}_1) \left[
+        C + (C-A) \frac{\omega_2}{\omega_1} \cos \theta
+     \right].
+ \end{equation}
+ Это \textit{основная формула гироскопии}, так что, наверное, можно было принять её на веру. В частном случае, когда $\omega_1 \gg \omega_2$ можно приближенно записать эту формулу, как
+ \begin{equation}
+     \vc{M}_O = C \left(\vc{\omega}_2 \times \vc{\omega}_1\right).
+ \end{equation}
+
+ Конкретно для нашей задачи \eqref{ggg} перепишется как
+ \begin{equation*}
+     \dot{\varphi} \omega \sin \theta 
+     \left(
+        C + (C-A) \frac{\dot{\varphi}}{\omega} \cos \theta
+     \right) = mgl \sin \theta,
+ \end{equation*}
+ т.к. мы действительно требуем регулярной прецессии. Так получаем квадратное уравнение вида
+ \begin{equation}
+     (C-A) \dot{\varphi}^2 \cos \theta + C \omega \varphi - mgl = 0
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+     \dot{\varphi} = 
+     \frac{
+        - C \omega \pm \sqrt{
+            C^2 \omega^2 + (C-A) mgl \cos \theta
+        }
+     }{
+        2(C-A) \cos \theta
+     }  .
+ \end{equation}
+Стоит заметить, что при $C^2 \omega^2 + (C-A) mgl \cos \theta < 0$ регулярная прецессия, по всей видимости, невозможна. При $\omega >> \dot{\varphi}$ угловая прецессия будет равна
+\begin{equation}
+    \dot{\varphi} = \frac{mgl}{C\omega},
+\end{equation}
+и, как видно, не зависит от угла нутации. 
+
+Теперь про силы. Запишем II закон Ньтона в проекции на вертикаль и нормаль к вертикали, повернутую на $+\varphi$ от $X$, получим
+\begin{equation}
+    \left\{\begin{aligned}
+        N_x = m \dot{\varphi}^2 l \sin \theta \\
+        N_y - mg = 0        
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    N = m\sqrt{g^2 + \dot{\varphi}^2 l^2 \sin^2 \theta}.
+\end{equation}
