@@ -8,12 +8,14 @@
 
 * **аналитической механике**;
 ([*заметки с семинара*](https://github.com/k1242/notes_3sem/blob/master/anmec/anmec_notes_v2.pdf),
-[*задание*](https://github.com/k1242/notes_3sem/blob/master/HW/Anal_Mec/Khoruzhii_AM_HW.pdf));
+[*I задание*](https://github.com/k1242/notes_3sem/blob/master/HW/Anal_Mec/Khoruzhii_AM_HW_1.pdf),
+[*II задание*](https://github.com/k1242/notes_3sem/blob/master/HW/Anal_Mec/Khoruzhii_AM_HW.pdf));
 
+* **анализу на многообразиях**
+([конспект](https://github.com/k1242/notes_3sem/blob/master/matan/UIM_varan_3sem.pdf)
+[лекций](https://www.youtube.com/playlist?list=PLp9ABVh6_x4E3nHQjBlF_LRUnvKmMnuVH)
+с НМУ);
 * ...
 
 ## P.S.
 Нет никаких гарантий, что написанное является правдой. Буду рад любым вопросам, замечаниям и предложениям, писать можно в [вк](https://vk.com/ka1242) или [tg](https://t.me/ka_1242).
-
-## P.P.S.
-Если есть претензии/вопросы/предложения по 4.12, 3.24, то вычисления по ним лежат [здесь](https://github.com/k1242/notes_3sem/blob/master/HW/Anal_Mec/notebooks/4.12.ipynb) и [здесь](https://github.com/k1242/notes_3sem/blob/master/HW/Anal_Mec/notebooks/3.24.ipynb).
