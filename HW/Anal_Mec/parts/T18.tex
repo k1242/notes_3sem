@@ -1,0 +1,165 @@
+\subsubsection*{Т18. (I)}
+
+Пусть в точках $(x_1, y_1)$ и $(x_2, y_2)$ закреплена цепь с линейной плотностью $\rho$ и массой $M$.
+Для цепной линии сначала найдём центр масс $y_0$:
+\begin{equation*}
+    y_0 = \frac{1}{M} \int_{x_1}^{x_2}
+    y \cdot 
+    \underbrace{
+    \rho \sqrt{1 + (y_x')^2} \d x
+    }_{
+    dm
+    }.
+\end{equation*}
+Лагранжиан системы
+\begin{equation*}
+    L = T - \Pi = M g \cdot y_0.
+\end{equation*}
+В силу независимости $L$ от $t$ верно, что
+\begin{equation}
+    \delta S = \delta 
+    \left(\int_{t_1}^{t_2} L \d t\right)
+    = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \delta L = 0, \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \delta
+    \bigg(
+    \int_{x_1}^{x_2}
+    \underbrace{
+    y \sqrt{1 + (y_x')^2}
+    }_{
+    F(x)
+    } \d x
+    \bigg) = 0
+    ,
+\end{equation}
+что позволяет нам решать немного другую задачу.
+
+Мы знаем, что на $\dot{q}, q$ равносильны следующие условия
+\begin{equation*}
+    \frac{d }{d t} \frac{\partial L(\dot{q}, q, t)}{\partial q^i}  - \frac{\partial L}{\partial q}  = 0,
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm} 
+    \delta \left(
+        \int_{t_1}^{t_2} L(\dot{q}, q, t) \d t
+    \right) = 0,
+\end{equation*}
+при фиксированной длине нити $l$ равной
+\begin{equation}
+\label{intl}
+    l = \int_{x_1}^{x_2} \underbrace{
+    \sqrt{1+\dot{y}^2}
+    }_{\varphi(x)} \d x,
+\end{equation}
+где $y_x' = \dot{y}$ (здесь и далее). 
+Тогда введём\footnote{
+    О причинах такого решения см. метод решения изопериметрической задачи.
+} $L^*$
+\begin{equation}
+\label{lstar}
+    L^* (y, x) = F(x) - \lambda \varphi(x),
+\end{equation}
+для которого верно, что
+\begin{equation}
+\label{maeq}
+\delta \left(\int_{x_1}^{x_2} L^*(y, \dot{y}, x) \d x \right) = 0
+\hspace{0.5cm} \Leftrightarrow \hspace{0.5cm} 
+    \frac{d}{dx} \frac{\partial L^*}{\partial \dot{y}} -\frac{\partial L^*}{\partial x} = 0.
+\end{equation}
+Формально мы перещли к решению изопериметрической задачи. Для удобство переобозначим $L^* = L$. 
+Посмотрим на $\partial L / \partial \dot{y} = L_{\dot{y}}$:
+\begin{equation*}
+    d L_{\dot{y}} (y, \dot{y}) = 
+    \frac{\partial L_{\dot{y}}}{\partial y} \d y + 
+    \frac{\partial L_{\dot{y}}}{\partial \dot{y}} \d \dot{y},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{d }{d x} \frac{\partial L}{\partial \dot{y}} -\frac{\partial L}{\partial y} =
+    L_{\dot{y}, y} \dot{y} + L_{\dot{y}, \dot{y}} \ddot{y} - L_{y} = 0.
+\end{equation*}
+Домножив на $(-\dot{y})$ получим, как видно, полный дифференциал \rotatebox[origin=c]{270}{:)}
+\begin{equation*}
+    \frac{\partial L}{\partial y} \frac{d y}{d x} 
+    + \underbrace{
+    \frac{\partial L}{\partial \dot{y}} \frac{d \dot{y}}{d x} 
+    - \bigg(
+        \frac{\partial L}{\partial \dot{y}} \ddot{y}
+    }_{\text{прибавил/вычел}}
+     + 
+        \dot{y} \bigg[
+            \frac{\partial L_{\dot{y}}}{\partial y} \dot{y} + \frac{\partial L_{\dot{y}}}{\partial \dot{y}} \ddot{y}
+        \bigg]
+    \bigg)
+    = \frac{d }{d x} \left(
+        L - \dot{y} \frac{\partial L}{\partial \dot{y}} 
+    \right),
+\end{equation*}
+откуда \eqref{maeq} может быть переписано, как
+\begin{equation*}
+    L - \dot{y} \frac{\partial L}{\partial \dot{y}} = C_1,
+\end{equation*}
+то есть да, <<энергия>> сохраняется, $x$ же явно не входит в $L^*$. 
+
+Конкретно в нашем случае,
+\begin{equation*}
+    (y+\lambda) \sqrt{1 + \dot{y}^2}
+    - \dot{y} (y + \lambda) \frac{\dot{y}}{\sqrt{1+\dot{y}^2}}  = C_1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    y + \lambda = C_1 \sqrt{1 + \dot{y}^2}.
+\end{equation*}
+Как известно 
+\href{https://ru.wikipedia.org/wiki/%D0%A8%D0%B8%D0%BD%D1%83%D1%81}{шинус} замечателен: $1 + \sh^2 \varkappa = \ch^2 \varkappa$, так что пусть $\dot{y} = \sh \varkappa$. Тогда
+\begin{equation*}
+    y = C_1 \ch \varkappa - \lambda.
+\end{equation*}
+Подставив друг в друга последних два выражения, найдём
+\begin{equation*}
+    \dot{y} = \frac{d y}{d \varkappa} \cdot \frac{d \varkappa}{d x} 
+    = C_1 \frac{d \varkappa}{d x} 
+    \sh \varkappa,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    x  = C_1 \varkappa + C_2.
+\end{equation*}
+Таким образом мы получаем \textit{уравнение цепной линиии}
+\begin{equation}
+    \boxed{
+        y = C_1 \ch \frac{x-C_2}{C_1} - \lambda.
+    }
+\end{equation}
+Константы могут быть найдены из граничных условий $y(x_1)=y_1$, $y(x_2)=y_2$
+и интеграла \eqref{intl}:
+\begin{equation*}
+     \sh \frac{x_2 - C_2}{C_1} - \sh \frac{x_1 - C_2}{C_1} = \frac{l}{C_1}.
+\end{equation*} 
+
+
+
+
+\subsubsection*{Т18. (II)}
+
+Найдём траекторию светового луча в среде с показателем преломления
+\begin{equation*}
+    n(z) = n_0 + n_z z.
+\end{equation*}
+Согласно принципу Ферма, введя $(ds)^2 = (dr)^2 + (dz)^2$, считая $dz / dr = \dot{z}$
+\begin{equation*}
+    \delta \left(
+        \int_A^B (n_0 + n_z z) \d s
+    \right) = 0,
+\hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \delta
+    \left(
+        \int_A^B z \sqrt{1 + \dot{z}^2} \d r
+    + \frac{n_0}{n_z}  l 
+    \right) = 0,
+\end{equation*}
+где
+\begin{equation*}
+    l = \int_A^B \sqrt{1 + \dot{z}^2} \d r.
+\end{equation*}
+Вспомнив \eqref{lstar} и \eqref{intl}, 
+поймём, что решаем изопериметрическую задачу, которую уже решили в предыдущем пункте, решением является траектория по цепной линии, с $\lambda = -n_0/n_z$:
+\begin{equation}
+    z(r) = \frac{n_0}{n_z} + C_1 \ch \frac{r-C_2}{C_1},
+\end{equation}
+где $C_1$ и $C_2$ определяются из начальных условий\footnote{
+    Предполагая, что мы хотим пустить луч от точки $(z_1, r_1)$ к $(z_2, r_2)$, мы сможем сделать это единственным образом, это и задаст $C_1$ и $C_2$.
+}.

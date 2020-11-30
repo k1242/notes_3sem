@@ -1,0 +1,34 @@
+\subsubsection*{12.6 (в)}
+
+Проверим, является ли интегрируемой связь 
+\begin{equation*}
+    \dot{y} - z \dot{x} = 0.
+\end{equation*}
+В случае интегрируемости связи существовали бы запрещенные положения системы. Покажем же что в действительности мы можем попасть из любой точки в любую. В силу отсутсвия ограничений на $\dot{z}$, мы свободно можем перемещаться вдоль оси $z$ при $\dot{x}, \dot{y} = 0$. Пусть мы оказались в $z = 2$, тогда при движении
+\begin{equation*}
+    \letus \ \dot{x} \d t = \xi,
+    \ \ \dot{y} \d t=  2 \xi, \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    (0, 0, 2) \longrightarrow (\xi, 2 \xi, 2).
+\end{equation*}
+Теперь по $\dot{x}, \dot{y} = 0$ перейдём в $z = 1$, тогда
+\begin{equation*}
+    \letus \ \dot{x} \d t = -\xi, \ \ \dot{y} \d t = -\xi,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    (\xi, 2 \xi, 1) \longrightarrow (0, \xi, 1).
+\end{equation*}
+Собирая всё вместе,
+\begin{equation*}
+    (0, 0, 0)
+    \overset{\vv{\dot{r}} = (0, 0, \neq 0)}{\longrightarrow} 
+    (0, 0, 2)
+    \overset{\vv{\dot{r}}dt = (\xi, 2\xi, 2)}{\longrightarrow} 
+    (\xi, 2 \xi, 2)
+    \overset{\vv{\dot{r}} = (0, 0, \neq 0)}{\longrightarrow} 
+    (0, 0, 1)
+    \overset{\vv{\dot{r}}dt = (-\xi, -\xi, 1)}{\longrightarrow} 
+    (0, \xi, 1)
+    \overset{\vv{\dot{r}} = (0, 0, \neq 0)}{\longrightarrow} 
+    (0, \xi, 0).
+\end{equation*}
+Получается допустимы перемещения из $\vc{r}_1$ в $\vc{r}_2$ $\forall \vc{r}_1, \vc{r}_2$, следовательно \textbf{связь не является интегрируемой}.
+

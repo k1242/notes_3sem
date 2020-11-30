@@ -1,0 +1,38 @@
+\subsubsection*{12.73}
+Выберем начало координат в положение равновесия. Запишем второй закон Ньютона для системы:
+\begin{equation*}
+    m \ddot{x} = -cx-\beta v.
+\end{equation*}
+Формально, мы хотим найти такой $L(x, \dot{x}, t)$, что 
+\begin{equation*}
+    \frac{d }{d t} \frac{\partial L}{\partial \dot{q}} - \frac{\partial L}{\partial q}  = m \ddot{x} + \beta \dot{x}  + cx = 0.
+\end{equation*}
+При отсутствии вязкого трения $L$ имел бы вид
+\begin{equation*}
+    L^* = T - \Pi = \frac{1}{2} m \dot{x}^2 + \frac{1}{2} cx^2.
+\end{equation*}
+Как мы видим $L^* \neq L(t)$, соответсвенно энергия такой системы сохраняется. Мы же рассматриваем систему с вязким трением, которая в пределе с $\beta \to 0$ приходила бы к $L = L^*$ так что будем искать $L$ вида 
+\begin{equation*}
+    L = f(t) \cdot L^*.
+\end{equation*}
+В таком случае
+\begin{equation*}
+    \frac{d }{d t} \frac{\partial L}{\partial \dot{q}} - \frac{\partial L}{\partial q}  =    
+    f(t) m \ddot{x} + \underbrace{\dot{f} (t) m}_{= f(t) \beta}
+     \dot{x}  + f(t) cx = 0
+     \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm} 
+     m \ddot{x} + \beta \dot{x} +   c x = 0.
+\end{equation*}
+Воплощая в жизнь стремление сократить уравнение на $f(t)$ находим, что
+\begin{equation*}
+    \frac{d }{d t} f(t) = \frac{\beta}{m} f(t),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    f(t) = \exp\left(\frac{\beta}{m} t\right).
+\end{equation*}
+Тогда уравнене движения осциллятора с вязким трением можно записать, как уравнение лагранжа второго рода, для лагранжаиана
+\begin{equation}
+    L(x, t) = \exp \left(\frac{\beta}{m} t\right) \cdot \frac{1}{2} 
+    \left(
+        m \dot{x}^2 + c x^2
+    \right).
+\end{equation}

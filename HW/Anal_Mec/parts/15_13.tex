@@ -1,0 +1,38 @@
+\subsubsection*{15.13}
+
+
+Запишем потенциал поля гравитационных сил:
+\begin{equation*}
+    \Pi =
+     \frac{1}{2} \frac{l_2}{l_1+l_2} M g l_2 -
+     \frac{1}{2} \frac{l_1}{l_1+l_2} M g l_1 -
+     \left(
+        l_1 \cos \varphi + l \cos \psi
+     \right) m g.
+\end{equation*}
+Заметим, что в $\Pi$ независимо входит $\cos \psi$, в силу $\Pi \to \min$ имеет, что $\cos \psi = 1, \ \psi = 0$. Так как связь односторонняя, то невозможно значение $\psi = \pi$. Далее будем решать одномерую задачу. 
+
+Найдём стационарные точки потенциала
+\begin{equation*}
+    \frac{\partial \Pi}{\partial \varphi} 
+    = 
+    \frac{1}{2} \frac{M g }{l_1 + l_2} (\sin \varphi) 
+    \left(-l_2^2 + l_1^2 + 2l_1 (l_1 + l_2) \frac{m}{M} \right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        \sin \varphi^* &= 0 \\
+        2 m l_1 &= M(l_2 - l_1)         &\forall \varphi \text{ \ система равновесна}.
+    \end{aligned}\right.
+\end{equation*}
+И опредлеим локальные экстремумы
+\begin{equation*}
+    \frac{\partial^2 \Pi}{\partial \varphi^2} =
+    \underbrace{(\ \ldots \ )}_{> 0 } (\cos \varphi)
+    \left(M(l_1 - l_2) + 2l_1 m\right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        \varphi &= 0 \text{ -- устойчиво при } &2ml_1 > M(l_2-l_1) \\
+        \varphi &= \pi \text{ -- устойчиво при } &2ml_1 < M(l_2-l_1) \\
+    \end{aligned}\right.
+\end{equation*}
+и соотвествующие положения равновесия неустойчивы при обратных знаках в неравенствах.

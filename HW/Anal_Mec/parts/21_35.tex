@@ -1,0 +1,61 @@
+\subsubsection*{21.35}
+
+Хотелось бы от действия $S$ вида
+\begin{equation*}
+    S = \int_A^B L \d t, \hspace{0.5cm} 
+    L = T - \Pi = \frac{1}{2} p_i \dot{q}^i - \Pi
+\end{equation*}
+к действию (или \textit{укороченному действию}) $\delta S^* = 0$, где $S^*$ вида
+\begin{equation}
+\label{sample}
+    S^* = \int_A^B n \d s, \hspace{0.5cm} 
+    \phantom{
+    L = T - \Pi = \frac{1}{2} p_i \dot{q}^i - \Pi
+    }
+\end{equation}
+где под интегрирование от $A$ до $B$ подразумевается интегрирование интегрирование уравнение от состояния в точке $A$ до состояния в точке $B$. Можно было бы сразу получить ответ из принципа Мопертюи, так что давайте его выведем. 
+
+Перейдём к энергии системы, как функции $p$ и $q$, где $p_i = \partial L / \partial \dot{q}^i$ -- обобщенный импульс. Тогда
+\begin{equation}
+\label{I2135}
+    dS = L \d t = \left(p_i  \dot{q}^i - H\right) \d t
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    S  = S_0 - H \cdot(t_B-t_A), 
+\end{equation}
+так как мы рассматриваем аналогию с консервативной системой, то есть $\dot{H} = 0$. Величина $S_0$ -- \textit{укороченное действие},
+\begin{equation*}
+    S_0 = \int_A^B p_i \dot{q}^i \d t = 
+    2 \int_A^B (H - \Pi) \d t.
+\end{equation*}
+Найдём $dt$, как
+\begin{equation*}
+    dt = \frac{ds}{v},
+    \hspace{0.25cm} 
+    v^2 = 2 (H-\Pi) / m
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    dt = \frac{ds}{
+    \sqrt{2(H-\Pi) / m}}.
+\end{equation*}
+Собирая всё вместе, получаем
+\begin{equation*}
+    S_0 = \int_A^B\sqrt{2m(H-\Pi)} \d s.
+\end{equation*}
+Вернёмся к варьированию. Если допускать варьирование конечного момента времени, то
+\begin{equation}
+\label{II2135}
+    \delta S = \frac{\partial S}{\partial t}  \delta t = -H \delta t, \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \delta S + H \delta t = 0.
+\end{equation}
+Подставляя \eqref{I2135} в \eqref{II2135}, получим, что
+\begin{equation}
+    \delta S_0 = 0, 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \delta \left(
+        \int_A^B\sqrt{2m(H-\Pi)} \d s
+    \right) = 0.
+\end{equation}
+Сравнивая полученное выражение с \eqref{sample}, полагая $m =1$, находим
+\begin{equation}
+    \Pi = -\frac{n^2}{2} + H.
+\end{equation}
+

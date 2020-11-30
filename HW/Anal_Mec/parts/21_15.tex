@@ -1,0 +1,31 @@
+\subsubsection*{21.14 и 20.15}
+
+Точка массы $m$ може двигаться по гладкой вертикальной плоскости $xz$, вращающейчя вокруг векртикальной оси $Oz$ с постоянной угловой скоростью $\omega$. 
+
+Лагранжиан системы
+\begin{equation}
+    L = \frac{1}{2} m \left(
+        \dot{x}^2 + \dot{z}^2
+    \right) + 
+    \frac{1}{2} m x^2 \omega^2.
+\end{equation}
+Вариация действия
+\begin{equation*}
+    \delta S = m \int_{A}^{B} \left(
+        \dot{x} \delta x + \dot{z} \delta z + \omega^2 x \delta x - g \delta z
+    \right) \d t.
+\end{equation*}
+Посмотрим на действие
+\begin{align*}
+    S 
+    &= \int_{A}^{B} 
+    L(x+\delta x, z + \delta z, t) \d t = \\
+    &= \int_{A}^{B}
+    L(x, z, t) \d t + 
+    \underbrace{
+    m \int_{A}^{B} \dot{x} \delta \dot{x} + \dot{z} \delta \dot{z} + \omega^2 x \delta x - g \delta z \d t
+    }_{\delta S (L(x, z, t)) = 0} +
+    \frac{1}{2} m \int_{A}^{B}
+     (\delta \dot{x})^2 + \left(\delta \dot{z}\right)^2 + \omega^2
+     (\delta x)^2 \d t, \hspace{0.5cm} \text{Q.E.D.}
+\end{align*}

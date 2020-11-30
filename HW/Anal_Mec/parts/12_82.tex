@@ -1,0 +1,54 @@
+\subsubsection*{12.82}
+Знаем, что символ Кристофеля
+\begin{equation*}
+    \Gamma_{i,kl} = \frac{1}{2} \left(
+        \frac{\partial g_{li}}{\partial q^k} + \frac{\partial g_{ki}}{\partial q^l} -
+        \frac{\partial g_{kl}}{\partial q^i} 
+    \right).
+\end{equation*}
+Кинетическая энергия склерономной системы в обобщенных координатах запишется как
+\begin{equation*}
+    T  = \frac{1}{2} g_{ij} \dot{q}^i \dot{q}^j.
+\end{equation*}
+Хотелось бы в терминах сивола Кристофеля записать уравнения Лагранжа
+\begin{equation*}
+    \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} - \frac{\partial T}{\partial q^i} = Q_i.
+\end{equation*}
+
+Для начала найдём
+\begin{equation*}
+    \frac{\partial T}{\partial q^k} = \frac{1}{2} \dot{q}^i \dot{q}^j \frac{\partial g_{ij}}{\partial q^k}.
+\end{equation*}
+Теперь
+\begin{equation*}
+    \frac{\partial T}{\partial \dot{q}^k} = 
+    \frac{1}{2} g_{ij} \left(
+        \dot{q}^j \delta^i_k + q\delta^i \delta^j_k
+    \right) = g_{kj} \dot{q}^j.
+\end{equation*}
+Дифференцируя по времени, получим
+\begin{equation*}
+    \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^k} =
+    g_{kj} \ddot{q}^j + 
+    \dot{q}^j \left(
+        \frac{\partial g_{kj}}{\partial q^i} \frac{d q^i}{d t} 
+    \right) = 
+    g_{kj} \ddot{q}^j + \frac{\partial g_{kj}}{\partial q^i} \dot{q}^j \dot{q}^i.
+\end{equation*}
+Теперь заметим, что
+\begin{equation*}
+    \dot{q}^i \dot{q}^j \frac{\partial g_{kj}}{\partial q^i} =
+     \dot{q}^j \dot{q}^i \frac{\partial g_{ki}}{\partial q^j} .
+\end{equation*}
+Тогда
+\begin{equation}
+    Q_k =
+    g_{kj} \ddot{q}^j + \frac{1}{2} \dot{q}^j \dot{q}^i
+    \left(
+        \frac{\partial g_{jk}}{\partial q^i} + \frac{\partial g_{ik}}{\partial q^j} 
+        - \frac{\partial g_{ij}}{\partial q^k} 
+    \right) , \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \boxed{
+        g_{kj} \ddot{q}^j + \Gamma_{k, ij} \dot{q}^j \dot{q}^i = Q_k
+    }.
+\end{equation}

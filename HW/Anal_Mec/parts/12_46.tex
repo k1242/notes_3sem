@@ -1,0 +1,62 @@
+\subsubsection*{12.46}
+
+Составим уравнения движения в форме Лагранжа для системы, представленнйо на рис. \ref{t12n46} Для начала запишем потенциальную энергию системы, как
+\begin{equation*}
+    \Pi = - (\rho - r) \cos (\varphi  + \theta).
+\end{equation*}
+Момент инерции полого цилиндра:
+\begin{equation*}
+    I_1 = \int_\rho^R \sigma r^2 \d V 
+    \hspace{0.2cm} 
+    \overset{dV = h 2 \pi r \d r}{\longrightarrow} 
+    \hspace{0.2cm} 
+    I_1 = 2 \pi \sigma h \int_\rho^R r^3 \d r = 
+    \frac{1}{2} \left(R^2 - \rho^2  \right) (R^2 + \rho^2) \pi  h \sigma =
+    \frac{1}{2} M \left(R^2 + \rho^2\right).
+\end{equation*}
+Тогда его кинетическая энергия 
+\begin{equation*}
+    T_1 = \frac{1}{4} M \left(R^2 + \rho^2\right) \dot{\theta}^2.
+\end{equation*}
+Скорость центра масс сплошного цилиндра:
+\begin{equation*}
+    v_2 = \dot{\varphi} (\rho  - r).
+\end{equation*}
+Пусть цилиндр катится с угловой скоростью $\omega$, тогда запишем условие того, что он не проскальзывает
+\begin{equation*}
+    (\rho - r) \dot{\varphi} = \rho \dot{\theta} + \omega r,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \omega = (\rho - r) \dot{\varphi} - \rho \dot{\theta}.
+\end{equation*}
+Тогда кинетическая энергия сплошного цилиндра
+\begin{equation*}
+    T_2 = 
+    \frac{1}{2} m \left(
+        \dot{\varphi} (\rho - r) \vp
+    \right)^2 + 
+    \frac{1}{2} \left(\frac{1}{2} m r^2 \right) \omega^2
+    .
+\end{equation*}
+Лагранжиан системы:
+\begin{equation}
+    L = 
+    mg (\rho - r) \cos \varphi +
+     m \left(
+        \frac{1}{2}  \dot{\varphi}^2 (\rho - r)^2 + 
+        \frac{1}{4} \left(
+            \dot{\theta} \rho - \dot{\varphi} (\rho - r)
+        \right)^2
+    \right) + \frac{1}{4} M \left(R^2  + \rho^2\right)\dot{\theta}^2.
+\end{equation}
+Соответсвенно, уравнения движения системы
+\begin{equation}
+    \left\{\begin{aligned}
+        \frac{d }{d t} \frac{\partial L}{\partial \dot{\varphi}} - \frac{\partial L}{\partial \varphi} &= 0, \\
+        \frac{d }{d t} \frac{\partial L}{\partial \dot{\theta}} - \frac{\partial L}{\partial \theta} &= 0.
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+    - \ddot{\theta} \rho + 3 \ddot{\varphi} \left(\rho - r\right) + 2 g \sin{\left(\varphi \right)} &= 0, \\
+    M \ddot{\theta} \left(R^{2} + \rho^{2}\right) + \rho m \left(\ddot{\theta} \rho - \ddot{\varphi} \left(\rho - r\right)\right) &= 0.
+    \end{aligned}\right.
+\end{equation}

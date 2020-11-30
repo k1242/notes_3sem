@@ -36,6 +36,8 @@
 \usepackage{xifthen}
 \usepackage{pdfpages}
 \usepackage{transparent}
+
+\usepackage{graphicx}                       % вращать текст
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -66,6 +68,10 @@
 \newcommand{\xmark}{\ding{55}}
 
 \input{settings/matrixes}
+
+\newcommand{\EqL}[1]{
+  \frac{d }{d t} \frac{\partial L}{\partial \dot{#1}} - \frac{\partial L}{\partial #1} = 0
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

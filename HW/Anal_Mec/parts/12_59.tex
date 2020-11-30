@@ -1,0 +1,74 @@
+\subsubsection*{12.59}
+
+Составим уравнения движения в форме Лагранжа для системы, представленнйо на рис. \ref{t12n59}. Для начала перейдём в сферические координаты:
+\begin{equation*}
+    \left\{\begin{aligned}
+        x &= r \sin \theta \cos \varphi, \\
+        y &= r \sin \theta \cos \varphi, \\
+        z &= r \cos \theta.
+    \end{aligned}\right.
+\end{equation*}
+
+Для начала запишем потенциальную энергию системы, как
+\begin{equation*}
+    \Pi = mg z + \frac{1}{2} k (r_0 - r)^2.
+\end{equation*}
+Как уже было показано в №12.12 скорость центра масс диска
+\begin{equation*}
+     v^2 = g_{ij} \dot{q}^i \dot{q}^j = 
+    r^2 \sin^2 \theta \dot{\varphi}^2 + r^2 \dot{\theta}^2 + \dot{r}^2.
+\end{equation*}
+Также запишем кинематические уравнения Эйлера и момент инерции диска:
+\begin{equation*}
+    \vc{\omega} \overset{\text{в СО диска}}{=}  \begin{pmatrix}
+        \omega_1 \\
+        \omega_2 \\
+        \omega_3 
+    \end{pmatrix},
+    \hspace{1cm} 
+    \left\{\begin{aligned}
+        \omega_1 &= \dot{\psi} \sin \theta \sin \varphi + \dot{\theta} \cos \varphi, \\
+        \omega_2 &= \dot{\psi} \sin \theta \cos \varphi - \dot{\theta} \sin \varphi, \\
+        \omega_3 &= \dot{\psi} \cos \theta + \dot{\varphi},
+    \end{aligned}\right.
+    ,
+    \hspace{1cm} 
+    \hat{J} = \frac{m R^2}{4} \dmat{3}{1}{1}{2}.
+\end{equation*}
+Кинетическую энергию диска тогда найдём, как
+\begin{equation*}
+    T = \frac{1}{2} \vc{\omega}\T \hat{J} \vc{\omega} + \frac{1}{2} m 
+    \left(r^2 \sin^2 \theta \dot{\varphi}^2 + r^2 \dot{\theta}^2 + \dot{r}^2\right).
+\end{equation*}
+Соответственно, лагранжиан системы:
+% \begin{equation}
+%     L = \frac{M \dot{\theta}^{2} \left(R^{2} + \rho^{2}\right)}{4} + \frac{\dot{\varphi}^{2} m \left(\rho - r\right)^{2}}{2} + g m \left(\rho - r\right) \cos{\left(\varphi \right)} + \frac{m \left(\dot{\theta} \rho - \dot{\varphi} \left(\rho - r\right)\right)^{2}}{4}.
+% \end{equation}
+\begin{equation}
+    \begin{aligned}
+        L/m =
+            &+\frac{1}{8} R^{2} \left(\dot{\psi}^{2} \cos^{2} \theta + \dot{\psi}^{2} + 4 \dot{\psi} \dot{\varphi} \cos \theta + \dot{\theta}^{2} + 2 \dot{\varphi}^{2}\right) + \\
+            &+ \frac{1}{2} r^2 \left(\dot{\theta}^{2} r^{2} + \dot{\varphi}^{2} r^{2} \sin^{2} \theta + \dot{r}^{2}\right)
+            - \\
+            &-  g r \cos \theta - \frac{1}{2} \frac{k}{m}  \left(r_{0} - r\right)^{2}.
+    \end{aligned}
+\end{equation}
+Уравнения движения системы:
+\begin{equation}
+        \EqL{\varphi},\hspace{0.5cm} 
+        \EqL{\theta}, \hspace{0.5cm} 
+        \EqL{\psi}, \hspace{0.5cm} 
+        \EqL{r}. 
+\end{equation}
+Подставляя $L$, получим уравнения движения в чуть менее элегантной форме:
+\begin{equation}
+    \begin{aligned}
+        R^{2} \left(\ddot{\psi} \cos{\left(\theta \right)} + \ddot{\varphi} - \dot{\psi} \dot{\theta} \sin{\left(\theta \right)}\right) + 2 \ddot{\varphi} r^{2} \sin^{2}{\left(\theta \right)} + 2 \dot{\theta} \dot{\varphi} r^{2} \sin{\left(2 \theta \right)} + 4 \dot{\varphi} \dot{r} r \sin^{2}{\left(\theta \right)} &= 0, \\
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        R^{2} \ddot{\theta} + R^{2} \dot{\psi} \left(\dot{\psi} \cos{\left(\theta \right)} + 2 \dot{\varphi}\right) \sin{\left(\theta \right)} + 4 \ddot{\theta} r^{2} + 8 \dot{\theta} \dot{r} r - 2 \dot{\varphi}^{2} r^{2} \sin{\left(2 \theta \right)} - 4 g r \sin{\left(\theta \right)} &= 0, \\
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \ddot{\psi} \cos^{2}{\left(\theta \right)} + \ddot{\psi} + 2 \ddot{\varphi} \cos{\left(\theta \right)} - \dot{\psi} \dot{\theta} \sin{\left(2 \theta \right)} - 2 \dot{\theta} \dot{\varphi} \sin{\left(\theta \right)} &= 0, \\
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        2 \ddot{r} m + 2 g m \cos{\left(\theta \right)} - 2 k \left(- r + r_{0}\right) - 2 m r \left(\dot{\theta}^{2} + \dot{\varphi}^{2} \sin^{2}{\left(\theta \right)}\right) &= 0.
+    \end{aligned}
+\end{equation}

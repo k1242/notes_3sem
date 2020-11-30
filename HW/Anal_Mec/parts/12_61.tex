@@ -1,0 +1,34 @@
+\subsubsection*{12.61}
+
+Составим уравнения движения в форме Лагранжа для системы, представленнйо на рис. \ref{t12n61}. Хотелось бы найти уравнения относительного движения стержня в форме Лагранжа.
+
+Потенциальная энергия стержня
+\begin{equation*}
+    \Pi = mgy.
+\end{equation*}
+Записав кинетическую энергию,, рассматривая движение центра масс и вращение относительно него, найдём 
+\begin{equation}
+    L = T - \Pi = 
+    \frac{1}{2} m \left(
+        \dot{y}^2 + \omega^2 x^2 + \dot{x}^2
+    \right) + 
+    \frac{1}{12} m l^2 \left(
+        \dot{\varphi}^2 + \omega^2 \cos^2 \varphi
+    \right) - mgy.
+\end{equation}
+В угловой скорости появляется добавка $\omega \cos \varphi$ как проекции $\vc{\omega}$ на нормаль к стержню. 
+
+Уравнения движения системы найдём, как
+\begin{equation}
+    \left\{\begin{aligned}
+        \EqL{x},  \\
+        \EqL{y}, \\
+        \EqL{\varphi}.
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+       \vp  \ddot{x} &= \omega^2 x,\\
+       \vp  \ddot{y} &= g, \\
+       \vp  \ddot{\varphi} &= -  \omega^2 \sin (2 \varphi) / 2.
+    \end{aligned}\right.
+\end{equation}

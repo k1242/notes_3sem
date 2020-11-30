@@ -1,0 +1,73 @@
+\subsubsection*{15.5}
+
+
+Перейдём в СО, вращающуюся вместе с телом. В таком случае в уравнениях <<возникнут>>  силы инерции. Ввиду того что $\vc{\omega} \bot \vc{r}$ запишем 
+\begin{equation*}
+    \vc{F}_{\text{и}} = m \vc{\omega} \times \vc{\omega} \times (\vc{r} + \vc{l}) + m \vc{\omega} \times \vc{\omega} \times \left( \vc{r} - \vc{l}\right) =
+    2 m\vc{\omega} \times \vc{\omega} \times \vc{r} = 2m\omega^2 r.
+\end{equation*}
+Тогда добавка к потенциалу системы будет
+\begin{equation*}
+    \Pi_{\text{и}} = - \omega^2 r^2 m.
+\end{equation*}
+Силы между гантелями и стержнем аналогичны потенциалу
+\begin{equation*}
+    \Pi_{\text{g}} = 
+    - \frac{\alpha m}{\rho} \times 2, \hspace{0.5cm} 
+    \rho = \sqrt{r^2 + l^2},
+\end{equation*}
+где $r$ -- расстояние от центра до стержня. 
+ 
+Запишем теперь потенциал системы
+\begin{equation*}
+    \Pi =  - \frac{2\alpha m}{\rho} - \omega^2 r^2 m.
+\end{equation*}
+Найдём стационарные точки потенциала
+\begin{equation*}
+    \frac{\partial \Pi}{\partial r} = \frac{2\alpha m r}{(r^2+l^2)^{3/2}} 
+    -
+    2 \omega^2 r m = 2mr \left(
+        \frac{\alpha}{(r^2+l^2)^{3/2}} - \omega^2
+    \right) = 0
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        r_1^* &= \sqrt{\left({\alpha}/{\omega^2} \right)^{2/3} - l^2}
+        , &\omega^2 l^3 < \alpha. \\
+        r_2^* &= 0.
+    \end{aligned}\right.
+\end{equation*}
+И определим локальные экстремумы потенциала
+\begin{equation*}
+    \frac{\partial^2 \Pi}{\partial r^2} (r) =
+    2 m
+    \left(
+    \frac{\alpha}{(r^2+l^2)^{3/2}} -
+    \frac{\alpha r^2}{(r^2+l^2)^{5/2}} - \omega^2
+    \right).
+    .
+\end{equation*}
+При $r = r^*_2$ верно, что
+\begin{equation*}
+    \frac{\partial^2 \Pi}{\partial r^2} (0) = 
+    \frac{2\alpha}{l^3} - 2 \omega^2,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        r^* = 0 &\text{\ -- устойчиво при } 
+        &\omega^2 l^3 < \alpha, \\
+        r^* = 0 &\text{\ -- неустойчиво при } 
+        &\omega^2 l^3 > \alpha.
+    \end{aligned}\right.    
+\end{equation*}
+Чуть сложнее для $r = r^*_1$, заметим, что случай реализуется только при $\omega^2 l^3 < \alpha$:
+\begin{equation*}
+    \frac{\partial^2 \Pi}{\partial r^2} (r^*_1)= 
+    \underbrace{\left(\ \ldots\ \right)}_{>0}
+    \left(
+        \alpha^{-2/3} \omega^{4/3} l^2 - 1
+    \right),
+    \hspace{0.5cm} a^{-2/3} < \omega^{-4/3} l^{-2}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{\partial^2 \Pi}{\partial r^2} (r^*_1) < 0.
+\end{equation*}
+Таким образом $r = r^*_1$ -- неустойчивое положение равновесия.
+

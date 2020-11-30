@@ -1,0 +1,62 @@
+\subsubsection*{15.9}
+
+Параметризуем систему некоторым $\varphi$ таким, что
+\begin{equation*}
+    \left\{\begin{aligned}
+        x &= a \sin \varphi \\
+        y &= b \cos \varphi
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{x^2}{a^2} + \frac{y^2}{b^2}  = 1.
+\end{equation*}
+Аналогично предыдущим задачам считаем, что движение происходит в поле потенциальных сил (инерции и гравитации):
+\begin{equation*}
+    \Pi_{\text{g}} = mgy  = mgb \cos \varphi,
+    \hspace{0.5cm} 
+    \Pi_{\text{и}} = - \frac{1}{2} m \omega^2 x^2 = - \frac{1}{2} m \omega^2 a^2 \sin^2 \varphi.
+\end{equation*}
+Далее полагая $m=1$, найдём стационарные точки потенциала
+\begin{equation*}
+    \frac{\partial \Pi}{\partial \varphi} =
+    \sin \varphi \frac{1}{\omega^2 a^2} 
+    \left(
+        \cos \varphi + \frac{bg}{\omega^2 a^2} 
+    \right) = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} \left\{\begin{aligned}
+        \sin \varphi^* &= 0 \\
+        \cos \varphi^* &= - \frac{bg}{\omega^2 a^2}, &bg < \omega^2 a^2 
+    \end{aligned}\right.
+\end{equation*}
+и определим локальные экстремумы потенциала
+\begin{equation*}
+    \frac{\partial^2 \Pi}{\partial \varphi^2} = \omega^2 a^2  
+    \left(1 - 2\cos^2 \varphi\right) - bg \cos \varphi.
+\end{equation*}
+Для $\sin \varphi^* = 0$ и, соответсвенно, $\cos \varphi = \pm 1$, найдём, что
+\begin{equation*}
+    \frac{\partial^2 \Pi}{\partial \varphi^2} (\varphi^*) = 
+    - \omega^2 a^2 \mp bg,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        &(0, b) \text{\ \ \ \, -- неустойчиво при \ } &\omega^2 a^2 < bg, \\
+        &(0, -b) \text{\ \ -- устойчиво при \ } &\omega^2 a^2 < bg, \\
+        &(0, \pm b) \text{\ \ -- неустойчиво при \ } &\omega^2 a^2 > bg. \\
+    \end{aligned}\right.
+\end{equation*}
+Для $\cos \varphi^* = - bg / \omega^2 a^2$, и соответсвующего $\sin \varphi^*$ найдём, что при $\omega^2 a^2 > gb$
+\begin{equation*}
+    \frac{\partial^2 \Pi}{\partial \varphi^2} (\varphi^*) = 
+    \left(
+    1 + \frac{bg}{\omega^2 a^2} 
+    \right) \left(
+        \omega^2 a^2 - bg
+    \right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \left(\pm a\sqrt{1 - \frac{g^2b^2}{\omega^4a^4}}, - b\frac{gb}{\omega^2a^2} \right)
+    \text{\ \ -- устойчивые.}
+\end{equation*}
+
+
+
+
+

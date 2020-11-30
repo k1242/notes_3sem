@@ -1,0 +1,44 @@
+\subsubsection*{Т17.}
+
+Рассмотрим движение точки по цилиндру радиуса $r_0$. Тогда $L$ 
+\begin{equation*}
+    L  = T - \Pi = T = \frac{1}{2} m v^2 = \frac{1}{2} m \dot{q}_i \dot{q}^i
+    = \frac{1}{2} m g_{ij} \dot{q}^i \dot{q}^j
+    = r_0^2 \dot{\varphi}^2 + \dot{z}^2
+    .
+\end{equation*}
+Тогда вариация действия для системы (свободной материальной точки)
+\begin{equation*}
+    \frac{d }{d t} (\dot{x} \delta x) = \dot{x} \delta x + \dot{x} \delta \dot{x}
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
+    \delta S =
+    m \int_A^B 
+    \left( 
+        r_0^2 \dot{\varphi} \delta \varphi + \dot{z} \delta \dot{z}
+     \right)
+    \d t = 
+    m (r_0^2 \dot{\varphi} \delta \varphi + \dot{z} \delta z)\bigg|_A^B
+    + 
+    \int_A^B 
+    \left(
+        -r_0^2 \ddot{\varphi} \delta \varphi - \ddot{z} \delta z
+    \right) \d t = 0.
+\end{equation*}
+Вариация на $A$ и $B$ тождественно равна 0, в силу прозвольности $\delta z$ и $\delta \varphi$ получаем, что
+\begin{equation*}
+    \left\{\begin{aligned}
+        \ddot{\varphi} &= 0, \\
+        \dot{z} &= 0
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        \varphi &= C_1 t + C_2 \mod 2 \pi, \\
+        z &= C_3 t + C_4.
+    \end{aligned}\right.
+\end{equation*}
+так как в силу выбора $\varphi$ верно, что $\varphi + 2 \pi k = \varphi \ \  \forall k \in \mathbb{Z}$. В таком случае
+\begin{equation*}
+    C_1 = \frac{\varphi_B - \varphi_A}{t_B - t_A} + \frac{2\pi}{t_B - t_A} k,
+    \hspace{0.5cm} \forall k \in \mathbb{Z},
+\end{equation*}
+таким образом для свободной материальной точки существует счётное количество истинных путей для перемещения из $A$ в $B$ за фиксированное время $t_B - t_A$.

@@ -1,0 +1,49 @@
+\subsubsection*{12.29}
+
+Два однородных стержня длины $l$ каждый образую плоский двойной маятник. Составим уравнения движения в форме Лагранжа. 
+
+Выберем начала координат в точке подвеса. Тогда координаты центра масс второго стержня
+\begin{equation*}
+    \left\{\begin{aligned}
+        x_2 &= l \sin \varphi_1 + (l/2) \sin \varphi_2, \\
+        y_2 &= l \cos \varphi_1 + (l/2) \cos \varphi_2.
+    \end{aligned}\right.
+\end{equation*}
+Потенциальная энергия системы
+\begin{equation*}
+    \Pi = -mg \left(\frac{l}{2} \cos \varphi_1 \right) -
+    mg \left(
+        l \cos \varphi_1 + \frac{l}{2} \cos \varphi_2
+    \right).
+\end{equation*}
+Кинетическая энергия первого стержня
+\begin{equation*}
+    T_1 = \frac{1}{2} I_1 \dot{\varphi}_1^2 = \frac{l^2 m}{6}  \dot{\varphi}^2.
+\end{equation*}
+Для второго стержня найдём кинетическую энергию, рассмотрев его вращение относительно центра масс:
+\begin{equation*}
+    T_2 = \frac{1}{2} m \left( \dot{x}_2^2 + \dot{y}_2^2\right) +
+    \frac{1}{2} \frac{m l^2}{12}  \dot{\varphi}_2^2.
+\end{equation*}
+Лагранжиан системы:
+\begin{equation}
+    L = T - \Pi 
+    =  ml^2 \left[
+        \frac{g}{2l} \left( 3 \sin \varphi_1 +  \cos \varphi_2  \right)
+        + \frac{1}{2} \cos (\varphi_1 - \varphi_2) \dot{\varphi}_1 \dot{\varphi}_2 + \frac{2}{3}  \dot{\varphi}^2 + \frac{1}{6} \dot{\varphi}_2^2
+        \right].
+\end{equation}
+Тогда уравнения движения системы
+\begin{equation}
+    \left\{\begin{aligned}
+        \frac{d }{d t} \frac{\partial L}{\partial \dot{\varphi_1}} - \frac{\partial L}{\partial \varphi_1} &= 0, \\
+        \frac{d }{d t} \frac{\partial L}{\partial \dot{\varphi_2}} - \frac{\partial L}{\partial \varphi_2} &= 0.
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+    9 (g/l) \sin \varphi_1 + 3  \sin (\varphi_1 - \varphi_2) \dot{\varphi}^2_2
+    + 3 \cos (\varphi_1 - \varphi_2) \ddot{\varphi}_2 + 8  \ddot{\varphi}_1 &= 0, \\
+    3 (g/l) \sin \varphi_2 - 3  \sin (\varphi_1 - \varphi_2) \dot{\varphi}_1^2
+    + 3 \cos (\varphi_1 - \varphi_2) \ddot{\varphi}_1 + 2  \ddot{\varphi}_2 &= 0.
+    \end{aligned}\right.
+\end{equation}

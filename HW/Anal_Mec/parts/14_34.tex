@@ -1,0 +1,39 @@
+\subsubsection*{14.34}
+
+
+Система движется в потениальном поле с удерживающией связью:
+\begin{equation*}
+    \Pi = \sum_{k=1}^n \alpha_k q_k, \hspace{1cm} 
+    \sum_{k=1}^n\alpha_k^2 > 0, \hspace{1cm} 
+    \sum_{k=1}^n q_k^2 - 1 \leq 0.
+\end{equation*}
+Можно было решить задачу на условный экстремум, введя функцию $F$:
+\begin{equation*}
+    f = \sum_{k=1}^n \alpha_k q_k - \lambda \left(
+        \sum_{k=1}^n q_k^2 - 1
+    \right).
+\end{equation*}
+А моожно посмотреть на $n$-мерную сферу, которой ограничено положение системы на координатном пространстве. Действующая сила тогда
+\begin{equation*}
+    \frac{\partial \Pi}{\partial q^i} = F_i = \alpha_i,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \vc{F} = \left(\alpha_1, \ \ldots,\  \alpha_n\right)\T.
+\end{equation*}
+Уравнение для сферы
+\begin{equation*}
+    \sum q_i^2 = 1.
+\end{equation*}
+Нас интересует момент, когда радиус вектор сонаправлен с $\vc{F}$, пусть $\vc{r} = k \vc{F}$.
+\begin{equation*}
+    (k \alpha_1)^2 + \ldots + (k \alpha_n)^2 = 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    k = \left(
+        \sum_{k=1}^n \alpha_k^2
+    \right)^{-1/2}.
+\end{equation*}
+Соответсвенно искомое положение равновесия
+\begin{equation}
+    \vc{r} = \left(
+        \sum_{k=1}^n \alpha_k^2
+    \right)^{-1/2} \left(\alpha_1,\  \ldots, \ \alpha_n\right)\T.
+\end{equation}
