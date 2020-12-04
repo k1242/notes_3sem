@@ -68,6 +68,10 @@
 \newcommand{\xmark}{\ding{55}}
 
 \input{settings/matrixes}
+
+\newcommand*\home{%
+  \xrightarrow[\raisebox{0.35 em}{\smash{\ensuremath{\sim}}}]{}%
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -108,6 +112,23 @@
 \theoremstyle{definition}
 \newtheorem{to_con}[to_thr]{Con}
 \newtheorem{to_def}[to_thr]{Def}
+\newtheorem{to_exm}{Пример}
+
+\newenvironment{itemize*}
+{
+    \begin{itemize}
+        \setlength{\itemsep}{1pt}
+        \setlength{\parskip}{1pt}}
+    {\end{itemize}
+}
+
+\newenvironment{enumerate*}
+{
+    \begin{enumerate}
+        \setlength{\itemsep}{1pt}
+        \setlength{\parskip}{1pt}}
+    {\end{enumerate}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
