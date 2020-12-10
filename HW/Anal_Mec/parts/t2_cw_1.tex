@@ -1,0 +1,57 @@
+\subsection*{Задача №1}
+
+Рассмторим движение твёржого тела с неподвижной точкой $O$, в частности рассмотрим случай Лагранжа. Хотелось бы найти первые инегралы и какое-нибудь хорошее дифференциальное уравнение для системы, при условии что $(\vc{K}_O)_z = 0$ и $\omega_\xi = 0$.
+
+Запишем кинематические и динамические уравнения Эйлера: 
+\begin{equation*}
+    \left\{\begin{aligned}
+        p &= \dot{\psi} \sin \theta \sin \varphi + \dot{\theta} \cos \varphi,\\
+        q &= \dot{\psi} \sin \theta \cos \varphi - \dot{\theta} \sin \varphi,\\
+        r &= \dot{\psi} \cos \theta + \dot{\varphi}.
+    \end{aligned}\right.,
+    \hspace{0.6cm} 
+    \left\{\begin{aligned}
+        I_1 \dot{p} + (I_3-I_2) q r &= M_{\xi} \\
+        I_2 \dot{q} + (I_1-I_3) p r &= M_{\eta} \\
+        I_3 \dot{r} + (I_2-I_1) p q &= M_{\zeta} \\
+    \end{aligned}\right.,   
+    \hspace{0.6cm} 
+    \hat{J}_O = \dmat{3}{I_1}{I_1}{I_3}, \hspace{0.6cm} 
+    \vc{\omega} = \begin{pmatrix}
+        p \\ q \\ r
+    \end{pmatrix}.
+\end{equation*}
+При чём в случае Лагранжа сразу находим первый интеграл системы:
+\begin{equation}
+    \vc{M}_O = \vv{OP} \times (m \vc{g}), 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    c \dot{r} = M_{\xi} = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \dot{\psi} \cos \theta + \dot{\varphi} = r =\const.
+\end{equation}
+По условию $(\vc{K}_O)_z = 0$ и $\omega_\xi = 0$. В таком случае энергия системы 
+\begin{equation*}
+    T + \Pi = \frac{1}{2} A (p^2 + q^2) + mgl \cos \theta = \const = \frac{h}{2}.
+\end{equation*}
+Подставляя значения из кинематических уравнений, получаем
+\begin{equation}
+    A \left(
+        \dot{\psi}^2 \sin^2 \theta + \dot{\theta}^2
+    \right) + 2mgl \cos \theta = h = \const.
+\end{equation}
+Так как $(\vc{K}_0)_z = \const = 0$, то 
+\begin{equation*}
+    C r \cos \theta + A \dot{\psi} \sin^2 \theta = (\vc{K}_0)_z = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    A \dot{\psi} \sin^2 \theta = 0.
+\end{equation*}
+Из последних двух выражений находим, что
+\begin{equation}
+    A \dot{\theta}^2 + 2 mgl \cos \theta = h,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \boxed{
+        \ddot{\theta} = \frac{mgl}{A} \sin \theta
+    },
+\end{equation}
+что и является искомым дифференциальным уравнением второго порядка, относительно угла нутации.
+

@@ -1,0 +1,70 @@
+\subsection*{Задача №2}
+
+Для системы, представленной на рис. \ref{cw_t2_2} найдём лагранжиан. Потенциальная энергия системы (считая, что в $(0,0)$ находится тело массы $M \gg m$),
+\begin{equation*}
+    \Pi = - \frac{2GMm}{r} \overset{\mathrm{def} \varkappa}{=} - \varkappa \frac{m}{r} .
+\end{equation*}
+Положение массивных тел, из геометрии системы, можем записать, как
+\begin{equation*}
+    r_{1,\,2} = r \begin{pmatrix}
+        \cos \varphi \\
+        \sin \varphi 
+    \end{pmatrix} 
+    \pm l \begin{pmatrix}
+        - \cos (\varphi + \psi) \\
+        \phantom{-} \sin (\varphi + \psi)
+    \end{pmatrix}.
+\end{equation*}
+Кинетиечская энергия системы теперь может быть записана как
+\begin{equation*}
+    T = \frac{m}{2} \left(
+        \dot{r}^2_1 + \dot{r}^2_2
+    \right),
+\end{equation*}
+где
+\begin{equation}
+\left\{\begin{aligned}
+    \dot{r}_1 = \dot{r} \begin{pmatrix}
+        \cos \varphi \\
+        \sin \varphi  
+    \end{pmatrix} + r \begin{pmatrix}
+        - \sin \varphi \\
+        \phantom{-}  \cos \varphi
+    \end{pmatrix}
+    \dot{\varphi} + 
+    l \begin{pmatrix}
+        \sin (\varphi + \psi) \\
+        \cos (\varphi + \psi) \\
+    \end{pmatrix} (\dot{\varphi} + \dot{\psi}), \\
+    \dot{r}_2 = \dot{r} \begin{pmatrix}
+        \cos \varphi \\
+        \sin \varphi  
+    \end{pmatrix} + r \begin{pmatrix}
+        - \sin \varphi \\
+        \phantom{-}  \cos \varphi
+    \end{pmatrix}
+    \dot{\varphi} - 
+    l \begin{pmatrix}
+        \sin (\varphi + \psi) \\
+        \cos (\varphi + \psi) \\
+    \end{pmatrix} (\dot{\varphi} + \dot{\psi}), \\
+\end{aligned}\right.
+\end{equation}
+что позволяет, наконец, записать лагранжиан системы
+\begin{equation}
+    L = T - \Pi,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    L / m =  \dot{r}^2 + r^2 \dot{\varphi}^2 + l^2 \left(\dot{\varphi}+ \dot{\psi}\right)^2 + \frac{\varkappa}{r} .
+\end{equation}
+Так как на систему действуют только радиальные силы, то
+\begin{equation}
+    \frac{d \vc{K}_O}{d t} = \vc{M}_O = 0, 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \vc{r}_1 \times \dot{\vc{r}}_1 + \vc{r}_2 \times \dot{\vc{r}}_2 = \const.
+\end{equation}
+Также сохраняется энергия системы,
+\begin{equation}
+    T + \Pi = \const, 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+     \dot{r}^2 + r^2 \dot{\varphi}^2 + l^2 \left(\dot{\varphi}+ \dot{\psi}\right)^2 + \frac{\varkappa}{r} = \const.
+\end{equation}
