@@ -3,13 +3,13 @@
 Как и в решение к №11.72 у нас симметричный волчок. Требуется определить начальную угловую скорость прецессии $\dot{\varphi}_0$, чтобы $\dot{\theta}=0$. 
 Формально можем поставить задачу несколько иначе, какой должен быть момент внешних сил $\vc{M}_O$ чтобы происходила регулярная прецессия $\dot{\theta}=0$?
 
-Для начала введём отдельно $\vc{\omega}_1 \parallel O\xi$ и $\vc{\omega}_2 \parallel OZ$.
+Для начала введём отдельно $\vc{\omega}_1 \parallel O\zeta$ и $\vc{\omega}_2 \parallel OZ$.
  По раннее проделанной работе с регулярной прецессией, мы знаем, что $K_z$ и $K_3$ постоянны, соответсвенно $\omega_1, \omega_2, \omega = \const$.
- Аналогично случаю Эйлера (см. №???)
+ Аналогично случаю Эйлера (см. №11.59)
  \begin{equation*}
-     (K_O)_\xi = Cr, \hspace{0.5cm} (K_O)_Z = A \sqrt{q^2 + q^2}.
+     (K_O)_\zeta = Cr, \hspace{0.5cm} (K_O)_Z = A \sqrt{p^2 + q^2}.
  \end{equation*}
- То есть $\vc{K}_O \in O\xi Z$ и $K_O=\const$. Но, т.к. плоскость $O\xi Z$ вращаеся с угловой скорсотью $\vc{\omega}_2$ то и вектор $\vc{K}_O$ аналогично. Тогда для $\vc{M}_O$ верно, что
+ То есть $\vc{K}_O \in O\zeta Z$ и $K_O=\const$. Но, т.к. плоскость $O\zeta Z$ вращаеся с угловой скорсотью $\vc{\omega}_2$ то и вектор $\vc{K}_O$ аналогично. Тогда для $\vc{M}_O$ верно, что
  \begin{equation}
      \frac{d \vc{K}_O}{d t} = \vc{\omega}_2 \times \vc{K}_O = \vc{M}_O.
  \end{equation}
@@ -21,7 +21,7 @@
         C (\omega_1 + \omega_2 \cos \theta) - A \omega_2 \cos \theta
      \right) 
  \end{equation*}
- Т.к. $\|\omega_2 \times \omega_1\| = \omega_1 \omega_2 \sin \theta$, то
+ Т.к. $\|\vc{\omega}_2 \times \vc{\omega}_1\| = \omega_1 \omega_2 \sin \theta$, то
  \begin{equation}
  \label{ggg}
     \vc{M}_O = 
@@ -43,7 +43,7 @@
  \end{equation*}
  т.к. мы действительно требуем регулярной прецессии. Так получаем квадратное уравнение вида
  \begin{equation}
-     (C-A) \dot{\varphi}^2 \cos \theta + C \omega \varphi - mgl = 0
+     (C-A) \dot{\varphi}^2 \cos \theta + C \omega \vc{\varphi} - mgl = 0
      \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
      \dot{\varphi} = 
      \frac{
@@ -64,7 +64,7 @@
 \begin{equation}
     \left\{\begin{aligned}
         N_x = m \dot{\varphi}^2 l \sin \theta \\
-        N_y - mg = 0        
+        N_z - mg = 0        
     \end{aligned}\right.
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
     N = m\sqrt{g^2 + \dot{\varphi}^2 l^2 \sin^2 \theta}.
