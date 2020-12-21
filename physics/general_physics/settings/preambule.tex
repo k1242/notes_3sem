@@ -33,6 +33,8 @@
 \usepackage{xifthen}
 \usepackage{pdfpages}
 \usepackage{transparent}
+
+\usepackage{mathrsfs}  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%% ИНТЕГРАЛЫ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -102,6 +104,15 @@
 \newtheorem{to_con}[to_thr]{Con}
 \theoremstyle{definition}
 \newtheorem{to_def}[to_thr]{Def}
+
+\newenvironment{description*}
+{
+    \begin{description}
+        \setlength{\itemsep}{1pt}
+        \setlength{\parskip}{1pt}
+        }
+    {\end{description}
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\incfig}[1]{%
