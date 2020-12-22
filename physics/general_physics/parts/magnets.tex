@@ -1,0 +1,80 @@
+Есть такое определение магнитного поля $\vc{B}$:
+\begin{equation*}
+    \vc{B} = \frac{q}{cr^3} \left[\vc{v} \times \vc{r}\right] = \frac{1}{c} \left[\vc{v} \times \vc{E} \right],
+\end{equation*}
+в СГСЭ.
+
+Можно из $I \d \vc{l} = \vc{j} \d V$, перейти к закону 
+\begin{equation*}
+    d \vc{B} = \frac{I}{c} \left[d \vc{l} \times \vc{r} \right],
+    \hspace{0.5cm} 
+    d \vc{B} = \frac{I}{c} \left[ \vc{j} \times \vc{r} \right].
+\end{equation*}
+Например, для прямого провода есть самозамкнутые кружочки вокруг онного с модулем
+\begin{equation*}
+    B = \frac{2I}{cr}.
+\end{equation*}
+
+Если взять маленький виток с проводом, то конфигурация полей аналогична полю диполю. В центре витка поле будет
+\begin{equation*}
+    B =  \frac{2\pi I}{cr}.
+\end{equation*}
+Так вот для витка 
+\begin{equation*}
+    \vc{\mathfrak{M}} = \frac{1}{c} I \vc{S}.
+\end{equation*}
+Поле вокруг магнитного диполя
+\begin{equation*}
+    \vc{B} = \frac{3}{5} \frac{\left(\vc{\mathfrak{M}} \cdot \vc{r} \right)}{r^5} \vc{r} - \frac{1}{r^3} \vc{\mathfrak{M}}.
+\end{equation*}
+Сила Лоренца:
+\begin{equation}
+    \vc{F} = e \left(\vc{E} + \frac{1}{c} [\vc{v} \times \vc{B}]\right).
+\end{equation}
+Введём линейную плотность тока и запишем, где $\Omega$ -- телесный угол площадочки, 
+\begin{equation*}
+    i = \frac{I}{l},
+    \hspace{0.5cm} 
+    d B_{\tau} = \frac{i}{c} \d \Omega.
+\end{equation*}
+Тогда поле внутри соленодиа
+\begin{equation*}
+    B = \frac{i}{c} 4 \pi, \hspace{0.5cm} i = \frac{IN}{l}.
+\end{equation*}
+Для плоскости по которой течёт $i$, 
+\begin{equation*}
+    B = \frac{2\pi}{c} i.
+\end{equation*}
+Для двух плоскостей аналогично, (а-ля магнитный конденсатор)
+\begin{equation*}
+    B = \frac{4\pi}{c} i.
+\end{equation*}
+Кстати, для телесного угла,
+\begin{equation*}
+    \Omega = 2 \pi (1 - \cos \alpha).
+\end{equation*}
+Для погнутого в окружность радиуса $R$ соленоида, площади $S$, с $i$
+\begin{equation*}
+    B_O = \frac{2iS}{cR^2} = \frac{2\pi i}{c} \left(\frac{r}{R} \right)^2.
+\end{equation*}
+
+\subsubsection* {Магнетики -- магнитное поле в веществе}
+
+Магнитный момент молекулярных токов:
+\begin{equation*}
+    \vc{I} = \frac{\vc{\mathfrak{M}}}{V} = \frac{1}{c} i_{\text{мол}} \vc{l}, \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    i_{\text{мол}} = c \left(\vc{I} \cdot \vc{l} \right),
+    \hspace{0.5cm} 
+    i_{\text{мол}} = c \oint_L \left(\vc{I} \cdot \d \vc{l} \right).
+\end{equation*}
+Кстати,
+\begin{equation*}
+    \vc{I} = \varkappa \vc{H},
+\end{equation*}
+где $\varkappa$ -- магнитная восприимчивость.
+Также 
+\begin{equation*}
+    \vc{B} = \mu \vc{H},
+\end{equation*}
+где $\mu = 1 + 4 \pi \varkappa$ -- магнитная проницаемость.
+

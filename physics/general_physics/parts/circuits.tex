@@ -1,71 +1,69 @@
-\section{Семинар про электрические цепи}
-\subsection{Общие сведения}
-Колебательный контур описывается дифференциальным уравнением второго порядка:
 
+Колебательный контур описывается дифференциальным уравнением второго порядка:
 \begin{equation}
 	L \ddot{q} + R \dot{q} + \frac{q}{C} = \mathscr{E}
 \end{equation}
 
 Если же <<внешних сил>> $\varepsilon$ или $F$ нет, то уравнения линейны и однородны по времени, описывая, так называемые, свободные колебания. Введём обозначения для таких линейных колебательных систем:
-
 \begin{equation}
-	\omega_0^2 = \frac{1}{L C} \hspace*{1 cm} 2 \gamma = \frac{R}{L} \hspace*{1 cm} X = \frac{\mathscr{E}}{L}
+	\omega_0^2 = \frac{1}{L C}, \hspace*{1 cm} 2 \gamma = \frac{R}{L}, \hspace*{1 cm} X = \frac{\mathscr{E}}{L}.
 \end{equation}
 
 
 Тогда уравнения преобразуются в более удобный вид, в котором $\omega_0 $ -- собственная частота, а $\gamma$ -- коэффициент затухания. 
 
-\subsection{Виды колебаний}
+\subsubsection*{Виды колебаний в электрических цепях}
 
 \textbf{Свободные колебания гармонического осциллятора} характеризуется отсутствием омического сопротивления:
-
 \begin{equation}
-	\ddot{q} + \omega_0^2 q = 0 \hspace*{1 cm} \Longrightarrow \hspace*{1 cm} 
+	\ddot{q} + \omega_0^2 q = 0, \hspace*{1 cm} \Rightarrow \hspace*{1 cm} 
 	\begin{aligned}
-		&q = q_0 \cos(\omega_0 t + \delta)\\
-		&I = \omega_0 q_0 \cos\left(\omega_0 t + \delta + \frac{\pi}{2}\right)
+		&q = q_0 \cos(\omega_0 t + \delta),\\
+		&I = \omega_0 q_0 \cos\left(\omega_0 t + \delta + {\pi}/{2}\right).
 	\end{aligned}
 \end{equation}
-
-\textbf{Затухающие колебания} характеризуются наличием тормозящей силы.
-
+\textbf{Затухающие колебания} характеризуются наличием тормозящей силы:
 \begin{equation}
-	\ddot{q} + 2 \gamma \dot{q} + \omega_0^2 q = 0 \hspace*{1 cm} \Longrightarrow \hspace*{1 cm} q = a e^{- \gamma t} \cos(\omega t + \delta), \text{ где } \omega^2 = \omega_0^2 - \gamma^2
+	\ddot{q} + 2 \gamma \dot{q} + \omega_0^2 q = 0 \hspace*{1 cm} \Rightarrow \hspace*{1 cm} q = a e^{- \gamma t} \cos(\omega t + \delta), \text{ где } \omega^2 = \omega_0^2 - \gamma^2.
 \end{equation}
+Выпишем несколько важных определений:
 
-\phantom{239}
+\begin{minipage}[t]{0.05\textwidth}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.95\textwidth}
+    \begin{description*}
+    \item[Период колебаний] --- величина $T = 2 \pi / \omega = 2\pi / \sqrt{\omega_0^2 - \gamma^2} = T_0 / \sqrt{1 - (\gamma/\omega_0)^2}$;
+    \item[Амплитуда]  --- величина $A = a e^{- \gamma t} $;
+    \item[Время затухания] --- величина $\tau = 1/\gamma$ за которое $A$ убывает в $e$ раз;
+    \item[Логарифмический декремент затухания] ---величина  $d = \gamma T$ (безбожно устарел);
+    \item[Добротность] --- величина $Q = \pi / d = \omega / 2 \gamma = \pi N$, где $N = \tau/T = \frac{1}{\gamma T} (= 1/d)$. 
+    Также $Q = \Delta W / W$. 
+\end{description*}
+\end{minipage}
 
-\noindent<<\textbf{Периодом}>> колебаний в таком случае называется величина $T = 2 \pi / \omega = 2\pi / \sqrt{\omega_0^2 - \gamma^2} = T_0 / \sqrt{1 - (\gamma/\omega_0)^2}$
-\textbf{Амплитуда} -- $A = a e^{- \gamma t} $, 
-\textbf{время затухания} -- $\tau = 1/\gamma$ за которое $A$ убывает в $e$ раз.
-\textbf{Логарифмический декремент затухания} $d = \gamma T$ (безбожно устарел).
+\subsubsection*{Вынужденный колебания затухающего осциллятора под действием синусоидальной силы}
 
-\noindent Число колебаний совершаемых за $\tau$: $N = \tau/T = \frac{1}{\gamma T} (= 1/d)$.
-\textbf{Добротностью} называется величина $Q = \pi N$
-
-\phantom{239} 
-
-\textbf{Вынужденный колебания затухающего осциллятора под действием синусоидальной силы.}
-
+Запишем уравнение колебаний в самом простом случае:
 \begin{equation}
 	\ddot{q} + 2 \gamma \dot{q} + \omega_0^2 q = X(t) = X_0 \cos (\omega t)
 \end{equation}
-Частное решение ищем в виде $q = q_0 e^{i \omega t}$, откуда $\dot{q} = i \omega q$, $\ddot{q} -\omega^{2} q $, тогда:
-
+Частное решение ищем в виде $q = q_0 e^{i \omega t}$, откуда $\dot{q} = i \omega q$, $\ddot{q} = \omega^{2} q $, тогда:
 \begin{equation}
-	q = \frac{X}{\omega_0^2 - \omega^2 + 2 i \omega \gamma} e^{i \omega t} + e^{-\gamma t}(C_1 cos \omega_0 t + C_2 sin \omega_0 t)
+	q = \frac{X}{\omega_0^2 - \omega^2 + 2 i \omega \gamma} e^{i \omega t} + e^{-\gamma t}(C_1 \cos \omega_0 t + C_2 \sin \omega_0 t)
 \end{equation}
-Если $t \gg \tau$, то свободные колебания практически затухнуть и останутся только вынужденные (первый член выражения для $q$).
+Если $t \gg \tau$, то свободные колебания практически затухнут и останутся только вынужденные (первый член выражения для $q$).
 
 Оставим только вещественную часть решения:
-
 \begin{equation}
-	q = \frac{X}{\omega_0^2 - \omega^2 + 2 i \omega \gamma} e^{i \omega t} \hspace*{1 cm } 
-	\scalebox{1.5}{$\leadsto$} \hspace*{1 cm}
-	q = \frac{X_0}{\sqrt{(\omega_0^2 - \omega^2) + 4 \gamma^2 \omega^2}} \cos(\omega t - \arctan\frac{2 \gamma \omega}{\omega_0^2 - \omega^2}), 
+	q = \frac{X}{\omega_0^2 - \omega^2 + 2 i \omega \gamma} e^{i \omega t} 
+	\hspace{0.5 cm } 	\leadsto \hspace{0.5 cm}
+	q = \frac{X_0}{\sqrt{(\omega_0^2 - \omega^2)^2 + 4 \gamma^2 \omega^2}} \cos\left(\omega t - \Delta \varphi\right), \hspace{0.5cm} \Delta \varphi = \arctan\left[\frac{2 \gamma \omega}{\omega_0^2 - \omega^2}\right].
 \end{equation}
 В наиболее важном случае, когда затухание невелико, положения всех максимумов почти не отличаются друг от друга. Поэтому за максимум аплитуды смещения можно принять её значение при $\omega = \omega_0 $:
-
 \begin{equation}
-	a_{max} = \frac{X_0}{2 \omega_0 \gamma} = \frac{\omega_0}{2 \gamma} a_0 \hspace*{1 cm} \scalebox{1.5}{$\leadsto$} \hspace*{1 cm} \frac{a_{max}}{a_0} = Q = \frac{\omega_0}{2 \gamma}
+	a_{max} = \frac{X_0}{2 \omega_0 \gamma} = \frac{\omega_0}{2 \gamma} a_0,
+	 \hspace*{1 cm} 
+	\leadsto 
+	\hspace*{1 cm} \frac{a_{max}}{a_0} = Q = \frac{\omega_0}{2 \gamma}.
 \end{equation}
