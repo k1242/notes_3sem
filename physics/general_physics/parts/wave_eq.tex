@@ -1,0 +1,34 @@
+\noindent
+Считая в среде $\vc{j} = 0$, можно написать, что
+\begin{equation}
+    \left\{\begin{aligned}
+        \rot \vc{E} &= - \frac{1}{c} \frac{\partial \vc{B}}{\partial t} \\
+        \rot \vc{H} &= \frac{1}{c} \frac{\partial \vc{D}}{\partial t}
+    \end{aligned}\right.;
+    \hspace{0.1cm} 
+    \left\{\begin{aligned}
+        \vc{B} &= \mu \vc{H} \vphantom{\frac{1}{2}}\\
+        \vc{D} &= \varepsilon \vc{E}  \vphantom{\frac{1}{2}}
+    \end{aligned}\right.;
+    \hspace{0.2cm} \Rightarrow \hspace{0.2cm} 
+    \left\{\begin{aligned}
+        \nabla \times \left[ \nabla \times \vc{E} \right] &= \cancel{\nabla \left(\nabla \cdot \vc{E}\right)} - \Delta \vc{E} \vphantom{\frac{1}{2}} \\
+        \nabla \times \left[ \nabla \times \vc{E} \right] &= -\frac{\partial }{\partial t} \rot \vc{B}
+    \end{aligned}\right. ;
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \boxed{
+        \Delta \vc{E} = \frac{\varepsilon \mu}{c^2} \frac{\partial^2 E}{\partial^2 t}  = 0
+    }.
+\end{equation}
+Аналогично для $\vc{B}$ мы можем записать, что
+\begin{equation*}
+    \frac{\partial^2 \vc{B}}{\partial^2 t}  = \frac{c^2}{\varepsilon \mu}  \Delta \vc{B}.
+\end{equation*}
+Если мы хотим видеть в волноводе целое число волн, то
+\begin{equation*}
+    \omega^2 = \frac{c^2 \pi^2}{\varepsilon \mu} \left[
+        \left(\frac{n_x}{a_x}\right)^2 + 
+        \left(\frac{n_y}{a_y}\right)^2 + 
+        \left(\frac{n_z}{a_z}\right)^2  
+    \right].
+\end{equation*}
