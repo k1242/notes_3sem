@@ -2,9 +2,9 @@
 Заметки третьего семестра МФТИ (ФОПФ). В частности, содержит материалы по:
 
 * **физике**
-([*механика*](https://github.com/k1242/notes_3sem/blob/master/physics/LL_I/notes_LL_I.pdf),
-[*теория поля*](https://github.com/k1242/notes_3sem/blob/master/physics/LL_II/notes_LL_II.pdf),
-[*общая физика*](https://github.com/k1242/notes_3sem/blob/master/physics/general_physics/general_physics.pdf));
+([*билеты*](https://github.com/k1242/notes_3sem/blob/master/physics/gp_tickets/GP_3sem_questions.pdf),
+[*заметки лекций*](https://github.com/k1242/notes_3sem/blob/master/physics/general_physics/general_physics.pdf),
+[*вопрос по выбору*](https://github.com/k1242/notes_3sem/blob/master/physics/CQ3/CQ3_JacobsLadder.pdf))
 
 * **аналитической механике**;
 ([*заметки с семинара*](https://github.com/k1242/notes_3sem/blob/master/anmec/anmec_notes_v2.pdf),
