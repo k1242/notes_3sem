@@ -1,0 +1,84 @@
+Вместо поиска $\vc{E}$ достаточно найти $\varphi$,
+\begin{equation*}
+    \left\{\begin{aligned}
+        &\vc{E} = -\frac{1}{c}\frac{\partial \vc{A}}{\partial t} - \grad \varphi \\
+        &\div \vc{E} = 4 \pi \rho \\
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \div \grad \varphi \equiv \Delta \varphi = 
+    \left\{\begin{aligned}
+        &- 4 \pi \rho &\text{ур. Пуассона} \\
+        &\phantom{42} 0 &\text{ур. Лапласа}
+    \end{aligned}\right.
+\end{equation*}
+
+
+Как может быть поставлена задача? Заданы граничные значения, найти распределения зарядов. Заданы заряды, найти распределения. Что-то задано, что-то не задано. Во всех трёх случаях \textbf{решение уравнения Пуассона единственно}. 
+
+
+К слову, так как $\varphi = \varphi(\vc{r})$, а при $A_i = \const$ верно, что $\vc{E} = -\grad \varphi$, то электростатическое поле потенциально. Также это можно увидеть в работе ЭМ сил, при перемещении заряда по замкнутому контуру:
+\begin{equation*}
+    A_{\text{замкн}}/q = \oint_{(L)} \vc{E} \cdot \d \vc{l} = - \frac{1}{c} \frac{\partial }{\partial t} \int \vc{H} \cdot \d \vc{f} = 0.
+\end{equation*}
+
+\vspace{-10pt}
+
+\subsubsection*{Разность потенциалов}
+
+\begin{to_def} 
+      Если на участке цепи не действуют сторонние силы, работа по перемещению включает только работу потенциального электрического поля и \textit{электрическое напряжение} $U_{AB}$ между $A$ и $B$ совпадает с разностью потенциалов $\varphi_A - \varphi_B = A^{\text{el}}_{AB}/q$. В общем случае $U_{AB} = \varphi_A - \varphi_B + \mathscr{E}_{AB}$.
+\end{to_def}
+
+\subsubsection*{Граничные условия на заряженной поверхности}
+
+\vspace{-10pt}
+
+\begin{minipage}[c]{0.45\textwidth}
+\noindent
+    По теореме Гаусса верно, что
+    \begin{align*}
+        E_{2n_2} \cancel{\Delta S} + E_{1n_1} \cancel{\Delta S} &= 4\pi\sigma \cancel{\Delta S}, \\
+        E_{2n} - E_{1n} &= 4\pi\sigma
+    \end{align*}
+\noindent
+    По теореме циркуляции верно, что
+    \begin{align*}
+        E_{2l} \cancel{\Delta} l - E_{1l} \cancel{\Delta} l &= 0 \\
+        E_{2l} - E_{1l} &= 0.
+    \end{align*}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.45\textwidth}
+    \incfig{3}
+\end{minipage}
+
+\vspace{-10pt}
+
+\subsubsection*{Проводники}
+
+\begin{to_def}[пусть так]
+    \textit{Проводник} -- костяк частиц, окруженных \textit{свободными} электронами, которые в пределах тела могут перемещаться на какие угодно
+    расстояния. 
+\end{to_def}
+
+\vspace{-10pt}
+
+\begin{minipage}[c]{0.55\textwidth}
+    В частности, для проводников, верно, что
+    \begin{align*}
+        E_n &= 4 \pi \sigma \\
+        E_\tau &= 0
+    \end{align*}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.35\textwidth}
+    \incfig{4}
+\end{minipage}
+
+Собственно, объёмных зарядов в проводнике нет, поверхностные есть и компенсируют внешнее поле. Аналогично работает решетка Фарадея, электростатическое поле не проникает в проводники.
+
+
+\subsubsection*{Метод изображений}
+
+Если существует некоторая эквипотенциальная поверхность разделяющая пространство на два полупространства, то можем считать что эта поверхность является проводящей. И наоборот, проводящую поверхность можно заменить, на системы зарядов в полупространстве, ей ограниченном, создающих эквипотенциальную поверхность.
+

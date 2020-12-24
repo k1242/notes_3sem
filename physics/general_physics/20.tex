@@ -1,0 +1,120 @@
+
+
+
+\begin{minipage}[t]{0.2\textwidth}
+\phantom{42}    
+Ди-форма в СГС:
+    \begin{align*}
+        \vphantom{\oint }
+        \div \vc{D} &= 4 \pi \rho \\
+        \vphantom{\oint }
+        \div \vc{B} &= 0 \\
+        \vphantom{\oint }
+        \rot \vc{E} &= -\frac{1}{c} \frac{\partial \vc{B}}{\partial t}  \\
+        \vphantom{\oint }
+        \rot \vc{H} &= \frac{4\pi}{c} \vc{j} + \frac{1}{c} \frac{\partial \vc{D}}{\partial t} 
+    \end{align*}
+\end{minipage}
+\vline
+\hfill
+\begin{minipage}[t]{0.23\textwidth}
+\phantom{42}
+Ин-форма в СГС:
+    \begin{align*}
+       \oint \vc{D} \cdot d \vc{s} &= 4\pi Q \\
+       \oint \vc{B} \cdot d \vc{s} &= 0 \\
+       \oint \vc{E} \cdot d \vc{l} &= - \frac{1}{c} \frac{d}{dt} \int \vc{B} \cdot d \vc{s} \\
+        \oint \vc{H} \cdot \d \vc{l} &= \frac{4\pi}{c} I + \frac{1}{c} \frac{d}{dt} \int \vc{D} \cdot \d \vc{s}.
+    \end{align*}
+\end{minipage}
+\vline
+\hfill
+\begin{minipage}[t]{0.2\textwidth}
+\phantom{42} Ди-форма в СИ:
+    \begin{align*}
+        \vphantom{\oint }
+        \div \vc{D} &= \rho \\
+        \vphantom{\oint }
+        \div \vc{B} &= 0 \\
+        \vphantom{\oint }
+        \rot \vc{E} &= - \frac{\partial \vc{B}}{\partial t}  \\
+        \vphantom{\oint }
+        \rot \vc{H} &= \vc{j} +  \frac{\partial \vc{D}}{\partial t} 
+    \end{align*}
+\end{minipage}
+\vline
+\hfill
+\begin{minipage}[t]{0.23\textwidth}
+\phantom{42}    Ин-форма в СГС:
+    \begin{align*}
+       \oint \vc{D} \cdot d \vc{s} &=  Q \\
+       \oint \vc{B} \cdot d \vc{s} &= 0 \\
+       \oint \vc{E} \cdot d \vc{l} &= - \frac{d}{dt} \int \vc{B} \cdot d \vc{s} \\
+        \oint \vc{H} \cdot \d \vc{l} &=  I + \frac{d}{dt} \int \vc{D} \cdot \d \vc{s}.
+    \end{align*}
+\end{minipage}
+
+\phantom{42}
+
+\noindent
+где $\mu \vc{H} = \vc{B}, \ \vc{D} = \varepsilon \vc{E}$, 
+\begin{description*}
+    \item[$\vc{E}$]  --- напряженность электрического поля;
+    \item[$\vc{H}$]  --- напряженность магнитного поля;
+    \item[$\vc{D}$]  --- электрическая индукция;
+    \item[$\vc{B}$]  --- магнитная индукция.
+\end{description*}
+
+\subsubsection*{Материальные уравнения}
+
+
+В среде сторонние электрические и магнитные поля вызывают поляризация $\vc{P}$ и намагничивание вещества $\vc{M}$.
+Тогда
+\begin{align*}
+    \rho_\text{b} &= - \nabla \cdot \vc{P} \\
+    \vc{j}_\text{b} &= c \nabla \times \vc{M} + \frac{\partial \vc{P}}{\partial t} ,
+\end{align*}
+где в СИ не будет множителя $c$. Далее, по определению
+\begin{align*}
+    \vc{D} &= \vc{E} + 4\pi \vc{P}, &\vc{B} &= \vc{H} + 4 \pi \vc{M} &\text{(СГС)} \\
+    \vc{D} &= \varepsilon_0 \vc{E} + \vc{P}, &\vc{B} &= \mu_0 (\vc{H} + \vc{M}) &\text{(СИ)}
+\end{align*}
+Наконец, в однородных средах верно, что
+\begin{equation*}
+    \left\{\begin{aligned}
+        \nabla \cdot \vc{E} &= 4\pi \frac{\rho}{\varepsilon},  \\
+        \nabla \cdot \vc{B} &= 0,
+    \end{aligned}\right.
+    \hspace{1cm} 
+    \left\{\begin{aligned}
+        \nabla \times \vc{E} &= - \frac{1}{c} \frac{\partial \vc{B}}{\partial t} \\
+        \nabla \times \vc{B} &= \frac{4\pi}{c} \mu \vc{j} + \frac{\varepsilon \mu}{c} \frac{\partial \vc{E}}{\partial t},
+    \end{aligned}\right.
+\end{equation*}
+где в оптическом диапазоне принято $n = \sqrt{\varepsilon \mu}$.
+
+\subsubsection*{Граничные условия}
+Опять же, в СГС,
+\begin{equation*}
+    \left\{\begin{aligned}
+        (\vc{E}_1 - \vc{E}_2) \times \vc{n}_{1,2} &= 0, \\
+        (\vc{H}_1 - \vc{H}_2) \times \vc{n}_{1,2} &= \frac{4\pi}{c} \vc{j}_\text{s},
+    \end{aligned}\right.
+    \hspace{1cm} 
+    \left\{\begin{aligned}
+        \left(\vc{D}_1 - \vc{D}_2\right) \cdot \vc{n}_{1,2} &= - 4\pi \rho_\text{s}, \\
+        \left(\vc{B}_1 - \vc{B}_2\right) \cdot \vc{n}_{1, 2} &= 0,
+    \end{aligned}\right.
+\end{equation*}
+где $\rho_{\text{s}}$ -- поверхностная плотность свободных зарядов, $\vc{j}_\text{s}$ -- плотность поверхностных свободных токов вдоль границы. 
+
+Эти граничные условия показывают непрерывность нормальной компоненты вектора магнитной индукции, и непрерывность на границе областей тангенциальных компонент напряжённостей электрического поля. 
+
+\subsubsection*{Уравнение непрерывности}
+
+Источники полей $\rho, \vc{j}$ не могут быть заданы произвольным образом. Применяя операцию дивергенции к четвёртому уравнению (закон Ампера—Максвелла) и используя первое уравнение (закон Гаусса), получаем уравнение непрерывности
+\begin{equation*}
+    \nabla \cdot \vc{j} + \frac{\partial \rho}{\partial t} = 0,
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm} 
+    \oint_S \vc{j} \cdot \d \vc{s} = - \frac{d }{d t} \int_V \rho \d V.
+\end{equation*}

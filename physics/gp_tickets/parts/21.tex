@@ -1,0 +1,54 @@
+Вспомнив пару уравнений Максвелла и домножив на $\vc{H}, \ \vc{E}$ соответсвтенно, получим
+\begin{equation*}
+    \left\{\begin{aligned}
+        \rot \vc{E} &= - \frac{1}{c} \frac{\partial \vc{H}}{\partial t}, \\
+        \rot \vc{H} &= \frac{1}{c} \frac{\partial \vc{E}}{\partial t} + \frac{4\pi}{c} \vc{j}
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{1}{c} \vc{E} \frac{\partial \vc{E}}{\partial t} + 
+    \frac{4\pi}{c} \vc{E} \cdot \vc{j} + 
+    \frac{1}{c} \vc{H} \frac{\partial \vc{H}}{\partial t} =
+    \underbrace{
+        \vc{E} \rot \vc{H} - \vc{H} \rot \vc{E}
+    }_{
+        -\div \left[ \vc{E} \times \vc{H} \right]
+    }.
+\end{equation*}
+Поэтому естественно ввести следующее определение:
+\begin{equation}
+    \vc{S} = \frac{c}{4\pi} \left[\vc{E} \times \vc{H} \right]
+    \text{\ \ --- \textit{вектор Умова-Пойтинга}}.
+\end{equation}
+Тогда уравнение перепишется в следующем виде (теорема Пойтинга в диф-форме):
+\begin{equation}
+    \frac{\partial }{\partial t} \frac{E^2 + H^2}{8\pi} = - \vc{E} \cdot \vc{j} - \div \vc{S}.
+\end{equation}
+Проинтегрировав по некоторому объему, поймём, что
+\begin{equation}
+    \frac{\partial }{\partial t} \int \frac{E^2 + H^2}{8\pi} \d V = 
+    - \int \vc{j} \cdot \vc{E} \d V -
+    \oint \vc{S} \cdot \d \vc{f},
+\end{equation}
+вспомнив скорость изменения кинетической энергии, получим, так называемую, \textit{теорему Пойтинга}
+\begin{equation}
+    \begin{aligned}
+        e \vc{E} \cdot \vc{v} = \frac{d }{d t} \mathcal E_{\text{кин}}, \\
+        \int \vc{j} \cdot \vc{E} \d V = \sum e \vc{v} \cdot \vc{E},
+    \end{aligned}
+    \hspace{0.5cm} \longrightarrow \hspace{0.5cm} 
+    \frac{\partial }{\partial t} 
+    \left[
+        \int \frac{E^2 + H^2}{8\pi} \d V + \sum \mathcal{E}_{\text{кин}}
+    \right] = 
+    - \oint_{\partial V} \vc{S} \cdot \d \vc{f}.
+\end{equation}
+И теперь уже естественно разделить левую часть на энергию зарядов, и энергию поля:
+\begin{equation*}
+    \mathcal{W} = \frac{E^2 + H^2}{8\pi} 
+    \text{\ \ --- \textit{плотность энергии} ЭМ поля},
+\end{equation*}
+а также ввести следующую величину:
+\begin{equation*}
+    \oint_{\partial V} \vc{S} \cdot \d \vc{f} 
+    \text{\ \ --- \textit{поток энергии}  ЭМ поля}.
+\end{equation*}
