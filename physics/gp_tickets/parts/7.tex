@@ -1,0 +1,93 @@
+Рассмотрим $\langle \vc{H} \rangle$, как предыдущем билете, перейдя от $\vc{j}$ к $\rho \vc{v}$.
+\begin{equation*}
+    \langle \vc{A} \rangle = \frac{1}{c} \sum 
+    \left\langle \frac{e_a \vc{v}_a}{R_a} \right\rangle
+    = \frac{1}{c} \sum 
+    \left\langle 
+    \frac{e_a \vc{v}_a}{\|\vc{R}_0 - \vc{r}_a\|} 
+    \right\rangle
+    ,
+\end{equation*}
+и аналогично раскладывая в ряд до первого порядка $\vc{r}_a/R_0$:
+\begin{equation*}
+    \left\langle \vc{A}\right\rangle = 
+    \frac{1}{cR_0} \sum e \left\langle \vc{v}\right\rangle - 
+    \frac{1}{c} \sum e
+    \left\langle \left(\vc{r} \cdot \grad \frac{1}{R_0} \right) \vc{v}\right\rangle = 
+    \frac{1}{c} \sum e
+    \left\langle \left(\vc{r} \cdot \grad \frac{1}{R_0} \right) \vc{v}\right\rangle.
+\end{equation*}
+Вспомнив, что $\vc{v} = \dot{\vc{r}}$, считая $\vc{R}_0 = \const$  -- 
+\begin{equation*}
+    \sum e \left(R_0 \cdot \vc{r} \right) \vc{v} = \frac{1}{2} 
+    \underbrace{\frac{d }{d t} 
+    \sum e \vc{r} \left(\vc{r} \cdot \vc{R}_0\right)}_{=0}
+     + 
+    \frac{1}{2} \sum e 
+    \underbrace{\{
+        \vc{v} \left(\vc{r} \cdot \vc{R}_0\right) - \vc{r} (\vc{v} \cdot \vc{R}_0)
+    \}}_{
+        \left[\vc{r} \times \vc{v} \right] \times \vc{R}_0
+    }\ ,
+\end{equation*}
+и теперь введём
+\begin{equation}
+    \vc{m} =  \frac{1}{2c} \sum e \left[\vc{r} \times \vc{v}\right], \text{\ \ --- \textit{магнитный момент системы}.}
+\end{equation}
+Тогда
+\begin{equation*}
+    \left\langle \vc{A}\right\rangle = \frac{1}{R_0^3} 
+    \left[ \vph
+        \left\langle \vc{m}\right\rangle \times \vc{R}_0
+    \right] = 
+    \left[
+        \grad \frac{1}{R_0} \times \left\langle \vc{m}\right\rangle.
+    \right]
+\end{equation*}
+Вспомним, что
+\begin{equation*}
+    \rot \left[\vc{a} \times \vc{b}\right] = \left(\vc{b} \cdot \nabla \right) \vc{a} - 
+    \left(\vc{a} \cdot \nabla \right) \vc{b} + a\div \vc{b} - \vc{b} \div \vc{a}, 
+\end{equation*}
+и получим
+\begin{equation*}
+    \left\langle \vc{H}\right\rangle = \rot \left\langle \vc{A}\right\rangle = 
+    \rot \left[
+        \left\langle \vc{m}\right\rangle \frac{\vc{R}_0}{R_0^3} 
+    \right] = \left\langle \vc{m}\right\rangle \div \frac{\vc{R}_0}{R_0^3} - 
+    \left(
+        \left\langle \vc{m}\right\rangle \cdot \nabla
+    \right) \frac{\vc{R}_0}{R_0^3}.
+\end{equation*}
+Раскрыв по правилу Лейбница
+\begin{equation*}
+    \left( \vph
+        \left\langle \vc{m}\right\rangle \cdot \nabla
+    \right) \frac{\vc{R}_0}{R_0^3} = 
+    \frac{1}{R_0^3} \left(
+        \left\langle \vc{m}\right\rangle \cdot \nabla
+    \right) \vc{R}_0 + \vc{R}_0 
+    \left(
+        \left\langle \vc{m}\right\rangle \cdot \nabla \frac{1}{R_0^3} 
+    \right) =
+    \frac{1}{R_0^3} \left( \vph
+        \left\langle \vc{m}\right\rangle - 3 \vc{R}_0 \left(
+            \left\langle \vc{m}\right\rangle \cdot \vc{R}_0
+        \right) / R_0^2
+    \right).
+\end{equation*}
+И наконец, сквозь тернии, находим очень знакому формулу
+\begin{equation}
+    \boxed{
+        \left\langle \vc{H}\right\rangle = \frac{1}{R_0^3} 
+        \left( \vph
+            3 \vc{n} \left(
+                \left\langle \vc{m}\right\rangle \cdot \vc{n}
+            \right) - \left\langle \vc{m}\right\rangle
+        \right), \hspace{1cm} 
+        \vc{n} = \frac{\vc{R}_0}{R_0},
+    }
+\end{equation}
+таким образом мы нашли вектор напряженности магнитного поля вокруг магнитного диполя!
+
+\subsubsection*{Сила и момент сил}

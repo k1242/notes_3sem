@@ -42,9 +42,9 @@
 \begin{equation*}
     \div E = 4 \pi \rho.
 \end{equation*}
-Или, в интегральной форме
+Или, в интегральной форме, по теореме Стокса
 \begin{equation*}
-    i
+    \int \div \vc{E} \d V = \oint \vc{E} \cdot \d \vc{f} = 4 \pi \int \rho \d V.
 \end{equation*}
 
 
@@ -102,11 +102,72 @@
 \end{equation*}
 \textit{Забавный факт}: подстановка в уравнение пуассона приводит к уравнению вида $\Delta (1/R) = -4\pi \cdot \delta(R)$. 
 
-Простейшим примером системы зарядов является \textit{диполь} $q_1 + q_2 = 0$, для которого верно, что
+% Простейшим примером системы зарядов является \textit{диполь} $q_1 + q_2 = 0$, для которого верно, что
+% \begin{equation}
+%     \vc{E} = \frac{q}{r_1^2} \frac{\vc{r}_1}{r_1} - \frac{q}{r_1^2} \frac{\vc{r}_2}{r_2} 
+%     \hspace{0.5cm} \overset{l \ll r_2, r_1}{\underset{\Longrightarrow}{}} \hspace{0.5cm} 
+%     \vc{E} = \frac{3 (\vc{p} \cdot \vc{n}) \vc{n}}{r^3}  - \frac{\vc{p}}{r^3},
+% \end{equation}
+% где $\vc{n}$ -- единичный вектор направления к рассматриваемой точке, а $\vc{p}=q \vc{l}$ -- \textit{дипольный момент}.
+
+\subsubsection*{Дипольный момент}
+
+
+Чуть подробнее остановимся на системе зарядов и дипольном моменте. Рассмотримм поле от системы зарядов на большом расстоянии от этой системы. Выберем начало координат где-то внутри этой системы. В точке, нам интересной, $R_0$ 
+\begin{equation*}
+    \varphi = \sum_a \frac{e_a}{|\vc{R}_0-\vc{r}_a|}.
+\end{equation*}
+Нам интересен случай $\vc{R}_0 \gg \vc{r}_0$, так что разложим в ряд до второго члена по $\vc{r}_a/R_0$. Вспомнив, что $f(\vc{R}_0-\vc{r}) \approx f(\vc{R}_0) - \vc{r} \grad f(\vc{R}_0)$ получим
+\begin{equation*}
+    \varphi = \frac{\sum e_a}{R_0} - \sum e_a \vc{r}_a \grad \frac{1}{R_0}.
+\end{equation*}
+Теперь естественно ввести \textit{дипольный момент} системы $\vc{p} = \sum_a e_a \vc{r}_a$. Важно, что если $\sum e_a = 0$, то $\vc{d}$ не зависит от выбора начала координат. Действительно:
+\begin{equation*}
+    \vc{r}_a' = \vc{r}_a + \vc{l},
+    \hspace{0.5cm} 
+    \vc{d}' = \sum e_a \vc{r}_a' + \vc{l} \sum e_a = \vc{p}.
+\end{equation*}
+Теперь естественно разделить 
+\begin{equation*}
+    \vc{d} = \sum e_a^+ \vc{r}_a^+ - \sum e_a^- \vc{r}_a^- = \vc{R}^+ \sum e_a^+ - \vc{R}^- \sum e_a^-, 
+    % \hspace{0.5cm} 
+    \text{\ \ \ где \ \ \ }
+    \vc{R}^+ = \frac{\sum e_a^+ \vc{r}_a^+}{\sum e_a^+}, \ 
+    \vc{R}^- = \frac{\sum e_a^- \vc{r}_a^-}{\sum e_a^-}.
+\end{equation*}
+В случае $\sum e_a^+ = \sum e_a^- = e$, естественно ввести $\vc{R}_{+-} = \vc{R}^+ - \vc{R}^-$, тогда $\vc{d} = e \vc{R}_{+-}$. Потенциал в таком случае
 \begin{equation}
-    \vc{E} = \frac{q}{r_1^2} \frac{\vc{r}_1}{r_1} - \frac{q}{r_1^2} \frac{\vc{r}_2}{r_2} 
-    \hspace{0.5cm} \overset{l \ll r_2, r_1}{\underset{\Longrightarrow}{}} \hspace{0.5cm} 
-    \vc{E} = \frac{3 (\vc{p} \cdot \vc{n}) \vc{n}}{r^3}  - \frac{\vc{p}}{r^3},
+    \sigma = - \vc{d} \grad \frac{1}{R_0} = \frac{\vc{d} \cdot \vc{R}_0}{R_0^3},
 \end{equation}
-где $\vc{n}$ -- единичный вектор направления к рассматриваемой точке, а $\vc{p}=q \vc{l}$ -- \textit{дипольный момент}.
-Чуть подробнее остановимся на системе зарядов и дипольном моменте.
+тогда $E$
+\begin{equation}
+    \vc{E} = - \grad \frac{\vc{d} \cdot \vc{R}_0}{R_0^3} = - \frac{1}{R_0^3} \grad \left(\vc{p} \cdot \vc{R}_0 \right) - \left(\vc{p} \cdot \vc{R}_0 \right) \grad \frac{1}{R_0^3},
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
+    \boxed{
+        \vc{E} = \frac{1}{R_0^3} \left[ \vph
+            3 \left(\vc{n} \cdot \vc{p}\right) \vc{n} - \vc{p}
+        \right]}, \text{\ \ где \ \ } \vc{n} = \frac{\vc{R}_0}{|R_0|}.
+\end{equation}
+В частности, выбрав ось $Oz$ по $\vc{p}$, найдём, что
+\begin{equation*}
+    E_z = \frac{p}{R_0^3} \left(3 \cos^2 \theta - 1\right);
+    \hspace{0.5cm} 
+    E_x = \frac{p}{R_0^3} \left(3 \sin^2 \theta - 1\right);
+\end{equation*}
+Или, разбив на радиальную и тангенцальные состовляющие:
+\begin{equation*}
+    E_R = 2 \frac{p}{R)^3}  \cos \theta, \hspace{0.5cm} 
+    E_{\tau} = -2 \frac{p}{R_0^3} \sin \theta.
+\end{equation*}
+
+\subsubsection*{\red{Гауссова система единиц (СГС) и система
+СИ.}}
+
+\red{
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+}
