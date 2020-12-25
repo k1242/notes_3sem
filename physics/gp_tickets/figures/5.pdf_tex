@@ -67,7 +67,7 @@
     \put(0,0){\includegraphics[width=\unitlength,page=2]{5.pdf}}%
     \put(0.70078886,0.11869262){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\vc{n}$\end{tabular}}}}%
     \put(0.41498655,0.27858723){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\sigma_{\text{пол}}$\end{tabular}}}}%
-    \put(0.0287862,0.16457564){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Delta S$\end{tabular}}}}%
+    \put(0.0087862,0.16457564){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Delta S$\end{tabular}}}}%
     \put(0.09986711,0.14085683){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$-$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

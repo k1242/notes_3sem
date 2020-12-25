@@ -1,0 +1,111 @@
+\textit{Диэлектрики} -- непроводники электричества. В них возбуждаются индукционные заряды, привязанные к кастету частиц, -- \textit{поляризационные}, или \textit{связанные заряды}. 
+
+Альтернативный вариант -- наличие дипольного момента у молекул. При наличии электрического поля дипольные моменты ориентируются, диэлектрик поляризуется. 
+\textit{Вектор поляризации} -- дипольный момент единицы объема диэлектрика, возникающий при его поляризации.  
+
+Рассмотрим скошенный параллелепипед. На основаниях параллелепипеда возникнут поляризационные заряды с  поверхностной плотностью $\sigma_{\text{пол}}$. Взяв его площадь за $S$, найдём дипольный момент равный $\sigma_{\text{пол}} S \vc{l}$. Тогда вектор поляризации будет 
+\begin{equation}
+    \vc{P} = \frac{\sigma_{\text{пол}} S}{V} \vc{l},
+\end{equation}
+что верно и для анизотропных кристаллов где $\vc{E} \nparallel \vc{P}$. 
+
+Пусть $\vc{n}$ -- единичный вектор внешней нормали к основанию параллелепипеда, тогда $V = S (\vc{l} \cdot \vc{n})$.
+
+\noindent
+\begin{minipage}[с]{0.55\textwidth}
+Подставив $V$ в предыдущую формулу, получим, что
+\begin{equation*}
+    \sigma_{\text{пол}} = (\vc{P} \cdot \vc{n}) = P_n
+\end{equation*}
+Или, более общо,
+$$
+    \vc{P} = \frac{1}{\Delta V} \sum_{\Delta V} \vc{p}_i
+$$
+\end{minipage}
+\hfill
+\begin{minipage}[с]{0.35\textwidth}
+    \incfig{5}
+\end{minipage}
+
+
+В случае неоднородной поляризации верно, что поляризационные заряды могут появиться и на поверхности. Выделим $V$, ограниченный $S$, смещённый заряд равен $-P_n \d S$, тогда через $S$ поступает
+\begin{equation}
+    q_{\text{пол}} = - \oint P_n \d S = - \oint \left(\vc{P} \cdot \d \vc{S}\right).
+    % \text{   \red{точно $\times$ ?}}
+\end{equation}
+Стоит заметить, что в теорему о циркуляции не входят заряды, соотвественно для диэлектриков верно, что 
+$$
+    \oint_{(L)} E_l \d l = 0.   
+$$
+Далее чаще всего мы будем сталкиваться с линейной поляризацией, когда
+$$
+    \vc{P} = \alpha \vc{E},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \vc{D} = \vc{E} \underbrace{(1 + 4\pi\alpha)}_{\varepsilon} = \varepsilon \vc{E},
+$$
+где $\alpha$ -- \textit{поляризуемость диэлектрика}, а $\varepsilon$ -- \textit{диэлектрическая проницаемость}.
+
+Запишем теорему Гаусса для электрического поля в диэлектрике. Знаем, что $\vc{E} = \vc{E}_{\text{пол}} + \vc{E}_{\text{св}}$.
+\begin{equation}
+    \oint E_n \d S = 4 \pi (q + q_{\text{пол}})
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \oint\underbrace{\left(
+        E_n + 4 \pi P_n
+    \right)}_{D_n} \d S= 4 \pi q.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \boxed{
+        \oint D_n \d S = 4 \pi q_{\text{св}}   
+    }
+\end{equation}
+где $\vc{D} = \vc{E} + 4 \pi \vc{P}.$ -- вектор \textit{электрической индукции}, или \textit{электрического смещения}. Поток вектора $\vc{D}$ определяется только свободными зарядами. 
+
+Можно посмотреть на это в дифференциальной форме:
+\begin{align*}
+    \div \vc{D} &= 4 \pi \rho, \\
+    \div \vc{E} &= 4 \pi \left(\rho - \div \vc{P} \right), \\
+    \div \vc{E} &= 4 \pi (\rho + \rho_{\text{пол}})
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \rho_{\text{пол}} = - \div \vc{P}.
+\end{align*}
+
+Найдём граничные условия: повторяя рассуждения, как для проводников, найдём, что
+$$
+    D_{1n} = D_{2n},
+$$
+а в случае линейных диэлектриков верно
+$$
+    \varepsilon_1 E_{1n} = \varepsilon_2 E_{2n},
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm} 
+    E_{2n} - E_{1n} = 4 \pi \sigma_{\text{пол}}.
+$$
+Аналогично, из теоремы о циркуляции получим, что
+$$
+    E_{1\tau} - E_{2\tau} = 0.
+$$
+
+% \subsubsection*{Плоский конденсатор}
+
+% \begin{center}
+%     \incfig{6}    
+% \end{center}
+
+% \phantom{42}    
+
+% То есть на грани пластинки $\sigma_{\text{пол}} = \sigma \left(1 - \frac{1}{\varepsilon} \right)$.
+
+
+% \subsubsection*{Поле системы зарядов в однородном диэлектрике}
+
+Для точечного заряда в однородном диэлектрике, по теореме Гаусса
+$$
+\left.\begin{aligned}
+    D &\cdot 4 \pi r^2 = 4 \pi \\
+    D &= \varepsilon E
+\end{aligned}\right\} 
+\hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+\boxed{
+    E = \frac{q}{\varepsilon r^2} .
+}
+\hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+\vc{E} = \frac{1}{\varepsilon} \vc{E}_0, \text{\ \ где $\vc{E}_0$ -- поле в ситуации без среды.}
+$$
