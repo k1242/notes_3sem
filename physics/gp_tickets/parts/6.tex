@@ -1,0 +1,115 @@
+В 1820 году датский ученый Ганс Христиан Эрстед свершил выдающееся открытие – магнитное действие электрического тока... Как было показано раннее, 
+\begin{equation}
+    \frac{d \vc{p}}{d t} = - e \vc{E} + \frac{e}{c} \left[\vc{v} \times \vc{H} \right],
+    \text{\ \ --- \ \ \textit{сила Лоренца}.}
+\end{equation}
+Здесь введено обозначение $\vc{H} = \rot \vc{A}$ -- напряженность магнитного поля. Это поле, 
+действующее на движущиеся электрические заряды и на тела, обладающие магнитным моментом. 
+
+Если взять провод, по которому течёт ток $I$ и засунуть его в магнитное поле, то погонная сила будет иметь вид
+\begin{equation}
+    \d \vc{F} = \frac{1}{c} I \left[
+        d \vc{l} \times \vc{B}
+    \right], \text{\ \ --- \textit{сила Ампера}.}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{Закон Био-Савара-Лапласа}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Рассмотри поле $\vc{H}$, создаваемое зарядами, совершающими \textit{финитное} движение -- остаются в конечной области пространства, сохраняя конечный импульс. Такое движение будет иметь стационарный характер и интересно будет рассмотреть усредненное по $t$ магнитное поле, создаваемое зарядами, соответсвенно $\vc{H} \neq \vc{H} (t)$. 
+
+Усредненные по времени уравнения Максвелла примут вид
+\begin{equation}
+    \div \langle \vc{H}\rangle = 0, \hspace{0.5cm} 
+    \rot \vc{H} = \frac{1}{c} \frac{\partial \vc{E}}{\partial t} + \frac{4\pi}{c} \vc{j},
+    \hspace{0.2cm} \Rightarrow \hspace{0.2cm} 
+    \rot \langle \vc{H}\rangle = \frac{4\pi}{c} \langle \vc{j} \rangle.
+\end{equation}
+Вспомним, что
+\begin{equation*}
+    \rot \langle \vc{A}\rangle = \langle \vc{H}\rangle,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \grad \div \langle \vc{A}\rangle - \Delta \langle \vc{A}\rangle = \frac{4\pi}{c} \langle \vc{j}\rangle,
+\end{equation*}
+теперь по калибровочной инвариантности выберем $\langle \vc{A}\rangle : \div \langle \vc{A} \rangle = 0$. Тогда
+\begin{equation}
+    \Delta \langle \vc{A} \rangle = - \frac{4\pi}{c} \langle \vc{j} \rangle,
+\end{equation}
+что \textit{очень похоже на уравнение Пуассона}, но вместо $\rho$ стоит $\langle \vc{j}\rangle / c$. Аналогично поиску $\varphi$, находим
+\begin{equation*}
+    \varphi = \int \frac{\rho}{R} \d V, \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \langle  \vc{A} \rangle = \frac{1}{c} \int \frac{\langle \vc{j}\rangle}{R} \d V.
+\end{equation*}
+Теперь, зная $\langle  \vc{A}\rangle$, можно найти 
+\begin{equation*}
+    \langle \vc{H}\rangle = \rot \langle \vc{A}\rangle = \frac{1}{c} \rot \int \frac{\langle \vc{j}\rangle}{R} \d V.
+\end{equation*}
+Так как $\rot$ происходит по координатам точки наблюдения, то можем занести его под $\int$, считая $\vc{j} = \const$. Вспомним, что
+\begin{equation*}
+    \rot f \vc{a} = f \rot \vc{a} + \left[
+        \grad f \times \vc{a}
+    \right],
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \rot \frac{\langle \vc{j}\rangle}{R} = \left[
+        \grad \frac{1}{R} \times \langle \vc{j} \rangle
+    \right] = \frac{\left[
+        \langle \vc{j} \rangle \times \vc{R}
+    \right]}{R^3},
+\end{equation*}
+подставляя в формулу для $\langle \vc{H} \rangle$, получаем \textit{закон Био-Савара-Лапласа}
+\begin{equation}
+    \langle \vc{H} \rangle = \frac{1}{c} \int \frac{\left[\langle \vc{j}\rangle \times \vc{R}\right]}{R^3} \d V,
+\end{equation}
+где $\vc{R}$ -- направление из $dV$ в точку наблюдения. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{Теорема Гаусса для магнитного поля}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+И вновь обращаемся к уравнениям Максвелла, а именно
+\begin{equation}
+    \div \vc{H} = 0,
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm} 
+    \int_V \div \vc{H} \d V = 
+    \oint \vc{H} \cdot \d \vc{f} = 0.
+\end{equation}
+И, из другуго уравнения
+\begin{equation}
+    \rot \vc{H} = \frac{4\pi}{\vc{j}} + \frac{1}{c} \frac{\partial \vc{E}}{\partial t}.
+\end{equation}
+Интегрируя по некоторой поверхности, по формуле Стокса,
+\begin{equation*}
+    \int \rot \vc{H} \d \vc{f} = \oint \vc{H} \cdot \d \vc{l} = 
+    \frac{1}{c} \frac{\partial }{\partial t} \int \vc{E} \d \vc{f} + \frac{4\pi}{c} \int \vc{j} \d \vc{f}.
+\end{equation*}
+Теперь естественно ввести величину \textit{тока смещения} $\frac{\partial }{\partial t} \vc{E} / 4\pi$, и получить уравнение вида
+\begin{equation*}
+    \oint \vc{H} \cdot \d \vc{l} = \frac{4\pi}{c} \int \left(
+        \vc{j} + \frac{1}{4\pi} \frac{\partial \vc{E}}{\partial t} 
+    \right) \d \vc{f}.
+\end{equation*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection*{Коллекционирование магнитных бабочек}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Из теореме о циркуляции $\vc{H}$ можем найти, прямой провод с током окружают самозамкнутый кружочки с 
+\begin{equation*}
+    H = \frac{2I}{cr}.
+\end{equation*}
+Интересен случай с линейной плотностью тока $i = I/l$, тогда
+\begin{equation*}
+    d B_{\tau} = \frac{i}{c} \d \Omega, \hspace{0.5cm} \Omega = 2 \pi (1 - \cos \alpha).
+\end{equation*}
+где $\Omega$ -- телесный угол. Теперь легко получить поле внутри соленодиа:
+\begin{equation*}
+    B = \frac{4\pi}{c} i.
+\end{equation*}
+Аналогичное значение мы получим для <<магнитного конденсатора>>.  Для тороидальной катушки с разрывом, по теореме о циркуляции
+\begin{equation*}
+    H_0 \Delta l + H (l-\Delta l) = NI, \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    H_0 = \frac{\mu N I }{(\mu-1) \Delta l + l}, \hspace{0.5cm} H \approx \frac{IN}{l}.
+\end{equation*}
