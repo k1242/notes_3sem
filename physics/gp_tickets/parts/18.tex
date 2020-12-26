@@ -1,0 +1,64 @@
+\subsubsection*{Тепловой шум}
+
+Что это такое? \textit{Тепловой шум} -- беспорядочное тепловое движение носителей.
+Рассмотрим $\langle v_{\text{ш}}^2\rangle$. Хотелось бы получить формулу
+\begin{equation}
+    \langle v_{\text{ш}}^2\rangle = 4 k_{\text{Б}} T R \Delta f,
+    \text{\ \ --- \ \ \textit{формула Найквиста}.}
+\end{equation}
+Какого порядка шумы? При $R \sim 10^4$ Ом, $\Delta f \sim 10^3$ Гц, и $T \sim 300$ К, увидим что $\sqrt{\langle v_{\text{ш}}^2\rangle} \sim 4 \cdot 10^{-7}$ В.
+
+Рассмотрим систему с длинной линией, длины $l$, и два резистора сопротивлением $R$. Пусть системе в термодинамическом равновесии при температуре $T$ что-то происходит. Оба резистора могут быть закорочены. Возможны волны, такие что
+\begin{equation*}
+    n \frac{\lambda_n}{2} = l = n \frac{c}{2f_n},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \Delta n = \frac{2l}{c} \Delta f.
+\end{equation*}
+Тут вспомним, что каждая такая мода может быть рассмотрена как колебательная система, на каждую из готорых придётся $k_{\text{Б}}T$. Тогда
+\begin{equation*}
+    \Delta n k_{\text{Б}} T = k_{\text{Б}}T \frac{2l}{c} \Delta f.
+\end{equation*}
+Найдём теперь выделяющуюся на нагрузке мощность:
+\begin{equation*}
+    P = \left(\frac{\mathscr{E}}{2R}\right)^2 R = \frac{\mathscr{E}^2}{4R}  = 
+    \frac{\langle v_{\text{ш}}^2\rangle}{4R} 
+\end{equation*}
+Так как время пробега $\tau = l / c$, тогда
+\begin{equation*}
+    \Delta n k_{\text{Б}} T = 2 P \tau,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    k_{\text{Б}}T \frac{2l}{c} \Delta f = 2 \frac{\langle v_{\text{ш}}^2\rangle}{4R} \frac{l}{c}, 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \langle v_{\text{ш}}^2\rangle = 4k_{\text{Б}}T R \Delta f,
+\end{equation*}
+что и требовалось доказать. К слову при $f > 10^{12}$ Гц начинают влиять квантовые эффекты.  
+
+
+\subsubsection*{Дробовой шум}
+
+\textit{Дробовой шум} -- шум, обусловленный конечным зарядом носителя. Посмотрим внимательнее на эффект Шотки. Рассмотрим схемы, с последовательно соединенными источником, лампой, амперметром и резистором. Тогда
+\begin{equation*}
+    \left\langle i^2_{\text{ш}}\right\rangle = 2 e I_0 \Delta f. 
+\end{equation*}
+Аналогично рассматриваем некоторый фиксированный диапазон частот. Если нас интересует напряжение на резисторе, то
+\begin{equation*}
+    \langle v_{\text{ш}}^2\rangle = 2 e R^2 I_0 \Delta f.
+\end{equation*}
+Имеет порядки $5 \cdot 10^{-5}$ В. 
+
+
+
+\subsubsection*{Роль шумов в жизни}
+
+Как минимум, в автоколебательной системе шумы могут начать автоколебательный процесс. Кстати, идеальных синусоидальных процессов не бывает.  Также можем сформулировать критерий измеряемости сигналов
+\begin{equation}
+    \langle v_{\text{ш}}^2\rangle \approx v^2_0,
+\end{equation}
+для измерения слабого сигнала $v_0$. 
+
+
+
+
+
+
+

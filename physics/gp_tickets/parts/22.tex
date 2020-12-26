@@ -1,0 +1,228 @@
+Пусть есть диэлектрик без свободных зарядов и токов проводимости  $\vc{j} = 0$ с $\mu, \varepsilon$. 
+
+Однаков при постоянных полях, как мы уже выяснили, уравнения Максвелл обратятся в тождесвенный 0, соотвественно рассмотрим переменные поля. 
+Давайте выберем 4-потенциал так, чтобы $\varphi = 0$. Тогда
+\begin{equation*}
+    \vc{E} = - \frac{1}{c} \frac{\partial \vc{A}}{\partial t}, \hspace{0.5cm} 
+    \vc{H} = \rot \vc{A}.
+\end{equation*}
+Далее,
+\begin{equation*}
+    \rot \vc{H} = \frac{1}{c} \frac{\partial \vc{E}}{\partial t}, \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \rot \rot A = - \nabla \vc{A} + \grad \div \vc{A} = - \frac{1}{c^2} \frac{\partial^2 \vc{A}}{\partial t^2}.
+\end{equation*}
+Выберем потенциал так, чтобы
+\begin{equation*}
+    \div \vc{A} = 0.
+\end{equation*}
+Тогда уравнение приобретает вид
+\begin{equation}
+    \nabla \vc{A} - \frac{1}{c^2} \frac{\partial^2 \vc{A}}{\partial t^2} = 0,
+    \text{ \ \ --- уравнение \textit{д'Аламбера} или \textit{волнове уравнение}}.
+\end{equation}
+Применяя к нему $\rot$ и $\partial/\partial t$, можем убедиться, что напряженности $\vc{E}$ и $\vc{H}$ удоволетворяют таким же волновым уравнениям.  
+\begin{equation}
+    \left\{\begin{aligned}
+        \rot \vc{E} &= - \frac{1}{c} \frac{\partial \vc{B}}{\partial t} \\
+        \rot \vc{H} &= \frac{1}{c} \frac{\partial \vc{D}}{\partial t}
+    \end{aligned}\right.;
+    \hspace{0.1cm} 
+    \left\{\begin{aligned}
+        \vc{B} &= \mu \vc{H} \vphantom{\frac{1}{2}}\\
+        \vc{D} &= \varepsilon \vc{E}  \vphantom{\frac{1}{2}}
+    \end{aligned}\right.;
+    \hspace{0.2cm} \Rightarrow \hspace{0.2cm} 
+    \left\{\begin{aligned}
+        \nabla \times \left[ \nabla \times \vc{E} \right] &= \cancel{\nabla \left(\nabla \cdot \vc{E}\right)} - \Delta \vc{E} \vphantom{\frac{1}{2}} \\
+        \nabla \times \left[ \nabla \times \vc{E} \right] &= -\frac{\partial }{\partial t} \rot \vc{B}
+    \end{aligned}\right. ;
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \boxed{
+        \Delta \vc{E} = \frac{\varepsilon \mu}{c^2} \frac{\partial^2 E}{\partial^2 t}  = 0
+    }.
+\end{equation}
+Аналогично для $\vc{B}$ мы можем записать, что
+\begin{equation*}
+    \frac{\partial^2 \vc{B}}{\partial^2 t}  = \frac{c^2}{\varepsilon \mu}  \Delta \vc{B}.
+\end{equation*}
+Общее решение такого уравнения имеет вид
+\begin{equation*}
+    \xi = f_1(z-vt) + f_2 (z+vt).
+\end{equation*}
+При произвольном виде $f_1, \ f_2$ они удоволетворяют волновому уравнению. Тогда
+\begin{equation*}
+    v_1^2 f_1'' = \frac{c^2}{\varepsilon \mu} f_1'',
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \boxed{
+        v = c / \sqrt{\varepsilon \mu}   
+    }.
+\end{equation*}
+Получается, что любое возмущение распростроняется с конечной скоростью $v$. Какие ещё у нас следствия?
+\begin{enumerate*}
+    \item Существуют электромагнитные волны;
+    \item Они поперечны: $\vc{E}, \ \vc{H} \colon \vc{k} \bot \{\vc{E}, \vc{H}\}$;
+    \item Распространение происходит с конечной скоростью $c / \sqrt{\varepsilon \mu}$;
+    \item В вакууме $v  \approx 3 \cdot 10^{10} \approx c$, таким образом свет -- ЭМ волна.
+\end{enumerate*}
+
+Найдём связь между электрической и магнитными компонентами волны. Пусть
+\begin{equation*}
+    E_x = f(x \mp v t); \hspace{0.5cm} 
+    B_y = g(z \mp vt),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    f'' = \pm \frac{v}{c} g'',
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    f = \pm \frac{v}{c} g + \const.
+\end{equation*}
+Прямой подставновкой убедились, что
+\begin{equation*}
+    E_x = \pm \frac{1}{\sqrt{\varepsilon\mu}} B_y, \hspace{0.5cm} \Leftrightarrow 
+    \hspace{0.5cm} 
+    \boxed{
+        \varepsilon E_x^2 = \mu H_y^2.   
+    }
+\end{equation*}
+
+\subsubsection*{Плоские волны}
+
+Рассмотрим частный случай ЭМ волн, когда поле зависит только от одной координаты, скажем $x$ (и от времени) -- \textit{плоская} волна. Тогад уравнения поля примут вид
+\begin{equation*}
+    \frac{\partial^2 f}{\partial t^2}  - c^2 \frac{\partial^2 f}{\partial x^2}  = 0,
+\end{equation*}
+где под $f$ подразумевается любая компонения $\vc{E}$ или $\vc{H}$. Перепишем уравнение в виде
+\begin{equation*}
+    \left(
+        \frac{\partial }{\partial t} - c \frac{\partial }{\partial x} 
+    \right)
+    \left(
+        \frac{\partial }{\partial t} + c \frac{\partial }{\partial x} 
+    \right) f = 0
+\end{equation*}
+и введем новые переменные 
+\begin{equation*}
+    \xi = t - \frac{x}{c}, \hspace{0.5cm} \eta = t + \frac{x}{c},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    t  = \frac{1}{2} \left(\vph \eta + \xi \right),
+    \hspace{0.5cm} 
+    x = \frac{c}{2} \left(
+        \vph \eta - \xi
+    \right).
+\end{equation*}
+Тогда
+\begin{equation*}
+    \frac{\partial }{\partial \xi} = \frac{1}{2} \left(
+        \frac{\partial }{\partial t} - c \frac{\partial }{\partial x} 
+    \right),
+    \hspace{0.5cm} 
+    \frac{\partial }{\partial \eta} = \frac{1}{2} \left(
+        \frac{\partial }{\partial t}  + c \frac{\partial }{\partial x} 
+    \right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{\partial^2 f}{\partial \xi \partial \eta} = 0.
+\end{equation*}
+Очевидно, что его решение имеет вид
+\begin{equation*}
+    f = f_1(\xi) + f_2(\eta),
+\end{equation*}
+где $f_1$ и $f_2$ -- произвольные функции. Таким образом
+\begin{equation}
+    f = f_1 \left(t - \frac{x}{c} \right) + f_2 \left(t + \frac{x}{c} \right).
+\end{equation}
+Пусть, например, $f_2 = 0$. Выясним смысл этого решения. Очевидно, что для 
+\begin{equation*}
+    t - \frac{x}{c} = \const \ \Rightarrow \ f = \const
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \text{при \ }x = \const + ct
+\end{equation*}
+волна имеет одинаковые значения, то есть распростроняется вдоль $x$ со  скоростью, равной скорости света $c$. Пусть $\vc{n}$ -- единичный вектор вдоль волны, тогда
+\begin{equation}
+    \vc{H} = \left[\vc{n} \times \vc{E}\right]. 
+\end{equation}
+Повторимся, именно поэтому эм волны называют \textit{поперечными}. Поток энергии в плоской волне
+\begin{equation*}
+    \vc{S} = \frac{c}{4\pi} \left[\vc{E} \times \vc{H}\right] = \frac{c}{4\pi} \left[ 
+        \vc{E} \times \left[\vc{n} \times \vc{E}\right]
+    \right] = \frac{c}{4\pi} E^2 \vc{n} = \frac{c}{4\pi} H^2 \vc{n} = c W \vc{n},
+\end{equation*}
+где $W = (E^2+H^2)/8\pi = E^2/4\pi$, в согласии с распространением со скоростью света. 
+
+
+
+\subsubsection*{Монохроматическая плоская волна}
+Важный частный случай ЭМ волн -- волны, в которых поле является простой периодической функцией, такая волна называется \textit{монохроматической}. Все компоненты зависят от времени посредством множителя $\cos (\omega t + \alpha)$, где $\omega$ -- \textit{циклическая частота}. Тогда волновое уравнение примет вид
+\begin{equation*}
+    \nabla f + \frac{\omega^2}{c^2} f = 0,
+    \hspace{1cm} \left(
+            \text{а для сред \textit{уравнение Гельмгольца} }
+            \left\{\begin{aligned}
+                \Delta \vc{E} + k^2 \vc{E} &= 0 \\        
+                \Delta \vc{B} + k^2 \vc{B} &= 0 \\
+            \end{aligned}\right.,
+            \hspace{0.5cm} 
+            k^2 = \mu \varepsilon \frac{\omega^2}{c^2}.\right)
+\end{equation*}
+В плоской волне поле является функцией только $t - x/c$, поэтому если плоская волна монохроматична, то ее поле является простой периодической функцией. Векторный потенциал такой волны удобнее всего написать в виде вещественной части комплексного выражения:
+\begin{equation*}
+    \vc{A} = \Re \{
+        \vc{A}_0 \exp(-i\omega(t-x/c))
+    \}.
+\end{equation*}
+Здесь $\vc{A}_0$ -- некоторый постоянный комплексный вектор. Очевидно, что и напряженности $\vc{E}$ и $\vc{H}$ в такой волне будут иметь аналогичный вид с той же частотой $\omega$. Величины
+\begin{equation}
+    \lambda = \frac{2\pi c}{\omega} \text{\ \ --- \ \ \textit{длина волны}}.
+\end{equation}
+По сути это период изменения поля координате $x$ в заданный момент времени $t$. Вектор
+\begin{equation}
+    \vc{k} = \frac{\omega}{c} \vc{n}, \text{\ \ --- \ \ \textit{волновой вектор}}.
+\end{equation}
+где $\vc{n}$ -- единичный вектор в направлении распространения волны. С его помощью уравнение можем переписать в виде
+\begin{equation*}
+    \vc{A} = \Re\{
+        \vc{A}_0 \exp\left(
+            i(\vc{k} \cdot \vc{r} - \omega t)
+        \right)
+    \},
+\end{equation*}
+инвариантном к выбору системы координат. Величину, с множителем $i$ называют \textit{фазой волны}. 
+
+До тех пор, пока нащи операции линейны, можем опустить знак взятия вещественной части и получить
+\begin{equation*}
+    \vc{A} = \vc{A}_0 \exp\left(
+        i (\vc{k} \cdot \vc{r} - \omega t)
+    \right),
+\end{equation*}
+подставив в волновое уравнение, получим связь между напряженностями и векторным потенциалом плоской монохроматической волны в виде
+\begin{equation}
+    \vc{E} = ik \vc{A},  \hspace{0.5cm} \vc{H} = i \left[\vc{k} \times \vc{A} \right].
+\end{equation}
+Рассмотрим отдельно $\vc{E}$. Нетрудно получить, что
+\begin{equation*}
+    E_y = b_1 \cos \left(
+        \omega t - \vc{k} \cdot \vc{r} + \alpha
+    \right),
+    \hspace{0.5cm} 
+    E_z = \pm b_2 \sin \left(
+        \omega t - \vc{k} \cdot \vc{r} + \alpha
+    \right).
+\end{equation*}
+Отсюда следует, что
+\begin{equation*}
+    \frac{E_y^2}{b_1^2} + \frac{E_z^2}{b_2^2}  = 1.
+\end{equation*}
+Получается, что в каждой точке пространства вектор $\vc{E}$ вращается в плоскости, нормально к распространению волны, при чём его конец описывает эллипс. Такая волна называется \textit{эллиптически поляризованной}. 
+
+Если $b_1$ или $b_2$ равны 0, то волну называют \textit{линейно поляризованной}. 
+
+
+
+% \subsubsection*{Волноводы}
+
+
+% Если мы хотим видеть в волноводе целое число волн, то
+% \begin{equation*}
+%     \omega^2 = \frac{c^2 \pi^2}{\varepsilon \mu} \left[
+%         \left(\frac{n_x}{a_x}\right)^2 + 
+%         \left(\frac{n_y}{a_y}\right)^2 + 
+%         \left(\frac{n_z}{a_z}\right)^2  
+%     \right].
+% \end{equation*}
