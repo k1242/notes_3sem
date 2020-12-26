@@ -1,0 +1,87 @@
+Предполагаем, что ферромагнетиков нет, тогда $\vc{B}$ и $\Phi$ пропорциональны току:    
+    \begin{equation}
+        \Phi = L I^{(m)} = \frac{1}{c} L I,
+    \end{equation}
+    где $I^{(m)}$ -- сила тока в СГСМ, а $I$ -- сила того же тока в СИ, $L$ же не зависит от силы тока и называется \textit{индуктивностью провода} или \textit{самоиндукцией}. Чем тоньше провод, тем болше его индуктивность.
+
+ Индуктивность соленоида:
+ \begin{equation}
+ 	B = \frac{4\pi}{c}\frac{I N \mu}{l}
+ 	\hspace*{1 cm}
+ 	\Phi = \frac{4 \pi}{c} \frac{ \mu N^2 S}{l}I
+ 	\hspace*{0.5 cm} \Rightarrow \hspace*{0.5 cm}
+ 	L = \frac{4 \pi \mu N^2 S}{l}
+ \end{equation}
+ 
+
+ \textbf{Магнитная энергия}. Для витка с током, в котором с помощью внешних сил потечёт ток, а значит будет нарастать и магнитный поток через него, возникнет ЭДС, тогда элементарная работа внешний сил:
+ \begin{equation}
+    \delta A^\text{внеш} = - \mathcal{E}^\text{инд} I \d t = \frac{1}{c} I \d \Phi.
+\end{equation}
+Если среда не обладает гистерезисом, в частности является пара/диамагнетиком, работа внешних сил пойдёт только на увеличение магнитной энергии, так что (будем предполагать, что $\Phi = L I /c$):
+\begin{equation}
+	d W_\text{m} =\frac{I}{c} \d \Phi 
+	\hspace*{1 cm} \Rightarrow \hspace*{1 cm}
+	W_\text{m} = \frac{L}{2} \left(\frac{I}{c}\right)^2 = \frac{1}{2 c} I \Phi = \frac{\Phi^2}{2 L}.
+\end{equation}
+
+Обобщим формулу выше на случай произвольного числа витков. Тогда работа внешних сил для одного витка осталась прежней, но для получения энергии нам придётся суммировать по всем виткам.
+\begin{equation}
+	W_m = \frac{1}{c} \sum I_i' \d \Phi_i'.
+\end{equation}
+Величина интеграла не зависит от того, как у витков по отношению друг другу возрастает ток, одновременно ли это происходит или в каждом витке по очереди. Для удобства будем считать, что токи наращиваются одновременно так, чтобы они оставались пропорциональны друг другу. Таким образом будем требовать, чтобы в любой момент времени $I_{i}' = \lambda I_i $, где $\lambda \in [0,1]_t $ не зависит от выбранного кольца $i$. Ток без штриха -- ток в конечном состоянии. При $\mu = \const$ поток магнитного поля от тока линеен, тогда $\Phi_i' = \lambda \Phi_i' $, а потому $d \Phi_i' = \Phi_i \d \lambda $.
+\begin{equation}
+	W_{\text{m}} = \frac{1}{c}\sum I_i \Phi_i \int_0^1 \lambda \d \lambda
+	\hspace*{1 cm} \leadsto \hspace*{1 cm} 
+	W_\text{m} = \frac{1}{2c} \sum I_i \Phi_i = \frac{1}{2 c^2} \sum \sum L_{i k } I_i I_k
+	\label{eq_vzaim}
+\end{equation}
+
+\phantom{239}
+
+Остаётся доказать теорему о \textbf{взаимности} : $L_{i k} = L_{k i} $.
+Достаточно доказать для пары витков.
+
+Чтобы бесконечно мало изменить токи $I_2$ и $I_2$ нужно затратить работу:  $\delta A^{\text{внеш}} = (I_1 \d \Phi_1 + I_2 \d \Phi_2)/c = \d W_m$.
+Эта энергия задаётся выражением \eqref{eq_vzaim}, а её приращение тогда:
+\begin{equation}
+	d W_m = \frac{1}{2 c} (I_1 \d \Phi_1 + I_2 \d \Phi_2) + \frac{1}{2 c} (\Phi_1 \d I_1 + \Phi_2 \d I_2) = \frac{1}{c} (I_1 \d \Phi_1 + I_2 \d \Phi_2).
+\end{equation}
+Получаем:
+\begin{equation}
+	I_1 \d \Phi_1 + I_2 \d \Phi_2 = \Phi_1 \d I_1 + \Phi_2 \d I_2
+	\label{eq_69.7}
+\end{equation}
+Это выражение справедливо $\forall \d I_{1}$ и $\d I_2$, последний мы для удобства занулим. Тогда для потоков имеет:
+\begin{equation}
+	\begin{aligned}
+	    \Phi_1 = \frac{1}{c} (L_{1 1} I_1 + L_{1 2} I_2)\\
+	    \Phi_2 = \frac{1}{c} (L_{2 1} I_1 + L_{2 2} I_2)\\
+	\end{aligned}
+	\hspace*{1 cm} \hspace*{1 cm}
+	\begin{aligned}
+	    \d \Phi_1 = \frac{1}{c} L_{1 1} \d I_1 \\
+	    \d \Phi_2 = \frac{1}{c} L_{2 1} \d I_1
+	\end{aligned}
+\end{equation}
+
+Подставляем их в \eqref{eq_69.7}: $L_{1 1} I_1 \d I_1 + L_{2 1} I_2 \d I_1 = (L_{1 1} I_1 + L_{1 2} I_2)\d I_1 $. Откуда следует, что $\boxed{L_{1 2} = L_{2 1}}$
+
+\phantom{239}
+ % $d W_{m} = \frac{I}{c}\d \Phi$
+
+Про \textit{локализацию магнитной энергии пространстве} поговорим на примере соленоида. Пренебрегая краевыми эффектами $H^{\text{in}} = 4\pi I/(c l) $, откуда ток $I = c l H/(4\pi)$. Пусть  $S$ -- площадь поперечного сечения, тогда $\Phi = B S$, и следовательно:
+\begin{equation}
+	d W_{m} = \frac{I}{c}\d \Phi = \frac{1}{4 \pi} l S H \d B = \frac{V}{4 \pi} (\vc{H} \cdot \d \vc{B}).
+\end{equation}
+Если $\omega_m$ -- магнитная энергия на единицу объёма, то для её дифференциала можно записать:
+\begin{equation}
+	\delta A^{\text{внеш}} = \delta \omega_m = \frac{1}{4 \pi} (\vc{H} \cdot \d \vc{B})
+	\hspace*{1 cm} \leadsto \hspace*{1 cm}
+	W_m = \int \omega_m \d V.
+\end{equation}
+
+В случае пара-/диамагнитных сред $\vc{B} = \mu \vc{H}$ получаем 
+\begin{equation}
+	\omega_m = \frac{1}{8\pi} \mu H^2 = \frac{1}{8 \pi} \vc{H} \cdot \vc{B} = \frac{B^2}{8 \pi \mu}	
+\end{equation}
