@@ -1,0 +1,36 @@
+\subsubsection*{Метод комплексных амплитуд}
+
+
+Рассмтрим $U = U_0 \cos (\Omega t + \varphi)$. По методу комплексных амплитуд
+\begin{equation*}
+    U = U_0 e^{i\left(\Omega t + \varphi \right)}.
+\end{equation*}
+Он применим всегда, когда $\Re$ и $\Im$ не смешиваются. 
+
+Можем ввести импеданс -- комплексное сопротивление, при чём $\Re(z)$ -- активное сопротивление, $\Im z$ -- реактивное споротивление. 
+
+\subsubsection*{Мощность переменного тока}
+Рассмотрим некоторый элемент
+\begin{equation*}
+    I = I_0 \cos \left(\Omega t + \psi\right) = \Re I_0 e^{i \psi} e^{i \Omega t}, \hspace{0.5cm} 
+    U = U_0 \cos (\Omega t + \varphi) = \Re U_0 e^{i\varphi} e^{i \Omega t}.
+\end{equation*}
+Мгновенное значение мощности
+\begin{equation*}
+    P = UI = 
+    \frac{1}{2} I_0 U_0 \cos (\psi - \varphi) + \frac{1}{2} I_0 U_0 \cos (
+    2 \Omega t + \varphi + \psi
+    ),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \langle P\rangle_T = \frac{1}{T} \int P \d t = \frac{1}{2} I_0 U_0 \cos (\psi - \varphi).
+\end{equation*}
+Можно исправить метод комплексных амплитуд сопряжением.
+\begin{equation*}
+    \langle P\rangle_T = \frac{1}{2} \tilde I \tilde U^*,
+    \hspace{0.5cm} 
+    I_{\text{эфф}} = \frac{1}{T} \int_0^T I^2 \d t = \frac{I_0}{\sqrt{2}},
+    \hspace{0.5cm} 
+    U_{\text{эфф}} = \frac{1}{T} \int_0^T U^2 \d t.
+\end{equation*}
+
+

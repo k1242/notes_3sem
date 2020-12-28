@@ -1,0 +1,194 @@
+\subsubsection*{Давление света}
+При полном поглощении запишем следующее:
+\begin{equation*}
+    w = \frac{E^2}{4\pi} = pc, \hspace{0.5cm} p = \frac{E^2}{4\pi c} 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    P = \frac{1}{dS} \frac{d (p\d V)}{d t} = \frac{E^2}{4\pi},
+    \hspace{0.5cm} 
+    \langle P\rangle = \frac{\langle E^2\rangle}{4\pi}.
+\end{equation*}
+Или, по-другому
+\begin{equation*}
+    \left\{\begin{aligned}
+        \frac{\partial \vc{E}}{\partial z} &= \rot \vc{E} = - \frac{1}{c} \frac{\partial \vc{H}}{\partial t}, \\
+        \frac{\partial \vc{H}}{\partial z} &= \rot \vc{H} = \frac{4\pi}{c} \vc{j} + \frac{1}{c} \frac{\partial E}{\partial t}.
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{\partial }{\partial z} \left(\frac{E^2+H^2}{8\pi} \right) = - \frac{1}{c} \frac{\partial \vc{H}}{\partial t} \cdot \frac{\vc{E}}{4\pi}  + \frac{4\pi}{c} \vc{j} \cdot \frac{\vc{B}}{4\pi} + \frac{1}{c} \frac{\partial \vc{E}}{\partial t} \frac{\partial \vc{H}}{\partial 4\pi} = \vc{f} + \frac{1}{8\pi c} \frac{\partial }{\partial t} \left(\vc{E} \cdot \vc{H}\right).
+\end{equation*}
+Таким образом
+\begin{equation*}
+    \frac{\partial }{\partial z} 
+    \vph
+    \langle w\rangle= \langle f \rangle
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \langle P\rangle = \int_0^{\infty} \langle f\rangle\d z = w(0) - w(\infty) = w(0) = \frac{\langle E^2\rangle}{4\pi}.
+\end{equation*}
+Что и требовалось доказать!) Кстати,
+\begin{equation*}
+\overline{S} = c \cdot \overline{\mathcal W_{\text{эл}}}, \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \vc{g}_{\text{эм}} = \frac{1}{c^2} \vc{S} = \frac{1}{4\pi c} \left[
+        \vc{E} \times \vc{H}
+    \right].
+\end{equation*}
+
+\subsubsection*{Формулы Снеллиуса}
+
+Скорость распространения света
+\begin{equation*}
+    n = \frac{c}{v} = \sqrt{\varepsilon \mu}.
+\end{equation*}
+Для нормальной и тангенциальной компоненты воспользуемся граничными условиями
+\begin{align*}
+    E_2 \cos \psi &= E_1 \cos \varphi - E_1' \cos \varphi \\
+    \varepsilon_2 E_2 \sin \psi &= \varepsilon_1 \left(
+        E_1 \sin \varphi + E_1' \sin \varphi'
+    \right),
+\end{align*}
+при чём $\varepsilon_2 = n_2^2$. И для $B$ верно, что
+\begin{equation*}
+    B_1 + B_1' = B_2.
+\end{equation*}
+Верно, что на границе
+\begin{equation*}
+    \vc{k} \cdot \vc{r} = k x \sin \varphi,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \vc{E}_1 = \vc{E}_{10} e^{i\omega t} e^{-ik_1 x \sin \varphi},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    E_1 \sim \cos (k_1 x \sin \varphi).
+\end{equation*}
+Вспомним, что $\sqrt{\varepsilon} E = H \sqrt{\mu} = H$, тогда
+\begin{equation*}
+    \boxed{n_1 (E_1 + E_1') = n_2 E_2}, \hspace{0.5cm} 
+    \boxed{
+        \varphi = \varphi'
+    }.
+\end{equation*}
+Можем сказать, что
+\begin{equation*}
+    n_1 \left(
+        \hat{E}_{10} e^{ik_1 x\sin \varphi} + \hat{E}_{10} e^{-ik_1' x \sin \varphi' }
+    \right) = 
+    n_2 \hat{E}_{20} e^{i k_2 x \sin \psi}.
+\end{equation*}
+Мы знаем связь для $k = 2\pi / \lambda$, соответсвенно $k_1 = k_1'$.  Приходим к системе
+\begin{equation*}
+        k_1 \sin \varphi = k_2 \sin \psi, \hspace{0.5cm} 
+    \frac{n_1 (\hat{E}_{10} + \hat{E}_{10}')}{n_2 \hat{E}_{20}} = \exp\left(
+        -ix(
+        \underbrace{k_2 \sin \psi - k_1 \sin \varphi}_{=0}
+        )
+    \right).
+\end{equation*}
+Ещё можем записать, что
+\begin{equation*}
+    n = \frac{\varepsilon \mu \omega}{c k}.
+\end{equation*}
+Получили формулы Снеллиуса.
+\begin{equation*}
+    \boxed{
+        n_1 \sin \varphi = n_2 \sin \psi = \frac{n^2 \omega}{ck} .
+    }
+\end{equation*}
+
+
+% \subsubsection*{Формулы Френе}
+
+Запишем формулы Френе. Для $P$-поляризации
+\begin{equation*}
+    E_2 = E_1 \cdot \left(
+        \frac{2 \sin \psi \cos \varphi}{\sin(\varphi + \theta)\cos (\varphi - \psi)} 
+    \right),
+    \hspace{1cm} 
+    E_1' = E_1 \cdot \left(
+    \frac{\tg(\varphi - \psi)}{\tg(\varphi + \psi)} 
+    \right).
+\end{equation*}
+Для $S$-поляризации
+\begin{equation*}
+    E_1' = -E_1 \frac{\sin(\varphi-\psi)}{\sin(\varphi+\psi)},
+    \hspace{1cm} 
+    E_2 = E_1 \frac{2 \sin \psi \cos \varphi}{\sin(\varphi+\psi)}.
+\end{equation*}
+
+При угле между $\vc{k}'$ и $\vc{k}_2$ равным $\pi/2$ волна полностью проникает внутрь. 
+Что ж, действительно, $\varphi + \psi = \pi/2$, тогда $n_1 \sin \varphi = n_2 \sin \psi = n_2 \cos \varphi$, тогда $\tg \varphi = n_2 / n_1$.
+
+% \begin{equation*}
+%     \varepsilon_2 \sin \psi E_{20} \cos \left(k_2 x \sin \psi \right) = 
+%     \varepsilon_1 \left(
+%         E_{10} \sin \varphi \cdot \cos \left(
+%             k_1 x \sin \varphi
+%         \right) + 
+%         E_{10}' \sin \varphi' \cos \left(k_1 x \sin \varphi\right)
+%     \right)
+% \end{equation*}
+
+\subsubsection*{Излучение диполя}
+
+Рассмотрим антенку-диполь, $l \ll \lambda$. Два шарика перезаряжаются, и 
+\begin{equation*}
+    p = ql = p_0 \cos \omega t.
+\end{equation*}
+Ток будет равным
+\begin{equation*}
+    I = \dot{q} = \frac{\dot{p}}{l} = -\frac{1}{l} \omega p_0 \sin \omega t =I_0 \sin \omega t 
+    .
+\end{equation*}
+Окружим диполь сферой. При $r \ll \lambda$ можем пренебречь запаздыванием, тогда можем говорить про статические формулы и $E \sim r^{-3}$ и $B \sim r^{-2}$. 
+
+Однако наиболее интересен второй случай при $r \gg \lambda$. Тогда поле имеет вид сформировавшейся бегущей волны $\vc{k} \nparallel \vc{r}$. Вектор $\vc{E}$ ориентирован по меридиану сферы, вектор $\vc{B}$ ориентирован по широте, $\vc{E}, \vc{B}, \vc{k}$ образуют правую тройку. 
+\begin{equation}
+    E = B = \frac{
+        \ddot{p} \left(t - \frac{r}{c}\right) \sin \theta
+    }{
+        c^2 r
+    }.
+\end{equation}
+Рассмотрим это подробнее. 
+\begin{equation*}
+    \ddot{p}\left(t - \frac{r}{c} \right) = \omega_0^2 p_0 \cos \left(
+        \omega \left(t - \frac{r}{c} \right)
+    \right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \ddot{p} = - \omega^2 p_0 \cos (\omega t - kr).
+\end{equation*}
+Найдём среднее значение для вектора Пойтинга
+\begin{equation*}
+    \overline{S} = \frac{1}{8\pi} E_0^2 n,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \overline{S} = \frac{1}{8\pi c^3} \frac{p_0^2 \omega^4 \sin^2 \theta}{r^2}.
+\end{equation*}
+Найдём интеграл по поверхности -- полный поток энергии
+\begin{equation*}
+    \int \overline{S} \d \sigma  = \int \overline{S} 
+    2 \pi r \sin \theta r \d \theta = \frac{p_0^2 \omega^4}{3 c^3} 
+    =
+    \frac{l^2 \omega^2}{3 c^3}  I_0^2.
+    =
+    \frac{1}{2} R_{\text{изл}} I_0^2.
+    .
+\end{equation*}
+
+
+
+
+
+% Для проводник верен закон Ома $\vc{j} = \sigma \vc{E}$, тогда по силе Лоренца
+% \begin{equation*}
+%     \vc{f} = \frac{1}{c} \left[
+%         \vc{j} \times \vc{B}
+%     \right] = \frac{1}{c} \left[\sigma \vc{E} \times \vc{B}\right]
+%     ,
+%     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+
+% \end{equation*}
+
+
+
+
+
+
+
+
+

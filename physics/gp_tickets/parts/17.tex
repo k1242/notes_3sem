@@ -1,0 +1,139 @@
+\subsubsection*{Спектральное разложение}
+
+Представим $\mathscr{E}$, как
+\begin{equation*}
+    \mathscr{E} = \sum_j a_j \cos(\omega_j t + \varphi_j).
+\end{equation*}
+Тогда мы в линейной системе всегда можем работать с синусоидальной возбуждающей силой. 
+
+Пусть функция $f(t)$ периодическая с периодом $T$, тогда 
+\begin{equation*}
+    f(t) = \sum_{n=-\infty}^{+\infty} \frac{1}{2\pi} C_n \exp(i\omega_n t),
+    \hspace{0.5cm} 
+    C_n = \frac{1}{T} \int_{-T/2}^{T/2} f(t) \cdot e^{-i \omega_n t} \d t,
+    \hspace{0.5cm} 
+    \omega_n = \omega_0 n, \hspace{0.5cm} \omega_0 = \frac{2\pi}{T}.
+\end{equation*}
+В случае, если $f(t)$ не является периодической, то спект перестает быть дискретным
+\begin{equation*}
+    f(t) = \frac{1}{2\pi} A(\omega) \exp(i\omega t) \d \omega,
+    \hspace{0.5cm} 
+    A(\omega) = \int_{-\infty}^{\infty} f(t) \exp(-i\omega t) \d t.
+\end{equation*}
+
+\subsubsection*{Прямоугольный сигнал}
+
+Рассмотрим прямоугольный сигнал. Для него
+\begin{equation*}
+    A(\omega) = \int_{\infty}^{\infty} f(t) \exp(-i\omega t)\d t = 
+    \int_{-\tau/2}^{\tau/2} f_0 \exp(-i \omega t) \d t = 
+    f_0 \tau \frac{1}{\omega \tau/2} 
+    \left(
+        \frac{e^{i \omega \tau/2 - e^{-i\omega \tau/2}}}{2i} 
+    \right)= f_0 \tau \cdot  \left(
+        \frac{
+        \sin \omega \tau / 2
+        }{
+        \omega \tau /2 
+        } 
+    \right)
+\end{equation*}
+Основная часть спектра лежит в 
+\begin{equation*}
+    \Delta \omega = \frac{2\pi}{\tau}, \hspace{0.5cm} \Delta \omega \cdot \tau = 2 \pi.
+\end{equation*}
+Рассмотрим теперь последовательность прямоугольных сигналов с шириной $\tau$ и периодом $T$. Тогда
+\begin{equation*}
+    C_n = \frac{1}{T} \int_{-T/2}^{T/2} f(t) e^{-i \omega t } \d t = 
+    \frac{1}{T} \int_{-\tau/2}^{\tau/2} f_0 \exp(-in \Omega t) \d t =
+    \frac{2f_0 \tau}{T} \cdot 
+    \frac{
+        \sin \omega \tau / 2
+        }{
+        \omega \tau /2 
+        } 
+\end{equation*}
+
+
+\subsubsection*{Амплитудная модуляция}
+
+Рассмотрим амплитудную модуляцию
+\begin{equation*}
+    U = A(1 + m \cos \Omega t) \cdot \cos \omega_0 t, \hspace{0.5cm} 
+    \Omega \ll \omega_0, \hspace{0.5cm} m<1.
+\end{equation*}
+Тогда
+\begin{equation*}
+    U = A\bigg(
+        1 + m \underbrace{
+        \frac{1}{2} \left(
+            e^{i\Omega t} + e^{-i\Omega t}
+        \right)
+        }_{\cos \Omega t}
+    \bigg) \cdot 
+    \underbrace{
+    \exp\left(i \omega_0 t\right)
+    }_{
+    \cos \omega_0 t
+    }
+\end{equation*}
+Раскрыв скобки получаем, что
+\begin{equation*}
+    U = A e^{i \omega_0 t} + \frac{Am}{2} e^{i \left(\omega_0-\Omega\right) t} + \frac{Am}{2} e^{i \left(\omega_0+\Omega\right) t}
+\end{equation*}
+Вообще может быть $U = F(\tau) \cdot \cos \omega_0 t, \ \tau \gg \frac{2\pi}{\omega_0}$. 
+
+\subsubsection*{Фазовая модуляция}
+
+Рассмотрим фазовую модуляцию
+\begin{equation*}
+    U = A \cos \left(
+        \omega_0 t + m \cos \Omega t
+    \right),
+    \hspace{0.5cm} \Omega \ll \omega_0, \hspace{0.5cm} m \ll 1.
+\end{equation*}
+Перепишем комплексными амплитудами
+\begin{equation*}
+    U = A \cdot e^{i \omega_0 t} \cdot \exp\left(
+        im \frac{1}{2} \left(
+            e^{i \Omega t} + e^{-i\Omega t}
+        \right)
+    \right) = 
+    A e^{i \omega_0 t}
+    \left(
+        1 + \frac{m}{2} i e^{i \Omega t} + \frac{m}{2} i e^{-i\Omega t}
+    \right) = 
+    A e^{i\omega_0 t} + \frac{Am}{2} i e^{i(\omega_0 - \Omega)t}
+    + \frac{Am}{2} i e^{i(\omega_0 + \Omega)t}.
+\end{equation*}
+То есть теперь есть сдвиг по фазе на $\pi/2$. 
+
+
+\subsubsection*{Детектирование сигнала}
+Пусть есть некоторое преобразование из $f(t)$ в $g(t)$, при чем
+\begin{equation*}
+    g(t) = \frac{1}{\Delta t} \int_{\Delta t} f^2(t) \d t.
+\end{equation*}
+Давайте $\Delta t \gg T_0 = 2\pi/\omega_0$, при этом $\Delta t \ll \tau$, то мы сохраним информацию об огибающей, где $\tau$ -- характерное время изменения модулирующей функции.
+Рассмотрим $f(t) = A(1+m\cos \Omega t) \cdot \cos \omega_0 t$ -- амплитудную модуляцию. 
+\begin{equation*}
+    g(t) = \frac{A^2}{\Delta t} (1 + 2m \cos \Omega t).
+\end{equation*}
+Или, методом комплексных амплитуд,
+\begin{align*}
+    f(t) = A(1 + m \cos \Omega t) \cos \omega_0 t,
+    \hspace{0.5cm} 
+    g(t) = \frac{A^2}{2} (1 + 2 m \cos \Omega t), \\
+    g(t) = \frac{1}{2} f(t) \cdot f^*(t).
+\end{align*}
+
+Посмотри теперь историю с фазовой модуляцией, без несущей. Тогда
+\begin{equation*}
+    g(t) = \left(
+        \frac{mA}{2} 
+    \right)^2 \cdot (1 + \cos 2 \Omega t).
+\end{equation*}
+Или можно сдвинуть фазу несущей на $\pi/2$, тогда ситуауия аналогична амплитудной модуляции, тогда
+\begin{equation*}
+    g(t) = \frac{A}{2} (1 + 2m \cos \Omega t). 
+\end{equation*}

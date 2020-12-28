@@ -67,10 +67,17 @@
 
 Найдём связь между электрической и магнитными компонентами волны. Пусть
 \begin{equation*}
-    E_x = f(x \mp v t); \hspace{0.5cm} 
-    B_y = g(z \mp vt),
+    \left\{\begin{aligned}
+        \frac{\partial E_x}{\partial z} = - \frac{1}{c} \frac{\partial B_y}{\partial t} \\
+        \frac{\partial B_y}{\partial z} = \frac{\varepsilon \mu}{c} \frac{\partial E_x}{\partial t}.
+    \end{aligned}\right.,
+    \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        E_x &= f(z \mp v t); \\
+        B_y &= g(z \mp vt),
+    \end{aligned}\right. 
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
-    f'' = \pm \frac{v}{c} g'',
+    f'' = \pm \frac{v}{c} g',
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
     f = \pm \frac{v}{c} g + \const.
 \end{equation*}
