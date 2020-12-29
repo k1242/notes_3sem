@@ -1,1 +1,104 @@
- 
+\textit{Волновод} -- цилиндр с идеально проводящими стенками, внутри диэлектрик с $\varepsilon, \mu$. Формально есть следующая система
+\begin{equation*}
+    \left\{\begin{aligned}
+        \div \vc{E} &= 0, \\
+        \div \vc{B} &= 0,
+    \end{aligned}\right.
+    \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        \rot \vc{E} = - \frac{1}{c} \frac{\partial \vc{B}}{\partial t}, 
+        \rot \vc{B} = \frac{\varepsilon \mu}{c} \frac{\partial \vc{E}}{\partial t},
+    \end{aligned}\right.
+    \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        E_{\bot}, H_{\nparallel} (x=0) &= 0 \ (\text{скачком}),\\
+        E_{\nparallel}, H_{\bot} (x=0) &= 0 \ (\text{плавно}),
+    \end{aligned}\right.
+\end{equation*}
+решение которой хотим найти.
+
+Решение будем искать в виде монохроматической плоской волны $\vc{E}(x,y,z) \cdot \exp\left(-i(\omega t- \vc{k} \cdot \vc{r})\right)$, тогда
+\begin{equation*}
+    \left\{\begin{aligned}
+        \frac{\partial^2 E_z}{\partial x^2}  +  \frac{\partial^2 E_z}{\partial y^2} + \left(
+            \frac{\varepsilon \mu}{c^2} \omega^2 - k^2
+        \right) \cdot E_z = 0 \\
+        \frac{\partial^2 B_z}{\partial x^2}  +  \frac{\partial^2 B_z}{\partial y^2} + \left(
+            \frac{\varepsilon \mu}{c^2} \omega^2 - k^2
+        \right) \cdot B_z = 0
+    \end{aligned}\right.
+    \hspace{1cm} 
+    \left[\begin{aligned}
+        E_z |_S &= 0 \\
+        \left(\partial B_z / \partial n \right)\big|_S &= 0
+    \end{aligned}\right.
+\end{equation*}
+Эти граничные условия могут быть выполнены поочереди. 
+
+Для начала рассмотрим TM волну, или E-волну, -- поперечно-магнитные волны:
+\begin{equation*}
+    B_z = 0 \ \forall z, \hspace{1cm} 
+    E_z |_S = 0.
+\end{equation*}
+Возможны TEM поперечные электромагнитные волны,
+\begin{equation*}
+    E_z = 0, \hspace{0.5cm} 
+    B_z = 0, \hspace{0.5cm} 
+    \left(
+        B_\tau \neq 0, \ E_\tau \neq 0
+    \right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    k^2 = \varepsilon \mu \frac{\omega^2}{c^2}.
+\end{equation*}
+Действительно, давайте введем $\gamma^2 = \frac{\varepsilon \mu}{c^2} \omega^2 - k^2$. Тогда
+\begin{equation*}
+    \frac{\partial^2 E_z}{\partial x^2} + \frac{\partial^2 E_z}{\partial y^2} + \gamma^2 E_z = 0.
+\end{equation*}
+Решения существуют только для некоторых $\gamma$, при некоторых $\gamma_\lambda$. Во-первых $\gamma_\lambda^2 > 0$. Аналогично $k^2 > 0$,   
+\begin{equation*}
+    k^2_\lambda = \frac{\varepsilon \mu}{c^2} \omega^2 - \gamma^2_\lambda > 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \omega_{\text{гр }} = c\frac{\gamma_{\lambda}}{\sqrt{\varepsilon \mu}}.
+\end{equation*}
+Поясним, почему так. Пусть $f'' + \gamma^2 \varphi = 0$ и $f|_{\text{границе}} = 0$. Тогда $T = 2 \pi / \gamma$ такой, чтобы помещалось целое число волн. Важно, что $\gamma_\lambda$ определяется геометрией, а
+\begin{equation*}
+    k = \frac{\sqrt{\varepsilon \mu}}{c} \sqrt{\vph \omega^2 - \omega_{\text{гр}}^2}.
+\end{equation*}
+что и является искомым дисперсионным соотношением. Можем найти фазовую скорость
+\begin{equation*}
+    v_{\text{ф}} = \frac{\omega}{k} = \frac{c}{\sqrt{\varepsilon \mu}} \cdot \frac{
+    1
+    }{
+    \sqrt{
+        1 - \frac{\omega^2_{\text{гр}}}{\omega^2} 
+    }
+    }  > \frac{c}{\sqrt{\varepsilon \mu}} .
+\end{equation*}
+Поэтому введем величину групповой скорости, с которой возможен перенос информации
+\begin{equation*}
+    v_{\text{гр}} = \frac{d \omega}{dk} = \frac{c}{\sqrt{\varepsilon \mu}} \sqrt{
+    1  -\frac{\omega_{\text{гр}}^2}{\omega^2} 
+    } < \frac{c}{\sqrt{\varepsilon \mu}}.
+\end{equation*}
+
+\subsubsection*{Прямоугольный волновод}
+
+Рассмотрим ТЕ волну. 
+Решение может быть найдено в виде
+\begin{equation}
+    B_{z_{nm}} (x, y) = B_0 \cos \left(
+        \frac{m \pi x}{a} 
+    \right) \cos \left(
+        \frac{n\pi x}{b} 
+    \right),
+\end{equation}
+а для частоты можем найти, что
+\begin{equation}
+    \gamma^2_{mn} = \pi^2  \left(
+        \frac{m^2}{a^2} + \frac{n^2}{b^2} 
+    \right),
+    \hspace{1cm} 
+    \omega_{mn} = \frac{c}{\sqrt{\varepsilon \mu}} \pi \sqrt{
+    \frac{m^2}{a^2} + \frac{n^2}{b^2} 
+    }.
+\end{equation}

@@ -1,1 +1,106 @@
 \subsubsection*{Преломление и поглощение волн}
+
+Пусть есть некоторое внешнее поле $E = E_0 e^{i(\omega t - kz)}$. Посмотрим на электрон на орбите атома,
+\begin{equation*}
+    m \ddot{z} = - k z - \beta \dot{z} + E_0 \cdot e^{-i(\omega t - kz)},
+    \hspace{0.5cm} \overset{p = e z}{\Rightarrow}  \hspace{0.5cm} 
+    \ddot{p} + 2 \delta \dot{p} + \omega_0^2 p = \frac{eE_0}{m} e^{-i(\omega t - kz)},
+\end{equation*}
+будем искать решения вида $p = p_0 e^{i\omega t}$, тогда
+\begin{equation*}
+    p = \frac{eE_0}{m} \frac{
+    1
+    }{
+    (\omega_0^2 - \omega_2) - 2 \delta \omega i 
+    } 
+    e^{-i(\omega t - kz)}.
+\end{equation*}
+Вспомним, что $D$ равно
+\begin{equation*}
+     D = E + 4 \pi N p = 
+     \bigg(
+     \underbrace{
+     1 + \frac{4\pi N e^2}{m} \cdot 
+     \frac{1}{(\omega_0^2 - \omega^2) - 2 \delta \omega i} 
+     }_{\varepsilon}
+    \bigg) E.
+\end{equation*}
+По определению $n = \sqrt{\varepsilon}$, то есть
+\begin{equation*}
+    n^2 = \varepsilon = 1 + \frac{4\pi N e^2}{m} \cdot 
+     \frac{1}{(\omega_0^2 - \omega^2) - 2 \delta \omega i}.
+\end{equation*}
+
+В случае проводника $\omega_0 = 0$, к тому же $2 \delta = 1 / \tau$, где $\tau$ -- характерное время затухания. Запишем, что
+\begin{equation*}
+    j = \sigma E, \hspace{0.5cm} j = N e v,
+    \hspace{0.5cm} 
+    v = \frac{eM}{m} \tau
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \tau = \frac{m\sigma}{Ne^2}. 
+\end{equation*}
+Тогда для проводника
+\begin{equation*}
+    n^2 = 1 - \frac{4\pi\sigma}{\omega i (1 -i \omega \tau)}.
+\end{equation*}
+Рассмотрим два случая, когда $\omega \tau \ll 1$, и $\omega \tau \gg 1$. 
+
+\subsubsection*{Скин-эффект}
+
+
+Первый случай приводит нас к явлению скин-эффекта.
+\begin{equation*}
+    n^2 = 1 - \frac{4\pi\sigma}{\omega i (1 -i \omega \tau)} 
+    \approx
+    1 - \frac{4\pi \sigma}{\omega i} \approx i \frac{4 \pi \sigma}{\omega},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    n = \left(\frac{1 + i}{\sqrt{2}}\right) \sqrt{\frac{4\pi\sigma}{\omega}}
+    = \sqrt{\frac{2\pi\sigma}{\omega} } (1 + i)
+    .
+\end{equation*}
+Посмотрим к чему это приводит. 
+\begin{equation*}
+    E = E_0 e^{-i(\omega t - kz)}, \hspace{0.5cm} 
+    k = \frac{\omega}{c} \sqrt{\varepsilon \mu} = \frac{\omega}{c} n.
+\end{equation*}
+Тогда
+\begin{equation*}
+    E = E_0 e^{-i(\omega t - \frac{n}{c} z)} = E_0
+    e^{-i \omega t} \exp\left(
+        i \frac{\omega}{c} \sqrt{\frac{2\pi\sigma}{\omega} }z
+    \right)
+    \exp\left(
+        - \frac{\omega}{c} \sqrt{\frac{2\pi\sigma}{\omega} }
+    \right).
+\end{equation*}
+Появился множитель, соответсвующий экспоненциальному затуханию
+\begin{equation*}
+    z_0 = \sqrt{\frac{c^2}{2\pi \sigma \omega} },
+\end{equation*}
+где на $z_0$ происходит затухание в $e$ раз. 
+
+
+\subsubsection*{Прозрачность металлов}
+
+Первый случай приводит к прозрачности металлов.
+\begin{equation*}
+    n^2 = 1 - \frac{4\pi\sigma}{\omega i (1 -i \omega \tau)} 
+    \approx
+    1 - \frac{4\pi\sigma}{\omega^2 \tau} = 1 - \frac{\omega_{\text{p}}^2}{\omega^2} 
+    ,
+    \omega_{\text{p}}:2 = 
+    \frac{4 \pi \sigma}{\tau} = \frac{4 \pi N e^2}{m}.
+\end{equation*}
+То есть при $\omega < \omega_{\text{p}}$ происходит отражение, а при $\omega > \omega_{\text{p}}$ металл становится прозрачным, то есть похожим на диэлектрик. 
+
+
+
+
+
+
+% \subsubsection*{Бонус о плазме}
+
+
+
+
+
