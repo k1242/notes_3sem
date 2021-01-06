@@ -5,7 +5,7 @@
             \frac{\partial f_i}{\partial x_j} 
         \right) \neq 0
     \end{equation*}
-    в этой окрестности. Пусть $f_i(p) = y_i$. Тогда найдётся окрестности точки $p$ вида $U \times V$, $U \subset \mathbb{R}^k$, $V \subset \mathbb{R}^{n-k}$, такая что в этой окрестности множество решений системы уравнений
+    в этой окрестности (поверхность является \textit{регулярной}). Пусть $f_i(p) = y_i$. Тогда найдётся окрестности точки $p$ вида $U \times V$, $U \subset \mathbb{R}^k$, $V \subset \mathbb{R}^{n-k}$, такая что в этой окрестности множество решений системы уравнений
     \begin{equation*}
         \left\{\begin{aligned}
             f_1(x) &= y_1, \\
@@ -18,7 +18,8 @@
         \left\{\begin{aligned}
             x_1 &= \varphi_1 (y_1, \ldots, y_k,\ x_{k+1}, \ldots, x_n),\\
             &\ldots\\
-            x_k &= \varphi_1 (y_1, \ldots, y_k,\ x_{k+1}, \ldots, x_n).
+            x_k &= \varphi_k (y_1, \ldots, y_k,\ x_{k+1}, \ldots, x_n),
         \end{aligned}\right.
     \end{equation*}
+    то есть отображения $\mathbb{R}^{n-k} \mapsto \mathbb{R}^k$.
 \end{to_thr}
