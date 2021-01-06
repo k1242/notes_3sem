@@ -27,3 +27,9 @@
 \newcommand{\const}{\text{const}}
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\xmark}{\ding{55}}
+
+
+\newcommand{\sbsnum}[2]{
+    \setcounter{subsection}{\the\numexpr #1 - 1 \relax}
+    \subsection{#2}
+}
