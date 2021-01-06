@@ -1,0 +1,129 @@
+% \RequirePackage{currfile} 
+\documentclass{beamer}
+
+\input{preambule/special_beamer.tex}
+\input{preambule/packages.tex}
+
+\usepackage{media9}
+\usepackage{animate}
+\usepackage{enumitem}
+\usepackage{threeparttable}
+\usepackage{pifont}
+
+
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+% \newcommand{\incfig}[1]{%
+%     \def\svgwidth{\columnwidth}
+%     \import{./figures/}{#1.pdf_tex}
+% }
+
+% \usepackage{circuitikz}
+
+\newcommand{\vc}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\T}{^{\text{T}}}
+\newcommand{\xmark}{\ding{55}}
+\newcommand{\R}{\text{R}}
+\newcommand{\const}{\text{const}}
+\newcommand{\rot}{\text{rot}}
+\renewcommand{\d}{\text{ d}}
+
+\newcommand{\incfig}[1]{%
+    % \def\svgwidth{}
+    \import{../Figures/}{#1.pdf_tex}
+}
+
+\newcommand{\com}[1]{\textcolor{red}{#1}}
+
+\newcommand{\progressbar}{%
+	\pgfmathsetmacro{\slidewidth}{\paperwidth}
+	\pgfmathsetmacro{\progressstep}{\paperwidth/\inserttotalframenumber}
+	\pgfmathsetmacro{\progresspos}{(\insertframenumber - 0.5) * \progressstep}
+	\begin{tikzpicture}[scale = 0.035, line width = 1ex]
+		\node[inner sep=0pt] (cat) at (\progresspos,0)	{\includegraphics[width=20pt]{cat.png}};
+		\path[red] (0,0) -- (\slidewidth,0);
+	\end{tikzpicture}
+}
+
+\makeatletter
+\setbeamertemplate{footline}
+{
+\hfill \progressbar%
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.433333\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}%
+    % \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    % \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+
+\newcommand{\agemO}{$\Omega^{-1}$}
+
+\title[Jacob's Ladder]{ Laboratory  research project on  \\ High Voltage Travelling Arc \\
+Jacob's Ladder}
+\author{Khoruzhii Kirill and Primak Eugene}
+\institute[MIPT]
+% \date{19 of December 2020}
+
+\begin{document}
+\date{12.19.2020}
+\maketitle
+
+\begin{frame}
+\frametitle{To be discussed}
+\tableofcontents
+\end{frame}
+
+\section{Motivation}
+
+\section{Review}
+% \frame{\input{slides/lit1} \frametitle{Theoretical, numerical and experimental study of DC
+% and AC electric arcs}}
+% \frame{\input{slides/lit2} \frametitle{Articles we have started with}}
+% \frame{\input{slides/lit3} \frametitle{Development of an arc root model for
+% studying the electrode vaporization and its
+% influence on arc dynamics}}
+
+% \section{Theory}
+% \frame{\input{slides/thr1} \frametitle{Fluid plasma description}}
+% \frame{\input{slides/thr2} \frametitle{Energy conservation}}
+% \frame{\input{slides/thr3} \frametitle{Laws of flows}}
+% \frame{\input{slides/thr4} \frametitle{Charge conservation and Maxwell}}
+
+% \section{Experiment}
+% \frame{\input{slides/exp0} \frametitle{Choosing high a voltage circuit}}
+
+% \frame{\input{slides/exp1} \frametitle{The circuit was soldered}}
+% \frame{\input{slides/exp2} \frametitle{Evolution of experimental setup}}
+
+\section{Data}
+\frame{\input{slides/K_tmp_slide_1.tex}}
+% \frame{\input{slides/K_tmp_slide_2.tex}}
+% \frame{\input{slides/K_tmp_slide_3.tex}}
+% \frame{\input{slides/grph1} \frametitle{With high speed camera}}
+% \frame{\input{slides/grph2} \frametitle{With high speed camera}}
+% \frame{\input{slides/grph3} \frametitle{With high speed camera}}
+% \frame{\input{slides/grph4} \frametitle{With high speed camera}}
+% \frame{\input{slides/grph5} \frametitle{With high speed camera}}
+% \frame{\input{slides/grph6} \frametitle{With high speed camera}} ########свеча
+
+
+% \section{Conclusion}
+
+
+% \frame{\frametitle{Thank you for your attention!}}
+
+% \frame{\input{slides/add1} \frametitle{Additions}}
+
+\end{document}
