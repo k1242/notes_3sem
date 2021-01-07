@@ -1,0 +1,42 @@
+% 6.1. Дифференцируемые отображения открытых подмножеств R n .
+\begin{to_def} 
+    Пусть $U \subset \mathbb{R}^n$ -- открытое множество. Отображение $f \colon U \to \mathbb{R}^m$ называется \textit{дифференцируемым} в точке $x_0 \in U$, если
+    \begin{equation*}
+        f(x) = f(x_0) + Df_{x_0} (x - x_0) + o(|x-x_0|), \hspace{0.5cm} x \to x_0,
+    \end{equation*} 
+    где $Df_{x_0} \colon \mathbb{R}^n \mapsto \mathbb{R}^m$ -- линейное отображение, называемое \textit{производной} $f$ в точке $x_0$.  
+\end{to_def}
+
+\begin{to_def} 
+    Функция $f$ называется \textit{непрерывно дифференцируемой} на $U$, если оно  дифференцируемо в каждой точке и $Df_x$ непрерывно зависит от $x$.
+\end{to_def}
+
+\begin{to_thr}[Дифференицрование композиции]
+     Если $f$ дифференцируемо в точке $x_0$, $g$ дифференцируемо в точке $y_0 = f(x_0)$, то композиция $g \circ f$ дифференцируема в точке $x_0$, и $D(g \circ f)_{x_0} = Dg_{y_0} \circ Df_{x_0}$.
+\end{to_thr}
+
+
+\begin{to_def} 
+    Производная функции $f$ по направлению $v \in Rn$ в точке $x$ называется
+    \begin{equation*}
+         \frac{\partial f}{\partial v} = 
+         \lim_{t \to 0}
+         \left(\frac{f(x + t v) - f(x)}{t} \right)
+     \end{equation*} 
+\end{to_def}
+
+\begin{to_lem} 
+    Если функция дифференцируема в точке $x$, то в этой точке
+    \begin{equation*}
+         \frac{\partial f}{\partial v} = Df_x (v).
+     \end{equation*} 
+     В частности для функционалов, верно что $\partial f / \partial v = df_x (v)$. Более того, выбрав в качестве $v$ базисные векторы $e_i$, поймём что
+     \begin{equation*}
+         df = \frac{\partial f}{\partial x^i} x^i,
+     \end{equation*}
+     где $dx^i$ -- дифференциалы координатных функций, образующие двойственный базис.
+\end{to_lem}
+
+\begin{to_thr} 
+    Если отображение $f \colon U \mapsto \mathbb{R}^m$ из открытого $U \subseteq \mathbb{R}^n$ задано в координатах, как $y_i = f_i(x_1, \ldots, x_n)$, для $i = 1,\ldots,m$ и функции $f_i$ имеют непрерывные частные производные на $U$, то $f$ непрерывно дифференцируемо на $U$. 
+\end{to_thr}
