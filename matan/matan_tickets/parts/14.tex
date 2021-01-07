@@ -1,0 +1,33 @@
+
+\begin{to_def} 
+    \textit{Векторным полем} на открытом множестве $U \subseteq \mathbb{R}^n$ называется выбор касательного вектора $X(p) \in T_p U$ для каждой точки $p \in U$, гладко\footnote{
+        Гладкая зависимость понимается в смысле гладкой зависимости координат векторного поля $X_i(p)$ в точке $p$.
+    } зависящий от $p$.  
+\end{to_def}
+
+
+\begin{to_lem} 
+    Для открытого $U \subseteq \mathbb{R}^n$ всякое $\mathbb{R}$-линейное отображение $X \colon C^{\infty} \mapsto C^{\infty}(U)$, удовлетворяющее правилу Лейбница $X(fg) = X(f) g + f x(g)$ задаётся векторным полем на $U$. 
+\end{to_lem}
+
+
+
+\begin{to_def} 
+    Пусть есть вектор $X \in T_pU,$ $q = \varphi(p)$, тогда \textit{прямой\footnote{
+        Производную отображения $\varphi$ в точке $p$ можно определить как $\varphi_*\colon T_p U \mapsto  T_q V$ при $q = \varphi(p)$. Иначе можем обозначать, как $F \varphi_p$.
+    } образ вектора} $\varphi_*(X)$ определяется по формуле
+    \begin{equation*}
+        \varphi_* (X) f = X(f \circ \varphi),
+        \hspace{1cm}\Rightarrow\  \left(\varphi_*X\right)^i = \frac{\partial \varphi^i}{\partial x^j} X^j.
+    \end{equation*}
+\end{to_def}
+
+\begin{to_def} 
+    Отображение $\varphi \colon U \mapsto  V$ задаёт \textit{гомоморфизм алшебр} (операция, сохраняющая умножение, сложение, и переводящая $\const$ в $\const$): 
+    $\varphi^* \colon C^{\infty}(V) \mapsto C^{\infty}(U)$ по формуле
+    \begin{equation*}
+        \varphi^* (f) = f \circ \varphi.
+    \end{equation*}
+    вектор даёт дифференцирование алгебры $X \colon C^{\infty}(U) \mapsto \mathbb{R}$, и тогда $\varphi_* X = X \circ \varphi^*$ тоже дифференцирование алгебры. 
+\end{to_def}
+
