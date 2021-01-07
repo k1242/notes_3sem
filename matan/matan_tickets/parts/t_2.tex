@@ -1,0 +1,21 @@
+Возьмём $f \in C^\infty$ такую, что $\forall k f^{(k)} (0) = 0$. Из неё составим $\varphi\in C^\infty$ большую нуля на $(-1,1)$:
+\begin{equation*}
+	f(x) = \left\{
+	\begin{aligned}
+	    &0, &x\leq 0; \\
+	    &e^{-1/x}, &x>0.
+	\end{aligned}\right.
+	\hspace*{1 cm} \varphi(x) = f(x+1) f(1-x).
+\end{equation*}
+
+\begin{to_lem}
+	$\forall \varepsilon > 0 \; \exists$ бесконечно гладкая $\varphi_\varepsilon \colon \mathbb{R}^n \rightarrow \mathbb{R}^+$, $\varphi_\varepsilon(x) \neq 0 \; \forall x \in U_\varepsilon(0)$, \textbf{такая чтo} $\int_{\mathbb{R}^n} \varphi_\varepsilon(x) \d x = 1. $
+	\label{lem_6.20}
+\end{to_lem}
+
+\begin{to_lem}
+	$\forall \varepsilon > \delta > 0 \; \exists$
+	бесконечно гладкая $\psi_{\varepsilon,\delta} \colon \mathbb{R}^n \rightarrow [0,1] $,
+	$\psi_{\varepsilon,\delta}(x) \neq 0 \; \forall x \in U_\varepsilon(0)$ 
+	и $\psi_{\varepsilon,\delta} (x) \neq 0 \; \forall x \in U_\delta(0)$.
+\end{to_lem}

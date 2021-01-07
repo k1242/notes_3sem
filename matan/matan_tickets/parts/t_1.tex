@@ -1,0 +1,29 @@
+\begin{to_def}[Свертка функции] Свёртку ещё пишут как $h = f * g$.
+	\begin{equation*}
+		h(x) = \int_{\mathbb{R}^n} f (x - t)g(t)\d t =\int_{\mathbb{R}^n} f(t)g(x-t) \d t,
+	\end{equation*}
+	\label{def_svertka}
+\end{to_def}
+
+Свёртка также ассоциативна: $f *(g*h) = (f*g)*h$, для функций с конечным интегралом.
+Чтобы интеграл существовал, можно заметить, что если одна из функций ограничена, а другая имеет конечный интеграл, тогда и свёртка будет ограничена, кроме того:
+
+\begin{to_thr}%[\ref{proof_6.18}]
+	Если $f$ и $g$ имеют конечный интегралы, \textbf{то} $h = f*g$ определена почти всюду и верно неравенс{}тво
+	\begin{equation*}{}
+		\int_{\mathbb{R}^n} |f * g| \d x < \int_{\mathbb{R}^n}|f| \d x \cdot \int_{\mathbb{R}^n}|g|\d x,
+	\end{equation*}
+	и равенство:
+	\begin{equation*}
+		\int_{\mathbb{R}^n} f * g \d x = \int_{\mathbb{R}^n} f \d x \cdot \int_{\mathbb{R}^n} g \d x.
+	\end{equation*}
+	\label{thr_6.18}
+\end{to_thr}
+
+\begin{to_lem}
+	Если свёртка $g*f$ --- \textbf{ограничена}, где $g$ -- имеет конечный интеграл, а $f$ и $\partial_x f$ -- ограничены, \textbf{то} возможно \text{дифференцирование под знаком интеграла} (\ref{5.95}), и мы получаем:
+	\begin{equation*}
+		\frac{\partial (f*g)}{\partial x_i} = \int_{\mathbb{R}^n} \frac{\partial f(x-t)}{\partial x_i} g(t) \d t = \frac{\partial f}{\partial x_i} * g.
+	\end{equation*}
+	\label{lem_6.19}
+\end{to_lem}

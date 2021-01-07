@@ -1,0 +1,23 @@
+\begin{to_thr}[Дифференцирование под знаком интеграла]
+% \footnote{Функция $g \colon X \to \mathbb{R}^+$ и $g \in \L_c$}
+\label{5.95}
+    \begin{equation*}
+    \begin{split}
+    \left.
+        \begin{aligned}
+            &f(x, y) \in \L^x_c \; \forall y \in (a, b) \\
+            &f \text{ дифференцируема по } y \\
+            &\forall x \in X, \forall y \in (a, b) |f'_y(x, y)| \leq g(x) \\
+            &g \geq 0 \colon X \to \mathbb{R}^+ \in L_c \text{ на } X
+        \end{aligned}
+    \right\} \hspace{1cm}
+    \Longrightarrow \hspace{1cm}
+    \frac{d}{dy} \int_X f(x, y) \d x = \int_X f'_y (x, y) \d x.
+    \end{split}
+    \end{equation*}
+\end{to_thr}
+
+\begin{to_thr}
+\label{thr_5.75}
+    Пусть функция $f \colon \mathbb{R}^n \to \mathbb{R}$ интегрируема по Лебегу с конечным интегралом. Тогда $f$ можно сколь угодно близко приблизить в среднем элементарно ступенчатой функцией.
+\end{to_thr}
