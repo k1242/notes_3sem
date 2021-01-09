@@ -1,0 +1,41 @@
+Удобно положить: $L(x) = f(x) - \lambda_1 \varphi_1(x) - \ldots - \lambda_m \varphi_m(x)$. Это называется \textit{функцией Лагранжа},а $\lambda_{i}$ --- \textit{множители Лагранжа}.
+
+\begin{to_thr}[Необходимые условия условного экстремума]
+	\begin{equation*}
+	 \left\{
+	 	\begin{aligned}
+	 		&f, \varphi_1,\ldots,\varphi_m \in C^2(U(p))\\
+	 		&\dim \langle \d \varphi_1, \ldots, \d \varphi_m\rangle = m\\
+	 		&p \text{ --- def(\ref{def_usl_ext})}\\
+	 		&\vc{v}\colon \d \varphi_{1,p}(\vc{v}) = \ldots = \d \varphi_{m,p}(\vc{v}) = 0
+	 	\end{aligned}\right.
+	 	\hspace*{0.5 cm} \Rightarrow \hspace*{0.5 cm}
+	 	\left\{
+	 	\begin{aligned}
+	 		&\d L_p = 0\\
+	 		&\left[
+	 		\begin{aligned}
+	 			&\d_2 L_p \geq 0 (\text{для минимума})\\
+	 			&\d_2 L_p \leq 0 (\text{для максимума})
+	 		\end{aligned}\right.
+	 	\end{aligned}\right.
+	 \end{equation*}
+	 \label{thr_6.42}
+\end{to_thr}
+
+\begin{to_thr}[Достаточные условия условного экстремума]
+	\begin{equation*}
+		\left\{
+		\begin{aligned}
+	 		&f, \varphi_1,\ldots,\varphi_m \in C^2(U(p))\\
+	 		&\dim \langle \d \varphi_1, \ldots, \d \varphi_m\rangle = m\\
+	 		&\d L_p = 0\\
+	 		&\varphi_1(p) = \ldots = \varphi_m(p) = 0\\
+	 		&\vc{v}(\neq 0) \colon \d \varphi_{1,p}(\vc{v}) = \ldots = \d \varphi_{m,p}(\vc{v}) = 0\\
+	 		&\d_2 L(\vc{v}) > 0 \text{ или } \d_2 L(\vc{v}) < 0
+	 	\end{aligned}\right.
+	 	\hspace*{0.5 cm} \Rightarrow \hspace*{0.5 cm}
+	 	f \text{ имеет строгий условный экстремум в } p.
+	\end{equation*}
+	\label{thr_6.43}
+\end{to_thr}
