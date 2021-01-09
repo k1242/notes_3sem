@@ -1,0 +1,31 @@
+% \red{Пройтись по происходящему с лекцией}
+
+\begin{to_def} 
+\label{def_compact_form}
+    Диф-форма с \textit{компактным носителем} на $\mathbb{R}^n$ -- форма определенная\footnote{
+        Вообще можно рассматривать $\Omega_\text{c}^k (U) \subseteq \Omega_\text{c}^k (\mathbb{R}^n)$.
+    } на всём $\mathbb{R}^n$ и равная $0$ за пределами некоторого компакта. 
+\end{to_def}
+
+\begin{to_def} 
+\label{def_6.98}
+    Для гладкой\footnote{
+        Т.к $a(x)$ -- гладкая с компактным носителем, этот интеграл $\exists$, как повторный интеграл Римана, или как интеграл Лебега.
+    } формы с компактным носителем $\nu = a(x) dx^1 \wedge \ldots \wedge dx^n \in \Omega_\text{c}^n (U)$ определим в какой-то фиксированной системе координат
+    \begin{equation*}
+         \int_U \nu \overset{\mathrm{def}}{=} \int_U a(x) \d x_1 \ldots \d x_n.
+     \end{equation*} 
+\end{to_def}
+
+
+\begin{to_lem} 
+\label{lem_6.99}
+    Если $\lambda \in \Omega_\text{c}^{n-1}(U)$, то\footnote{
+        Таким образом интеграл оказывается определен как линейный функционал на факторпространстве $\Omega_{\text{c}}^n(U) / d \Omega_{\text{c}}^{n-1}(U)$.
+    }
+    $\int_U \d \lambda = 0.$
+\end{to_lem}
+  
+
+
+

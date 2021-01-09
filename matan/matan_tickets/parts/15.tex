@@ -1,0 +1,67 @@
+\begin{to_def} 
+    \textit{Дифференциальная 1-форма} -- это ковекторное поле. Иначе, элемент двойственного пространства $(T_p U)^* \equiv T_p^* U$, линейная форма на касательнм пространстве, гладко зависящая от $p$. 
+    \textit{Дифференциал} функции $f$ от векторного поля $X$ это $df (X) \overset{\mathrm{def}}{=} X f$.
+\end{to_def}
+
+Дифференциалы $dx_1, \ldots, dx_n$ дают базис $T_p^* U$, двойственный к $\partial_1, \ldots, \partial_n$, в смысле $dx^i \partial_j = \delta_j^i$. По этому базису можно разложить любую форму в точке, а применяя это $\forall p \in U \subseteq \mathbb{R}^n$ видим, что $\omega^1 = \alpha_i dx^i$.
+
+
+При замене координат компоненты $\omega^1$ преобразуются как дифференциалы функции, то есть 
+\begin{equation*}
+    \alpha = \alpha_j dx^j = \tilde \alpha_i dy^i = 
+    \underbrace{\tilde \alpha_i \partial_j y^i }_{\alpha_j}
+    dx^j, \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \alpha_j = \tilde \alpha_i \partial_j y^i
+    \hspace{0.25cm} \Leftrightarrow \hspace{0.25cm} 
+    \text{\red{переписать в матричном виде}}.
+\end{equation*}
+
+
+
+% Дописать что происходит при замене базиса
+
+% \red{Далее некоторые рассуждения из НМУ}. Заметим, что $\frac{\partial }{\partial x^1}, \ldots, \frac{\partial }{\partial x^n}$ -- базис в каждой точке. Рассмотрим теперь $f = x^i$ и $X = \frac{\partial }{\partial x^j} $, тогда
+% \begin{equation}
+%     d x^i \left(\frac{\partial }{\partial x^j} \right)
+%     =
+%     \frac{\partial x^i}{\partial x^j} = \delta^i_j.
+% \end{equation}
+% Из этого следует, что $dx_1,\ldots,dx_n$ -- двойственный к $\frac{\partial }{\partial x^1}, \ldots, \frac{\partial }{\partial x^n}$ базис в $V^*$.
+% Тогда в этом базисе
+% $$
+%     d f = \omega_i \d x^i.
+% $$
+% Заметим, что
+% $$
+% \underbrace{\omega_i \d x^i }_{df}
+%     \left(
+%         \frac{\partial }{\partial x^j} 
+%     \right) = \omega_i \delta^i_j = \omega_j,
+%     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+%     \omega_j = df \left(\frac{\partial }{\partial x^j} \right) =
+%     \frac{\partial f}{\partial x^j}.
+% $$
+% Тогда
+% \begin{equation}
+%     df = \frac{\partial f}{\partial x^i} \d x^i.
+% \end{equation}
+% Получается ковектор $df$ расписывается по базису
+% $dx^i$
+%  двойственного пространства с координатами $\partial f / \partial x^i$.
+
+% А для общей 1-формы
+% $$
+%     \omega = \omega_i \d x^i,
+% $$
+% где $\omega_1, \ldots, \omega_n$ -- координаты $\omega$ в локальной системе координат.
+
+% \begin{to_def} 
+%     $\omega$  гладкая, если $\forall X$, где $X$ -- гладкое поле, верно, что
+%     $\omega(X)$ -- гладкая функция.
+% \end{to_def}
+
+% \begin{to_lem} 
+%     $\omega = \omega_i \d x^i$  -- гладкая $\Leftrightarrow$ $\omega_i$ -- гладкая форма $\forall i$.
+% \end{to_lem}
+
+% \red{Конец рассуждений из НМУ}.

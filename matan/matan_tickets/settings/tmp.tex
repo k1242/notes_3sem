@@ -1,0 +1,1021 @@
+\documentclass[twoside]{article}
+
+\input{settings/preambule}
+
+\begin{document}
+
+\input{settings/settings}
+
+\input{settings/inputs}
+
+
+
+
+
+\end{document} \begin{to_def}[Свертка функции] Свёртку ещё пишут как $h = f * g$.
+	\begin{equation*}
+		h(x) = \int_{\mathbb{R}^n} f (x - t)g(t)\d t =\int_{\mathbb{R}^n} f(t)g(x-t) \d t,
+	\end{equation*}
+	\label{def_svertka}
+\end{to_def}
+
+Свёртка также ассоциативна: $f *(g*h) = (f*g)*h$, для функций с конечным интегралом.
+Чтобы интеграл существовал, можно заметить, что если одна из функций ограничена, а другая имеет конечный интеграл, тогда и свёртка будет ограничена, кроме того:
+
+\begin{to_thr}%[\ref{proof_6.18}]
+	Если $f$ и $g$ имеют конечный интегралы, \textbf{то} $h = f*g$ определена почти всюду и верно неравенс{}тво
+	\begin{equation*}{}
+		\int_{\mathbb{R}^n} |f * g| \d x < \int_{\mathbb{R}^n}|f| \d x \cdot \int_{\mathbb{R}^n}|g|\d x,
+	\end{equation*}
+	и равенство:
+	\begin{equation*}
+		\int_{\mathbb{R}^n} f * g \d x = \int_{\mathbb{R}^n} f \d x \cdot \int_{\mathbb{R}^n} g \d x.
+	\end{equation*}
+	\label{thr_6.18}
+\end{to_thr}
+
+\begin{to_lem}
+	Если свёртка $g*f$ --- \textbf{ограничена}, где $g$ -- имеет конечный интеграл, а $f$ и $\partial_x f$ -- ограничены, \textbf{то} возможно \text{дифференцирование под знаком интеграла} (\ref{5.95}), и мы получаем:
+	\begin{equation*}
+		\frac{\partial (f*g)}{\partial x_i} = \int_{\mathbb{R}^n} \frac{\partial f(x-t)}{\partial x_i} g(t) \d t = \frac{\partial f}{\partial x_i} * g.
+	\end{equation*}
+	\label{lem_6.19}
+\end{to_lem}
+Возьмём $f \in C^\infty$ такую, что $\forall k f^{(k)} (0) = 0$. Из неё составим $\varphi\in C^\infty$ большую нуля на $(-1,1)$:
+\begin{equation*}
+	f(x) = \left\{
+	\begin{aligned}
+	    &0, &x\leq 0; \\
+	    &e^{-1/x}, &x>0.
+	\end{aligned}\right.
+	\hspace*{1 cm} \varphi(x) = f(x+1) f(1-x).
+\end{equation*}
+
+\begin{to_lem}
+	$\forall \varepsilon > 0 \; \exists$ бесконечно гладкая $\varphi_\varepsilon \colon \mathbb{R}^n \rightarrow \mathbb{R}^+$, $\varphi_\varepsilon(x) \neq 0 \; \forall x \in U_\varepsilon(0)$, \textbf{такая чтo} $\int_{\mathbb{R}^n} \varphi_\varepsilon(x) \d x = 1. $
+	\label{lem_6.20}
+\end{to_lem}
+
+\begin{to_lem}
+	$\forall \varepsilon > \delta > 0 \; \exists$
+	бесконечно гладкая $\psi_{\varepsilon,\delta} \colon \mathbb{R}^n \rightarrow [0,1] $,
+	$\psi_{\varepsilon,\delta}(x) \neq 0 \; \forall x \in U_\varepsilon(0)$ 
+	и $\psi_{\varepsilon,\delta} (x) \neq 0 \; \forall x \in U_\delta(0)$.
+\end{to_lem}Пусть $\varphi\colon \mathbb{R}^n \rightarrow \mathbb{R} $, неотрицательная $\varphi\in C^\infty $, $\varphi \neq 0$ при $|x| \leq 1$ и пусть $\int_{\mathbb{R}^n} \varphi(x) \d x = 1$.
+Положим  $\varphi_k (x) = k^n \varphi(k x) $, у которых так же будут $\int = 1$ и которые $ \varphi_k \neq 0$ при $|x| \leq 1/k$.
+
+\begin{to_thr}
+	Для непрерывной $f \colon \mathbb{R}^n \rightarrow \mathbb{R} $ определим свёртки:
+	\begin{equation*}
+		f_k(x) = \int_{\mathbb{R}^n} f(x-t)\varphi_k \d t = \int_{\mathbb{R}^n} f(t) \varphi_k (x -t) \d t \hspace*{0.5 cm} \leadsto \hspace*{0.5 cm} f_k \in C^\infty, \; f_k \rightarrow f \text{ равномерно на компактах в } \mathbb{R}^n.
+	\end{equation*}
+	\label{thr_6.21}
+\end{to_thr}
+
+\begin{to_thr}
+	Если $f$ имеет непр. производные до $m$-го порядка, то производные $f_k$ до $m$-го порядка равномерно сходятся на компактах к соответствующим $f'$.
+	\label{thr_6.22}
+\end{to_thr}
+
+\begin{to_thr}
+	Пусть $f\colon \mathbb{R}^n \rightarrow \mathbb{R}$ и $f \in \L_{c}$. Тогда свёртки $f*\varphi_k$ c функциями из теоремы \ref{thr_6.21} сколь угодно близко приближают $f$ в среднем.
+	\label{thr_6.23}
+\end{to_thr}% 6.1. Дифференцируемые отображения открытых подмножеств R n .
+\begin{to_def} 
+    Пусть $U \subset \mathbb{R}^n$ -- открытое множество. Отображение $f \colon U \to \mathbb{R}^m$ называется \textit{дифференцируемым} в точке $x_0 \in U$, если
+    \begin{equation*}
+        f(x) = f(x_0) + Df_{x_0} (x - x_0) + o(|x-x_0|), \hspace{0.5cm} x \to x_0,
+    \end{equation*} 
+    где $Df_{x_0} \colon \mathbb{R}^n \mapsto \mathbb{R}^m$ -- линейное отображение, называемое \textit{производной} $f$ в точке $x_0$.  
+\end{to_def}
+
+\begin{to_def} 
+    Функция $f$ называется \textit{непрерывно дифференцируемой} на $U$, если оно  дифференцируемо в каждой точке и $Df_x$ непрерывно зависит от $x$.
+\end{to_def}
+
+\begin{to_thr}[Дифференицрование композиции]
+     Если $f$ дифференцируемо в точке $x_0$, $g$ дифференцируемо в точке $y_0 = f(x_0)$, то композиция $g \circ f$ дифференцируема в точке $x_0$, и $D(g \circ f)_{x_0} = Dg_{y_0} \circ Df_{x_0}$.
+\end{to_thr}
+
+
+\begin{to_def} 
+    Производная функции $f$ по направлению $v \in Rn$ в точке $x$ называется
+    \begin{equation*}
+         \frac{\partial f}{\partial v} = 
+         \lim_{t \to 0}
+         \left(\frac{f(x + t v) - f(x)}{t} \right)
+     \end{equation*} 
+\end{to_def}
+
+\begin{to_lem} 
+    Если функция дифференцируема в точке $x$, то в этой точке
+    \begin{equation*}
+         \frac{\partial f}{\partial v} = Df_x (v).
+     \end{equation*} 
+     В частности для функционалов, верно что $\partial f / \partial v = df_x (v)$. Более того, выбрав в качестве $v$ базисные векторы $e_i$, поймём что
+     \begin{equation*}
+         df = \frac{\partial f}{\partial x^i} x^i,
+     \end{equation*}
+     где $dx^i$ -- дифференциалы координатных функций, образующие двойственный базис.
+\end{to_lem}
+
+\begin{to_thr} 
+    Если отображение $f \colon U \mapsto \mathbb{R}^m$ из открытого $U \subseteq \mathbb{R}^n$ задано в координатах, как $y_i = f_i(x_1, \ldots, x_n)$, для $i = 1,\ldots,m$ и функции $f_i$ имеют непрерывные частные производные на $U$, то $f$ непрерывно дифференцируемо на $U$. 
+\end{to_thr}% 6.4. Непрерывно дифференцируемые отображения и криволинейные системы координат
+
+\begin{to_def} 
+    \textit{Криволинейная замена координат} --- бесконечно гладкое отображение $\varphi \colon U \mapsto  V$ такое, что $\varphi^{-1}$ определено и тоже бесконечно гладко. 
+\end{to_def}
+
+\begin{to_lem} 
+    Пусть открытое множество $U \subset \mathbb{R}^n $ выпукло. Для непрерывно дифференцируемого отображения $\varphi \colon U \to \mathbb{R}^m $ найдётся непрерывное отображение $A \colon U \times U \mapsto  \mathcal L (\mathbb{R}^n, \mathbb{R}^m)$, такое что $\forall x', \ x'' \in U$ 
+\begin{equation*}
+     \varphi(x'') - \varphi(x') = A(x', x'')(x'' - x')
+ \end{equation*} 
+ и $A(x, x) = D \varphi_x$.  
+\end{to_lem}
+
+% \begin{to_lem} 
+%     Для всякого линейного отображения $A \colon \mathbb{R}^n \mapsto \mathbb{R}^m$ найдётся число $\|A\|$ такое что для все $x \in \mathbb{R}^n$ $|Ax| \leq \|A\| \cdot |x|$. 
+% \end{to_lem}
+
+\begin{to_thr}[Теорема об обратном отображении]
+     \textbf{Если} отображение $\varphi \colon U \mapsto \mathbb{R}^n$ непрерывно дифференцируемо в окрестности точки $x$ \textbf{и} его дифференциал $D\varphi_x$ являетсяя невырожденным линейным преобразованием, \textbf{то} это отображение взаимно однозначно отображает некоторую окрестность $V \ni x$ на окрестность $W \ni y$, где $y = \varphi(x)$. Обратное отображение $\varphi^{-1} \colon W \to V$ тоже непрерывно дифференцируемо. 
+\end{to_thr}
+
+
+\begin{to_def} 
+    \textit{Криволинейной системой координат} в окрестности точки $p \in \mathbb{R}^n$ называется набор таких функций, которые явяются координатами гладкого отображения окрестности $p$ на некоторое открытое множество в $\mathbb{R}^n$ с гладким обратным\footnote{
+        По теореме об обратном отображении для проверки системы преобразования достаточно проверить невырожденность $\left(
+    \partial y_i / \partial x_j
+    \right)$ в точке $p$, или линейную независимость $dy^i$ в точке $p$.
+    } отображением.
+\end{to_def}
+
+\begin{to_thr}[Теорема о неявной функции]
+\label{thr_6.32}
+     Пусть функции $f_1, \ldots, f_k$ непрерывно дифференцируемы в окрестности $p \in \mathbb{R}^n$ и 
+    \begin{equation*}
+        \det \left(
+            \frac{\partial f_i}{\partial x_j} 
+        \right) \neq 0
+    \end{equation*}
+    в этой окрестности. Пусть $f_i(p) = y_i$, $i = 1, \ldots, k$. Тогда найдётся окрестность точки $p$ вида $U \times V$, $U \subset \mathbb{R}^k$, $V \subset \mathbb{R}^{n-k}$, такая что в этой окрестности множество решений системы уравнений
+    \begin{equation*}
+        \left\{\begin{aligned}
+            f_1(x) &= y_1, \\
+            &\ldots \\
+            f_k(x) &= y_k,
+        \end{aligned}\right.
+    \end{equation*}
+    совпадает с графиком непрерывно дифференцируемого отображения $\varphi \colon V \to U$, заданного в координатах как
+    \begin{equation*}
+        \left\{\begin{aligned}
+            x_1 &= \varphi_1 (y_1, \ldots, y_k,\ x_{k+1}, \ldots, x_n),\\
+            &\ldots\\
+            x_k &= \varphi_k (y_1, \ldots, y_k,\ x_{k+1}, \ldots, x_n),
+        \end{aligned}\right.
+    \end{equation*}
+    то есть отображения $\mathbb{R}^{n-k} \mapsto \mathbb{R}^k$.
+\end{to_thr}
+
+\begin{to_thr}[Теорема о расщеплении отображения на элементарные]
+     Если отображение $\varphi$ непрерывно дифференцируемо в окрестности точки $p \in \mathbb{R}^n$ и имеет обратимый $D \varphi_x$, то его можно представить в виде композиции перестановки координат, отображений координат и элементарных отображений, непрерывно дифференцируемо и возрастающим образом меняющих только одну координату $y_i = \psi_i (x_1, \ldots, x_n)$.
+\end{to_thr}
+
+\begin{to_thr} 
+    Теоремы об обратном отображении, о неявной функции и о расщеплении отображения дают отображения класса $C^k$ при $k \geq 1$, если исходные отображени были класса $C^k$. 
+\end{to_thr}
+
+% 6.6. Векторы и векторные поля
+
+\begin{to_lem} 
+    \label{lem_6.44}
+    Всякую гладкую функцию, определенную в некоторой окрестности $x_0 \in \mathbb{R}^n$, в возможно меньшей окрестности $x_0$, можно представить в виде
+    \begin{equation*}
+         f(x) = f(x_0) + \sum_{k=1}^n \partial_k f|_{x_0}
+         \
+         (x^k  - x_0^k) , 
+     \end{equation*} 
+     с гладкими $\partial_k f$.
+\end{to_lem}
+
+% Начнём наше удивительное приключение в определение вектора. Для всякого $v \in \mathbb{R}^n$ мы можем определеить производную по направлению
+% \begin{equation*}
+%     \frac{\partial f}{\partial v}  = \lim_{t \to 0} 
+%     \left(
+%         \frac{f(p+tv)-f(p)}{t} 
+%     \right),
+%     \hspace{0.5cm} 
+%     \frac{\partial (fg)}{\partial v} = \frac{\partial f}{\partial v} g + f \frac{\partial g}{\partial v}.
+% \end{equation*}
+% Проблема -- $p + tv$ определено не инвариантно. Решение -- определим вектор, как \textit{дифференцирование алгебры гладких функций в точке}, удовлетворяющее формуле Лейбница.
+
+\begin{to_def} 
+    Определим \textit{касательный вектор} в точке $p \in U$ открытого множества $U \subseteq \mathbb{R}^n$ как $\mathbb{R}$-линейное отоборражение $X \colon C^{\infty}(U) \mapsto \mathbb{R}$, удовлетворяющее 
+    \begin{equation*}
+        X(fg) = X(f) g(p) + f(p) X(g).
+    \end{equation*}
+    \textit{Касательное пространство} $T_p U$ к $U$ в точке $p$ состоит из всех касательных векторов в точке $p$.
+\end{to_def}
+
+\begin{to_lem} 
+    Если $X$ -- касательный вектор в точке $p \in U$, то для любой окресности $V \ni p$, $V \subseteq U$, выражение $X(f)$ может зависеть только от значений $f$ в $V$, а не на всём $U$. 
+\end{to_lem}
+
+В силу предыдущих лем мы можем перейти в окрестность, где $f$ представима в виде \eqref{eq_lem_6.44}, тогда
+\begin{equation*}
+    X(f) = X(f(p)) + \sum_{i=1}^n X(x_i) \partial_i f|_p + \sum_{i=1}^n x_i(p) X(\partial_i f|_p) = 
+    \sum_{i=1}^n X(x_i) \ \partial_i f|_p.
+\end{equation*}
+Числа $X_i = X(x_i)$ называются координатами касательного вектора в данной криволинейной системе координат, тогда весь вектор в точке $p$ записывается, как $X = X^i \partial_i$.
+
+\begin{to_def} 
+    \textit{Векторным полем} на открытом множестве $U \subseteq \mathbb{R}^n$ называется выбор касательного вектора $X(p) \in T_p U$ для каждой точки $p \in U$, гладко\footnote{
+        Гладкая зависимость понимается в смысле гладкой зависимости координат векторного поля $X_i(p)$ в точке $p$.
+    } зависящий от $p$.  
+\end{to_def}
+
+
+\begin{to_lem} 
+    Для открытого $U \subseteq \mathbb{R}^n$ всякое $\mathbb{R}$-линейное отображение $X \colon C^{\infty} \mapsto C^{\infty}(U)$, удовлетворяющее правилу Лейбница $X(fg) = X(f) g + f x(g)$ задаётся векторным полем на $U$. 
+\end{to_lem}
+
+
+
+\begin{to_def} 
+    Пусть есть вектор $X \in T_pU,$ $q = \varphi(p)$, тогда \textit{прямой\footnote{
+        Производную отображения $\varphi$ в точке $p$ можно определить как $\varphi_*\colon T_p U \mapsto  T_q V$ при $q = \varphi(p)$. Иначе можем обозначать, как $F \varphi_p$.
+    } образ вектора} $\varphi_*(X)$ определяется по формуле
+    \begin{equation*}
+        \varphi_* (X) f = X(f \circ \varphi),
+        \hspace{1cm}\Rightarrow\  \left(\varphi_*X\right)^i = \frac{\partial \varphi^i}{\partial x^j} X^j 
+        \hspace{0.25cm} \Leftrightarrow \hspace{0.25cm} 
+        \text{\red{переписать в матричном виде}}
+        .
+    \end{equation*}
+\end{to_def}
+
+\begin{to_def} 
+    Отображение $\varphi \colon U \mapsto  V$ задаёт \textit{гомоморфизм алшебр} (операция, сохраняющая умножение, сложение, и переводящая $\const$ в $\const$): 
+    $\varphi^* \colon C^{\infty}(V) \mapsto C^{\infty}(U)$ по формуле
+    \begin{equation*}
+        \varphi^* (f) = f \circ \varphi.
+    \end{equation*}
+    вектор даёт дифференцирование алгебры $X \colon C^{\infty}(U) \mapsto \mathbb{R}$, и тогда $\varphi_* X = X \circ \varphi^*$ тоже дифференцирование алгебры. 
+\end{to_def}
+
+\begin{to_def} 
+    \textit{Дифференциальная 1-форма} -- это ковекторное поле. Иначе, элемент двойственного пространства $(T_p U)^* \equiv T_p^* U$, линейная форма на касательнм пространстве, гладко зависящая от $p$. 
+    \textit{Дифференциал} функции $f$ от векторного поля $X$ это $df (X) \overset{\mathrm{def}}{=} X f$.
+\end{to_def}
+
+Дифференциалы $dx_1, \ldots, dx_n$ дают базис $T_p^* U$, двойственный к $\partial_1, \ldots, \partial_n$, в смысле $dx^i \partial_j = \delta_j^i$. По этому базису можно разложить любую форму в точке, а применяя это $\forall p \in U \subseteq \mathbb{R}^n$ видим, что $\omega^1 = \alpha_i dx^i$.
+
+
+При замене координат компоненты $\omega^1$ преобразуются как дифференциалы функции, то есть 
+\begin{equation*}
+    \alpha = \alpha_j dx^j = \tilde \alpha_i dy^i = 
+    \underbrace{\tilde \alpha_i \partial_j y^i }_{\alpha_j}
+    dx^j, \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \alpha_j = \tilde \alpha_i \partial_j y^i
+    \hspace{0.25cm} \Leftrightarrow \hspace{0.25cm} 
+    \text{\red{переписать в матричном виде}}.
+\end{equation*}
+
+
+
+% Дописать что происходит при замене базиса
+
+% \red{Далее некоторые рассуждения из НМУ}. Заметим, что $\frac{\partial }{\partial x^1}, \ldots, \frac{\partial }{\partial x^n}$ -- базис в каждой точке. Рассмотрим теперь $f = x^i$ и $X = \frac{\partial }{\partial x^j} $, тогда
+% \begin{equation}
+%     d x^i \left(\frac{\partial }{\partial x^j} \right)
+%     =
+%     \frac{\partial x^i}{\partial x^j} = \delta^i_j.
+% \end{equation}
+% Из этого следует, что $dx_1,\ldots,dx_n$ -- двойственный к $\frac{\partial }{\partial x^1}, \ldots, \frac{\partial }{\partial x^n}$ базис в $V^*$.
+% Тогда в этом базисе
+% $$
+%     d f = \omega_i \d x^i.
+% $$
+% Заметим, что
+% $$
+% \underbrace{\omega_i \d x^i }_{df}
+%     \left(
+%         \frac{\partial }{\partial x^j} 
+%     \right) = \omega_i \delta^i_j = \omega_j,
+%     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+%     \omega_j = df \left(\frac{\partial }{\partial x^j} \right) =
+%     \frac{\partial f}{\partial x^j}.
+% $$
+% Тогда
+% \begin{equation}
+%     df = \frac{\partial f}{\partial x^i} \d x^i.
+% \end{equation}
+% Получается ковектор $df$ расписывается по базису
+% $dx^i$
+%  двойственного пространства с координатами $\partial f / \partial x^i$.
+
+% А для общей 1-формы
+% $$
+%     \omega = \omega_i \d x^i,
+% $$
+% где $\omega_1, \ldots, \omega_n$ -- координаты $\omega$ в локальной системе координат.
+
+% \begin{to_def} 
+%     $\omega$  гладкая, если $\forall X$, где $X$ -- гладкое поле, верно, что
+%     $\omega(X)$ -- гладкая функция.
+% \end{to_def}
+
+% \begin{to_lem} 
+%     $\omega = \omega_i \d x^i$  -- гладкая $\Leftrightarrow$ $\omega_i$ -- гладкая форма $\forall i$.
+% \end{to_lem}
+
+% \red{Конец рассуждений из НМУ}.\begin{to_def} 
+    Определим \textit{дифференциальную форму степени} $k$ на открытом $U \subseteq \mathbb{R}^n$ как кососимметричное отображение наборов из $k$ гладких векторных полей $X_1, \ldots, X_k$ на $U$ в $C^{\infty}(U)$, линейное по каждому аргументу и относительно умножения на бесконечно гладкие функции.
+\end{to_def}
+
+\begin{to_lem} 
+    Значение выражения $\alpha(X_1, \ldots, X_k)$ в точке $p$ зависит только от значений векторных полей $X_i$ в точке $p$.     
+\end{to_lem}
+
+Пространство диф-форм степени $k$ на $U \subseteq \mathbb{R}^n$ обозначим $\Omega^k(U)$. Интересно, что $\Omega^n(U)$ в фиксированной системе координат выглядит как $C^{\infty}(U)$, но при замене координат ведёт себя иначе.
+
+% Для $ \forall f \in C^{\infty}(U)$ её дифференциал, как отображение $U \mapsto \mathbb{R}$ можно считать формой первой степени $df(X) = X(f)$. 
+
+
+\red{Свойства диф-форм?}
+
+
+
+
+\begin{to_def} 
+    \textit{Внешнее умножение} $\Omega^k(U) \times \Omega^l (U) \mapsto \Omega^{k+l} (U)$, можно определить как $\alpha \wedge \beta = \text{Alt}\, (\alpha \otimes \beta)$, при чём $(dx_1 \wedge \ldots \wedge dx_k)(\partial_1, \ldots, \partial_k) = 1$.
+\end{to_def}
+
+\red{Здесь можно написать про операцию альтернирования.}\begin{to_lem} 
+    На гладких диф-формах на $U$ существует единсвтенный $\mathbb{R}$-линейный оператор $\delta \colon \Omega^k (U) \mapsto \Omega^{k+1} (U)$, удовлетворяющий условиям: 
+    1) $d(f) = df$;
+    2) $d^2 = 0$;
+    3) $d(\alpha \wedge \beta) = d \alpha \wedge \beta + (-1)^{\deg \alpha} \alpha \wedge d \beta$ (а-ля правило Лейбница).
+    Более того, операция $d$ определена инвариантно.
+\end{to_lem}
+
+\begin{to_def}[Обратный образ] 
+    Для всякого гладкого отображения $\varphi \colon U \mapsto V$ между открытими подмножествами евклидовых пространств определено отображение пространств дифференциальных форм $\varphi^* \colon \Omega^k(V) \mapsto \Omega^k (U)$, действующее по формуле\footnote{
+        Важно заметить, что если левая часть вычисляется в точке $p \in U$, то правая в $\varphi(p)$.
+    }
+\begin{equation*}
+    \varphi^* \alpha (X_1, \ldots, X_k) = \alpha(\varphi_* X_1,\ldots,\varphi_* X_k).
+\end{equation*}
+Для функции $f \in C^{\infty}(V) = \Omega^0 (V)$ оказывается $\varphi^* f = f \circ \varphi$, что совпадает с замены переменных в функции. Для форм первой степени $\alpha \circ \varphi_*$, где $\alpha|_{f(p)}$, а $\varphi_*|_p$. \red{Чего?}
+\end{to_def}
+
+\begin{to_lem} 
+    Взятие обратного образа диф-форм коммутирует с внешним умножением и внешним дифференцированием.  
+\end{to_lem}
+
+% \begin{proof}[$\triangle$]
+%     \begin{equation*}
+%         d(\varphi^* f) = d (f \circ \varphi) = df \circ D\varphi = df \circ \varphi_* = \varphi^*(df).
+%     \end{equation*}
+% \end{proof}
+
+Таким образом взятие обратного образа происходит формально подстановкой\footnote{
+    \red{Было бы здорово посмотреть на задачи 6.96 и 6.97.}
+} выражений новых переменных через старые в коэффициенты формы и в дифференциалы новых переменных.
+
+
+% \red{Пройтись по происходящему с лекцией}
+
+\begin{to_def} 
+\label{def_compact_form}
+    Диф-форма с \textit{компактным носителем} на $\mathbb{R}^n$ -- форма определенная\footnote{
+        Вообще можно рассматривать $\Omega_\text{c}^k (U) \subseteq \Omega_\text{c}^k (\mathbb{R}^n)$.
+    } на всём $\mathbb{R}^n$ и равная $0$ за пределами некоторого компакта. 
+\end{to_def}
+
+\begin{to_def} 
+\label{def_6.98}
+    Для гладкой\footnote{
+        Т.к $a(x)$ -- гладкая с компактным носителем, этот интеграл $\exists$, как повторный интеграл Римана, или как интеграл Лебега.
+    } формы с компактным носителем $\nu = a(x) dx^1 \wedge \ldots \wedge dx^n \in \Omega_\text{c}^n (U)$ определим в какой-то фиксированной системе координат
+    \begin{equation*}
+         \int_U \nu \overset{\mathrm{def}}{=} \int_U a(x) \d x_1 \ldots \d x_n.
+     \end{equation*} 
+\end{to_def}
+
+
+\begin{to_lem} 
+\label{lem_6.99}
+    Если $\lambda \in \Omega_\text{c}^{n-1}(U)$, то\footnote{
+        Таким образом интеграл оказывается определен как линейный функционал на факторпространстве $\Omega_{\text{c}}^n(U) / d \Omega_{\text{c}}^{n-1}(U)$.
+    }
+    $\int_U \d \lambda = 0.$
+\end{to_lem}
+  
+
+
+
+\begin{to_lem} 
+\label{lem_6.100}
+    Пусть $U = \prod_{i=1}^n (a_i, b_i)$, где $(a_i, b_i) \ni 0$. Пусть $\varphi \colon \mathbb{R} \mapsto \mathbb{R}^+$ -- гладкая функция с компактным носителем, содержащимся в каждом $(a_i, b_i)$, и с единичным интегралом. Для всякой $\nu \in \Omega_{\text{c}}^n (U)$ найдётся число $I$ и форма $\lambda \in \Omega_{\text{c}}^{n-1}(U)$, такие что
+    $\nu = I \varphi(x_1) \ldots \varphi(x_n) dx_1 \wedge \cdots \wedge dx_n + d \lambda$.
+\end{to_lem}
+
+
+\begin{to_con} 
+\label{con_6.101}
+    Пусть $U = \prod_{i=1}^{n} (a_i, b_i)$ -- произведение интервалов. Факторпространство $\Omega_{\text{c}}^n(U) / d \Omega_{\text{c}}^{n-1} (U)$ одномерно. Получается, что всевозможные способы определить интеграл формы $\nu \in \Omega_{\text{c}}^n (U)$ так, чтобы интеграл от $d \lambda$ равнялся нулю, могут отличаться только умножением на константу. \red{Ещё раз.} 
+\end{to_con}
+\begin{to_lem}[Поведение интеграла формы при линейной замене координат]
+     Интеграл дифференциальной формы $\nu \in \Omega_{\text{c}}^n (\mathbb{R}^n)$ при отображении $A^*$, соответствующем линейному преобразованию $A : \mathbb{R}^n \mapsto  \mathbb{R}^n$ меняет или не меняет знак в зависимости от знака определителя $\det A$, то есть
+     \begin{equation*}
+         \int_{\mathbb{R}^n} A^* \nu = (\sign \det A) \int_{\mathbb{R}^n} \nu.
+     \end{equation*}
+\end{to_lem}
+\begin{to_lem}[Разбиение единицы в окрестности компакта в $\mathbb{R}^n$]
+\label{lem_6.102}
+     Для любого открытого покрытия $\{U_\alpha\}_\alpha$ компакта $K \subseteq \mathbb{R}^n$ найдётся набор неотрицательных гладких функций $\{\rho_\alpha\}_\alpha \colon \mathbb{R}^n \mapsto [0, 1]$ с компактными носителями $\text{supp}\, \rho_\alpha$ таких, что $\forall \alpha \ \text{supp}\, \rho_\alpha \subset U_\alpha$, и только конечное число из них не равно нулю и 
+     $\sum_\alpha \rho_\alpha (x) \equiv 1$ в некоторой окрестности $K$. Это называется \emph{разбиение единицы, подчиненное покрытию}.
+\end{to_lem}
+
+\begin{to_tas} 
+\label{task_6.103}
+     Для связной области $U \subset \mathbb{R}^n$ пространство $\Omega_{\text{c}}^n (U) / \d \Omega_{\text{c}}^{n-1} (U)$ одномерно.
+\end{to_tas}
+
+\begin{to_thr}[Поведение интеграла формы относительно гладкой замены координат]
+     Интеграл дифференциальной формы $\nu \in \Omega_{\text{c}}^n (V)$ при отображении $\varphi^*$, соответствующем диффеоморфизму $\varphi \colon U \mapsto V$ между областями в $\mathbb{R}^n$ меняет или не меняет знак в зависимости от знака\footnote{
+         Так как $U$ и $V$ связны, то знак якобиана один и тот же во всех точках области.
+     } якобиана $J_\varphi$, то есть
+     \begin{equation*}
+         \int_U \varphi^* \nu  = (\sign J_\varphi) \int_v \nu.
+     \end{equation*}
+\end{to_thr}
+
+\begin{to_con}[Криволинейная замена переменных в кратном интеграле]
+\label{con_6.109}
+     При диффеоморфизме\footnote{
+         Вообще достаточно непрерывной дифференцируемости.
+     } $\varphi \colon U \mapsto  V$ для интегрируемой по Лебегу на $V$ функции $f$ имеет место формула
+\begin{equation*}
+    \int_V f(y) \d y = \int_U f(\varphi(x)) |J_\varphi| \d x.
+\end{equation*}
+\end{to_con}
+
+
+
+\begin{to_def} 
+    Замкнутое подмножество $M \subseteq \mathbb{R}^N$ называется \textit{вложенным многообразием размерности} $n$, если $\forall \ p \in M$ $\exists U_{\varepsilon}(p)$ и криволинейная система координат в ней, в которой включение $M \subset \mathbb{R}^N$ в пересечении с некоторой окрестностью нуля.
+\end{to_def}
+
+Яркий пример -- работа с условными экстремумами. Если $M$ задаётся гладкими уравнениями $f_1 = \ldots = f_{N_n} = 0$ и 
+
+Основным компонентом системы IRE является интеллектуальный механизм рекомендаций, основанный на AI-Quantum Matching ©. «В естественных науках природа дала нам мир, а мы только что открыли его законы. В компьютерах мы можем запихивать в них законы и создавать мир »(Алан Кей, н.о.), формируя искусственную систему, подчиняющуюся законам, которых нет в Природе. 
+
+Одним из примеров такой искусственной системы является квантовый компьютер, который следует тем же эффектам квантовой механики, как квантовый параллелизм и квантовая интерференция. Традиционный компьютер обрабатывает данные, кодируя их в 0 и 1, создавая большое количество возможных значений. Однако он может находиться только в одном из этих состояний одновременно. Точно так же квантовый компьютер может присутствовать в комбинации всех этих состояний одновременно, что позволяет расширить вычислительную мощность с помощью квантового параллелизма. Задача состоит в том, чтобы закодировать результаты потенциально большого объема вычислений.
+
+ В традиционном мире, если есть два возможных пути к одному результату и каждый путь выбирается с вероятностью 0,25, общая вероятность получения этого результата составляет 0,5. 
+
+ В квантовом мире два пути могут мешать, увеличивая вероятность успеха до 1. 
+
+ Другими словами, квантовый параллелизм дает преимущества большого объема вычислений,
+  в то время как интерференция помогает объединить выходные данные в значимые результаты.
+
+  . Недавние исследования показывают, что квантовая интерференция может использоваться для моделирования реальных финансовых сценариев с высоким уровнем неопределенности, показывая многообещающий подход для систем поддержки принятия решений и искусственного интеллекта (Moreira et al., 2018, Moreira & Wichert, 2018).
+
+
+Предлагаемый DDT AI-Quantum Matching © основан на концепции квантовых искусственных систем с точки зрения информации, обеспечивающей наилучшие разумные рекомендации. В рамках подхода AI-Quantum Matching © рекомендации могут быть представлены в виде многомерных векторов, отражающих потенциалы всех событий. Матч можно назвать суперпозицией в квантовой механике. Векторное представление суперпозиции не подчиняется ни булевой логике, ни закону полной вероятности. В результате это позволяет строить более общие модели и повышает доступность информации, которую невозможно уловить в традиционных моделях. Это создает возможность моделировать потенциально различные сценарии принятия решений. Эти отличительные особенности квантовой теории обеспечивают несколько преимуществ и дают более точные рекомендации в ситуациях, когда одна только классическая теория вероятностей приводит к загадочным и противоречивым предсказаниям (смещениям и ошибкам).
+
+Давайте исследуем возможность поиска. В реальной жизни мы могли бы использовать несколько поисковых систем, чтобы найти все множество информации по определенной теме. Хотя Google считается лучшей поисковой системой для этой работы, мы все же можем упустить некоторые важные данные, которые могут быть предложены другими поисковыми системами, такими как Yahoo и Bing. Как найти наиболее полезную для нас информацию? AI-Quantum Matching может помочь найти наилучшую возможную рекомендацию, используя квантовую структуру в поиске информации. Структура AI-Quantum Matching представлена ​​на рисунке 2. Например, при принятии решения о выключении света модель AI одновременно находится в неопределенном состоянии, соответствующем «да», и в состоянии соответствует «нет». Каждая модель может рассуждать в соответствии со своим набором правил. Различные модели получаются при высоком уровне неопределенности, информация непрерывно поступает в систему базы знаний.
+
+
+Мы предлагаем унифицированную структуру для интеллектуальных рекомендаций, основанных на квантовой механике, которые предоставляют более обобщенные модели принятия решений, способные представить больше информации, чем классические модели. Он может учесть несколько парадоксальных выводов и когнитивных предубеждений и привести к альтернативным и мощным выводам, сфокусированным на перспективной зависимости лица, принимающего решения.
+
+
+К истории про интереференцию никаких вопросов, звучит адекватно. 
+
+Есть множество различных способов работать с распределением вероятности по ответам, то есть ничего нам не мешает (при наличии достаточного количества данных) засунуть это всё в нейросеть и научить её делать то, что нам нужно. Как вариант, мы можем делать что-то похожее на квантмех, введя в вероятности возможность интерференции. То есть у нашего механизма принятия решений есть некоторая интепретация. Наверное, хотелось бы понять чем такой вариант лучше (других нелинейных механизмов), кроме наличия естественной интерпретации.
+
+
+
+\begin{to_thr}[Дифференцирование под знаком интеграла]
+% \footnote{Функция $g \colon X \to \mathbb{R}^+$ и $g \in \L_c$}
+\label{5.95}
+    \begin{equation*}
+    \begin{split}
+    \left.
+        \begin{aligned}
+            &f(x, y) \in \L^x_c \; \forall y \in (a, b) \\
+            &f \text{ дифференцируема по } y \\
+            &\forall x \in X, \forall y \in (a, b) |f'_y(x, y)| \leq g(x) \\
+            &g \geq 0 \colon X \to \mathbb{R}^+ \in L_c \text{ на } X
+        \end{aligned}
+    \right\} \hspace{1cm}
+    \Longrightarrow \hspace{1cm}
+    \frac{d}{dy} \int_X f(x, y) \d x = \int_X f'_y (x, y) \d x.
+    \end{split}
+    \end{equation*}
+\end{to_thr}
+
+\begin{to_thr}
+\label{thr_5.75}
+    Пусть функция $f \colon \mathbb{R}^n \to \mathbb{R}$ интегрируема по Лебегу с конечным интегралом. Тогда $f$ можно сколь угодно близко приблизить в среднем элементарно ступенчатой функцией.
+\end{to_thr}\begin{to_tas}[Замена координат в интеграле для собственных отображений вообще]
+    \label{task_6.108}
+    Пусть гладкое отображение $\varphi \colon \mathbb{R}^n \mapsto \mathbb{R}^n$ является собственным. Тогда
+    \begin{equation*}
+        \int_{\mathbb{R}^n}\varphi^* \nu = C_\varphi \int_{\mathbb{R}^n} \nu, \hspace{0.5cm} 
+        C_\varphi \in \mathbb{Z}.
+    \end{equation*}
+\end{to_tas}
+\begin{proof}[\ref{thr_6.18}]
+
+	1) $f(y) g (x) \in \L$ и по thr. Фубини: $\int |f \cdot g| = \int |f| \cdot \int |g|$;
+
+	2) то же верно для $f(x-t) g(t)$, отличие в лин. замене коор-т с $\det = 1$;
+
+	3) требуемое равенство напрямую из (1) и (2) замена: $x - t = y$;
+
+	4) для неравенства интегрируем по $x$: $|\int f(x-t)g(t) \d t| \leq \int |f(x-t)g(t)|\d t$.
+	\label{proof_6.18}
+\end{proof}\begin{proof}[\ref{lem_6.20}]
+	
+	1) для введённой $\varphi$ достаточно: $\varphi_\varepsilon (x_1,\ldots,x_n) = A \varphi\left(\frac{\sqrt{n} x_1}{\varepsilon}\right)\ldots\varphi\left(\frac{\sqrt{n} x_n}{\varepsilon}\right)$.
+
+	2) $\psi(x) = B \int_{-\infty}^x \varphi(t) \d t $, выбирем $B$: $\psi(x) \equiv 0 \; \forall x \leq -1$ и $\psi(x) \equiv 1 \; \forall x \geq -1$;
+
+	3) достаточно положить: $\psi_{\varepsilon,\delta} (x) = \psi \left(\frac{\delta +\varepsilon -2|x|}{\varepsilon-\delta}\right)$.
+\end{proof}\begin{proof}[\ref{thr_6.21}]
+	
+	1) $f_k(x) - f(x) = \int_\mathbb{R}^n (f(x-t) - f(x)) \varphi_k(t) \d t$;
+
+	2) Пусть $f$ р-но непр. в $U_\delta(K\subset \mathbb{R}^n) $ и пусть $|f(x) - f(y)|<\varepsilon$ при $|x-y|<\delta$ там же;
+
+	3) Выбирая $k\colon 1/k <\delta$, тогда $\varphi_k(t) \neq 0 $ при $|t|<\delta$ и тогда $|f(x-t) - f(x)|<\varepsilon$ при $x \in K$.
+
+	4) при $x \in K$ верна р-ная сходимость: $|f_k(x) - f(x)| \leq \varepsilon \int_{\mathbb{R}^n}\varphi_k(x) \d x = \varepsilon$.
+
+	5) продифференцируем по параметру $\int_{\mathbb{R}^n} f(t) \varphi_k (x-t)\d t $;
+
+	6) производная (5) при $x \in K$ будет зависеть только значений $f$ в $U_{1/k}(K)$, то есть $f$ можно считать интегрируемой при дифференцировании по параметру, что позволяет применять теорему.
+\end{proof}
+
+\begin{proof}[\ref{thr_6.22}]
+	 По различным $\partial_{x_i} f*\varphi_k(x)$ получим по лемме \ref{lem_6.19}, для производных свёрток схожее равенство, с самой $f$, а значит и р-ную сходимость.
+	\begin{equation*}
+		\frac{\partial^m (f*\varphi_k)}{\partial x_{i_1}\ldots \partial x_{i_m}} = \frac{\partial^m f}{\partial x_{i_1}\ldots \partial x_{i_m}}*\varphi_k.
+	\end{equation*}
+\end{proof}
+
+\begin{proof}[\ref{thr_6.23}]
+	1) по thr(\ref{thr_5.75}) $f = h + g$, где $g$ -- эл. ступ., $\int_{\mathbb{R}^n} |h|\d x <\varepsilon$;
+
+	2) по thr(\ref{thr_6.18}): $\int_{\mathbb{R}^n}|h * \varphi_k|\d x < \varepsilon$. То есть, если окажется: $\int_{\mathbb{R}^n}|g - g*`f_k|\d x < \varepsilon$, то
+	\begin{equation*}
+		\int_{\mathbb{R}^n}|f - f*\varphi_k| \d x \leq \int_{\mathbb{R}^n} |g - g* \varphi_k|\d x + \int_{\mathbb{R}^n}|h|\d x + \int_{\mathbb{R}^n} |h*\varphi_k| \d x < 3 \varepsilon.
+	\end{equation*}
+
+	3) Раскладывая $g$ в сумму х-их $\chi_P$, останется доказать для одной $\chi_P$;
+
+	4) $\chi_P - \chi_P - \varphi_k \neq 0$ только в $U_{1/k}(\partial P) $ и по модулю $\leq 1$;
+
+	5) То есть после интегрирования получим не более $\mu(U_{1/k}(\partial P))$.
+
+	6) Напрямую можно убедиться, что эта $\mu \rightarrow 0$ при $k\rightarrow 0$.
+\end{proof}\begin{proof}[\ref{thr_6.32}]   
+
+\begin{enumerate*}
+    \item По условию $df_1, \ldots, df_k, \ dx_{k+1}, \ldots, dx_n$ -- линейно независимы. Тогда $f_1, \ldots, f_k, x_{k+1, \ldots, x_n}$ дают криволинейную систему координат. 
+    \item Тогда старые координаты (НД) выражаются через новые: $x_i = \varphi_i(f_1, \ldots, f_k, x_{k+1}, \ldots, x_n)$, при чём выберем $\vc{x}\colon$ $f_i = y_i$. $\Rightarrow$ Sol СУ содержится в графике отображения $\varphi \colon V \mapsto  U$, при достаточно малых $V, \ U$: $\varphi(V) \subseteq U$. 
+    \item Но график отображения содержится в Sol(СУ), т.к. в точке $p = (y_1, \ldots, y_k, x_{k+1},\ldots,x_n)$ значения $f_i = y_i$, т.к. $\varphi_i (p)$ даст такие $x_1, \ldots, x_k$, что $f_i(x_i)=y_i$. Q. E. D.
+\end{enumerate*}
+    
+\end{proof}
+
+\definecolor{grey}{HTML}{666666}
+\definecolor{linkcolor}{HTML}{0000CC}
+\definecolor{urlcolor}{HTML}{006600}
+\hypersetup{
+    pdfstartview=FitH,  
+    linkcolor=linkcolor,
+    urlcolor=urlcolor, 
+    colorlinks=true,
+    citecolor=blue}% add (renew) commands
+
+\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand{\d}{\, d}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\L}{\mathcal{L}}
+
+\newcommand{\vc}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\T}{^{\text{T}}}
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+\newcommand{\diag}{\mathop{\mathrm{diag}}\nolimits}
+\newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits}
+\renewcommand{\div}{\mathop{\mathrm{div}}\nolimits}
+\newcommand{\rot}{\mathop{\mathrm{rot}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\Spec}{\mathop{\mathrm{Spec}}\nolimits}
+\newcommand{\sign}{\mathop{\mathrm{sign}}\nolimits}
+\newcommand{\tr}{\mathop{\mathrm{tr}}\nolimits}
+\newcommand{\rg}{\mathop{\mathrm{rg}}\nolimits}
+
+\newcommand{\const}{\text{const}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\xmark}{\ding{55}}
+
+\newcommand{\sbsnum}[2]{
+    \setcounter{subsection}{\the\numexpr #1 - 1 \relax}
+    \subsection{#2}
+}
+
+\newcommand{\set}[2]{{#1}^{1}, \ldots, {#1}^{#2}}
+\newtheorem{to_thr}{Thr}[subsection]
+\newtheorem{to_suj}[to_thr]{Suj}
+\newtheorem{to_lem}[to_thr]{Lem}
+\newtheorem{to_com}[to_thr]{Com}
+\newtheorem{to_con}[to_thr]{Con}
+\theoremstyle{definition}
+\newtheorem{to_def}[to_thr]{Def}
+\newtheorem{to_tas}[to_thr]{Task}
+\newtheorem{to_exm}[to_thr]{Exm}
+
+
+\newenvironment{itemize*}
+{
+    \begin{itemize}
+        \setlength{\itemsep}{1pt}
+        \setlength{\parskip}{1pt}}
+    {\end{itemize}
+}
+
+\newenvironment{enumerate*}
+{
+    \begin{enumerate}
+        \setlength{\itemsep}{1pt}
+        \setlength{\parskip}{1pt}}
+    {\end{enumerate}
+}
+
+\newenvironment{description*}
+{
+    \begin{description}
+        \setlength{\itemsep}{1pt}
+        \setlength{\parskip}{1pt}}
+    {\end{description}
+}% add page header
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE,LO]{\textsc{Ф\raisebox{-1.5pt}{и}з\TeX}}
+\fancyhead[LE,RO]{Ж\raisebox{-1.5pt}{и}К}
+% \fancyhead[CO,CE]{\leftmark}
+\fancyfoot[LE,RO]{\textcolor{grey}{\texttt{\thepage}}}
+
+% document's head
+% \phantom{42}
+
+\begin{center}
+    \LARGE \textsc{Билеты к экзамену <<Кратные интегралы и теория поля>>}
+\end{center}
+
+\hrule
+
+\phantom{42}
+
+\begin{flushright}
+    \begin{tabular}{rr}
+    % written by:
+        \textbf{Авторы}: 
+        & Примак Евгений \\
+        & Хоружий Кирилл \\
+        &\\
+    % date:
+        \textbf{От}: &
+        \textit{\today}\\
+    \end{tabular}
+\end{flushright}
+
+\thispagestyle{empty}
+\tableofcontents
+\newpage% input files
+
+\input{settings/heading}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Свёртка и приближение функций бесконечно гладкими}
+\addcontentsline{toc}{section}{Свёртка и приближение функций бесконечно гладкими}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sbsnum{1}{Свёртка функций и её свойства}
+\input{parts/01.tex}
+
+\sbsnum{2}{Бесконечно гладкие функции с компактным носителем}
+\input{parts/02.tex}
+
+\sbsnum{3}{Приближение функций бесконечно гладкими}
+\input{parts/03.tex}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Дифференцируемые отображения и криволинейные замены координат}
+\addcontentsline{toc}{section}{Дифференцируемые отображения и криволинейные замены координат}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sbsnum{4}{Дифференцируемые отображения и дифференцирование композиции}
+\input{parts/04.tex}
+
+\sbsnum{5}{Системы криволинейных координат и теорема об обратном отображении}
+\input{parts/05.tex}
+
+\sbsnum{6}{Теоремы о системе неявных функций}
+\input{parts/06.tex}
+
+\sbsnum{7}{Теорема о расщеплении гладкого отображения}
+\input{parts/07.tex}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Векторы и дифференциальные формы первой степени}
+\addcontentsline{toc}{section}{Векторы и дифференциальны формы первой степени}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sbsnum{13}{Вектор, как дифференцирование}
+\input{parts/13.tex}
+
+\sbsnum{14}{Касательное пространство и дифференциал отображения}
+\input{parts/14.tex}
+
+\sbsnum{15}{Диф-формы I степени}
+\input{parts/15.tex} 
+
+\newpage 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Диф-формы высших степеней}
+\addcontentsline{toc}{section}{Диф-формы высших степеней}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sbsnum{16}{Определение и свойства диф-форм высших степеней}
+\input{parts/16.tex}
+
+\sbsnum{17}{Внешнее умножение диф-форм}
+\input{parts/17.tex}
+
+\sbsnum{18}{Внешнее дифференцирование}
+\input{parts/18.tex}
+
+\sbsnum{19}{Обратный образ диф-форм}
+\input{parts/19.tex}
+
+
+\newpage 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Интегрирование дифференциальных форм}
+\addcontentsline{toc}{section}{Интегрирование дифференциальных форм}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sbsnum{20}{Интегрирование диф-формы объёма}
+\input{parts/20.tex}
+
+\sbsnum{21}{Представление диф-формы в каноническом виде}
+\input{parts/21.tex}
+
+\sbsnum{22}{Поведение интеграла от формы при линейной замене координат}
+\input{parts/22.tex}
+
+\sbsnum{23}{Гладкое разбиение единицы}
+\input{parts/23.tex}
+
+\sbsnum{24}{Поведение интеграла от формы при гладкой замене координат}
+\input{parts/24.tex}
+
+\sbsnum{25}{Формулы гладкой замены переменных в интеграле Лебега от функции}
+\input{parts/25.tex}
+
+\newpage 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Многообразия (с краем) и формула Стокса}
+\addcontentsline{toc}{section}{Многообразия (с краем) и формула Стокса}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sbsnum{26}{Вложенные многообразия}
+\input{parts/26.tex}
+
+\newpage 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Решения (\textbf{BETA})}
+\addcontentsline{toc}{section}{Решения}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sbsnum{1}{Свёртка функций и её свойства}
+\input{proofs/01.tex}
+
+\sbsnum{2}{Бесконечно гладкие функции с компактным носителем}
+\input{proofs/02.tex}
+
+\sbsnum{3}{Приближение функций бесконечно гладкими}
+\input{proofs/03.tex}
+
+\sbsnum{6}{Теоремы о системе неявных функций}
+\input{proofs/06.tex}
+
+
+
+\newpage
+
+\input{phantoms/1_phantom}
+\input{phantoms/2_phantom}\newcommand{\dmat}[4]{
+  \ifthenelse{
+    \equal{#1}{3}
+  }{
+\begin{pmatrix}
+    #2 & 0 & 0 \\
+    0 & #3 & 0 \\
+    0 & 0 & #4 \\
+\end{pmatrix}
+  }{
+  \ifthenelse{
+      \equal{#1}{2}
+    }{
+  \begin{pmatrix}
+      #2 & 0 \\
+      0 & #3 \\
+  \end{pmatrix}
+    }{
+      \text{\textcolor{red}{error}}
+    }
+  }
+}
+
+\newcommand{\skmat}[4]{
+  \ifthenelse{
+    \equal{#1}{3}
+  }{
+\begin{pmatrix}
+    0 & -#4 & #3 \\
+    #4 & 0 & -#2 \\
+    -#3 & #2 & 0 \\
+\end{pmatrix}
+  }{
+  \ifthenelse{
+      \equal{#1}{2}
+    }{
+  \begin{pmatrix}
+      0 & #2 \\
+      -#2 & 0 \\
+  \end{pmatrix}
+    }{
+      \text{\textcolor{red}{error}}
+    }
+  }
+}
+\usepackage[T2A]{fontenc}                   %!? закрепляет внутреннюю кодировку LaTeX
+\usepackage[utf8]{inputenc}                 %!  закрепляет кодировку utf8
+\usepackage[english,russian]{babel}         %!  подключает русский и английский
+\usepackage[margin=1.7cm]{geometry}         %!  фиксирует оступ на 2cm
+
+\usepackage[unicode, pdftex]{hyperref}      %!  оглавление для панели навигации по PDF-документу + гиперссылки
+
+\usepackage{amsthm}                         %!  newtheorem и их сквозная нумерация
+\usepackage{hypcap}                         %?  адресация на картинку, а не на подпись к ней
+\usepackage{caption}                        %-  позволяет корректировать caption 
+\usepackage{fancyhdr}                       %   добавить верхний и нижний колонтитул
+\usepackage{wrapfig}                        %!  обтекание таблиц и рисунков
+
+\usepackage{amsmath}                        %!  |
+\usepackage{amssymb,textcomp, esvect,esint} %!  |важно для формул 
+\usepackage{amsfonts}                       %!  математические шрифты
+\usepackage{mathrsfs}                       %  добавит красивые E, H, L
+\usepackage{ulem}                           %!  перечеркивание текста
+\usepackage{abraces}                        %?  фигурные скобки сверху или снизу текста
+\usepackage{pifont}                         %!  нужен для крестика
+\usepackage{cancel}                         %!  аутентичное перечеркивание текста
+\usepackage{esvect}                         %  добавит вектора стрелочками
+
+\usepackage{graphicx}                       %?  графическое изменение текста
+\usepackage{indentfirst}                    %   добавить indent перед первым параграфом
+\usepackage{xcolor}                         %   добавляет цвета
+\usepackage{enumitem}                       %!  задание макета перечня.
+
+\usepackage{booktabs}                       %!  добавляет книжные линии в таблицы
+\usepackage{multirow}                       %   объединение ячеек в таблицах
+
+\usepackage{tikz}                           %!  высокоуровневые рисунки (кружочек)
+
+\usepackage{import}                         %   |
+\usepackage{xifthen}                        %   |
+\usepackage{pdfpages}                       %   | вставка рисунков pdf_tex
+\usepackage{transparent}                    %   |
+
+\setlength{\headheight}{12.52pt}            % избегать warning
+
+\usepackage{chngcntr}
+\renewcommand\thesubsection{\arabic{subsection}}
+\counterwithout{equation}{section}% file's preambule
+%%%%%%%%%%%%%%%%%%%
+
+
+
+% connect packages
+\input{settings/packages}
+
+% create environment
+\input{settings/environments}
+
+% document palette
+\input{settings/colors}
+
+% add (renew) commands
+\input{settings/commands}
+
+% add page header
+\input{settings/header}
+
+% matrixes shortcuts 
+\input{settings/matrixes}
+
+% additional symbols and commands
+\input{settings/symbols}
+
+
+
+
+
+
+
+% set skip of equation length 
+
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\abovedisplayshortskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlength{\belowdisplayshortskip}{3pt}
+
+\numberwithin{equation}{section}
+
+\DeclareRobustCommand{\tmpsim}{ %%%%%%%%%%%%%% ~ < %%%%%%%%%%%%%%%%%%%
+  \mathbin{\text{
+      \raisebox{-1pt}{
+            \hspace{-4.5pt} \rotatebox{-26}{\scalebox{0.8}[0.7]{$\sim$}}
+        }
+  }}
+}
+\def\lesim{{
+    \setbox0\hbox{$\ <\ $}
+    \rlap{\hbox to \wd0{\hss$\tmpsim$\hss}}\box0
+}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\def\letuscom{%%%%%%%%%%%%%%%%%%%%%% ПУСТЬ %%%%%%%%%%%%%%%%%%%%%%%%%%
+\mathord{\setbox0=\hbox{$\exists$}%
+     \hbox{\kern 0.125\wd0%
+           \vbox to \ht0{%
+              \hrule width 0.75\wd0%
+              \vfill%
+              \hrule width 0.75\wd0}%
+           \vrule height \ht0%
+           \kern 0.125\wd0}%
+   }%
+}
+\newcommand{\letus}{\raisebox{-1.2pt}{$\letuscom$}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{arydshln} %%%%%%%%%%%%%%% ЛИНИИ В МАТРИЧКЕ %%%%%%%%%%%%%%%
+\makeatletter
+  \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+    \hskip -\arraycolsep
+    \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\makeatletter %%%%%%%%%%%%%%% КРУЖОЧЕК %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*{\encircled}[1]{\relax\ifmmode\mathpalette
+\@encircled@math{#1}\else\@encircled{#1}\fi}
+\newcommand*{\@encircled@math}[2]{\@encircled{$\m@th#1#2$}}
+\newcommand*{\@encircled}[1]{%
+  \tikz[baseline,anchor=base]{\node[draw,circle,outer sep=0pt,
+                                        inner sep=.2ex] {#1};}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
