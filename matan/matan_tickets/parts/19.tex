@@ -1,3 +1,25 @@
+\begin{to_def}[Обратный образ] 
+    Для всякого гладкого отображения $\varphi \colon U \mapsto V$ между открытими подмножествами евклидовых пространств определено отображение пространств дифференциальных форм $\varphi^* \colon \Omega^k(V) \mapsto \Omega^k (U)$, действующее по формуле\footnote{
+        Важно заметить, что если левая часть вычисляется в точке $p \in U$, то правая в $\varphi(p)$.
+    }
 \begin{equation*}
-    \alpha + \frac{\alpha}{\beta} 
+    \varphi^* \alpha (X_1, \ldots, X_k) = \alpha(\varphi_* X_1,\ldots,\varphi_* X_k).
 \end{equation*}
+Для функции $f \in C^{\infty}(V) = \Omega^0 (V)$ оказывается $\varphi^* f = f \circ \varphi$, что совпадает с замены переменных в функции. Для форм первой степени $\alpha \circ \varphi_*$, где $\alpha|_{f(p)}$, а $\varphi_*|_p$. \red{Чего?}
+\end{to_def}
+
+\begin{to_lem} 
+    Взятие обратного образа диф-форм коммутирует с внешним умножением и внешним дифференцированием.  
+\end{to_lem}
+
+% \begin{proof}[$\triangle$]
+%     \begin{equation*}
+%         d(\varphi^* f) = d (f \circ \varphi) = df \circ D\varphi = df \circ \varphi_* = \varphi^*(df).
+%     \end{equation*}
+% \end{proof}
+
+Таким образом взятие обратного образа происходит формально подстановкой\footnote{
+    \red{Было бы здорово посмотреть на задачи 6.96 и 6.97.}
+} выражений новых переменных через старые в коэффициенты формы и в дифференциалы новых переменных.
+
+
