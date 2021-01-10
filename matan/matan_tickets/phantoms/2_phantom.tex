@@ -6,3 +6,34 @@
         C_\varphi \in \mathbb{Z}.
     \end{equation*}
 \end{to_tas}
+
+\subsubsection*{Формула Стокса}
+
+
+\begin{to_lem}[формула Стокса в узком смысле]
+     Для компактной двумерной поверхности с краем (то есть вложенного двумерного многообразия с краем) $S \subset \mathbb{R}^3$ верна
+\begin{equation*}
+    \int_{\partial S} P \d x + Q \d y + R \d z =
+    \int_S \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} \right) \d y \wedge d z + 
+    \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} \right) \d z \wedge dx + 
+    \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \d x \wedge \d y.
+\end{equation*}
+\end{to_lem}
+
+
+\begin{to_tas} 
+    Площадь области, ограниченной замкнутой гладкой кривой без самопересечений $C \subset \mathbb{R}^2$, можно посчитать по формуле:
+    \begin{equation*}
+         A = \pm \int_C x \d y,
+     \end{equation*} 
+    где знак выбирается в зависимости от ориентации кривой.
+\end{to_tas}
+
+\begin{to_tas} 
+    Объём области в $\mathbb{R}^3$, ограниченной связной вложенной компактной поверхностью без края $S \subset \mathbb{R}^3$, можно посчитать по формуле:
+    \begin{equation*}
+         A = \pm \int_S x \d y \wedge d z,
+     \end{equation*} 
+    где знак выбирается в зависимости от ориентации поверхности.
+\end{to_tas}
+

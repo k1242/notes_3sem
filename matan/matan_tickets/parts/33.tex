@@ -1,0 +1,35 @@
+ % \renewcommand{\labelenumi}{\Roman{enumii}}
+\begin{enumerate}[label={$\mathbb{R}^\text{\arabic*}$.}]
+    \item Формула Стокса для ориентированной кривой с началом в точке $p$ и концом в точке $q$ сводится к 
+    \begin{equation*}
+        \int_\gamma \d f = f(q) - f(p).
+    \end{equation*}
+    \item Для компактного множества $G \subset \mathbb{R}^2$ с гладкой границей, ориентированного так, что при движении по $\partial G$ множество $G$ оказывается слева, верна \textit{формула Грина}
+    \begin{equation*}
+        \int_{\partial G} P \d x + Q \d y = \int_G
+        \left(
+            \frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} 
+        \right) \d x \wedge d y.
+    \end{equation*}
+    \item Для компактного множества $G \subset \mathbb{R}^3$ с гладкой границей (край в $\mathbb{R}^3$) верна \textit{формула Гаусса-Остроградского}
+    \begin{equation*}
+        \int_{\partial G} P \d y \wedge d z 
+        + Q \d z \wedge dx 
+        + R \d x \wedge dy = 
+        \int_G
+        \left(
+            \frac{\partial P}{\partial x} +
+            \frac{\partial Q}{\partial y} +
+            \frac{\partial R}{\partial z} 
+        \right) \d x \wedge d y \wedge d z.
+    \end{equation*}
+\end{enumerate}
+
+
+Кривую можно считать не бесконечно гладкой, а всего лишь кусочно непрерывно дифференцируемой, формула всё равно остаётся верной. С помощью предельного перехода также обобщается случай с $\simeq \mathbb{R}^2$ до множества с кусочно $C^2$ границей.
+
+Вообще формула Стокса верна не только для вложенных двумерных многообразий, но и для всякого образа гладкого отображения $f \colon D \mapsto  \mathbb{R}^3$ области $D \subset \mathbb{R}^2$ с кусочно гладкой границей, если интегралы мы понимаем как интегралы обратных образов $f^*(\alpha)$ и $f^*(d\alpha)$ по $\partial D$ и $D$ соответственно. Для практических применений полезно ослабить условие гладкости $f$ до $C^2$ (в интеграле, в координатном представлении, используются производные $f$ не более чем первого порядка).
+
+
+% Кривую 
+
