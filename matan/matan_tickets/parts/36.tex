@@ -1,0 +1,35 @@
+В силу теоремы Пуанкаре (\ref{thr_poin}) любая замкнутая форма на многообразии локально точна, однако склеивать их в точную на всём пространство нам будут мешать дырки, как это случалось в задаче из нашего задания.
+Связь между устройством многообразия и взаимоотношением  замкнутых и точных форм на нём описывается группами (ко)гомологий де Рама.
+
+Замкнутые и точные формы на $M$ образуют линейные пространства $Z^k(M)$ и $B^k(M)$ соответственно.
+
+\begin{to_def}[Когомологии де Рама] или группа $k$-мерных когомологий многообразия $M$:
+	\begin{equation*}
+		H^k(M) = Z^k(M)/B^k(M)
+	\end{equation*}
+\end{to_def}
+
+\begin{to_def}
+	Если формы $\alpha_1, \alpha_2$ отличаются на точную форму, то говорят, что они гомологичны.
+	\label{def_7.16}
+\end{to_def}
+Таким образом если замкнутые $\alpha_1, \alpha_2$ гомологичны, то они лежат в одном классе когомологии.
+
+По скольку $Z^k (M)$ есть $\Ker d \colon \Omega^k(M) \rightarrow \Omega^{k+1}(M)$, а $B^k (M)$ есть $\Im d \colon \Omega^{k-1}(M) \rightarrow \Omega^{k}(M)$, то часто переписывают:
+
+\begin{to_def}
+	Когомологии де Рама гладкого $M$ --- это факторпространства
+	\begin{equation*}
+		H_{DR}^k (M) = \frac{\Ker d \colon \Omega^k(M) \rightarrow \Omega^{k+1}(M)}{\Im d \colon \Omega^{k-1}(M) \rightarrow \Omega^{k}(M)}.
+	\end{equation*}
+	\label{def_7.17}
+\end{to_def}
+
+\begin{to_lem}[Лемма Пуанкаре]
+	\begin{equation*}
+		H^p(\mathbb{R}^k) = 0 \text{ при } k>0
+		\hspace*{1 cm}  \hspace*{1 cm}
+		H^k(\mathbb{R}^k) \sim \mathbb{R} \text{ при } k=0
+	\end{equation*}
+	\label{lem_7.19}
+\end{to_lem}
