@@ -1,0 +1,34 @@
+\subsubsection*{Физическая интерпретация векторных операторов}
+
+\begin{itemize}
+    \item[$\div \vc{B}$.] 
+    Для некоторой точки $x$ области $V$ ($V_x$ -- также объём области, $r$ --её деаметр) с заданным полем $\vc{B}$, по формуле Стокса и теореме о среднем ($\exists x' \in V(x) $ такая, что)
+\begin{equation*}
+    \int_{\partial V} \vc{B} \cdot \d \vc{\sigma} = 
+    \int_V \div \vc{B} \d V = \div \vc{B}(x')V_x,
+    \hspace{1cm} \Rightarrow \hspace{1cm} 
+    \div \vc{B}(x) \overset{\mathrm{def}}{=} 
+    \lim_{r \to 0} \left(\frac{
+                \iint_{\partial V(x)} \vc{B} \cdot \d \vc{\sigma}
+            }{
+                V_x
+            }\right).
+\end{equation*}
+\item[$\rot \vc{A}$.] 
+    Возьмём круг $S_i (x)$ с центром в точке $x$, лежащей в плоскости, $\bot$ к $\partial_i$, для $i = 1, 2, 3$. Ориентируем $S_i(x)$ с помощью нормали, в качестве которой возьмём орт $\partial_i$, пусть $r$ -- диаметр $S_i(x)$, тогда по формуле Стокса
+    \begin{equation*}
+        \oint_{\partial S} \vc{A} \cdot \d \vc{s} = \iint_S (\rot \vc{A}) \cdot \d \vc{\sigma},
+        \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+        (\rot \vc{A})^i = 
+        \lim_{r \to 0}
+        \left(
+            \frac{
+            \oint_{\partial S_i(x)} \vc{A} \cdot \d \vc{s}
+            }{
+            S_i(x)
+            } 
+        \right)
+    \end{equation*}
+\item[$\grad f$.] Посколько $\omega^1_{\grad f} (\vc{\xi}) = (\grad f \cdot \vc{\xi}) = d f(\vc{\xi}) = D_{{\xi}}f$, где $D_{{\xi}}f$ -- производная функции $f$ по вектору $\vc{\xi}$,то вектор $\grad f$ ортогонален поверхностям уровня функции $f$, указывает в каждой точке направление наиболее быстрого роста значений функции.
+\end{itemize}
+
