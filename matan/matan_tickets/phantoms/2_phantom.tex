@@ -6,3 +6,101 @@
         C_\varphi \in \mathbb{Z}.
     \end{equation*}
 \end{to_tas}
+
+\subsubsection*{Формула Стокса}
+
+
+\begin{to_lem}[формула Стокса в узком смысле]
+     Для компактной двумерной поверхности с краем (то есть вложенного двумерного многообразия с краем) $S \subset \mathbb{R}^3$ верна
+\begin{equation*}
+    \int_{\partial S} P \d x + Q \d y + R \d z =
+    \int_S \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z} \right) \d y \wedge d z + 
+    \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x} \right) \d z \wedge dx + 
+    \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \d x \wedge \d y.
+\end{equation*}
+\end{to_lem}
+
+
+\begin{to_tas} 
+    Площадь области, ограниченной замкнутой гладкой кривой без самопересечений $C \subset \mathbb{R}^2$, можно посчитать по формуле:
+    \begin{equation*}
+         A = \pm \int_C x \d y,
+     \end{equation*} 
+    где знак выбирается в зависимости от ориентации кривой.
+\end{to_tas}
+
+\begin{to_tas} 
+    Объём области в $\mathbb{R}^3$, ограниченной связной вложенной компактной поверхностью без края $S \subset \mathbb{R}^3$, можно посчитать по формуле:
+    \begin{equation*}
+         A = \pm \int_S x \d y \wedge d z,
+     \end{equation*} 
+    где знак выбирается в зависимости от ориентации поверхности.
+\end{to_tas}
+
+
+
+
+\begin{to_tas}[Порядок точки относительно кривой]
+Для замкнутой кусочно-гладкой $\gamma \in \mathbb{R}^2$, не проходящей через начало координат определим порядок начала координат относительно кривой:
+\begin{equation*}
+    w (\gamma, 0) - \frac{1}{2 \pi} \int_{\gamma} \frac{x \d y - y \d x}{x^2 + y^2},
+\end{equation*}
+и он не меняется при непрерывных деформациях кривой, при которых она не проходит через начало координат.
+\end{to_tas}
+
+\begin{to_tas}
+    Порядок начала координат относительно кривой является целым.
+\end{to_tas}
+
+\begin{to_tas}
+    Порядок начала координат относительно не проходящей через него нечётной кривой является нечётным числом. ($\gamma \colon \mathbb{S}^1 \rightarrow \mathbb{R}^2, \; \gamma(-u) = - \gamma(u)$).
+\end{to_tas}
+
+\begin{to_tas}
+    Для замкнутой кривой на плоскости с всюду не нулевой скоростью $\int k(s) \d s = 2 \pi N, \; N \in \mathbb{Z}$.
+\end{to_tas}
+
+\begin{to_tas}[Лемма Жордана]
+    Замкнутая кусочно-гладкая кривая $\gamma \subset \mathbb{R}^2$ без самопересечений делит плоскость на две связные части внутреннюю и внешнюю (можно усложнить и сформулировать для непрерывных кривых).
+\end{to_tas}
+
+
+
+\subsubsection*{Коммутатор}
+
+Для матриц известен коммутатор вида
+$$
+    \left[A, B\right] = AB - BA.
+$$
+Аналогично для дифференцирования
+\begin{align*}
+    \left[\partial_X, \partial_Y \right] f
+    =
+    \partial_X \partial_Y f - \partial_Y \partial_X f 
+    =
+    X^i \frac{\partial }{\partial u^i}
+     \left(Y^j \frac{\partial f}{\partial u^j} \right)
+    -
+    Y^j \frac{\partial }{\partial u^j} 
+    \left(X^i \frac{\partial f}{\partial u^i} \right) 
+    = X^i \frac{\partial Y^j}{\partial u^i} \frac{\partial f}{\partial u^i} 
+    -
+    Y^j \frac{\partial X^i}{\partial u^j} \frac{\partial f}{\partial u^j}
+\end{align*}
+Таким образом
+\begin{equation}
+    \left[\partial_X, \partial_Y \right] f
+    =
+    \left(
+    X^i \partial_i Y^j - Y^i \partial_i X^j
+    \right) \partial_j f
+    .
+\end{equation}
+Это, как ни странно, дифференциальный оператор первого порядка. Это значит что есть такое векторное поле $\left[X, Y\right]$, что
+$$
+    \partial_{\left[X, Y\right]} = \left[\partial_X, \partial_Y\right] f.
+$$
+Таким образом $\left[X, Y\right]$ существует и равен
+\begin{equation}
+    \left[X, Y\right] =   X^i \partial_i Y^j - Y^i \partial_i X^j.
+\end{equation}

@@ -1,0 +1,22 @@
+\begin{to_def} 
+    Операция \textit{внутреннего умножения} векторного поля на форму как
+    $ i_X \alpha(X_2, \ldots, X_k) = \alpha(X, X_2, \ldots, X_k).$
+\end{to_def}
+
+\begin{enumerate*}
+    \item $i$ -- локальная операция,
+    \item $i_X \mapsto \Omega^k (M) \mapsto \Omega^{k-1}(M)$ -- линейное отображение;
+    \item Если $\omega_1 \in \Omega^{k_1}(M), \ \omega_2 \in \Omega^{k_2}(M)$, то $i_X(\omega_1 \wedge \omega_2) = i_X \omega_1 \wedge \omega_2 + (-1)^{k_1} \omega_1 \wedge i_X \omega_2$;
+    \item Если $\omega \in \Omega^1 (M)$, о $i_X \omega = \omega(X)$, а если $f \in \Omega^0 (M)$, то $i_X f = 0$.
+\end{enumerate*}
+
+\begin{to_lem} 
+     Если в локальных координатах $x_1,\ldots,x^n$ карты $\varphi \colon \mathbb{R}^n \mapsto U \subset M$ форма $\omega$ (точнее $\omega|_U$), то
+\begin{equation*}
+\omega = \frac{1}{k!} a_{i_1,\ldots,i_k}\d x^{i_1}\wedge\ldots \wedge d x^{i_k},
+\hspace{0.5cm} 
+X = X^i \partial_i
+\hspace{1cm} \Rightarrow \hspace{1cm} 
+    i_X \omega = \frac{1}{(k-1)!}  X^i \alpha_{i,i_2,\ldots,i_k} \d x^{i_2} \wedge \ldots \wedge \d x^{i_k}.
+\end{equation*}
+\end{to_lem}

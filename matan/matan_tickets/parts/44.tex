@@ -1,0 +1,84 @@
+\begin{to_def}[Производная Ли диф-формы]
+    \textit{Производная Ли} вдоль векторного поля $X$ на дифференциальных формах определяется, как $ L_X = i_X d + d \, i_X$.
+\end{to_def}
+
+Из этого легко получть, что $L_X (\alpha \wedge \beta) = L_X \alpha \wedge \beta + \alpha \wedge L_X \beta$, и выражения для функций и линейных форм
+\begin{equation*}
+    L_X f = i_X d f + d(I_X f) = i_X d f = df(X) = X(f), \hspace{1cm} L_X \d f = i_X d (df) + d (i_X \d f) = d(X(f)).
+\end{equation*}
+
+\begin{enumerate*}
+    \item $L_X$ -- локальная операция;
+    \item $L_X \colon \Omega^k (M) \mapsto \Omega^k(M)$ -- линейное отображение $\forall k$;
+    \item $L_X (\alpha \wedge \beta) = L_X \alpha \wedge \beta + \alpha \wedge L_X \beta$;
+    \item Если $f \in \Omega^0 (M)$, то $L_X f = df(X) \overset{\mathrm{def}}{=} Xf$, а $L_X df = d(Xf)$.
+\end{enumerate*}
+
+
+\begin{to_def}[Производная Ли векторного поля]
+    Потребуем выполнение формулы Лейбница для производной Ли вдоль $X$ значения $\alpha(Y) = i_Y \alpha$, то есть
+    \begin{equation*}
+        X(\alpha(Y)) = L_X(\alpha)(Y) + \alpha(L_X Y),
+        \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+        \alpha(L_X Y) = i_X d(i_Y \alpha) - i_Y d (i_X \alpha) - i_Y i_X \d \alpha.
+    \end{equation*} 
+    Подставив $\alpha = \alpha_i \d x^i$, и считая, что $\alpha(L_X Y) = a_i dx^i (L_X Y)$, находим что
+    \begin{equation*}
+        (L_X Y)^i = dx_i(L_X Y) = i_x d(i_Y dx^i) - i_Y d(i_X dx^i).
+    \end{equation*}    
+    Рассматривая это, как дифференцирование функции $f$, получаем
+\begin{equation*}
+    (L_X Y) f = df (L_X Y) = i_X d(i_Y df) - i_Y d(i_X df) =X(Y(f)) - Y(X(f)).
+\end{equation*}
+    Поэтому производная Ли $L_X Y$ -- это коммутатор векторных полей $[X, Y]$, то есть 
+\begin{equation*}
+    L_X Y = [X, Y] = (X^i \partial_i Y^j - Y^i \partial_i X^j) \partial_j.
+\end{equation*}
+\end{to_def}
+
+
+\begin{to_lem}[Тождество Якоби] 
+    Для любых трёх гладких векторных полей $X, Y, Z$ всегда верно, что
+    \begin{equation*}
+        [X, [Y, Z]] + [Z, [X, Y]] + [Y, [Z, X]] = 0.
+    \end{equation*}
+\end{to_lem}
+
+\begin{to_tas} 
+    Пусть $X, \ Y$ -- векторные поля, $f, \ g$ -- гладкие функции, тогда 
+    $
+    [fX, gY] = fg[X, Y] - gY(f)X + f X(g) Y.
+    $ 
+\end{to_tas}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
