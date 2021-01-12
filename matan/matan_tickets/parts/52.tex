@@ -1,0 +1,53 @@
+Оператор звёздочки является поточечным, то есть линейным относительно умножения на функцию $*(f \alpha) = f(*\alpha)$. Например на $\mathbb{R}^3$ со стандартной римановой структурой:
+\begin{gather*}
+   	*1 = \d x \wedge \d y \wedge \d z;
+   	\\
+   	*\d x = \d y \wedge \d z, 
+   	\hspace*{0.5 cm}
+   	*\d y = \d z \wedge \d x, 
+   	\hspace*{0.5 cm}
+   	*\d z = \d x \wedge \d y;
+   	\\
+   	*(\d x \wedge \d y) = \d z,
+   	\hspace*{0.5 cm}
+   	*(\d y \wedge \d z) = \d x,
+   	\hspace*{0.5 cm}
+   	*(\d z \wedge \d x) = \d y;
+   	\\
+   	*(\d x \wedge \d y \wedge \d z) = 1.
+\end{gather*}
+
+Тогда можно определить векторные операторы с помощью введённых терминов:
+\begin{align*}
+   &\grad \colon C^\infty(\mathbb{R}^3) \rightarrow \mathbb{T}_0^1 (\mathbb{R}^3)
+   \hspace*{0.5 cm} 
+   \leadsto 
+   \hspace*{0.5 cm}
+   \grad f = (\d f)^\sharp 
+   \hspace*{0.5 cm} 
+   \leadsto 
+   \hspace*{0.5 cm}
+   \grad = \sharp \d;
+   \\
+   &\rot \colon \mathbb{T}_0^1(\mathbb{R}^3) \rightarrow \mathbb{T}_0^1(\mathbb{R}^3)
+   \hspace*{0.5 cm} 
+   \leadsto 
+   \hspace*{0.5 cm}
+   \rot \vc{v} = (*\d(\vc{v}^\flat))^\sharp
+   \hspace*{0.5 cm} 
+   \leadsto 
+   \hspace*{0.5 cm}
+   \rot = \sharp * \d \, \flat;
+   \\
+   &\div \colon \mathbb{T}_0^1(\mathbb{R}^3) \rightarrow C^\infty(\mathbb{R}^3)
+   \hspace*{0.5 cm} 
+   \leadsto 
+   \hspace*{0.5 cm}
+   \div \vc{v} = *\d(*\vc{v}^\flat)
+   \hspace*{0.5 cm} 
+   \leadsto 
+   \hspace*{0.5 cm}
+   \div = * \d * \sharp.
+\end{align*}
+
+Таким образом можем записать лапласиан: $\Delta f = *\d * \d f$.  
