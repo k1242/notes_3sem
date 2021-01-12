@@ -52,22 +52,22 @@
 \end{equation*}
 
 \begin{to_lem}
-	$\forall \varepsilon > 0 \; \exists$ бесконечно гладкая $\varphi_\varepsilon \colon \mathbb{R}^n \rightarrow \mathbb{R}^+$, $\varphi_\varepsilon(x) \neq 0 \; \forall x \in U_\varepsilon(0)$, \textbf{такая чтo} $\int_{\mathbb{R}^n} \varphi_\varepsilon(x) \d x = 1. $
+	$\forall \varepsilon > 0 \; \exists$ бесконечно гладкая $\varphi_\varepsilon \colon \mathbb{R}^n \mapsto \mathbb{R}^+$, $\varphi_\varepsilon(x) \neq 0 \; \forall x \in U_\varepsilon(0)$, \textbf{такая чтo} $\int_{\mathbb{R}^n} \varphi_\varepsilon(x) \d x = 1. $
 	\label{lem_6.20}
 \end{to_lem}
 
 \begin{to_lem}
 	$\forall \varepsilon > \delta > 0 \; \exists$
-	бесконечно гладкая $\psi_{\varepsilon,\delta} \colon \mathbb{R}^n \rightarrow [0,1] $,
+	бесконечно гладкая $\psi_{\varepsilon,\delta} \colon \mathbb{R}^n \mapsto [0,1] $,
 	$\psi_{\varepsilon,\delta}(x) \neq 0 \; \forall x \in U_\varepsilon(0)$ 
 	и $\psi_{\varepsilon,\delta} (x) \neq 0 \; \forall x \in U_\delta(0)$.
-\end{to_lem}Пусть $\varphi\colon \mathbb{R}^n \rightarrow \mathbb{R} $, неотрицательная $\varphi\in C^\infty $, $\varphi \neq 0$ при $|x| \leq 1$ и пусть $\int_{\mathbb{R}^n} \varphi(x) \d x = 1$.
+\end{to_lem}Пусть $\varphi\colon \mathbb{R}^n \mapsto \mathbb{R} $, неотрицательная $\varphi\in C^\infty $, $\varphi \neq 0$ при $|x| \leq 1$ и пусть $\int_{\mathbb{R}^n} \varphi(x) \d x = 1$.
 Положим  $\varphi_k (x) = k^n \varphi(k x) $, у которых так же будут $\int = 1$ и которые $ \varphi_k \neq 0$ при $|x| \leq 1/k$.
 
 \begin{to_thr}
-	Для непрерывной $f \colon \mathbb{R}^n \rightarrow \mathbb{R} $ определим свёртки:
+	Для непрерывной $f \colon \mathbb{R}^n \mapsto \mathbb{R} $ определим свёртки:
 	\begin{equation*}
-		f_k(x) = \int_{\mathbb{R}^n} f(x-t)\varphi_k \d t = \int_{\mathbb{R}^n} f(t) \varphi_k (x -t) \d t \hspace*{0.5 cm} \leadsto \hspace*{0.5 cm} f_k \in C^\infty, \; f_k \rightarrow f \text{ равномерно на компактах в } \mathbb{R}^n.
+		f_k(x) = \int_{\mathbb{R}^n} f(x-t)\varphi_k \d t = \int_{\mathbb{R}^n} f(t) \varphi_k (x -t) \d t \hspace*{0.5 cm} \leadsto \hspace*{0.5 cm} f_k \in C^\infty, \; f_k \mapsto f \text{ равномерно на компактах в } \mathbb{R}^n.
 	\end{equation*}
 	\label{thr_6.21}
 \end{to_thr}
@@ -78,7 +78,7 @@
 \end{to_thr}
 
 \begin{to_thr}
-	Пусть $f\colon \mathbb{R}^n \rightarrow \mathbb{R}$ и $f \in \L_{c}$. Тогда свёртки $f*\varphi_k$ c функциями из теоремы \ref{thr_6.21} сколь угодно близко приближают $f$ в среднем.
+	Пусть $f\colon \mathbb{R}^n \mapsto \mathbb{R}$ и $f \in \L_{c}$. Тогда свёртки $f*\varphi_k$ c функциями из теоремы \ref{thr_6.21} сколь угодно близко приближают $f$ в среднем.
 	\label{thr_6.23}
 \end{to_thr}% 6.1. Дифференцируемые отображения открытых подмножеств R n .
 \begin{to_def} 
@@ -196,7 +196,7 @@
 	    	&f \in C^1(U(p))\\
 	    	&p \text{ --- def(\ref{def_6.36})}
 		\end{aligned} \right.
-		\hspace*{0.5 cm} \Rightarrow \hspace*{0.5 cm}
+		\hspace*{0.5 cm} \mapsto \hspace*{0.5 cm}
 		\d f_p = 0.
 	\end{equation*}
 	\label{thr_6.37}
@@ -212,7 +212,7 @@
 	    	&f \in C^2(U(p))\\
 	    	&p \text{ --- def(\ref{def_6.36})}
 		\end{aligned} \right.
-		\hspace*{0.5 cm} \Rightarrow \hspace*{0.5 cm}
+		\hspace*{0.5 cm} \mapsto \hspace*{0.5 cm}
 		\left[
 		\begin{aligned}
 			\d_2 f_p \geq 0 \text{ --- min}\\
@@ -228,7 +228,7 @@
 	    	&p \text{ --- def(\ref{def_6.36})}\\
 	    	&\d f_p = 0 \text{ и } \d_2 f_p >0 
 		\end{aligned} \right.
-	\hspace*{0.5 cm}  \Rightarrow \hspace*{0.5 cm}
+	\hspace*{0.5 cm}  \mapsto \hspace*{0.5 cm}
 	p \text{ --- точка строгого локального максимума}
 	\label{thr_6.39}
 \end{equation*}
@@ -247,7 +247,7 @@
 	 		&\dim \langle \d \varphi_1, \ldots, \d \varphi_m\rangle = m\\
 	 		&p \text{ --- def(\ref{def_usl_ext})}
 	 	\end{aligned}\right.
-	 	\hspace*{0.5 cm} \Rightarrow \hspace*{0.5 cm}
+	 	\hspace*{0.5 cm} \mapsto \hspace*{0.5 cm}
 	 	\d f_p = \lambda_1 \d \varphi_{1,p} + \ldots + \lambda_m \d \varphi_{m,p}.
 	 \end{equation*}
 	 \label{thr_6.41}
@@ -263,7 +263,7 @@
 	 		&p \text{ --- def(\ref{def_usl_ext})}\\
 	 		&\vc{v}\colon \d \varphi_{1,p}(\vc{v}) = \ldots = \d \varphi_{m,p}(\vc{v}) = 0
 	 	\end{aligned}\right.
-	 	\hspace*{0.5 cm} \Rightarrow \hspace*{0.5 cm}
+	 	\hspace*{0.5 cm} \mapsto \hspace*{0.5 cm}
 	 	\left\{
 	 	\begin{aligned}
 	 		&\d L_p = 0\\
@@ -288,7 +288,7 @@
 	 		&\vc{v}(\neq 0) \colon \d \varphi_{1,p}(\vc{v}) = \ldots = \d \varphi_{m,p}(\vc{v}) = 0\\
 	 		&\d_2 L(\vc{v}) > 0 \text{ или } \d_2 L(\vc{v}) < 0
 	 	\end{aligned}\right.
-	 	\hspace*{0.5 cm} \Rightarrow \hspace*{0.5 cm}
+	 	\hspace*{0.5 cm} \mapsto \hspace*{0.5 cm}
 	 	f \text{ имеет строгий условный экстремум в } p.
 	\end{equation*}
 	\label{thr_6.43}
@@ -356,7 +356,7 @@
     } образ вектора} $\varphi_*(X)$ определяется по формуле
     \begin{equation*}
         \varphi_* (X) f = X(f \circ \varphi),
-        \hspace{1cm}\Rightarrow\  \left(\varphi_*X\right)^i = \frac{\partial \varphi^i}{\partial x^j} X^j 
+        \hspace{1cm}\mapsto\  \left(\varphi_*X\right)^i = \frac{\partial \varphi^i}{\partial x^j} X^j 
         \hspace{0.25cm} \Leftrightarrow \hspace{0.25cm} 
         \text{\red{переписать в матричном виде}}
         .
@@ -384,7 +384,7 @@
 \begin{equation*}
     \alpha = \alpha_j dx^j = \tilde \alpha_i dy^i = 
     \underbrace{\tilde \alpha_i \partial_j y^i }_{\alpha_j}
-    dx^j, \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    dx^j, \hspace{0.5cm} \mapsto \hspace{0.5cm} 
     \alpha_j = \tilde \alpha_i \partial_j y^i
     \hspace{0.25cm} \Leftrightarrow \hspace{0.25cm} 
     \text{\red{переписать в матричном виде}}.
@@ -411,7 +411,7 @@
 %     \left(
 %         \frac{\partial }{\partial x^j} 
 %     \right) = \omega_i \delta^i_j = \omega_j,
-%     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+%     \hspace{0.5cm} \mapsto \hspace{0.5cm} 
 %     \omega_j = df \left(\frac{\partial }{\partial x^j} \right) =
 %     \frac{\partial f}{\partial x^j}.
 % $$
@@ -855,7 +855,7 @@
 \end{to_tas}
 
 \begin{to_def}
-	Отображения $h_0, h_1 \colon M \rightarrow N$ гладко гомотопны, если $\exists h \colon M \times [0,1] \rightarrow N$, такое что $h_0(x) = h(x,0)$ и $h_1(x) = h(x,1)$.
+	Отображения $h_0, h_1 \colon M \mapsto N$ гладко гомотопны, если $\exists h \colon M \times [0,1] \mapsto N$, такое что $h_0(x) = h(x,0)$ и $h_1(x) = h(x,1)$.
 	\label{def_7.12}
 \end{to_def}
 
@@ -863,7 +863,7 @@
 Интересно заметить, что если $\partial M = \varnothing$, то $\partial(M \times [0,1]) = M \times \{0,1\}$. 
 
 \begin{to_def}
-	М называется стягиваемым в точку $x_0 \in M$ или гомотопным точке, если $\exists h \colon M \times [0,1] \rightarrow M$ такое, что $h(x,1) = x$ и $h(x,0) = x_0$. ($\mathbb{R}^n$ --- $h(x,t) = t x$)
+	М называется стягиваемым в точку $x_0 \in M$ или гомотопным точке, если $\exists h \colon M \times [0,1] \mapsto M$ такое, что $h(x,1) = x$ и $h(x,0) = x_0$. ($\mathbb{R}^n$ --- $h(x,t) = t x$)
 \end{to_def}
 
 \begin{to_thr}[Теорема Пуанкаре]
@@ -876,7 +876,7 @@
 Станет легче, если свести вопрос к случаю, когда для $\varepsilon > 0$: $h(x,t) = h(x,0)$ при $t < \varepsilon$ и $h(x,t) = h(x,1)$ при $t > 1-\varepsilon$.
 Определим новую гомотопию:
 \begin{equation*}
-\varphi(\in C^\infty) \colon \mathbb{R} \rightarrow [0,1]:
+\varphi(\in C^\infty) \colon \mathbb{R} \mapsto [0,1]:
 \left\{
 \begin{aligned}
 	&\varphi = 0,\; t \leq \varepsilon\\
@@ -888,7 +888,7 @@
 \end{equation*} 
 
 \begin{to_thr}[Цепная гомотопия]
-	Если отображения $f_0, f_1 \colon M \rightarrow N$ гладко гомотопны, \textbf{то} $\forall \alpha \in \Omega^k (N)$ выполняется для некоторой $H \colon \Omega^k (N) \rightarrow \Omega^{k-1}(M)$:
+	Если отображения $f_0, f_1 \colon M \mapsto N$ гладко гомотопны, \textbf{то} $\forall \alpha \in \Omega^k (N)$ выполняется для некоторой $H \colon \Omega^k (N) \mapsto \Omega^{k-1}(M)$:
 	\begin{equation*}
 		f_1^* \alpha - f_0^*\alpha - H(\delta \alpha) + \delta(H(\alpha)).
 	\end{equation*}
@@ -909,12 +909,12 @@
 \end{to_def}
 Таким образом если замкнутые $\alpha_1, \alpha_2$ гомологичны, то они лежат в одном классе когомологии.
 
-По скольку $Z^k (M)$ есть $\Ker d \colon \Omega^k(M) \rightarrow \Omega^{k+1}(M)$, а $B^k (M)$ есть $\Im d \colon \Omega^{k-1}(M) \rightarrow \Omega^{k}(M)$, то часто переписывают:
+По скольку $Z^k (M)$ есть $\Ker d \colon \Omega^k(M) \mapsto \Omega^{k+1}(M)$, а $B^k (M)$ есть $\Im d \colon \Omega^{k-1}(M) \mapsto \Omega^{k}(M)$, то часто переписывают:
 
 \begin{to_def}
 	Когомологии де Рама гладкого $M$ --- это факторпространства
 	\begin{equation*}
-		H_{DR}^k (M) = \frac{\Ker d \colon \Omega^k(M) \rightarrow \Omega^{k+1}(M)}{\Im d \colon \Omega^{k-1}(M) \rightarrow \Omega^{k}(M)}.
+		H_{DR}^k (M) = \frac{\Ker d \colon \Omega^k(M) \mapsto \Omega^{k+1}(M)}{\Im d \colon \Omega^{k-1}(M) \mapsto \Omega^{k}(M)}.
 	\end{equation*}
 	\label{def_7.17}
 \end{to_def}
@@ -929,7 +929,7 @@
 \end{to_lem}\begin{to_tas}
 	Для не обязательно компактного многообразия без края $M$ рассмотрим дифференциальные формы с компактным носителем $\Omega_c^*(M)$ и определим когомологии де Рама с компактным носителем:
 	\begin{equation*}
-		H_c^k (M) = \Ker d \colon \Omega_c^k (M) \rightarrow \Omega^{k+1}_c (M) \ / \ \Im \d \colon \Omega_c^{k-1}(M) \rightarrow \Omega_c^{k}(M).
+		H_c^k (M) = \Ker d \colon \Omega_c^k (M) \mapsto \Omega^{k+1}_c (M) \ / \ \Im \d \colon \Omega_c^{k-1}(M) \mapsto \Omega_c^{k}(M).
 	\end{equation*}
 
 	Если $ \dim M = n$, M ориентируемо и связно, \textbf{то} $H_c^n(M)$ одномерно.
@@ -938,7 +938,7 @@
 \begin{to_tas}
 	$H_c^k (\mathbb{R}^n) = 0$ при $k \neq n$, и $H_c^n(\mathbb{R}^n) = \mathbb{R} $.
 \end{to_tas}\begin{to_def}
-	Точка $p \in M$ называется регулярной точкой гладкого отображения $f \colon M \rightarrow N$, если $D f_{p}$ сюръективно. Иначе называется критической точкой.
+	Точка $p \in M$ называется регулярной точкой гладкого отображения $f \colon M \mapsto N$, если $D f_{p}$ сюръективно. Иначе называется критической точкой.
 
 	Если для точки $q \in N$ найдётся критическая $p \in M$, такая что $q = f(p)$, то $q$ называется критическим значением отображения. Некритическое значение $q \in N$ назвается регулярным значением.
 \end{to_def}
@@ -950,9 +950,9 @@
 Формула меры образа (\ref{con_6.109}) при гладкой замене координат тогда показывает, что множество меры нуль в евкл. пр-ве переходит в множество меры нуль. Значит свойство подмножества $X$ многообразия $M$ иметь лебегову меру нуль достаточно проверить не во всех возможных картах, а лишь в любом атласе, который покрывает $M$.
 
 \begin{to_thr}[Теорема Сарда]
-	Для бесконечно гладкого отображения $f \colon M \rightarrow N$ множество критических значений $f$ имеет меру нуль в $N$, то есть почти все точки $N$ являются регулярными значениями $f$.
+	Для бесконечно гладкого отображения $f \colon M \mapsto N$ множество критических значений $f$ имеет меру нуль в $N$, то есть почти все точки $N$ являются регулярными значениями $f$.
 \end{to_thr}\begin{to_def}
-	Если $f \colon M \rightarrow N$ --- гладкое отображение ориентированных многообразий одной и той же размерности, $M$ --- компактно, и $y$ --- регулярное значение $f$, степенью отображения в точке $y$ называется: \red{А?}
+	Если $f \colon M \mapsto N$ --- гладкое отображение ориентированных многообразий одной и той же размерности, $M$ --- компактно, и $y$ --- регулярное значение $f$, степенью отображения в точке $y$ называется: \red{А?}
 	\begin{equation*}
 		\sum_{f(x_i) = y} \sign J f_{x_i}.
 	\end{equation*}
@@ -964,40 +964,40 @@
 Из условия того, что $y$ --- регулярное значение, следует, что множество $f^{-1}(y)$ состоит из изолированных точек, то есть это дискретное множество. В случае компактного $M$ число точек $f^{-1}(y)$ должно оказаться конечным, так как дискретное компактное множество конечно. То же будет верно для отображения, для которого прообраз любого компакта компактен, но использовать мы этого уже не будем.
 
 \begin{to_lem}
-	Если $f\colon M \rightarrow N$ --- гладкое отображение ориентированных многообразий без края одной и той же размерности, многообразие $M$ компактно, и $y$ --- регулярное значение $f$, \textbf{то} $\exists U \ni y$ (окр-ть), такая что $\forall y' \in U$ регулярны и $\deg_y f = \deg_{y'} f$. 
+	Если $f\colon M \mapsto N$ --- гладкое отображение ориентированных многообразий без края одной и той же размерности, многообразие $M$ компактно, и $y$ --- регулярное значение $f$, \textbf{то} $\exists U \ni y$ (окр-ть), такая что $\forall y' \in U$ регулярны и $\deg_y f = \deg_{y'} f$. 
 
 	В случае отсутствия ориентации в $M$ мы просто утверждаем независимость количества точек в $f^{-1} (y')$ от $y'\in U$.
 \end{to_lem}
 
 \begin{to_thr}[Гомотопическая инвариантность степени отображения]
-	Пусть многообразие $M$ компактное без края, $N$ --- не обязательно компактное без края, $h \colon M \times [0,1] \rightarrow N$ --- гладкая гомотопия, а $y \in N$ такова, что она является регулярным значением для $h_{0}$ и $h_{1}$. 
+	Пусть многообразие $M$ компактное без края, $N$ --- не обязательно компактное без края, $h \colon M \times [0,1] \mapsto N$ --- гладкая гомотопия, а $y \in N$ такова, что она является регулярным значением для $h_{0}$ и $h_{1}$. 
 
 	Тогда степени отображения $h_0$ и $h_1$ в точке $y$ равны. Если оба многообразия ориентированы, то степень считается со знаком, иначе она считается как чётность.
 \end{to_thr}
 
 \begin{to_def}
-	Семейство диффеоморфизмов $h_t \colon M \rightarrow N$ назовём изотопией, если оно гладко зависит от параметра $t$, то есть даёт гладкое $h \colon M \times [0,1] \rightarrow N$.
+	Семейство диффеоморфизмов $h_t \colon M \mapsto N$ назовём изотопией, если оно гладко зависит от параметра $t$, то есть даёт гладкое $h \colon M \times [0,1] \mapsto N$.
 \end{to_def}
 
 \begin{to_lem}
-	Если многообразие $M$ связное, без края и $x,y \in M$, то существует изотопия $h_t \colon M \rightarrow M $, такая что $h_0 = id$ и $h_1(x)  = y$.
+	Если многообразие $M$ связное, без края и $x,y \in M$, то существует изотопия $h_t \colon M \mapsto M $, такая что $h_0 = id$ и $h_1(x)  = y$.
 \end{to_lem}
 
 \begin{to_con}
-	При связном $N$ степень $f \colon M \rightarrow$ не зависит от выбора $y \in N$.
+	При связном $N$ степень $f \colon M \mapsto$ не зависит от выбора $y \in N$.
 \end{to_con}
 
 \begin{to_thr}[Корректность определения степени отображения]
-	Степень отображения $f \colon M \rightarrow N$ для связного многообразия без края $N$ и компактного многообразия без края $M$ не зависит от выбора регулярного значения в $M$. Если оба многообразия ориентированы, то степень считается со знаком, иначе она считается как чётность.
+	Степень отображения $f \colon M \mapsto N$ для связного многообразия без края $N$ и компактного многообразия без края $M$ не зависит от выбора регулярного значения в $M$. Если оба многообразия ориентированы, то степень считается со знаком, иначе она считается как чётность.
 \end{to_thr}
 
 \begin{to_con}
-	Пусть $M$ --- компактное многообразие без края положительной размерности. Тогда тождественное отображение $id\colon M \rightarrow M$ не гомотопно постоянному отображению $M \rightarrow M$ в одну точку.
+	Пусть $M$ --- компактное многообразие без края положительной размерности. Тогда тождественное отображение $id\colon M \mapsto M$ не гомотопно постоянному отображению $M \mapsto M$ в одну точку.
 \end{to_con}Проверить, что всё работает, когда у нас $N$ не компактно, и мы имеем дело с собственным отображением (прообраз компакта --- компакт).
 
 Определим степень для таких отображений:
 \begin{to_def}
-	$f \colon M \rightarrow N$ --- собственное и гладкое, $M,N$ --- ориентированные и без края, и одной и той же размерности, причём $N$ связно. Тогда для $\omega \in \Omega_c^n (M)$ выполняется:
+	$f \colon M \mapsto N$ --- собственное и гладкое, $M,N$ --- ориентированные и без края, и одной и той же размерности, причём $N$ связно. Тогда для $\omega \in \Omega_c^n (M)$ выполняется:
 \begin{equation*}
 	\int_{M} f* \omega = \deg f \cdot \int_{N} \omega.
 \end{equation*}	
@@ -1005,13 +1005,13 @@
 \end{to_def}
 
 \begin{to_lem}
-	$f \colon M\rightarrow N$ гладкое отображение ориентированных многообразий с карем одной и той же размерности, причём $f(\partial M) \subseteq \partial N$ и $N$ связно. В этом случае степень $f$ корректно определена: $\deg f = \deg f |_{\partial N} $.
+	$f \colon M\mapsto N$ гладкое отображение ориентированных многообразий с карем одной и той же размерности, причём $f(\partial M) \subseteq \partial N$ и $N$ связно. В этом случае степень $f$ корректно определена: $\deg f = \deg f |_{\partial N} $.
 \end{to_lem}\begin{to_thr}[Теорема Брауэра о неподвижной токе]
-	Пусть $B \subset \mathbb{R}^n$ --- некторый замкрнутый шар. Всякое непрерывное отображения в себя $f \colon B \rightarrow B$ имеет неподвижную точку, то есть точку, в которой $f(x) = x$.
+	Пусть $B \subset \mathbb{R}^n$ --- некторый замкрнутый шар. Всякое непрерывное отображения в себя $f \colon B \mapsto B$ имеет неподвижную точку, то есть точку, в которой $f(x) = x$.
 \end{to_thr}
 
 \begin{to_thr}[Отсутствие ретракции шара на его границу]
-	Пусть сфера $S^{n-1}$ рассматривается как край шара $B^n$. Не существует непрерывного отображения $f \colon B^n \rightarrow S^{n-1}$, такого что $f |_{S^{n-1}} = id_{S^{n-1}}$.
+	Пусть сфера $S^{n-1}$ рассматривается как край шара $B^n$. Не существует непрерывного отображения $f \colon B^n \mapsto S^{n-1}$, такого что $f |_{S^{n-1}} = id_{S^{n-1}}$.
 \end{to_thr}\red{Здесь про ёжика}\begin{to_def} 
     Операция \textit{внутреннего умножения} векторного поля на форму как
     $ i_X \alpha(X_2, \ldots, X_k) = \alpha(X, X_2, \ldots, X_k).$
@@ -1030,7 +1030,7 @@
 \omega = \frac{1}{k!} a_{i_1,\ldots,i_k}\d x^{i_1}\wedge\ldots \wedge d x^{i_k},
 \hspace{0.5cm} 
 X = X^i \partial_i
-\hspace{1cm} \Rightarrow \hspace{1cm} 
+\hspace{1cm} \mapsto \hspace{1cm} 
     i_X \omega = \frac{1}{(k-1)!}  X^i \alpha_{i,i_2,\ldots,i_k} \d x^{i_2} \wedge \ldots \wedge \d x^{i_k}.
 \end{equation*}
 \end{to_lem}
@@ -1055,7 +1055,7 @@ X = X^i \partial_i
     Потребуем выполнение формулы Лейбница для производной Ли вдоль $X$ значения $\alpha(Y) = i_Y \alpha$, то есть
     \begin{equation*}
         X(\alpha(Y)) = L_X(\alpha)(Y) + \alpha(L_X Y),
-        \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+        \hspace{0.5cm} \mapsto \hspace{0.5cm} 
         \alpha(L_X Y) = i_X d(i_Y \alpha) - i_Y d (i_X \alpha) - i_Y i_X \d \alpha.
     \end{equation*} 
     Подставив $\alpha = \alpha_i \d x^i$, и считая, что $\alpha(L_X Y) = a_i dx^i (L_X Y)$, находим что
@@ -1209,7 +1209,7 @@ X = X^i \partial_i
 \begin{equation*}
     \int_{\partial V} \vc{B} \cdot \d \vc{\sigma} = 
     \int_V \div \vc{B} \d V = \div \vc{B}(x')V_x,
-    \hspace{1cm} \Rightarrow \hspace{1cm} 
+    \hspace{1cm} \mapsto \hspace{1cm} 
     \div \vc{B}(x) \overset{\mathrm{def}}{=} 
     \lim_{r \to 0} \left(\frac{
                 \iint_{\partial V(x)} \vc{B} \cdot \d \vc{\sigma}
@@ -1221,7 +1221,7 @@ X = X^i \partial_i
     Возьмём круг $S_i (x)$ с центром в точке $x$, лежащей в плоскости, $\bot$ к $\partial_i$, для $i = 1, 2, 3$. Ориентируем $S_i(x)$ с помощью нормали, в качестве которой возьмём орт $\partial_i$, пусть $r$ -- диаметр $S_i(x)$, тогда по формуле Стокса
     \begin{equation*}
         \oint_{\partial S} \vc{A} \cdot \d \vc{s} = \iint_S (\rot \vc{A}) \cdot \d \vc{\sigma},
-        \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+        \hspace{0.5cm} \mapsto \hspace{0.5cm}   
         (\rot \vc{A})^i = 
         \lim_{r \to 0}
         \left(
@@ -1276,7 +1276,7 @@ X = X^i \partial_i
             &g \geq 0 \colon X \to \mathbb{R}^+ \in L_c \text{ на } X
         \end{aligned}
     \right\} \hspace{1cm}
-    \Rightarrow \hspace{1cm}
+    \mapsto \hspace{1cm}
     \frac{d}{dy} \int_X f(x, y) \d x = \int_X f'_y (x, y) \d x.
     \end{split}
     \end{equation*}
@@ -1340,7 +1340,7 @@ X = X^i \partial_i
 \end{to_tas}
 
 \begin{to_tas}
-    Порядок начала координат относительно не проходящей через него нечётной кривой является нечётным числом. ($\gamma \colon \mathbb{S}^1 \rightarrow \mathbb{R}^2, \; \gamma(-u) = - \gamma(u)$).
+    Порядок начала координат относительно не проходящей через него нечётной кривой является нечётным числом. ($\gamma \colon \mathbb{S}^1 \mapsto \mathbb{R}^2, \; \gamma(-u) = - \gamma(u)$).
 \end{to_tas}
 
 \begin{to_tas}
@@ -1444,12 +1444,12 @@ $$
 
 	5) То есть после интегрирования получим не более $\mu(U_{1/k}(\partial P))$.
 
-	6) Напрямую можно убедиться, что эта $\mu \rightarrow 0$ при $k\rightarrow 0$.
+	6) Напрямую можно убедиться, что эта $\mu \mapsto 0$ при $k\mapsto 0$.
 \end{proof}\begin{proof}[\ref{thr_6.32}]   
 
 \begin{enumerate*}
     \item По условию $df_1, \ldots, df_k, \ dx_{k+1}, \ldots, dx_n$ -- линейно независимы. Тогда $f_1, \ldots, f_k, x_{k+1, \ldots, x_n}$ дают криволинейную систему координат. 
-    \item Тогда старые координаты (НД) выражаются через новые: $x_i = \varphi_i(f_1, \ldots, f_k, x_{k+1}, \ldots, x_n)$, при чём выберем $\vc{x}\colon$ $f_i = y_i$. $\Rightarrow$ Sol СУ содержится в графике отображения $\varphi \colon V \mapsto  U$, при достаточно малых $V, \ U$: $\varphi(V) \subseteq U$. 
+    \item Тогда старые координаты (НД) выражаются через новые: $x_i = \varphi_i(f_1, \ldots, f_k, x_{k+1}, \ldots, x_n)$, при чём выберем $\vc{x}\colon$ $f_i = y_i$. $\mapsto$ Sol СУ содержится в графике отображения $\varphi \colon V \mapsto  U$, при достаточно малых $V, \ U$: $\varphi(V) \subseteq U$. 
     \item Но график отображения содержится в Sol(СУ), т.к. в точке $p = (y_1, \ldots, y_k, x_{k+1},\ldots,x_n)$ значения $f_i = y_i$, т.к. $\varphi_i (p)$ даст такие $x_1, \ldots, x_k$, что $f_i(x_i)=y_i$. Q. E. D.
 \end{enumerate*}
     

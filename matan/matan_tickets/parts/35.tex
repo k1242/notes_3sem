@@ -9,7 +9,7 @@
 \end{to_tas}
 
 \begin{to_def}
-	Отображения $h_0, h_1 \colon M \rightarrow N$ гладко гомотопны, если $\exists h \colon M \times [0,1] \rightarrow N$, такое что $h_0(x) = h(x,0)$ и $h_1(x) = h(x,1)$.
+	Отображения $h_0, h_1 \colon M \mapsto N$ гладко гомотопны, если $\exists h \colon M \times [0,1] \mapsto N$, такое что $h_0(x) = h(x,0)$ и $h_1(x) = h(x,1)$.
 	\label{def_7.12}
 \end{to_def}
 
@@ -17,7 +17,7 @@
 Интересно заметить, что если $\partial M = \varnothing$, то $\partial(M \times [0,1]) = M \times \{0,1\}$. 
 
 \begin{to_def}
-	М называется стягиваемым в точку $x_0 \in M$ или гомотопным точке, если $\exists h \colon M \times [0,1] \rightarrow M$ такое, что $h(x,1) = x$ и $h(x,0) = x_0$. ($\mathbb{R}^n$ --- $h(x,t) = t x$)
+	М называется стягиваемым в точку $x_0 \in M$ или гомотопным точке, если $\exists h \colon M \times [0,1] \mapsto M$ такое, что $h(x,1) = x$ и $h(x,0) = x_0$. ($\mathbb{R}^n$ --- $h(x,t) = t x$)
 \end{to_def}
 
 \begin{to_thr}[Теорема Пуанкаре]
@@ -30,7 +30,7 @@
 Станет легче, если свести вопрос к случаю, когда для $\varepsilon > 0$: $h(x,t) = h(x,0)$ при $t < \varepsilon$ и $h(x,t) = h(x,1)$ при $t > 1-\varepsilon$.
 Определим новую гомотопию:
 \begin{equation*}
-\varphi(\in C^\infty) \colon \mathbb{R} \rightarrow [0,1]:
+\varphi(\in C^\infty) \colon \mathbb{R} \mapsto [0,1]:
 \left\{
 \begin{aligned}
 	&\varphi = 0,\; t \leq \varepsilon\\
@@ -42,8 +42,8 @@
 \end{equation*} 
 
 \begin{to_thr}[Цепная гомотопия]
-	Если отображения $f_0, f_1 \colon M \rightarrow N$ гладко гомотопны, \textbf{то} $\forall \alpha \in \Omega^k (N)$ выполняется для некоторой $H \colon \Omega^k (N) \rightarrow \Omega^{k-1}(M)$:
+	Если отображения $f_0, f_1 \colon M \mapsto N$ гладко гомотопны, \textbf{то} $\forall \alpha \in \Omega^k (N)$ выполняется для некоторой $H \colon \Omega^k (N) \mapsto \Omega^{k-1}(M)$:
 	\begin{equation*}
-		f_1^* \alpha - f_0^*\alpha - H(\delta \alpha) + \delta(H(\alpha)).
+		f_1^* \alpha - f_0^*\alpha = H(\delta \alpha) + \delta(H(\alpha)).
 	\end{equation*}
 \end{to_thr}

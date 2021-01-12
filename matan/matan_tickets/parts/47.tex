@@ -17,7 +17,7 @@
 \begin{to_thr}[Геометрический смысл дивергенции]
      Пусть на ориентированном многообразии $M$ мера определена как интеграл от некоторой всюду ненулевой соответствующей ориентации формы $\nu \in \Omega^n (M)$. Тогда для дивергенции векторного поля $X$ относительно объёма $\nu$ и всякого компактного $K \subseteq M$ имеет место формула
      \begin{equation*}
-         \int_K (\div_\nu X) \nu = \frac{d}{dt} \text{Vol}_\nu\, \varphi_t (K) \bigg|_{t=01,}
+         \int_K (\div_\nu X) \nu = \frac{d}{dt} \textnormal{vol}_\nu\, \varphi_t (K) \bigg|_{t=01,}
      \end{equation*}
      где $\varphi_t$ -- соответствующая однопараметрическая группа диффеоморфизмов.
 \end{to_thr}
@@ -30,7 +30,7 @@
 \begin{equation*}
     \int_{\partial V} \vc{B} \cdot \d \vc{\sigma} = 
     \int_V \div \vc{B} \d V = \div \vc{B}(x')V_x,
-    \hspace{1cm} \Rightarrow \hspace{1cm} 
+    \hspace{1cm} \mapsto \hspace{1cm} 
     \div \vc{B}(x) \overset{\mathrm{def}}{=} 
     \lim_{r \to 0} \left(\frac{
                 \iint_{\partial V(x)} \vc{B} \cdot \d \vc{\sigma}
@@ -42,7 +42,7 @@
     Возьмём круг $S_i (x)$ с центром в точке $x$, лежащей в плоскости, $\bot$ к $\partial_i$, для $i = 1, 2, 3$. Ориентируем $S_i(x)$ с помощью нормали, в качестве которой возьмём орт $\partial_i$, пусть $r$ -- диаметр $S_i(x)$, тогда по формуле Стокса
     \begin{equation*}
         \oint_{\partial S} \vc{A} \cdot \d \vc{s} = \iint_S (\rot \vc{A}) \cdot \d \vc{\sigma},
-        \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+        \hspace{0.5cm} \mapsto \hspace{0.5cm}   
         (\rot \vc{A})^i = 
         \lim_{r \to 0}
         \left(

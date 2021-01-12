@@ -1,10 +1,10 @@
-Пусть $\varphi\colon \mathbb{R}^n \rightarrow \mathbb{R} $, неотрицательная $\varphi\in C^\infty $, $\varphi \neq 0$ при $|x| \leq 1$ и пусть $\int_{\mathbb{R}^n} \varphi(x) \d x = 1$.
+Пусть $\varphi\colon \mathbb{R}^n \mapsto \mathbb{R} $, неотрицательная $\varphi\in C^\infty $, $\varphi \neq 0$ при $|x| \leq 1$ и пусть $\int_{\mathbb{R}^n} \varphi(x) \d x = 1$.
 Положим  $\varphi_k (x) = k^n \varphi(k x) $, у которых так же будут $\int = 1$ и которые $ \varphi_k \neq 0$ при $|x| \leq 1/k$.
 
 \begin{to_thr}
-	Для непрерывной $f \colon \mathbb{R}^n \rightarrow \mathbb{R} $ определим свёртки:
+	Для непрерывной $f \colon \mathbb{R}^n \mapsto \mathbb{R} $ определим свёртки:
 	\begin{equation*}
-		f_k(x) = \int_{\mathbb{R}^n} f(x-t)\varphi_k \d t = \int_{\mathbb{R}^n} f(t) \varphi_k (x -t) \d t \hspace*{0.5 cm} \leadsto \hspace*{0.5 cm} f_k \in C^\infty, \; f_k \rightarrow f \text{ равномерно на компактах в } \mathbb{R}^n.
+		f_k(x) = \int_{\mathbb{R}^n} f(x-t)\varphi_k \d t = \int_{\mathbb{R}^n} f(t) \varphi_k (x -t) \d t \hspace*{0.5 cm} \leadsto \hspace*{0.5 cm} f_k \in C^\infty, \; f_k \mapsto f \text{ равномерно на компактах в } \mathbb{R}^n.
 	\end{equation*}
 	\label{thr_6.21}
 \end{to_thr}
@@ -15,6 +15,6 @@
 \end{to_thr}
 
 \begin{to_thr}
-	Пусть $f\colon \mathbb{R}^n \rightarrow \mathbb{R}$ и $f \in \L_{c}$. Тогда свёртки $f*\varphi_k$ c функциями из теоремы \ref{thr_6.21} сколь угодно близко приближают $f$ в среднем.
+	Пусть $f\colon \mathbb{R}^n \mapsto \mathbb{R}$ и $f \in \L_{c}$. Тогда свёртки $f*\varphi_k$ c функциями из теоремы \ref{thr_6.21} сколь угодно близко приближают $f$ в среднем.
 	\label{thr_6.23}
 \end{to_thr}
