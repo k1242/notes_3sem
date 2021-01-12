@@ -1,0 +1,49 @@
+\begin{to_def}[аксиоматическое определение для ковариантной производной от вектора]
+    \begin{enumerate*}
+        \item $\nabla_{fX} Y = f \nabla_X Y$ (линейность по перовому аргументу)
+        \item $\nabla_X f Y = X(f) Y + f \nabla_X Y$ (правило Лейбница для второго аргумента)
+        \item $\nabla_X Y - \nabla_Y X = [X, Y]$ (отсутствие кручения)
+        \item $X(g(Y, Z)) = g(\nabla_X Y, Z) + g(Y, \nabla_X Z)$ (совместимость с (полу)римановой структурой $g$)
+    \end{enumerate*}     
+\end{to_def}
+
+
+
+\begin{to_thr}[Формула Козюля]
+     Из условий на ковариантное дифференцирование следует формула
+\begin{equation*}
+    2 g(\nabla_X Y, Z) = 
+    X(g(Y, Z)) + Y(g(Z, X)) - Z(g(X, Y)) + g([X, Y], Z) - g([Y, Z], X) + g([Z, X], Y).
+\end{equation*}
+\end{to_thr}
+
+
+\begin{to_def}[определение ковариантной производной от форм]
+     Требуем выполнение правила Лейбница для умножения векторных форм первой степени на векторные поля
+    \begin{equation*}
+        (\nabla_X \alpha)(Y) = \nabla_X (\alpha(Y)) - \alpha(\nabla_X Y) = X(\alpha(Y)) - \alpha(\nabla_X Y).
+    \end{equation*}
+\end{to_def}
+
+\begin{to_tas} 
+    Условие отсутствия кручения эквивалентно тому, что для форм первой степени выполняется
+    \begin{equation*}
+         (\nabla_X \alpha)(Y) - (\nabla_Y \alpha)(X) = d \alpha(X, Y).
+     \end{equation*} 
+     Действительно, $d \alpha(X, Y) = X(\alpha(Y)) - Y(\alpha(X)) - \alpha([X, Y])$.
+\end{to_tas}
+
+\begin{to_tas} 
+    Пусть $\nabla_X Y =Z$, тогда
+    \begin{equation*}
+         Z^k = X^i \partial_i Y^k + \Gamma_{ij}^k X^i Y^j,
+         \hspace{0.5cm} \text{где} \hspace{0.5cm} 
+         \Gamma_{lij} = \frac{1}{2} \left( 
+         \vphantom{\frac{1}{2}} 
+            \partial_j g_{li} + \partial_i g_{lj} - \partial_l g_{ij}
+         \right).
+    \end{equation*}        
+\end{to_tas}
+
+
+

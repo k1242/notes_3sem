@@ -1,0 +1,32 @@
+\red{Здесь будет о сути происходящего от НМУ}
+
+\begin{to_con} 
+    Для кривых, дающих экстремум функционала действия, выполняется \underline{уравнение геодезической}\footnote{
+        Получается, уравнение геодезической, означает постоянство квадрата скорости $g(\dot{\gamma}, \dot{\gamma})$.
+    } $$\ddot{\gamma} = \nabla_{\dot{\gamma}} \dot{\gamma} = 0.$$ 
+    В координатах уравнение геодезической примет вид $\ddot{\gamma}^k + \Gamma_{ij}^k \dot{\gamma}^i \dot{\gamma}^j = 0.$
+\end{to_con}
+
+\begin{to_lem}
+     Уравнение \underline{параллельного переноса} векторного поля $X$ вдоль кривой $\gamma$: \red{почему?}
+     \begin{equation*}
+         \nabla_{\dot{\gamma}} X = 0
+         \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm} 
+         \dot{\gamma}^i \partial_i X^k + \Gamma_{ij}^k \dot{\gamma}^i X^j = 0
+         \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm} 
+         \dot{X}^k + \Gamma_{ij}^k \dot{\gamma}^i X^j = 0.
+     \end{equation*}
+\end{to_lem}
+
+\begin{to_tas} 
+    Параллельный перенос векторов из начала кривой в конец является ортогональным (относительно $g$) оператором.
+\end{to_tas}
+
+Вообще, здесь мы используем, что $\dot{\gamma}^i \partial_i \dot{\gamma}^k = \ddot{\gamma}^k$. Иначе уравнение геодезической можно получить напрямую, выписав уравнение Эйлера-Лагранжа в координатах и отсутствие кручения, считая $g_{ij} \dot{\gamma}^i \dot{\gamma}^j = v^2$
+\begin{equation*}
+    \frac{\partial (v^2/2)}{\partial x_k}  - \frac{d }{d t} 
+    % \left(
+        \frac{\partial (v^2/2)}{\partial \dot{\gamma}^k} 
+    % \right)
+     = 0.
+\end{equation*}
