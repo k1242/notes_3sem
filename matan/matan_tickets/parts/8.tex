@@ -1,0 +1,29 @@
+\begin{to_lem} 
+    Если $dg =0$, то гессиан $d_2 g_i = (\partial_i \partial_j g) dx^j$ преобразуется, как квадратичная форма. 
+\end{to_lem}
+
+\begin{to_def} 
+    \textit{Гессиан} $H$ функции $f(x)$ -- квадратичная форма
+    \begin{equation*}
+        H(x) = \partial_i \partial_j f x^i x^j.
+    \end{equation*}
+    Иногда, гессиан -- определитель матрицы Гессе
+    \begin{equation*}
+        H(f) = \det \begin{bmatrix}
+            \partial_{1,1} f & \partial_{1,2} f 
+            & \cdots & \partial_{1,n} f\\
+            \partial_{2,1} f & \partial_{2,2} f
+            & \cdots & \partial_{2,n} f\\
+            \vdots & \vdots & \ddots & \vdots \\
+            \partial_{n,1} f & \partial_{n,2} f 
+            & \cdots & \partial_{n,n} f
+        \end{bmatrix}
+    \end{equation*}
+\end{to_def}
+
+\begin{to_lem} 
+    Если $df_{x_0} = 0$, то при любой замене координат $x = \varphi(t)$ второй дифференицал в точке $x_0 = \varphi(t_0)$ меняется так:
+    \begin{equation*}
+         d_2 (f \circ \varphi)_{t_0} (\Delta t) = d_2 f_{x_0} (D \varphi_{t_0} (\Delta t)).
+     \end{equation*} 
+\end{to_lem}

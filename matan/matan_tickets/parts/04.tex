@@ -12,12 +12,14 @@
 \end{to_def}
 
 \begin{to_thr}[Дифференицрование композиции]
-     Если $f$ дифференцируемо в точке $x_0$, $g$ дифференцируемо в точке $y_0 = f(x_0)$, то композиция $g \circ f$ дифференцируема в точке $x_0$, и $D(g \circ f)_{x_0} = Dg_{y_0} \circ Df_{x_0}$.
+     Если $f$ дифференцируемо в точке $x_0$, $g$ дифференцируемо в точке $y_0 = f(x_0)$, то композиция $g \circ f$ дифференцируема в точке $x_0$, и $D(g \circ f)_{x_0} = Dg_{y_0} \circ Df_{x_0}$. Или, в координатах
+     \begin{equation*}
+         \frac{\partial (g \circ f)}{\partial x^i}  = \frac{\partial g}{\partial y^j} \frac{\partial f^j}{\partial x^i}.
+     \end{equation*}
 \end{to_thr}
 
-
 \begin{to_def} 
-    Производная функции $f$ по направлению $v \in Rn$ в точке $x$ называется
+    Производная функции $f$ по направлению $v \in \mathbb{R}^n$ в точке $x$ называется
     \begin{equation*}
          \frac{\partial f}{\partial v} = 
          \lim_{t \to 0}
@@ -38,5 +40,6 @@
 \end{to_lem}
 
 \begin{to_thr} 
-    Если отображение $f \colon U \mapsto \mathbb{R}^m$ из открытого $U \subseteq \mathbb{R}^n$ задано в координатах, как $y_i = f_i(x_1, \ldots, x_n)$, для $i = 1,\ldots,m$ и функции $f_i$ имеют непрерывные частные производные на $U$, то $f$ непрерывно дифференцируемо на $U$. 
+    Если отображение $f \colon U \mapsto \mathbb{R}^m$ из открытого $U \subseteq \mathbb{R}^n$ задано в координатах, как $y_i = f_i(x^1, \ldots, x^n)$, для $i = 1,\ldots,m$ и  $f_i$ имеют непрерывные частные производные на $U$, то $f$ непрерывно дифференцируемо на $U$. 
 \end{to_thr}
+
