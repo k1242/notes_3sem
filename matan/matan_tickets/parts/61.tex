@@ -1,0 +1,53 @@
+Имеем полуриманову метрика в СТО пространства Минковского:
+\begin{equation*}
+	g = -d t \otimes d t + d x \otimes d x + d y \otimes d y + d z \otimes d z,
+\end{equation*}
+Но в задаче из задания мы видели ещё метрики, в которых описывались траектории световых лучей, например:
+\begin{equation*}
+	g = -d t \otimes d t + e^{\alpha t} (d x \otimes d x + d y \otimes d y + d z \otimes d z).
+\end{equation*}
+Это один из вариантов внутренней метрики пространства \textbf{де Ситтера}, а в общем случае оно $d S^n$ пишется так:
+\begin{to_def}[Пространство де Ситтера]
+\begin{equation*}
+	\left\{\begin{aligned}
+		&g = -d x^0 \otimes d x^0 + d x^1 \otimes d x^1 + \ldots + d ^n \otimes d x^n\\
+		&-d x^0 \otimes d x^0 + d x^1 \otimes d x^1 + \ldots + d ^n \otimes d x^n = \alpha^2.
+	\end{aligned}\right.
+\end{equation*}	
+\end{to_def}
+
+В таком пространстве можно ввести несколько видов метрик:
+
+\begin{tabular}{lll}
+	1) Статические координаты & 2) Плоское слоение&3) Открытое слоение \\
+	4) Замкнутое слоение&5) Слоение $d S^{n-1}$ & 6) Конформная метрика \\
+\end{tabular}
+
+\begin{to_exm}[Плоское слоение]
+	\begin{equation*}
+		\left\{\begin{aligned}
+			&x^0 = \alpha \sh \left(\frac{t}{\alpha}\right) + \frac{r^2}{2 \alpha} e^{t / \alpha}
+			\\
+			&x^1 = \alpha \ch \left(\frac{t}{\alpha}\right) - \frac{r^2}{2 \alpha} e^{t / \alpha}
+			\\
+			&x^i = e^{t/\alpha} y^i \; 2 \leq i \leq n
+		\end{aligned}\right.
+		\hspace*{1 cm} \Rightarrow \hspace*{1 cm}
+		g = - d t^2 + e^{2t/\alpha} d y^2, \text{ где } d y^2 = \sum_i d y^i \otimes d y^i.
+	\end{equation*}
+	И если приглядеться, плоское слоение и есть метрика из задания.
+
+	Из плоского слоения, положив $\zeta = \zeta_\infty - \alpha \exp(-t / \alpha) $ можно получить следующую \textit{конформную метрику}:
+	\begin{equation*}
+		g = \frac{\alpha^2}{\zeta_\infty - \zeta}^2 (d y^2 - d \zeta^2).
+	\end{equation*}
+\end{to_exm}
+
+Про свтетовые лучи в плоском слоении, в удобной  плоскости:
+\begin{equation*}
+	X = (t, x, 0, 0)^T \hspace*{1 cm}
+	\text{ метрика луча светоподобна: }
+	g(X, X)=0
+	\hspace*{1 cm} \Rightarrow \hspace*{1 cm}
+	x = \pm  \frac{2}{\alpha}\left(1 - e^{-\alpha t/2}\right).
+\end{equation*}
