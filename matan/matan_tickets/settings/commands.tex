@@ -35,5 +35,11 @@
     \setcounter{subsection}{\the\numexpr #1 - 1 \relax}
     \subsection{#2}
 }
+\newcommand{\secnum}[2]{
+    \section*{#2}
+    \setcounter{section}{#1}
+    \addcontentsline{toc}{section}{#2}
+}
+
 
 \newcommand{\set}[2]{{#1}^{1}, \ldots, {#1}^{#2}}
