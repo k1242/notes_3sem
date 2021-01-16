@@ -1,0 +1,46 @@
+
+\usepackage[T2A]{fontenc}                   %!? закрепляет внутреннюю кодировку LaTeX
+\usepackage[utf8]{inputenc}                 %!  закрепляет кодировку utf8
+\usepackage[english,russian]{babel}         %!  подключает русский и английский
+\usepackage[margin=1.7cm]{geometry}         %!  фиксирует оступ на 2cm
+
+\usepackage[unicode, pdftex]{hyperref}      %!  оглавление для панели навигации по PDF-документу + гиперссылки
+
+\usepackage{amsthm}                         %!  newtheorem и их сквозная нумерация
+\usepackage{hypcap}                         %?  адресация на картинку, а не на подпись к ней
+\usepackage{caption}                        %-  позволяет корректировать caption 
+\usepackage{fancyhdr}                       %   добавить верхний и нижний колонтитул
+\usepackage{wrapfig}                        %!  обтекание таблиц и рисунков
+
+\usepackage{amsmath}                        %!  |
+\usepackage{amssymb,textcomp, esvect,esint} %!  |важно для формул 
+\usepackage{amsfonts}                       %!  математические шрифты
+\usepackage{mathrsfs}                       %  добавит красивые E, H, L
+\usepackage{ulem}                           %!  перечеркивание текста
+\usepackage{abraces}                        %?  фигурные скобки сверху или снизу текста
+\usepackage{pifont}                         %!  нужен для крестика
+\usepackage{cancel}                         %!  аутентичное перечеркивание текста
+\usepackage{esvect}                         %  добавит вектора стрелочками
+
+\usepackage{graphicx}                       %?  графическое изменение текста
+\usepackage{indentfirst}                    %   добавить indent перед первым параграфом
+\usepackage{xcolor}                         %   добавляет цвета
+\usepackage{enumitem}                       %!  задание макета перечня.
+
+\usepackage{booktabs}                       %!  добавляет книжные линии в таблицы
+\usepackage{multirow}                       %   объединение ячеек в таблицах
+
+\usepackage{tikz}                           %!  высокоуровневые рисунки (кружочек)
+
+\usepackage{import}                         %   |
+\usepackage{xifthen}                        %   |
+\usepackage{pdfpages}                       %   | вставка рисунков pdf_tex
+\usepackage{transparent}                    %   |
+
+\setlength{\headheight}{12.52pt}            % избегать warning
+
+\usepackage{chngcntr}
+\renewcommand\thesubsection{\arabic{subsection}}
+\counterwithout{equation}{section}
+
+% \usepackage[upint]{stix}

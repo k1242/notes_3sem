@@ -1,0 +1,35 @@
+
+\newtheorem{to_thr}{Thr}[subsection]
+\newtheorem{to_suj}[to_thr]{Suj}
+\newtheorem{to_lem}[to_thr]{Lem}
+\newtheorem{to_com}[to_thr]{Com}
+\newtheorem{to_con}[to_thr]{Con}
+\theoremstyle{definition}
+\newtheorem{to_def}[to_thr]{Def}
+\newtheorem{to_tas}[to_thr]{Task}
+\newtheorem{to_exm}[to_thr]{Exm}
+
+
+\newenvironment{itemize*}
+{
+    \begin{itemize}
+        \setlength{\itemsep}{1pt}
+        \setlength{\parskip}{1pt}}
+    {\end{itemize}
+}
+
+\newenvironment{enumerate*}
+{
+    \begin{enumerate}
+        \setlength{\itemsep}{1pt}
+        \setlength{\parskip}{1pt}}
+    {\end{enumerate}
+}
+
+\newenvironment{description*}
+{
+    \begin{description}
+        \setlength{\itemsep}{1pt}
+        \setlength{\parskip}{1pt}}
+    {\end{description}
+}
