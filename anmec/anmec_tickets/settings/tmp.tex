@@ -1,0 +1,643 @@
+\documentclass[twoside]{article}
+
+\input{settings/preambule}
+
+\begin{document}
+
+\input{settings/settings}
+
+\input{settings/inputs}
+
+
+
+
+
+\end{document} Ну, что? Погнали техать?\begin{to_def} 
+    \textit{Обобщенная сила} $Q_k$ -- величина коэффициента $\partial q^k$ при вариации $\delta A$, то есть $\delta A = Q_k \delta q^k$.
+\end{to_def}
+
+\begin{to_thr}[Уравнения Лагранжа второго рода]
+     Каждая механическая система характеризуется определенной функцией $L(q, \dot{q}, t)$. Для голономных системы с конфигурационном многообразием степени $n$, верно что
+     \begin{equation*}
+         \frac{d}{dt} \frac{\partial L}{\partial \dot{q}_k} - \frac{\partial L}{\partial q_k} = 0, \hspace{0.5cm} k = 1, \ldots, n.
+     \end{equation*}
+     Где для потенциальных систем $L = T - \Pi$. В более общем случае можно записать, что
+     \begin{equation*}
+         \left(\frac{d }{d t} \frac{\partial T}{\partial \dot{q}^k} - \frac{\partial T}{\partial q^k} - Q^k\right)\delta q^k = 0, \hspace{0.5cm} 
+         Q^k = - \frac{\partial \Pi}{\partial q^k}.
+     \end{equation*}
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+Запишем второй закон Ньютона:
+$
+    \left(
+        m_i \vc{\mathrm{w}}_i = \vc{F}_i + \vc{R}_i
+    \right)\big|_{\cdot \d \vc{r}_i}
+$
+, где $\vc{R}_i$ -- реакции связи. Хотим записать уравнение в общековариантном виде.
+То есть мы <<замораживаем>> время, так чтобы $\vc{R} \cdot \delta \vc{r} = 0$. На таких перемещениях работа реакция связи равна 0.
+\begin{align*}
+    \bigg[
+        \sum m_i \left(\vc{\mathrm{w}}_i \cdot \frac{\partial \vc{r}_i}{\partial q^k} \right)
+        -
+        \left(\vc{F}_i \cdot \frac{\partial \vc{r}_i}{\partial q^k} \right)
+        -
+        \underbrace{
+        \left(
+            \vc{R}_i \cdot \frac{\partial \vc{r}_i}{\partial q^k} 
+        \right)}_{\cdot \delta q^k \to 0}
+    \bigg] \cdot \delta q^k &= 0;
+    \\
+    \left[
+        \frac{d}{dt} \frac{\partial }{\partial \dot{q}^k} \sum  \frac{m_i v_i^2}{2} 
+        -
+        \frac{\partial }{\partial q^k} \sum \frac{m_i v_i^2}{2} -
+        \sum \vc{F}_i \frac{\partial \vc{r}_i}{\partial q^k} 
+    \right] \delta q^k &= 0
+    , \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \sum_k
+    \left[
+        \frac{d}{dt} \frac{\partial T}{\partial \dot{q}^k} 
+        - \frac{\partial T}{\partial q^k} - Q^k
+    \right] \delta q^k = 0.
+\end{align*}
+Проблема остается в неголономных системах, где $\delta q^k$ не являются независимыми, получается, что уравнения Лагранжа справедливы для голономных систем.
+
+Вспоминая, что
+\begin{equation*}
+    \delta  A = \sum_i \vc{F}_i \cdot \delta \vc{r}_i =
+    \sum_i \left(\vc{F}_i \cdot \frac{\partial \vc{r}_i}{\partial q^k}\right) \delta q^k =
+    \sum_k 
+    \frac{\delta A_k}{\delta q^k} \delta q^k = Q_k \delta q^k.
+\end{equation*}
+Тогда пусть $\Pi (q, t) \colon Q^k = - \partial \Pi / \partial q^k$.  Тогда
+\begin{equation*}
+    \frac{d}{dt} \frac{\partial (T-\Pi)}{\partial \dot{q}^k} - \frac{\partial (T - \Pi)}{\partial q^k}  = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{d}{dt} \frac{\partial L}{\partial \dot{q}^k} - \frac{\partial L}{\partial q^k} = 0, \hspace{0.5cm} k = 1, \ldots, n.
+\end{equation*}
+То есть получили систему уравнений на $2n$ переменных.
+\end{proof}
+
+
+
+Подставим разложение кинетической энергии в уравнения Лагранжа, оставив только слагаемые с обобщёнными ускорениями $f_j (q, \dot{q}, t) = a_{jk} \ddot{q}^j$. 
+\begin{equation*}
+    T = \frac{1}{2} \sum_\nu m_\nu \dot{\vc{r}}_\nu^2 = \frac{1}{2} \sum_\nu
+    \left(
+        \frac{\partial \vc{r}_\nu}{\partial q^j} \dot{q}^j + \frac{\partial \vc{r}_\nu}{\partial t} 
+    \right)^2 = 
+    \frac{1}{2} 
+    \bigg[
+    \underbrace{
+        a_{jk} \dot{q}^j \dot{q}^k
+    }_{
+        2T_2
+    } +
+    \underbrace{
+        a_j \dot{q}^j
+    }_{
+        2T_1
+    } +
+    \underbrace{
+        a_0
+    }_{
+        2T_0
+    }
+    \bigg],
+\end{equation*}
+где коэффициенты, соответственно, равны 
+\begin{equation*}
+    a_{jk}(q, t) = \sum_\nu m_\nu \frac{\partial \vc{r}_\nu}{\partial q^j} \cdot \frac{\partial \vc{r}_\nu}{\partial q^k},
+    \hspace{0.5cm} 
+    a_j(q, t) = \sum_\nu m_\nu \frac{\partial \vc{r}_\nu}{\partial q^j} \cdot \frac{\partial \vc{r}_\nu}{\partial t},
+    \hspace{0.5cm} 
+    a_0 = \sum_\nu m_\nu 
+    \left(
+    \frac{\partial \vc{r}_\nu}{\partial t} 
+            \right)^2.
+\end{equation*}
+Для склерономных систем $\partial \vc{r}_\nu / \partial t = 0$, соотвественно $T = a_{jk} \dot{q}^j \dot{q}^k$, при чём $a_{jk} \equiv a_{jk} (q)$.
+
+Теперь подставим значение $T$ в уравнения Лагранжа, и получим, что
+$
+    a_{ik} \ddot{q}^k = f_i,
+$
+где $f_1 = f_1(q, \dot{q}, t)$. Уравнений в системе $n$, причём $a_{jk}$ является положительно определенной формой\footnote{
+    \red{Требует отдельного доказательства.}
+}, соответственно невырожденной. 
+
+\begin{to_thr} 
+    Уравнения Лагранжа второго рода разрешимы относительно обобщенных ускорений 
+\end{to_thr}
+Пусть есть также непотенциальные силы, часть обобщенных сил, соответстующих непотенциальным силам, обозначим $Q_i^*$, тогда
+\begin{equation*}
+    Q_1 = - \frac{\partial \Pi}{\partial q^i} + Q_i^*,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} - 
+    \frac{\partial T}{\partial q^i} 
+    =
+    - \frac{\partial \Pi}{\partial q^i} + Q_i^*.
+\end{equation*}
+Найдём производную по времени от кинетической энергии
+\begin{equation*}
+    \frac{d T}{d t} = 
+    \frac{\partial T}{\partial \dot{q}^i} \ddot{q}^i + \frac{\partial T}{\partial q^i} \dot{q}_i + \frac{\partial T}{\partial t}  =
+    \frac{d }{d t} \left(
+        \frac{\partial T}{\partial \dot{q}^i} \dot{q}^i
+    \right) - \left(
+        \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} - \frac{\partial T}{\partial q^i} 
+    \right) \dot{q}^i + \frac{\partial T}{\partial t}.
+\end{equation*}
+По \textit{теореме Эйлера об однороных функциях} для $f(x_1, \ldots, x_n)$ $k$-й степени верно что
+\begin{equation*}
+    \frac{\partial f}{\partial x^i} x^i = kf,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{\partial T}{\partial \dot{q}^i} \dot{q}^i = 2 T_2 + T_1.
+\end{equation*}
+В таком случае последнее равеноство перепишется, как
+\begin{align*}
+    \frac{d T}{d t} 
+    &=
+    \frac{d }{d t} (2 T_2 + T_1) + \frac{\partial \Pi}{\partial q^i} \dot{q}^i - Q_i^* \dot{q}^i + \frac{\partial T}{\partial t} 
+    = \\ &= 
+    \frac{d }{d t} (2 T_2 + 2 T_1 + 2 T_0) - \frac{d }{d t} (T_1 + 2 T_0) + \frac{d \Pi}{d t} - \frac{\partial \Pi}{\partial t} - Q_i^* \dot{q}^i + \frac{\partial T}{\partial t}.
+\end{align*}
+Таким образом мы доказали следующую теорему.
+
+\begin{to_thr}
+     Полная мехническая энергия голономной системы $E = T+ \Pi$ изменяется следующим образом:
+     \begin{equation*}
+         \frac{d E}{d t} = N^* + \frac{d }{d t} (T_1 + 2 T_0) + \frac{\partial \Pi}{\partial t} - \frac{\partial T}{\partial t}.
+     \end{equation*}
+     Где $N^* = Q^*_i \dot{q}^i$ -- мощность непотенциальных сил.
+\end{to_thr}
+
+
+\begin{to_def} 
+    Голономная склерономная система с  $\Pi \equiv \Pi(q)$ называется \textit{консервативной}, при чём $d E / d t = 0$.
+\end{to_def}
+
+\subsubsection*{Гироскопические силы}
+
+
+\begin{to_def} 
+    Непотенициальные силы называют \textit{гироскопическими}, если их мощность равна $0$. 
+\end{to_def}
+
+
+Пусть $Q^*_i = \gamma_{ik} \dot{q}^k$. Если $\gamma_{ik} = -\gamma_{ki}$, то силы $Q^*_i$ гиросокопические, соответсвенно кососимметричность $\gamma_{ik}$ необходима и достаточна.
+
+Более того, имеет место равеноство
+
+\vspace{-25pt}
+\begin{equation*}
+    \sum_\nu \vc{F}_\nu \cdot \vc{v}_\nu = \sum_\nu \vc{F}_\nu \cdot
+    \left(
+        \frac{\partial \vc{r}_\nu}{\partial q^i} \dot{q}^i + \frac{\partial \vc{r}_\nu}{\partial t} 
+    \right) 
+    =
+     \bigg(
+     \overbrace{
+     \sum_\nu \vc{F}_\nu \cdot \frac{\partial \vc{r}_\nu}{\partial q^i}
+     }^{
+     Q_i
+     }
+      \bigg)
+     \dot{q}^i + \sum_\nu \vc{F}_\nu \cdot \frac{\partial \vc{r}_\nu}{\partial t},
+     \hspace{0.25cm} \overset{\partial \vv{r}_\nu / \partial t = 0}{=}  \hspace{0.25cm} 
+     \sum_\nu \vc{F}_\nu \cdot \vc{v}_\nu = Q_i \dot{q}^i.
+\end{equation*}
+Поэтому для склерономных систем $N^* = 0$ выражается в $\sum_\nu \vc{F}_\nu^* \cdot \vc{v}_\nu = 0$.
+
+\subsubsection*{Диссипативные силы}
+
+\begin{to_def} 
+    Непотенциальные силы называются диссипативными, если их $N^* \leq 0$, но $N^* \not \equiv 0$. При $\Pi = \Pi(q)$ и диссипативности сил $d E / dt \leq 0$, тогда система называется диссипативной. В случае определенно-отрицательной $N^* (\dot{q})$ дисспация называется \textit{полной}, а в случае знакопостоянной отрицательной $N^*$ \textit{частичной}.
+\end{to_def}
+
+\begin{to_def} 
+    \textit{Диссипативной функцией Рэлея} называется  положительная квадратичная форма $R$ такая, что
+    \begin{equation*}
+        R = \frac{1}{2} b_{ik} \dot{q}^i \dot{q}^k,
+        \hspace{1cm}
+        Q^*_i = - \frac{\partial R}{\partial \dot{q}^i}  = - b_{ik} \dot{q}^k.
+    \end{equation*}
+    Тогда для склерономной системы можность $N^*$ непотенциальных сил равна
+    \begin{equation*}
+        \sum_\nu \vc{F}_\nu^* \cdot \vc{v}_\nu = Q_i^* \dot{q}^i = - 2 R \leq 0.
+    \end{equation*}
+\end{to_def}
+
+
+
+
+Путь существует функция $V (q, \dot{q}, t)$ такая, что обобщенные силы $Q_i$ определяются по формулам
+\begin{equation*}
+    Q_i = \frac{d }{d t} \frac{\partial V}{\partial \dot{q}^i} - \frac{\partial V}{\partial q^i}.
+\end{equation*}
+Тогда функция $V$ называется обобщенным потенциалом. Действительно, при $L = T - V$ уравнения движения запишутся в той же форме. Дифференцируя по времени выясним, что
+\begin{equation*}
+    Q_i = \frac{\partial^2 V}{\partial \dot{q}^i \partial \dot{q}^k} \ddot{q}^k + f_i,
+\end{equation*}
+где $f_i \equiv f_i ( q,\dot{q}, t)$. Но так как зависимость $Q_i(\ddot{q})$ это странно, то
+\begin{equation*}
+    V =  A_i(q, t) \dot{q}^i + V_0(q, t).
+\end{equation*}
+Тогда обобщенные силы
+\begin{equation*}
+    Q_i = \frac{d A_i}{d t} - \frac{\partial }{\partial q^i} \left(
+        A_k \dot{q}^k  + V_0
+    \right) = - \frac{\partial V_0}{\partial q^i} + \frac{\partial A_i}{\partial t} +
+    \left(
+        \frac{\partial A_i}{\partial q^k} - \frac{\partial A_k}{\partial q^i} 
+    \right) \dot{q}^k.
+\end{equation*}
+Если $\partial A_i / \partial t = 0$, то $Q_i$ складываются из потенциальных $\partial V_0 / \partial q_i$ и гироскопических $Q_i^* = \gamma_{ik} \dot{q}^k$, где $\gamma_{ik} = \partial_k A_i - \partial_i A_k$. Если система склерономна и $V_0 \neq V_0(t)$, то $T+V_0$ остается постоянной.
+
+В случае существования обобщенного потенциала $L$ всё так же многочлен второй степени относительно $q, \ \dot{q}$, при чём $L_2 = T_2$, так что уравнения остаются разрешимы относительно обобщенных ускорений.
+
+
+
+
+
+
+
+
+
+\begin{to_def} 
+    \textit{Действием по Гамильтону} называют функционал вида
+    \begin{equation*}
+         S = \int_{t_0}^{t_1} L(\gamma(t), \dot{\gamma}(t), t) \d t.
+    \end{equation*} 
+    Переходя к однопараметрическому семейству кривых $\gamma(\alpha, t)$ получим \textit{вариацию действия}
+    \begin{equation*}
+        S = \int_{t_0}^{t_1} L(\gamma(\alpha, t), \dot{\gamma}(\alpha, t), t) \d t, 
+        \hspace{0.5cm} 
+        \delta S = \frac{d S}{d \alpha} \delta \alpha.
+    \end{equation*}
+\end{to_def}
+
+
+\begin{to_thr}[принцип Гамильтона]
+    Кривая $\gamma(\alpha, t)$ является экстремалью действия тогда и только тогда, когда является решением уравнений Лагранжа
+     \begin{equation*}
+         \delta S = 0
+         \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm} 
+         \gamma(\alpha, t) \in \textnormal{Sol}\,
+         \left(
+     \frac{d}{dt} \frac{\partial L}{\partial \dot{q}^k} - \frac{\partial L}{\partial q^k} = 0
+         \right)
+         .
+     \end{equation*}
+\end{to_thr}
+
+
+\begin{proof}[$\triangle$]
+    Давайте просто проварьируем Лагранжиан, тогда
+    \begin{align*}
+        \delta S 
+        &=
+         \int_{t_0}^{t_1} 
+        \left(
+            \frac{\partial L}{\partial q^i} \frac{\partial q^i}{\partial \alpha} +
+            \frac{\partial L}{\partial \dot{q}^i} \frac{\partial \dot{q}^i}{\partial \alpha}  
+        \right) \delta \alpha \d t 
+        =
+        \int_{t_0}^{t_1} \left(
+            \frac{\partial L}{\partial q^i} \delta q^i + \frac{\partial L}{\partial \dot{q}^i} \delta \dot{q}^i
+        \right) \d t
+        =
+        \frac{\partial L}{\partial \dot{q}} \partial q \bigg|_{t_1}^{t_2}
+        + \int_{t_1}^{t_2}
+        \left(
+            \frac{\partial L}{\partial q^i} - \frac{d }{d t} \frac{\partial L}{\partial \dot{q}^i} 
+        \right) \,\delta q^i \d t
+        = 0.
+    \end{align*}
+    таким образом уравнения Лагранжа выполнены. 
+\end{proof}
+
+% в первых билет засунуть конфигурационное многообразие
+\definecolor{grey}{HTML}{666666}
+\definecolor{linkcolor}{HTML}{0000CC}
+\definecolor{urlcolor}{HTML}{006600}
+\hypersetup{
+    pdfstartview=FitH,  
+    linkcolor=linkcolor,
+    urlcolor=urlcolor, 
+    colorlinks=true,
+    citecolor=blue}% add (renew) commands
+
+\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand{\d}{\, d}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\renewcommand{\L}{\mathcal{L}}
+
+
+\newcommand{\vc}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\T}{^{\text{T}}}
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+\newcommand{\diag}{\mathop{\mathrm{diag}}\nolimits}
+\newcommand{\id}{\mathop{\mathrm{id}}\nolimits}
+\newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits}
+\renewcommand{\div}{\mathop{\mathrm{div}}\nolimits}
+\newcommand{\rot}{\mathop{\mathrm{rot}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\Spec}{\mathop{\mathrm{Spec}}\nolimits}
+\newcommand{\sign}{\mathop{\mathrm{sign}}\nolimits}
+\newcommand{\tr}{\mathop{\mathrm{tr}}\nolimits}
+\newcommand{\rg}{\mathop{\mathrm{rg}}\nolimits}
+
+\newcommand{\const}{\text{const}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\xmark}{\ding{55}}
+
+\newcommand{\sbsnum}[2]{
+    \setcounter{subsection}{\the\numexpr #1 - 1 \relax}
+    \subsection{#2}
+}
+\newcommand{\secnum}[2]{
+    \section*{#2}
+    \setcounter{section}{#1}
+    \addcontentsline{toc}{section}{#2}
+}
+
+
+\newcommand{\set}[2]{{#1}^{1}, \ldots, {#1}^{#2}}
+\newtheorem{to_thr}{Thr}[subsection]
+\newtheorem{to_suj}[to_thr]{Suj}
+\newtheorem{to_lem}[to_thr]{Lem}
+\newtheorem{to_com}[to_thr]{Com}
+\newtheorem{to_con}[to_thr]{Con}
+\theoremstyle{definition}
+\newtheorem{to_def}[to_thr]{Def}
+\newtheorem{to_tas}[to_thr]{Task}
+\newtheorem{to_exm}[to_thr]{Exm}
+
+
+\newenvironment{itemize*}
+{
+    \begin{itemize}
+        \setlength{\itemsep}{1pt}
+        \setlength{\parskip}{1pt}}
+    {\end{itemize}
+}
+
+\newenvironment{enumerate*}
+{
+    \begin{enumerate}
+        \setlength{\itemsep}{1pt}
+        \setlength{\parskip}{1pt}}
+    {\end{enumerate}
+}
+
+\newenvironment{description*}
+{
+    \begin{description}
+        \setlength{\itemsep}{1pt}
+        \setlength{\parskip}{1pt}}
+    {\end{description}
+}% add page header
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RE,LO]{\textsc{Ф\raisebox{-1.5pt}{и}з\TeX}}
+\fancyhead[LE,RO]{Ж\raisebox{-1.5pt}{и}К}
+% \fancyhead[CO,CE]{\leftmark}
+\fancyfoot[LE,RO]{\textcolor{grey}{\texttt{\thepage}}}
+
+% document's head
+% \phantom{42}
+
+\begin{center}
+    \LARGE \textsc{Билеты к экзамену по <<Аналитической Механике>>, ФОПФ}
+\end{center}
+
+\hrule
+
+\phantom{42}
+
+\begin{flushright}
+    \begin{tabular}{rr}
+    % written by:
+        \textbf{Авторы}: 
+        & Хоружий Кирилл \\
+        & Примак Евгений \\
+        &\\
+    % date:
+        \textbf{От}: &
+        \textit{\today}\\
+    \end{tabular}
+\end{flushright}
+
+\thispagestyle{empty}
+\tableofcontents
+\newpage% input files
+
+\input{settings/heading}
+
+
+\sbsnum{31}{Уравнение Лагранжа второго рода}
+\input{parts/31.tex}
+
+\sbsnum{32}{Разрешимость уравнений Лагранжа}
+\input{parts/32.tex}
+
+\sbsnum{33}{Изменение полной мехнической энергии голономной системы}
+\input{parts/33.tex}
+
+\sbsnum{34}{Обобщенный потенциал и первые интегралы лагранжевых систем}
+\input{parts/34.tex}
+
+
+% \sbsnum{36}{Принцип наименьшего действия}
+% \input{parts/36.tex}\newcommand{\dmat}[4]{
+  \ifthenelse{
+    \equal{#1}{3}
+  }{
+\begin{pmatrix}
+    #2 & 0 & 0 \\
+    0 & #3 & 0 \\
+    0 & 0 & #4 \\
+\end{pmatrix}
+  }{
+  \ifthenelse{
+      \equal{#1}{2}
+    }{
+  \begin{pmatrix}
+      #2 & 0 \\
+      0 & #3 \\
+  \end{pmatrix}
+    }{
+      \text{\textcolor{red}{error}}
+    }
+  }
+}
+
+\newcommand{\skmat}[4]{
+  \ifthenelse{
+    \equal{#1}{3}
+  }{
+\begin{pmatrix}
+    0 & -#4 & #3 \\
+    #4 & 0 & -#2 \\
+    -#3 & #2 & 0 \\
+\end{pmatrix}
+  }{
+  \ifthenelse{
+      \equal{#1}{2}
+    }{
+  \begin{pmatrix}
+      0 & #2 \\
+      -#2 & 0 \\
+  \end{pmatrix}
+    }{
+      \text{\textcolor{red}{error}}
+    }
+  }
+}
+\usepackage[T2A]{fontenc}                   %!? закрепляет внутреннюю кодировку LaTeX
+\usepackage[utf8]{inputenc}                 %!  закрепляет кодировку utf8
+\usepackage[english,russian]{babel}         %!  подключает русский и английский
+\usepackage[margin=1.7cm]{geometry}         %!  фиксирует оступ на 2cm
+
+\usepackage[unicode, pdftex]{hyperref}      %!  оглавление для панели навигации по PDF-документу + гиперссылки
+
+\usepackage{amsthm}                         %!  newtheorem и их сквозная нумерация
+\usepackage{hypcap}                         %?  адресация на картинку, а не на подпись к ней
+\usepackage{caption}                        %-  позволяет корректировать caption 
+\usepackage{fancyhdr}                       %   добавить верхний и нижний колонтитул
+\usepackage{wrapfig}                        %!  обтекание таблиц и рисунков
+
+\usepackage{amsmath}                        %!  |
+\usepackage{amssymb,textcomp, esvect,esint} %!  |важно для формул 
+\usepackage{amsfonts}                       %!  математические шрифты
+\usepackage{mathrsfs}                       %  добавит красивые E, H, L
+\usepackage{ulem}                           %!  перечеркивание текста
+\usepackage{abraces}                        %?  фигурные скобки сверху или снизу текста
+\usepackage{pifont}                         %!  нужен для крестика
+\usepackage{cancel}                         %!  аутентичное перечеркивание текста
+\usepackage{esvect}                         %  добавит вектора стрелочками
+
+\usepackage{graphicx}                       %?  графическое изменение текста
+\usepackage{indentfirst}                    %   добавить indent перед первым параграфом
+\usepackage{xcolor}                         %   добавляет цвета
+\usepackage{enumitem}                       %!  задание макета перечня.
+
+\usepackage{booktabs}                       %!  добавляет книжные линии в таблицы
+\usepackage{multirow}                       %   объединение ячеек в таблицах
+
+\usepackage{tikz}                           %!  высокоуровневые рисунки (кружочек)
+
+\usepackage{import}                         %   |
+\usepackage{xifthen}                        %   |
+\usepackage{pdfpages}                       %   | вставка рисунков pdf_tex
+\usepackage{transparent}                    %   |
+
+\setlength{\headheight}{12.52pt}            % избегать warning
+
+\usepackage{chngcntr}
+\renewcommand\thesubsection{\arabic{subsection}}
+\counterwithout{equation}{section}
+
+\renewcommand{\theequation}{\arabic{equation}}
+% \usepackage[upint]{stix}% file's preambule
+%%%%%%%%%%%%%%%%%%%
+
+
+
+% connect packages
+\input{settings/packages}
+
+% create environment
+\input{settings/environments}
+
+% document palette
+\input{settings/colors}
+
+% add (renew) commands
+\input{settings/commands}
+
+% add page header
+\input{settings/header}
+
+% matrixes shortcuts 
+\input{settings/matrixes}
+
+% additional symbols and commands
+\input{settings/symbols}
+
+
+
+
+
+
+
+% set skip of equation length 
+
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\abovedisplayshortskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlength{\belowdisplayshortskip}{3pt}
+
+\numberwithin{equation}{section}
+
+\DeclareRobustCommand{\tmpsim}{ %%%%%%%%%%%%%% ~ < %%%%%%%%%%%%%%%%%%%
+  \mathbin{\text{
+      \raisebox{-1pt}{
+            \hspace{-4.5pt} \rotatebox{-26}{\scalebox{0.8}[0.7]{$\sim$}}
+        }
+  }}
+}
+\def\lesim{{
+    \setbox0\hbox{$\ <\ $}
+    \rlap{\hbox to \wd0{\hss$\tmpsim$\hss}}\box0
+}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\def\letuscom{%%%%%%%%%%%%%%%%%%%%%% ПУСТЬ %%%%%%%%%%%%%%%%%%%%%%%%%%
+\mathord{\setbox0=\hbox{$\exists$}%
+     \hbox{\kern 0.125\wd0%
+           \vbox to \ht0{%
+              \hrule width 0.75\wd0%
+              \vfill%
+              \hrule width 0.75\wd0}%
+           \vrule height \ht0%
+           \kern 0.125\wd0}%
+   }%
+}
+\newcommand{\letus}{\raisebox{-1.2pt}{$\letuscom$}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{arydshln} %%%%%%%%%%%%%%% ЛИНИИ В МАТРИЧКЕ %%%%%%%%%%%%%%%
+\makeatletter
+  \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+    \hskip -\arraycolsep
+    \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\makeatletter %%%%%%%%%%%%%%% КРУЖОЧЕК %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*{\encircled}[1]{\relax\ifmmode\mathpalette
+\@encircled@math{#1}\else\@encircled{#1}\fi}
+\newcommand*{\@encircled@math}[2]{\@encircled{$\m@th#1#2$}}
+\newcommand*{\@encircled}[1]{%
+  \tikz[baseline,anchor=base]{\node[draw,circle,outer sep=0pt,
+                                        inner sep=.2ex] {#1};}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
