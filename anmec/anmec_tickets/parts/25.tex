@@ -1,0 +1,128 @@
+\begin{to_def}[Предмет рассмотрения]
+	Ввиду макроскопического рассмотрения \textit{жидкости}(газы) в гидродинамике представлется как сплошная среда, то есть малый элемент объёма жидкости содержит ещё достаточно больше количество молекул, относительно межмолекулярного расстояния.
+\end{to_def}
+
+Для описания движения жидкости требуется задать распределение скорости жидкости $\vc{v} = \vc{v}(x,y,z,t)$ и какие-либо её две термодинамические величины, как, например, плотность и давление. Важно отметить, что все эти величины относятся не к отдельной частице, а к точке в пространстве в определенное время.
+
+\begin{to_thr}[Уравнение непрерывности]
+\phantom{239}
+
+\begin{proof}[$\triangle$]
+	В маленьком объёме $V_{0}$ количество жидкости есть $\int_{V_0} \rho d V$.
+	Через элемент поверхности, ограничивающей $V_0$, в единицу времени протекает $\rho \vc{v} \cdot d \vc{f}$ жидкости --- положительно или отрицательное число, в зависимости от того, вытекает или втекает жидкость соответственно.
+	Тогда приравниваем для вытекания жидкости два наших рассуждения:
+	\begin{equation*}
+		- \frac{\partial}{\partial t} \int \rho d V =  \oint \rho \vc{v} \cdot d \vc{f}
+		\hspace*{0.5 cm} 
+		\Rightarrow 
+		\hspace*{0.5 cm}
+		\int \left(\frac{\partial \rho}{\partial t} + \div \rho \vc{v}\right)d V = 0
+		\hspace*{0.5 cm}
+		\Rightarrow
+		\hspace*{0.5 cm}
+		\frac{\partial \rho}{\partial t} + \div \rho \vc{v} = 0.
+	\end{equation*}
+	Последнее следует из того, что равенство должно иметь для любого объёма, таким образом получили искомое \textit{уравнение непрерывности}.
+\end{proof}
+	
+\end{to_thr}
+
+\begin{to_thr}[Уравнение Эйлера]
+\phantom{239}
+
+\begin{proof}[$\triangle$]
+	Выделим в жидкости некоторый объём, полная сила, действующая на этот объём: $- \oint p d \vc{f} = - \int \grad p d V$, где интеграл из взятого по поверхности объёма преобразуется в сам рассматриваемый объём.
+	Таким образом получили, что на единицу объёма жидкости будет действовать сила:
+	\begin{equation*}
+		\rho \frac{d \vc{v}}{d t} = - \grad p.
+	\end{equation*}
+	Однако стоящая здесь скорость определяет изменение скорости именно элемента объёма, а не точки в пространстве.
+	Запишем это изменение скорости:
+	\begin{equation*}
+		d \vc{v} 
+		=
+		 \frac{\partial \vc{v}}{\partial t} d t + \frac{\partial \vc{v}}{\partial x^i} d x^i 
+		= 
+		\frac{\partial \vc{v}}{\partial t} d t + (d \vc{r} \cdot \nabla) \vc{v}
+		\hspace*{1 cm}
+		\Rightarrow
+		\hspace*{1 cm}
+		\frac{\partial \vc{v}}{\partial t} + (\vc{v} \nabla) \vc{v} = - \frac{1}{\rho} \grad p.
+	\end{equation*}
+	Последнее и есть искомое уравнение Эйлера.
+\end{proof}
+\end{to_thr}
+
+Если же жидкость движется во внешнем поле тяжести, то, на каждый элемент объёма будет действовать сила, которая просто добавится к изначальному уравнению: 
+\begin{equation*}
+	\frac{\partial \vc{v}}{\partial t} + (\vc{v} \nabla) \vc{v} = - \frac{\nabla p}{\rho} + \vc{g}.
+\end{equation*}
+
+Чтобы нормально учесть вязкость, нужно поговорить про \textit{поток импульса}.
+Импульс единицы объёма жидкости есть $\rho \vc{v}$, скорость изменения его компоненты:
+\begin{equation*}
+	\frac{\partial}{\partial t} \rho v^i = \rho \frac{\partial v^i}{\partial t} + \frac{\partial \rho}{\partial t} v^i.
+\end{equation*}
+Уравнения непрерывности и Эйлера запишутся в тензорном виде:
+\begin{equation*}
+	\frac{\partial \rho}{\partial t} = - \frac{\partial (\rho v^k)}{\partial x^k},
+	\hspace*{0.5 cm}
+	\hspace*{0.5 cm}
+	\frac{\partial v^i}{\partial t} = - v^k \frac{\partial v^i}{\partial x^k} - \frac{1}{\rho} \delta^{i k} \frac{\partial p}{\partial x^k}.
+\end{equation*}
+Тогда получим:
+\begin{equation*}
+	\frac{\partial}{\partial t} \rho v^i 
+	= 
+	- \rho v^k \frac{\partial v^i}{\partial x^k} -  \delta^{i k} \frac{\partial p}{\partial x^k} - v^i \frac{\partial \rho v^k}{\partial x^k} 
+	=
+	-\delta^{i k} \frac{\partial p}{\partial x^k} - \frac{\partial}{\partial x^k} \rho v^i v^k
+	= - \frac{\partial \Pi^{i k}}{\partial x^k}.
+\end{equation*}
+\begin{to_def}
+	$\Pi^{i k} $ --- \textit{тензор плотности потока импульса}:
+	$
+		\Pi^{i k} = p \delta^{i k} + \rho v^i v^k.
+	$
+\end{to_def}
+
+Таким образом уравнение Эйлера у нас записалось в виде:
+$
+	\frac{\partial}{\partial t} \rho v^i = - \frac{\partial \Pi^{i k}}{\partial x^k}.
+$
+Поток импульса представляет собой чисто обратимый перенос импульса, связанный с просто механическим передвижением различных участков жидкости и с действующими в жидкости силами давления.
+\textit{Вязкость} (внутреннее трение) жидкости проявляется в наличии ещё дополнительного, необратимого переноса импульса из мест с большой скоростью в места с меньшей.
+
+Поэтому уравнение движения вязкой жидкости можно получить, прибавив к идеальному потоку импульса дополнительный член $\sigma^{i k}_{visc}$, определяющий такой вязкий перенос:
+$
+\Pi^{i k} = p \delta^{i k} + \rho v^i v^k - \sigma^{i k}_{visc} = - \sigma^{i k} + \rho v^i v^k.
+$
+\begin{to_def}
+	Таким образом: $\sigma^{i k} = - p \delta^{i k} + \sigma^{i k}_{visc}$ называют \textit{тензором напряжений}, а $\sigma^{i k}_{visc}$ --- вязким тензором напряжений.
+\end{to_def}
+
+Чтобы написать выражение для вязкого напряжения сделаем пару оговорок. 
+\textit{Во первых}, градиенты скорости движения участков жидкости относительно друг друга не велики, тогда $\sigma^{i k}_{visc}$ зависит лишь от первых производных скорости по координатам, линейно. \textit{Во вторых}, не зависящие от первых производных величины должны обращаться в нуль как для скорости потока $\vc{v} = \const$ и тензор должен быть нулевым. \textit{В третьих}, $\sigma^{i k}_{visc} = 0$ когда жидкость совершает целое равномерное вращение, поскольку никакого внутреннего трения тогда не будет.
+Для такого равномерного вращения с $\vc{v} = [\vc{\omega} \vc{r}]$ линейными комбинациями производных обращающимися в нуль будут: $\frac{\partial v^i}{\partial x^k} + \frac{\partial v^k}{\partial x^i}$.
+
+Это всё даёт нам мотивацию для не шибко сильных потоков несжимаемой жидкости согласится с Сэром Исааком Ньютоном, и написать тензор вязкого напряжения, как \textit{тензор скорости деформации}:
+\begin{equation*}
+	\sigma^{i k}_{visc} = \eta \left(\frac{\partial v^i}{\partial x^k} + \frac{\partial v^k}{\partial x^i}\right),
+	\hspace*{1 cm}
+	\Rightarrow
+	\hspace*{1 cm}
+	\sigma^{i k} = - p \delta^{i k} + \eta \left(\frac{\partial v^i}{\partial x^k} + \frac{\partial v^k}{\partial x^i}\right).
+\end{equation*}
+А уравнение Эйлера тогда для несжимаемой жидкости запишется:
+\begin{equation*}
+	\rho \left(\frac{\partial v^i}{\partial t} + v^k \frac{\partial v^i}{\partial x^k}\right)
+	=
+	- \delta^{i k} \frac{\partial p}{\partial x^k} + \frac{\partial}{\partial x^k} \left[\eta \left(\frac{\partial v^i}{\partial x^k} + \frac{\partial v^k}{\partial x^i}\right)\right].
+\end{equation*}
+а в более человеческом, привычном глазу, виде:
+\begin{equation*}
+	\frac{\partial \vc{v}}{\partial t} + (\vc{v} \triangle) \vc{v} = - \frac{1}{\rho} \grad p + \frac{\eta}{\rho} \Delta \vc{v}.
+\end{equation*}
+\begin{to_def}
+	Коэффициент $\eta$ называется --- \textit{динамическим коэффициентом вязкости}, а отношение $\eta/\rho = \nu$ --- \textit{кинематической вязкостью}.
+\end{to_def}

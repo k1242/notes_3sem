@@ -1,1 +1,90 @@
-Ну, что? Погнали техать?
+Для точки $P$ движущейся относительно некоторого неподвижного тела (свяжем с ним точку $O$), можно ввести следующие характеристики:
+\begin{to_def}[Радиус вектор, скорость и ускорение точки $P$]
+	\begin{equation*}
+	\vc{r} = \overrightarrow{O P},
+	\hspace*{1 cm}
+	\vc{v} = \frac{d \vc{r}}{d \vc{t}},
+	\hspace*{1 cm}
+	\vc{w} =  \frac{d \vc{v}}{d t} = \frac{d^2 \vc{r}}{d t^2}.
+\end{equation*}	
+\end{to_def}
+
+\begin{to_def}
+	Для задания движения точки, зная её траекторию, можно сопоставить ей дуговую координату $\sigma (t)$ и получить выражения для скорости и ускорения, выраженные в осях \textit{естественного трёхгранника} $\vc{\tau}, \vc{n}, \vc{b}$.
+	Таким образом для $\vc{r} = \vc{r}(\sigma(t))$:
+	\begin{equation*}
+		\vc{\tau} (\sigma) = \frac{d \vc{r}}{d \sigma}, 
+		\hspace*{1 cm} 
+		\frac{d \vc{\tau}}{d \sigma} = \frac{1}{\rho} \vc{n} (\sigma),
+	\end{equation*}
+	где $\rho$ -- радиус кривизны. Для кривой в $\mathbb{R}^3$ добавим ещё вектор $b$ для правой тройки. Таким образом получим формулы Френе:
+	\begin{equation*}
+		\frac{d \vc{\tau}}{d s} = \frac{1}{\rho} \vc{n},
+		\hspace*{1 cm}
+		\frac{d \vc{n}}{d s} = - \frac{1}{\rho} \vc{\tau} + \varkappa \vc{b},
+		\hspace*{1 cm}
+		\frac{d \vc{b}}{d s} = - \varkappa \vc{n}.
+	\end{equation*}
+\end{to_def}
+
+Таким образом сможем в компонентах трёхгранника выписать скорость и ускорение точки:
+\begin{gather*}
+   \vc{v} = \frac{d \vc{r}}{d t} = \frac{d \vc{r}}{d \sigma} \frac{d \sigma}{d t} = v_\tau \vc{\tau}
+   \\
+   \vc{w} = \frac{d \vc{v}}{d t} = \frac{d_\tau}{d t} \vc{\tau} + v_\tau \frac{d \vc{\tau}}{d \sigma} \frac{d \sigma}{d t} = \frac{d^2 \sigma}{d t^2} \vc{\tau} + \frac{v_\tau^2}{\rho} \vc{n}.
+\end{gather*}
+Как видно, ускорение точки представилось в видео $w = w_n + w_\tau $ --- \textit{нормальной} и \textit{тангенциальной} составляющей.
+
+\begin{to_lem}[Из матана]
+	Для $f_i \in  C^2 \colon U \mapsto V$, если $X$ -- касательный вектор в точке $p \in U$, то $X(f)$ можно определить как:
+	\begin{equation*}
+		X(f) = X(x^i) \frac{\partial f(p)}{\partial x^i}, \text{ а координаты этого вектора в криволинейных координатах: } X = X^i \frac{\partial}{\partial x^i}.
+	\end{equation*}
+\end{to_lem}
+
+Каждую материальную точку можем определить $\vc{r}_1, \ldots, \vc{r}_N$ -- итого $\mathbb{R}^{3N}$. Но есть некоторые ограничения вида
+\begin{equation*}
+    f_i (\vc{r}, t) = 0.
+\end{equation*}
+Вложим в фазовое пространство многообразие $M$, в котором локально всё хорошо. Тогда
+$\dim M = n$ -- число степеней свободы, а параметризация $q_1, \ldots, q_N$ -- криволинейные координаты. В каждой $A \in M$ верно, что $\dot{\vc{q}} \in TM_A$, то есть
+\begin{equation}
+    TM = \bigcup_q T_qM \ni (q, \dot{q})
+\end{equation}
+
+И такБ движение точки можно задать, если её криволинейные координаты --- известне функции $q(t)$.
+\begin{equation*}
+	\vc{r} = \vc{r}(q_1, q_2, q_3) = x \vc{i} + y \vc{j} + z \vc{k}.
+\end{equation*}
+
+\begin{to_def}
+	\textit{Коэффициентами Ламе} такие $H^i$. C их помощью удобно выразить единичные базисные векторы криволинейных координат: 
+	\begin{equation*}
+		H_i = \left|\frac{\partial \vc{r}}{\partial q^i} \right| = \sqrt{\left(\frac{\partial x}{\partial q^i}\right)^2 + \left(\frac{\partial y}{\partial q^i}\right)^2 + \left(\frac{\partial z}{\partial q^i}\right)^2}.
+		\hspace*{1 cm}
+		e^i = \frac{1}{H_i} \frac{\partial \vc{r}}{\partial q^i}.
+	\end{equation*}
+\end{to_def}
+
+Далее будем координатными векторами называть $\vc{g}_i(\vc{r}) = \frac{\partial \vc{r}}{\partial q^i}$. Разложение произвольного вектора по локальному базису имеет вид:
+\begin{equation*}
+	\vc{a} = a^i \vc{g}_i = a_j \vc{g}^j.
+\end{equation*}
+Здесь $\vc{g}^j$ --- векторы двойственного базиса к базису из $\vc{g}_i$. В двойственном же (взаимном) базисе из матана мы видели:
+\begin{equation*}
+	X(f) = d f (X) = \partial_x f,
+	\hspace*{1 cm}
+	d x^i (\frac{\partial}{\partial x^j}) = \frac{\partial x^i}{\partial x^j} = \delta_j^i,
+	\hspace*{1 cm}
+	a = a_i d x^i.
+\end{equation*}
+Таким образом получаем скорость точки и её ковариантную компоненту:
+\begin{equation*}
+	\vc{v} = \frac{d \vc{r}}{d t} = \frac{\partial \vc{r}}{\partial q^i} \frac{d q^i}{d t} = \vc{g}_i \dot{q}^i,
+	\hspace*{1 cm}
+	v^i = \vc{q}^i.
+\end{equation*}
+И для ускорения:
+\begin{equation*}
+	w_k = \left(\frac{d \vc{v}}{d t}\right)_k = \frac{(d \vc{v})_k}{d t} = g_{k j} \frac{d v^j}{d t} + \Gamma_{k i j} v^j v^i.
+\end{equation*}

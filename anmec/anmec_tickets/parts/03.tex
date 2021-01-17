@@ -1,0 +1,47 @@
+Проведём два вектора $\vc{r}_A, \vc{r}_O$:
+\begin{equation*}
+    \vc{r}_A = \vc{r}_O + \vc{r} = \vc{r}_O + R(t) \vc{\rho}
+    \hspace{0.5cm} \overset{d / dt}{\Rightarrow} \hspace{0.5cm} 
+    \vc{v}_A = \vc{v}_O + \dot{R} \rho = \vc{v}_O + \dot{R} R^{-1}\vc{r}
+\end{equation*}
+но,
+\begin{equation*}
+    RR\T = E, \dot{R} R\T + R \dot{R}\T = 0, \dot{R} R\T = - R \dot{R}\T,
+    (\dot{R} R^{-1})\T = - \dot{R} R^{-1}.
+\end{equation*}
+
+То есть $\dot{R} R^{-1}$ кососимметрична. Тогда пусть
+\begin{equation*}
+    \dot{R} R^{-1} = \Omega = \begin{pmatrix}
+        0 & -\omega_z & w_y \\
+        w_z & 0 & -\omega_x \\
+        -\omega_y & \omega_x & 0\\
+    \end{pmatrix}
+\end{equation*}
+Таким образом мы доказали следующую теорему.
+
+\begin{to_thr}[формула Эйлера]
+\label{eq_euler}
+    Существует единственный вектор\footnote{
+        Псевдоветор же, нет?
+    } $\vc{\omega}$, называемый \textbf{угловой скоростью тела}, с помощью которого скорость $\vc{v}$ точки тела может быть представлена в виде
+    \begin{equation*}
+        \vc{v}_A = \vc{v}_O + \vc{\omega} \times \vc{r}
+        \hspace{0.5cm} \text{--} \hspace{0.5cm} \text{\textbf{формула Эйлера}.}
+    \end{equation*}
+\end{to_thr}
+
+
+Тогда, например, при постоянном радиус векторе верно, что
+\begin{equation*}
+    \vc{v}_A = \frac{d \vc{a}}{dt} = \vc{\omega} \times \vc{a},
+    \hspace{0.5cm} \text{при условии $a = \const$}.
+\end{equation*}
+
+Можно вывести ускорение точки твёрдого тела
+\begin{align*}
+    \vc{\mathrm{w}}_A &= \vc{\mathrm{w}}_O + \frac{d \vc{\omega}}{dt} \times \vc{r} + \vc{\omega} \times \frac{d \vc{r}}{dt}, \\
+    \vc{\mathrm{w}}_A &= \vc{\mathrm{w}}_O + \vc{\varepsilon} \times \vc{r} + \vc{\omega} \times \left(\vc{\omega} \times \vc{r} \right)
+    \hspace{0.5cm} \text{--} \hspace{0.5cm} \text{\textbf{формула Ривальса},}
+\end{align*}
+где $\vc{\varepsilon} = d \vc{\omega} / d t$ -- \textit{угловое ускорение}.
