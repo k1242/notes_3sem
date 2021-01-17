@@ -1,0 +1,125 @@
+\subsubsection*{Подход к деформации}
+Под влиянием приложенных внешних сил твердые тела в той или иной степени \textit{деформируются}, то есть меняют свою форму и объём.
+Рассмотрим точку деформируемого тела $\vc{r}(x^1,x^2,x^3)$, которая после деформации станет $\vc{r}'$.
+\begin{to_def}
+	$\vc{u} = \vc{r}' - \vc{r}$ --- \textit{вектор деформации}. Координаты $y^i$ смещенной точки могут быть выражены через $x^i$, таким образом $\vc{u}(x^i)$ полностью определяет деформацию тела.
+\end{to_def}
+
+Рассмотрим две близкие точки, расстояние между ними до деформации
+$d (l')^2 = (d x^1)^2 + (d x^2)^2 + (d x^3)^2$, а 
+после $d `l^2 = (d y^1)^2 + (d y^2)^2 + (d y^3)^2$.
+Записав через деформацию (здесь $u_i = g_{i k}u^k$):
+\begin{equation*}
+	d (l')^2 = (d x^i + d u_i)^2
+	\hspace*{0.4 cm}
+	\Rightarrow
+	\hspace*{0.4 cm}
+	\left(d u_i = \frac{\partial u_i}{\partial x^k} d x^k \right)
+	\hspace*{0.4 cm}
+	\Rightarrow
+	\hspace*{0.4 cm}
+	d (l')^2 = d l^2 + 2 \frac{\partial u_i}{\partial x^k} d x^i d x^k + \frac{\partial u_i}{\partial x^k} \frac{\partial u_i}{\partial x^l} d x^k d x^l.
+\end{equation*}
+Поменяем во втором члене индексы $i$ и $k$, а в третьем $i$ и $l$:
+\begin{equation*}
+	d (l')^2 = d l^2 + 2 u_{i k} d x^i d x^k,
+	\hspace*{1 cm}
+	\text{где }
+	u_{i k} = \frac{1}{2} \left(\frac{u_i}{\partial x^k} + \frac{u_k}{\partial x^i} + \frac{u_i}{\partial x^l} \frac{u_l}{\partial x^k}\right).
+\end{equation*}
+Как и всякий симметричный тензор, можно привести тензор $u_{i k}$ в каждой данной точке к главным осям. 
+Это значит, что в каждой данной точке можно выбрать такую систему координат --- главные оси тензора, --- в которой из всех компонент 
+$u_{i k}$ отличны от нуля только диагональные компоненты $u_{1 1}, u_{2 2}, u_{3 3}$.
+
+При малых же деформациях, за исключением редких случаем, и вектор деформации оказывается малым, тогда можем пренебречь последним членом в полученном нами значении для тензора деформации:
+\begin{to_def}[Тензор деформации в малом приближении]
+	\begin{equation*}
+		u_{i k} = \frac{1}{2} \left( \frac{\partial u_i}{\partial x^k} + \frac{\partial u_k}{\partial x^i}\right) .
+	\end{equation*}
+\end{to_def}
+
+\subsubsection*{Изменение объёма при деформации}
+Относительные удлинения элементов длины вдоль направлений главных осей тензора деформации с нашей точностью: $\sqrt{1 + 2 u_{i i}} - 1 \approx u_{ii}$.
+
+Малый элемент объёма тогда претерпит следующее изменение:
+\begin{equation*}
+	d V' = d V(1 + u_{1 1})(1 + u_{2 2})(1 + u_{3 3}) d V (1 + u_{1 1} + u_{2 2} + u_{3 3})
+	\hspace*{0.5 cm}
+	\Rightarrow
+	\hspace*{0.5 cm}
+	u_{i i} = \frac{d V' - d V}{d V}.
+\end{equation*}
+Для несжимаемого тела, тогда $u_{i i}$ --- сумма диагональных компонент тензора в главных осях --- нулевая. Такая деформация называется \textit{сдвигом}.
+
+\subsubsection*{Тензор скорости деформации}
+\begin{to_def}
+	\textit{Тензором скорости деформации}  назовём просто $\dot{u}_{i j} = \frac{d u_{i j} }{ d t} = \frac{1}{2}\left(\frac{\partial v_i}{\partial x^j} + \frac{\partial v_j}{\partial x ^i}\right)$.
+\end{to_def}
+Тогда рассмотрим движение элемента объёма тела во времени: $\vc{v} = \vc{v}(\vc{r} + \delta \vc{r})$, до первого члена малости:
+\begin{equation*}
+	\vc{v} = \vc{v}_0 + \frac{\partial \vc{v}}{\partial x^j} \delta x^j
+	\hspace*{0.3 cm}
+	\Rightarrow
+	\hspace*{0.3 cm}
+	\left(\vc{v}_0 = 0\right)
+	\hspace*{0.3 cm}
+	\Rightarrow
+	\hspace*{0.3 cm}
+	v_i = \frac{\partial v_i}{\partial x^j} \delta x^j = \frac{1}{2} \left(\frac{\partial v_i}{\partial x^j} + \frac{\partial v_j}{\partial x^i} \right) \delta x^j + \frac{1}{2} \left(\frac{\partial v_i}{\partial x^j} - \frac{\partial v_j}{\partial x^i} \right) \delta x^j.
+\end{equation*}
+Получаем уравнение, где с помощью замены, и вернув начальную скорость, явно можем показать, что
+\begin{to_thr}[Теорема Гельмгольца]
+	Тензор скоростей деформации можно разложить на сумму симметричного и кососимметричного:
+	\begin{equation*}
+	 	\vc{v} = \vc{v}_0 + u_{i j} \delta x^j e^i + \vc{\omega} \times \delta \vc{r}.
+	 \end{equation*} 	
+\end{to_thr} 
+
+\subsubsection*{Обобщенный закон Гука}
+
+Пусть $E$ -- модуль Юнга, $\mu$ -- коэффициент Пуассона. Тогда
+$$
+    u_{11} = \frac{\sigma_{11}}{E}, \hspace{0.5cm} 
+    u_{22} = u_{33} = - \frac{\mu}{E} \sigma_{11}.
+$$
+Перепишем это в виду
+$$
+    u_{11} = \frac{\sigma_{11}}{E}  - \frac{\mu}{E} \sigma_{22} -
+    \frac{\mu}{E} \sigma_{33} = \frac{1+\mu}{E} \sigma_{11} - \frac{\mu}{E} \tr \sigma.
+$$
+Или, в матричном виде
+$$
+    \begin{pmatrix}
+        u_{11} & 0 & 0\\
+        0 & u_{22} & 0 \\
+        0 & 0 & u_{33}
+    \end{pmatrix} =
+    \frac{1+\mu}{E} 
+    \begin{pmatrix}
+        \sigma_{11} & 0 & 0\\
+        0 & \sigma_{22} & 0 \\
+        0 & 0 & \sigma_{33}
+    \end{pmatrix} -
+    \frac{\mu}{E} \tr \sigma 
+    \begin{pmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+    \end{pmatrix}.
+$$
+В тензорном виде
+$$
+    u_{ik} = \frac{1+\mu}{E} \sigma_{ik} - \frac{\mu}{E} \delta_{ik} \tr \sigma .
+$$
+Выразим $u$:
+$$
+    \tr u = \frac{1+\mu}{E} \tr \sigma - \frac{3\mu}{E} \tr \sigma
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \tr \sigma = \frac{E}{1-2\mu} \tr u.
+$$
+Так и получаем \textit{обобщенный закон гука}:
+\begin{equation*}
+    \sigma_{ik} = \frac{E}{1+\mu} \left[
+        u_{ik} + \frac{\mu}{1 - 2\mu} \delta_{ik} \tr u 
+    \right]
+\end{equation*}
