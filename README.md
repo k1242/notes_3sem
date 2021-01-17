@@ -13,8 +13,9 @@
 [*задание*](https://github.com/k1242/notes_3sem/blob/master/HW/Anal_Mec/Khoruzhii_AM_HW.pdf));
 
 * **анализу на многообразиях**
-([конспект](https://github.com/k1242/notes_3sem/blob/master/matan/UIM_varan_3sem.pdf),
+(
 [билеты](https://github.com/k1242/notes_3sem/blob/master/matan/matan_tickets/MatAn_T.pdf),
+[конспект](https://github.com/k1242/notes_3sem/blob/master/matan/UIM/UIM_varan_3sem.pdf),
 [лекций](https://www.youtube.com/playlist?list=PLp9ABVh6_x4E3nHQjBlF_LRUnvKmMnuVH)
 с НМУ);
 * ...
