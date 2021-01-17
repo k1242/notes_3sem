@@ -1,0 +1,109 @@
+\subsection*{Решение задачи}
+
+
+Составим матрицу $C$, записав в её столбцах координаты векторов $f_1, f_2, f_3$:
+\begin{equation*}
+    C = \begin{pmatrix}
+        -3 & 1 & -2 \\
+        1 & -2 & 1 \\
+        2 & 3 & -1 \\
+    \end{pmatrix}.
+\end{equation*}
+Вычислим определитель этой матрицы
+\begin{equation*}
+    \det C = \begin{vmatrix}
+        -3 & 1 & -2 \\
+        1 & -2 & 1 \\
+        2 & 3 & -1 \\
+    \end{vmatrix} = 
+    \begin{vmatrix}
+        0 & -5 & 1 \\
+        1 & -2 & 1 \\
+        0 & 7 & -3 \\
+    \end{vmatrix} = 
+    1 \cdot (-1)^{(2+1)} \begin{vmatrix}
+        -5 & 1\\
+        7 & -3 \\
+    \end{vmatrix} = -8.
+\end{equation*}
+Так как $\det C \neq 0$, то векторы $\vc{f}_1, \ \vc{f}_2, \ \vc{f}_3$ линейно независимы, а потому могут быть приняты в качестве базиса в $\mathbb{R}^3$. Матрица $C$ невырождена, а потому имеет обратную $C^{-1}$. Найдём её:
+\begin{align*}
+    &A_1^1 = \begin{vmatrix}
+        -2 & 1 \\
+        3 & -1 \\
+    \end{vmatrix}, \  
+    A_1^2 = - \begin{vmatrix}
+        1 & -2 \\
+        3 & -1 \\
+    \end{vmatrix}, \  
+    A_1^3 = - \begin{vmatrix}
+        1 & -2 \\
+        -2 & 1
+    \end{vmatrix}, \  
+    A_2^1 = - \begin{vmatrix}
+        1 & 1 \\
+        2 & -1
+    \end{vmatrix}, \  \
+    A_2^2 = \begin{vmatrix}
+        -3 & -2 \\
+        2 & -1 \\
+    \end{vmatrix}; 
+    \\
+    &A_2^3 = \begin{vmatrix}
+        -3 & -2 \\
+        1 & 1 \\
+    \end{vmatrix}, \  
+    A_3^1 = - \begin{vmatrix}
+        1 & -2 \\
+        2 & 3 \\
+    \end{vmatrix}, \  
+    A_3^2 = - \begin{vmatrix}
+        -3 & 1 \\
+        2 & 3
+    \end{vmatrix}, \  
+    \ \; \, A_3^3 = - \begin{vmatrix}
+        -3 & 1 \\
+        1 & -2
+    \end{vmatrix}.
+\end{align*}
+Таким образом находим обратную матрицу
+\begin{equation*}
+    C^{-1} = \frac{1}{8} \begin{pmatrix}
+        1 & 5 & 3 \\
+        -3 & -7 & -1 \\
+        -7 & -11 & -5 \\
+    \end{pmatrix}.
+\end{equation*}
+В таком случае новые координаты $y_1, \ y_2, \ y_3$ вектора $\vc{x}$:
+\begin{equation*}
+    \begin{pmatrix}
+        y_1 \\
+        y_2 \\
+        y_3 \\
+    \end{pmatrix} = 
+    \frac{1}{8} \begin{pmatrix}
+        1 & 5 & 3 \\
+        -3 & -7 & -1 \\
+        -7 & -11 & -5 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        -3 \\
+        -2 \\
+        7 \\
+    \end{pmatrix} =
+    \frac{1}{8} 
+    \begin{pmatrix}
+        -3-10+21 \\
+        9+11 - 7 \\
+        21 + 22 - 35 \\
+    \end{pmatrix} = 
+    \frac{1}{8} 
+    \begin{pmatrix}
+        8 \\
+        16 \\
+        8
+    \end{pmatrix} =
+    \begin{pmatrix}
+        1 \\ 2 \\ 1
+    \end{pmatrix}.
+\end{equation*}

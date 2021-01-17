@@ -1,0 +1,53 @@
+\begin{to_def} 
+    \textit{Действием по Гамильтону} называют функционал вида
+    \begin{equation*}
+         S = \int_{t_0}^{t_1} L(\gamma(t), \dot{\gamma}(t), t) \d t.
+    \end{equation*} 
+    Переходя к однопараметрическому семейству кривых $\gamma(\alpha, t)$ получим \textit{вариацию действия}
+    \begin{equation*}
+        S = \int_{t_0}^{t_1} L(\gamma(\alpha, t), \dot{\gamma}(\alpha, t), t) \d t, 
+        \hspace{0.5cm} 
+        \delta S = \frac{d S}{d \alpha} \delta \alpha.
+    \end{equation*}
+\end{to_def}
+
+
+\begin{to_thr}[принцип Гамильтона]
+    Кривая $\gamma(\alpha, t)$ является экстремалью действия тогда и только тогда, когда является решением уравнений Лагранжа
+     \begin{equation*}
+         \delta S = 0
+         \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm} 
+         \gamma(\alpha, t) \in \textnormal{Sol}\,
+         \left(
+     \frac{d}{dt} \frac{\partial L}{\partial \dot{q}^k} - \frac{\partial L}{\partial q^k} = 0
+         \right)
+         .
+     \end{equation*}
+\end{to_thr}
+
+
+\begin{proof}[$\triangle$]
+    Давайте просто проварьируем Лагранжиан, тогда
+    \begin{align*}
+        \delta S 
+        &=
+         \int_{t_0}^{t_1} 
+        \left(
+            \frac{\partial L}{\partial q^i} \frac{\partial q^i}{\partial \alpha} +
+            \frac{\partial L}{\partial \dot{q}^i} \frac{\partial \dot{q}^i}{\partial \alpha}  
+        \right) \delta \alpha \d t 
+        =
+        \int_{t_0}^{t_1} \left(
+            \frac{\partial L}{\partial q^i} \delta q^i + \frac{\partial L}{\partial \dot{q}^i} \delta \dot{q}^i
+        \right) \d t
+        =
+        \frac{\partial L}{\partial \dot{q}} \partial q \bigg|_{t_1}^{t_2}
+        + \int_{t_1}^{t_2}
+        \left(
+            \frac{\partial L}{\partial q^i} - \frac{d }{d t} \frac{\partial L}{\partial \dot{q}^i} 
+        \right) \,\delta q^i \d t
+        = 0.
+    \end{align*}
+    таким образом уравнения Лагранжа выполнены. 
+\end{proof}
+

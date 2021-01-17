@@ -1,0 +1,47 @@
+Путь существует функция $V (q, \dot{q}, t)$ такая, что обобщенные силы $Q_i$ определяются по формулам
+\begin{equation*}
+    Q_i = \frac{d }{d t} \frac{\partial V}{\partial \dot{q}^i} - \frac{\partial V}{\partial q^i}.
+\end{equation*}
+Тогда функция $V$ называется обобщенным потенциалом. Действительно, при $L = T - V$ уравнения движения запишутся в той же форме. Дифференцируя по времени выясним, что
+\begin{equation*}
+    Q_i = \frac{\partial^2 V}{\partial \dot{q}^i \partial \dot{q}^k} \ddot{q}^k + f_i,
+\end{equation*}
+где $f_i \equiv f_i ( q,\dot{q}, t)$. Но так как зависимость $Q_i(\ddot{q})$ это странно, то
+\begin{equation*}
+    V =  A_i(q, t) \dot{q}^i + V_0(q, t).
+\end{equation*}
+Тогда обобщенные силы
+\begin{equation*}
+    Q_i = \frac{d A_i}{d t} - \frac{\partial }{\partial q^i} \left(
+        A_k \dot{q}^k  + V_0
+    \right) = - \frac{\partial V_0}{\partial q^i} + \frac{\partial A_i}{\partial t} +
+    \left(
+        \frac{\partial A_i}{\partial q^k} - \frac{\partial A_k}{\partial q^i} 
+    \right) \dot{q}^k.
+\end{equation*}
+Если $\partial A_i / \partial t = 0$, то $Q_i$ складываются из потенциальных $\partial V_0 / \partial q_i$ и гироскопических $Q_i^* = \gamma_{ik} \dot{q}^k$, где $\gamma_{ik} = \partial_k A_i - \partial_i A_k$. Если система склерономна и $V_0 \neq V_0(t)$, то $T+V_0$ остается постоянной.
+
+В случае существования обобщенного потенциала $L$ всё так же многочлен второй степени относительно $q, \ \dot{q}$, при чём $L_2 = T_2$, так что уравнения остаются разрешимы относительно обобщенных ускорений.
+
+
+\subsubsection*{Натуральные системы}
+
+
+\begin{to_def} 
+    Системы, в которых силы имеют обычный $\Pi(q_i, t)$ или обобщенный $V(q^i, \dot{q}^i, t)$ потенциал, называются \textit{натуральными}. В таких системах $L = T - \Pi$.
+    Более общие системы $L(q^i, \dot{q}^i, t)$ не представимы в виде однако при выполнении условия, 
+    \begin{equation*}
+         \det \left[
+            \frac{\partial^2 L}{\partial \dot{q}^i \partial \dot{q}^k} 
+         \right] \neq 0,
+    \end{equation*}
+    то есть ненулевого гессиана лагранжиана, 
+    уравнения Лагранжа остаются разрешимы относительно обобщенных ускорений.
+\end{to_def}
+
+
+\subsubsection*{Первые интегралы}
+
+Распространенным    
+
+

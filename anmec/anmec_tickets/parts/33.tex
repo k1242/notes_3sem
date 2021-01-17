@@ -1,0 +1,102 @@
+Пусть есть также непотенциальные силы, часть обобщенных сил, соответстующих непотенциальным силам, обозначим $Q_i^*$, тогда
+\begin{equation*}
+    Q_1 = - \frac{\partial \Pi}{\partial q^i} + Q_i^*,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} - 
+    \frac{\partial T}{\partial q^i} 
+    =
+    - \frac{\partial \Pi}{\partial q^i} + Q_i^*.
+\end{equation*}
+Найдём производную по времени от кинетической энергии
+\begin{equation*}
+    \frac{d T}{d t} = 
+    \frac{\partial T}{\partial \dot{q}^i} \ddot{q}^i + \frac{\partial T}{\partial q^i} \dot{q}_i + \frac{\partial T}{\partial t}  =
+    \frac{d }{d t} \left(
+        \frac{\partial T}{\partial \dot{q}^i} \dot{q}^i
+    \right) - \left(
+        \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} - \frac{\partial T}{\partial q^i} 
+    \right) \dot{q}^i + \frac{\partial T}{\partial t}.
+\end{equation*}
+По \textit{теореме Эйлера об однороных функциях} для $f(x_1, \ldots, x_n)$ $k$-й степени верно что
+\begin{equation*}
+    \frac{\partial f}{\partial x^i} x^i = kf,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{\partial T}{\partial \dot{q}^i} \dot{q}^i = 2 T_2 + T_1.
+\end{equation*}
+В таком случае последнее равеноство перепишется, как
+\begin{align*}
+    \frac{d T}{d t} 
+    &=
+    \frac{d }{d t} (2 T_2 + T_1) + \frac{\partial \Pi}{\partial q^i} \dot{q}^i - Q_i^* \dot{q}^i + \frac{\partial T}{\partial t} 
+    = \\ &= 
+    \frac{d }{d t} (2 T_2 + 2 T_1 + 2 T_0) - \frac{d }{d t} (T_1 + 2 T_0) + \frac{d \Pi}{d t} - \frac{\partial \Pi}{\partial t} - Q_i^* \dot{q}^i + \frac{\partial T}{\partial t}.
+\end{align*}
+Таким образом мы доказали следующую теорему.
+
+\begin{to_thr}
+     Полная мехническая энергия голономной системы $E = T+ \Pi$ изменяется следующим образом:
+     \begin{equation*}
+         \frac{d E}{d t} = N^* + \frac{d }{d t} (T_1 + 2 T_0) + \frac{\partial \Pi}{\partial t} - \frac{\partial T}{\partial t}.
+     \end{equation*}
+     Где $N^* = Q^*_i \dot{q}^i$ -- мощность непотенциальных сил.
+\end{to_thr}
+
+
+\begin{to_def} 
+    Голономная склерономная система с  $\Pi \equiv \Pi(q)$ называется \textit{консервативной}, при чём $d E / d t = 0$.
+\end{to_def}
+
+\subsubsection*{Гироскопические силы}
+
+
+\begin{to_def} 
+    Непотенициальные силы называют \textit{гироскопическими}, если их мощность равна $0$. 
+\end{to_def}
+
+
+Пусть $Q^*_i = \gamma_{ik} \dot{q}^k$. Если $\gamma_{ik} = -\gamma_{ki}$, то силы $Q^*_i$ гиросокопические, соответсвенно кососимметричность $\gamma_{ik}$ необходима и достаточна.
+
+Более того, имеет место равеноство
+
+\vspace{-25pt}
+\begin{equation*}
+    \sum_\nu \vc{F}_\nu \cdot \vc{v}_\nu = \sum_\nu \vc{F}_\nu \cdot
+    \left(
+        \frac{\partial \vc{r}_\nu}{\partial q^i} \dot{q}^i + \frac{\partial \vc{r}_\nu}{\partial t} 
+    \right) 
+    =
+     \bigg(
+     \overbrace{
+     \sum_\nu \vc{F}_\nu \cdot \frac{\partial \vc{r}_\nu}{\partial q^i}
+     }^{
+     Q_i
+     }
+      \bigg)
+     \dot{q}^i + \sum_\nu \vc{F}_\nu \cdot \frac{\partial \vc{r}_\nu}{\partial t},
+     \hspace{0.25cm} \overset{\partial \vv{r}_\nu / \partial t = 0}{=}  \hspace{0.25cm} 
+     \sum_\nu \vc{F}_\nu \cdot \vc{v}_\nu = Q_i \dot{q}^i.
+\end{equation*}
+Поэтому для склерономных систем $N^* = 0$ выражается в $\sum_\nu \vc{F}_\nu^* \cdot \vc{v}_\nu = 0$.
+
+\subsubsection*{Диссипативные силы}
+
+\begin{to_def} 
+    Непотенциальные силы называются диссипативными, если их $N^* \leq 0$, но $N^* \not \equiv 0$. При $\Pi = \Pi(q)$ и диссипативности сил $d E / dt \leq 0$, тогда система называется диссипативной. В случае определенно-отрицательной $N^* (\dot{q})$ дисспация называется \textit{полной}, а в случае знакопостоянной отрицательной $N^*$ \textit{частичной}.
+\end{to_def}
+
+\begin{to_def} 
+    \textit{Диссипативной функцией Рэлея} называется  положительная квадратичная форма $R$ такая, что
+    \begin{equation*}
+        R = \frac{1}{2} b_{ik} \dot{q}^i \dot{q}^k,
+        \hspace{1cm}
+        Q^*_i = - \frac{\partial R}{\partial \dot{q}^i}  = - b_{ik} \dot{q}^k.
+    \end{equation*}
+    Тогда для склерономной системы можность $N^*$ непотенциальных сил равна
+    \begin{equation*}
+        \sum_\nu \vc{F}_\nu^* \cdot \vc{v}_\nu = Q_i^* \dot{q}^i = - 2 R \leq 0.
+    \end{equation*}
+\end{to_def}
+
+
+
+

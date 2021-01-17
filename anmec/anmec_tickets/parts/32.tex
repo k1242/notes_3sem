@@ -1,0 +1,49 @@
+Подставим разложение кинетической энергии в уравнения Лагранжа, оставив только слагаемые с обобщёнными ускорениями $f_j (q, \dot{q}, t) = a_{jk} \ddot{q}^j$. 
+\begin{equation*}
+    T = \frac{1}{2} \sum_\nu m_\nu \dot{\vc{r}}_\nu^2 = \frac{1}{2} \sum_\nu
+    \left(
+        \frac{\partial \vc{r}_\nu}{\partial q^j} \dot{q}^j + \frac{\partial \vc{r}_\nu}{\partial t} 
+    \right)^2 = 
+    \frac{1}{2} 
+    \bigg[
+    \underbrace{
+        a_{jk} \dot{q}^j \dot{q}^k
+    }_{
+        2T_2
+    } +
+    \underbrace{
+        a_j \dot{q}^j
+    }_{
+        2T_1
+    } +
+    \underbrace{
+        a_0
+    }_{
+        2T_0
+    }
+    \bigg],
+\end{equation*}
+где коэффициенты, соответственно, равны 
+\begin{equation*}
+    a_{jk}(q, t) = \sum_\nu m_\nu \frac{\partial \vc{r}_\nu}{\partial q^j} \cdot \frac{\partial \vc{r}_\nu}{\partial q^k},
+    \hspace{0.5cm} 
+    a_j(q, t) = \sum_\nu m_\nu \frac{\partial \vc{r}_\nu}{\partial q^j} \cdot \frac{\partial \vc{r}_\nu}{\partial t},
+    \hspace{0.5cm} 
+    a_0 = \sum_\nu m_\nu 
+    \left(
+    \frac{\partial \vc{r}_\nu}{\partial t} 
+            \right)^2.
+\end{equation*}
+Для склерономных систем $\partial \vc{r}_\nu / \partial t = 0$, соотвественно $T = a_{jk} \dot{q}^j \dot{q}^k$, при чём $a_{jk} \equiv a_{jk} (q)$.
+
+Теперь подставим значение $T$ в уравнения Лагранжа, и получим, что
+$
+    a_{ik} \ddot{q}^k = f_i,
+$
+где $f_1 = f_1(q, \dot{q}, t)$. Уравнений в системе $n$, причём $a_{jk}$ является положительно определенной формой\footnote{
+    \red{Требует отдельного доказательства.}
+}, соответственно невырожденной. 
+
+\begin{to_thr} 
+    Уравнения Лагранжа второго рода разрешимы относительно обобщенных ускорений 
+\end{to_thr}

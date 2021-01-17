@@ -1,0 +1,70 @@
+\begin{to_def} 
+    \textit{Обобщенная сила} $Q_k$ -- величина коэффициента $\partial q^k$ при вариации $\delta A$, то есть $\delta A = Q_k \delta q^k$.
+\end{to_def}
+
+\begin{to_thr}[Уравнения Лагранжа второго рода]
+     Каждая механическая система характеризуется определенной функцией $L(q, \dot{q}, t)$. Для голономных системы с конфигурационном многообразием степени $n$, верно что
+     \begin{equation*}
+         \frac{d}{dt} \frac{\partial L}{\partial \dot{q}_k} - \frac{\partial L}{\partial q_k} = 0, \hspace{0.5cm} k = 1, \ldots, n.
+     \end{equation*}
+     Где для потенциальных систем $L = T - \Pi$. В более общем случае можно записать, что
+     \begin{equation*}
+         \left(\frac{d }{d t} \frac{\partial T}{\partial \dot{q}^k} - \frac{\partial T}{\partial q^k} - Q^k\right)\delta q^k = 0, \hspace{0.5cm} 
+         Q^k = - \frac{\partial \Pi}{\partial q^k}.
+     \end{equation*}
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+Запишем второй закон Ньютона:
+$
+    \left(
+        m_i \vc{\mathrm{w}}_i = \vc{F}_i + \vc{R}_i
+    \right)\big|_{\cdot \d \vc{r}_i}
+$
+, где $\vc{R}_i$ -- реакции связи. Хотим записать уравнение в общековариантном виде.
+То есть мы <<замораживаем>> время, так чтобы $\vc{R} \cdot \delta \vc{r} = 0$. На таких перемещениях работа реакция связи равна 0.
+\begin{align*}
+    \bigg[
+        \sum m_i \left(\vc{\mathrm{w}}_i \cdot \frac{\partial \vc{r}_i}{\partial q^k} \right)
+        -
+        \left(\vc{F}_i \cdot \frac{\partial \vc{r}_i}{\partial q^k} \right)
+        -
+        \underbrace{
+        \left(
+            \vc{R}_i \cdot \frac{\partial \vc{r}_i}{\partial q^k} 
+        \right)}_{\cdot \delta q^k \to 0}
+    \bigg] \cdot \delta q^k &= 0;
+    \\
+    \left[
+        \frac{d}{dt} \frac{\partial }{\partial \dot{q}^k} \sum  \frac{m_i v_i^2}{2} 
+        -
+        \frac{\partial }{\partial q^k} \sum \frac{m_i v_i^2}{2} -
+        \sum \vc{F}_i \frac{\partial \vc{r}_i}{\partial q^k} 
+    \right] \delta q^k &= 0
+    , \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \sum_k
+    \left[
+        \frac{d}{dt} \frac{\partial T}{\partial \dot{q}^k} 
+        - \frac{\partial T}{\partial q^k} - Q_k
+    \right] \delta q^k = 0.
+\end{align*}
+Проблема остается в неголономных системах, где $\delta q^k$ не являются независимыми, получается, что уравнения Лагранжа справедливы для голономных систем.
+
+Вспоминая, что
+\begin{equation*}
+    \delta  A = \sum_i \vc{F}_i \cdot \delta \vc{r}_i =
+    \sum_i \left(\vc{F}_i \cdot \frac{\partial \vc{r}_i}{\partial q^k}\right) \delta q^k \overset{\text{\red{?}}}{=} 
+    \sum_k 
+    \frac{\delta A_k}{\delta q^k} \delta q^k = Q_k \delta q^k.
+\end{equation*}
+Тогда пусть $\Pi (q, t) \colon Q_k = - \partial \Pi / \partial q^k$.  Тогда
+\begin{equation*}
+    \frac{d}{dt} \frac{\partial (T-\Pi)}{\partial \dot{q}^k} - \frac{\partial (T - \Pi)}{\partial q^k}  = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{d}{dt} \frac{\partial L}{\partial \dot{q}^k} - \frac{\partial L}{\partial q^k} = 0, \hspace{0.5cm} k = 1, \ldots, n.
+\end{equation*}
+То есть получили систему уравнений на $2n$ переменных.
+\end{proof}
+
+
+
