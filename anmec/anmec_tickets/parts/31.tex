@@ -45,7 +45,7 @@ $
     \sum_k
     \left[
         \frac{d}{dt} \frac{\partial T}{\partial \dot{q}^k} 
-        - \frac{\partial T}{\partial q^k} - Q^k
+        - \frac{\partial T}{\partial q^k} - Q_k
     \right] \delta q^k = 0.
 \end{align*}
 Проблема остается в неголономных системах, где $\delta q^k$ не являются независимыми, получается, что уравнения Лагранжа справедливы для голономных систем.
@@ -53,11 +53,11 @@ $
 Вспоминая, что
 \begin{equation*}
     \delta  A = \sum_i \vc{F}_i \cdot \delta \vc{r}_i =
-    \sum_i \left(\vc{F}_i \cdot \frac{\partial \vc{r}_i}{\partial q^k}\right) \delta q^k =
+    \sum_i \left(\vc{F}_i \cdot \frac{\partial \vc{r}_i}{\partial q^k}\right) \delta q^k \overset{\text{\red{?}}}{=} 
     \sum_k 
     \frac{\delta A_k}{\delta q^k} \delta q^k = Q_k \delta q^k.
 \end{equation*}
-Тогда пусть $\Pi (q, t) \colon Q^k = - \partial \Pi / \partial q^k$.  Тогда
+Тогда пусть $\Pi (q, t) \colon Q_k = - \partial \Pi / \partial q^k$.  Тогда
 \begin{equation*}
     \frac{d}{dt} \frac{\partial (T-\Pi)}{\partial \dot{q}^k} - \frac{\partial (T - \Pi)}{\partial q^k}  = 0,
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
