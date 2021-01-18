@@ -1,0 +1,32 @@
+\subsubsection*{Теорема о сложении скоростей}
+\begin{to_thr}
+	Абсолютная скорость точки равна сумме переносной и относительной скорости: $\vc{v}^a = \vc{v}^e + \vc{v}^r$.
+\end{to_thr}
+\begin{proof}[$\triangle$]
+	Для точки $P$ в абсолютной системе координат:
+	\begin{equation*}
+		\vc{R} = \vc{R}_0 + \vc{r}
+		\hspace*{1 cm}
+		\Rightarrow
+		\hspace*{1 cm}
+		\vc{v}_a = \vc{\dot{R}} = \vc{\dot{R}}_0 + \vc{\dot{r}} = \underbrace{\vc{v}_0 + \vc{\omega}\times \vc{r}}_{v^e} + \underbrace{A \vc{\dot{\rho}}}_{v^r}.
+	\end{equation*}
+	\textit{Переносная скорость} $v^e$ --- есть скорость той точки подвижной системы координат, в которой находится $P$.
+	Таким образом показали напрямую разложение.
+\end{proof}
+
+\subsubsection*{Теорема Кареолиса}
+\begin{to_thr}
+	Абсолютное ускорение точки равно сумме переносного, относительного и карелысого ускорения: $w^a = w^e + w^r + w^c$.
+\end{to_thr}
+\begin{proof}[$\triangle$]
+	Для абсолютного ускорения точки, продифференцируем ещё раз:
+	\begin{equation*}
+		\vc{w}^a = \vc{\dot{v}}_0 + \vc{\dot{\omega}} \times \vc{\dot{r}} + \vc{\omega} \times \vc{\dot{r}} + \dot{A} \vc{\dot{\rho}} + A \vc{\ddot{\rho}} = w_0 + \vc{\varepsilon} \times \vc{r} + \vc{\omega} \times (\vc{\omega} \times \vc{r} + A \vc{\dot{\rho}}) + \dot{A} \vc{\dot{\rho}} + A \vc{\ddot{\rho}}.
+	\end{equation*}
+	$\vc{\varepsilon}$ --- угловое ускорение подвижной системы координат, а $A \ddot{\rho} = w^r$:
+	\begin{equation*}
+		w^a = \underbrace{ w_0 + \vc{\varepsilon} \times \vc{r} + \vc{\omega} \times (\vc{\omega} \times \vc{r})}_{w^e} + w^r + \omega \times A \vc{\dot{\rho}} + \dot{A} \vc{\dot{\rho}}.
+	\end{equation*}
+	И последние два слогаемых дадут кареолисового ускорение: $\dot{A} \vc{\dot{\rho}} = \dot{A} A^{-1} A \vc{\dot{\rho}} = \vc{\omega} \times A \vc{\dot{\rho}} $, тогда получаем $w^c = 2 \vc{\omega} \times v^r$. Итого получаем искомую формулу.
+\end{proof}
