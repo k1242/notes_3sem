@@ -1,0 +1,85 @@
+\subsubsection*{Кинематические инварианты}
+\begin{to_def}
+	Первый кинематический инвариант --- $\vc{\omega}$, которая, как мы видели не зависит от выбора точки по формуле Эйлера \eqref{eq_euler}.	
+	В более узком смысле первым инвариантом можно назывтаь $I_1 = \omega^2 $.
+\end{to_def}
+\begin{to_def}
+	Из той же формуле Эйлера следует, что $I_2 \vc{v} \cdot \vc{\omega}$ также инвариант для всех точек тела.
+\end{to_def}
+
+\subsubsection*{Кинематический винт}
+\begin{to_def}
+	Если в данный момент тело участвует в совокупности мгновенно поступательно вдоль оси и вращательного вокруг этой же, то такое движение называют \textit{мгновенно винтовое движение}.
+\end{to_def}
+Выберем полюс $O$ и пусть в данный момент известны его $v_O$ и $\vc{\omega}$. Пусть они заданы своими компонентами в система координат $O X Y Z$, получающейся из абсолютной системы координат $O_a X Y Z$ при помощи поступательного перемещения:
+\begin{equation*}
+	\vc{v}_O = \begin{pmatrix}
+		v_{O X} \\ v_{O Y} \\ v_{O Z}
+	\end{pmatrix},
+	\hspace*{1 cm}
+	\vc{\omega} = \begin{pmatrix}
+		\omega_X \\ \omega_Y \\ \omega_Z
+	\end{pmatrix}.
+\end{equation*}
+Если скорость точки параллельна вектору $\vc{\omega}$, то: $\vc{v}_S = \vc{v}_O + \vc{\omega} \times \overrightarrow{O S} = p \vc{\omega}$.
+
+Полученное равенство является векторным уравнением для прямой, все точки которой имеют сонаправленные $\vc{\omega}$ скорости. В координатах оно запишется как:
+\begin{equation*}
+	\frac{v_{O X} + (\omega_Y Z - \omega_Z Y)}{\omega_X} = \frac{v_{O Y} + (\omega_Z X - \omega_X Z)}{\omega_Y} = \frac{v_{O Z} + (\omega_X Y - \omega_Y X)}{\omega_Z} = p.
+\end{equation*}
+\begin{to_def}
+	Эта прямая называется мгновенной \textit{винтовой осью} тела. Совокупность $\vc{\omega}$ и $\vc{v}$ любой точки называют \textit{кинематическим винтом}, а число $p = I_2/I_1$ --- \textit{параметром винта}.	
+\end{to_def}
+
+\subsubsection*{Главный момент и главный вектор}
+
+Имеется $m$ мгновенно поступательных движений $\vc{v}_1, \ldots, \vc{v}_m$ и $n$ мгновенно вращательных движений\footnote{
+    Скользящий вектор -- это ?
+}
+$\vc{\omega}_1, \ldots, \vc{\omega}_n$. Уже знаем, что $\forall j$ мы можем представить 
+$\vc{v}_j$ как пару $\vc{\omega}_j', \vc{\omega}_j''$. Получается, что $\vc{v}_1, \ldots, \vc{v}_m, \vc{\omega}_1, \ldots, \vc{\omega}_n$ представим в виду $2m+n$ мгновенных вращений. 
+
+Введём два важных вектора
+\begin{align*}
+    &\vc{\Omega} = \sum_{i=1}^n \vc{\omega}_i &\text{-- суммарный вектор мгновенных угловых скоростей, \textit{главный вектор}}; \\
+    &\vc{V} = \sum_{j=1}^m \vc{v}_j + \sum_{i=1}^n \vc{r}_i \times \vc{\omega}_i
+    &\text{-- суммарный вектор мгновенных поступательных движений, \textit{главный момент}}.
+\end{align*}
+Таким обрахом свели $\vc{v}_1, \ldots, \vc{v}_m, \vc{\omega}_1, \ldots, \vc{\omega}_n$ к паре $\vc{\Omega}, \vc{V}$, соответствующей выбранному центру приведения.
+
+\phantom{42}
+
+% \incfig{2}
+Найдём $\vc{V}_{O'}$:
+$$
+    \vc{V}_{O'} = \sum_{j=1}^m \vc{v}_j + \sum_{i=1}^n \vc{r}_i' \times \vc{\omega}_i =
+    \sum_{j=1}^m \vc{v}_j + \sum_{i=1}^n \left(\vv{O'O} + \vc{r}_i \right) \times \vc{\omega}_i =
+    \underbrace{
+        \sum_{j=1}^m \vc{v}_j + \sum_{i=1}^n \vc{r}_i \times \vc{\omega}_i
+    }_{\vc{V}_0} +
+    \vv{O'O} \times
+    \underbrace{
+        \sum_{i=1}^n \vc{\omega}_i
+    }_{\vc{\Omega}} = \vc{V}_0 +   \vv{O'O} \times \vc{\Omega}.
+$$
+
+\begin{table}[h]
+    \centering
+    \caption{Простейшие типы движений.}
+        \begin{tabular}{cccl}
+    \toprule
+            $(\vc{V}_0, \vc{\Omega})$ & $\vc{\Omega}$ & $\vc{V}_0$ & \multicolumn{1}{c}{простейшее мгновенное движение}\\
+    \midrule
+            $\neq 0$ & $\neq 0$ & $\neq 0$ 
+            & мгновенно винтовое движение\\
+            \multirow{2}{*}{$0$} & \multirow{2}{*}{$\neq 0$} & 0 
+            & мгновенное вращение, ось $\ni O$\\
+            && $\neq 0$ & мгновенное вращение, ось $\not \ni O$ \\
+            $0$ & $0$ & $\neq 0$ 
+            & мгновенно поступательное движение \\
+            $0$ & $0$ & $0$ 
+            & мгновенный покой \\
+    \bottomrule
+        \end{tabular}
+    \label{tab:}
+\end{table}
