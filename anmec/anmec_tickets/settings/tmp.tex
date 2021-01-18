@@ -12,7 +12,544 @@
 
 
 
-\end{document} Ну, что? Погнали техать?\begin{to_def} 
+\end{document} Для точки $P$ движущейся относительно некоторого неподвижного тела (свяжем с ним точку $O$), можно ввести следующие характеристики:
+\begin{to_def}[Радиус вектор, скорость и ускорение точки $P$]
+	\begin{equation*}
+	\vc{r} = \overrightarrow{O P},
+	\hspace*{1 cm}
+	\vc{v} = \frac{d \vc{r}}{d \vc{t}},
+	\hspace*{1 cm}
+	\vc{w} =  \frac{d \vc{v}}{d t} = \frac{d^2 \vc{r}}{d t^2}.
+\end{equation*}	
+\end{to_def}
+
+\begin{to_def}
+	Для задания движения точки, зная её траекторию, можно сопоставить ей дуговую координату $\sigma (t)$ и получить выражения для скорости и ускорения, выраженные в осях \textit{естественного трёхгранника} $\vc{\tau}, \vc{n}, \vc{b}$.
+	Таким образом для $\vc{r} = \vc{r}(\sigma(t))$:
+	\begin{equation*}
+		\vc{\tau} (\sigma) = \frac{d \vc{r}}{d \sigma}, 
+		\hspace*{1 cm} 
+		\frac{d \vc{\tau}}{d \sigma} = \frac{1}{\rho} \vc{n} (\sigma),
+	\end{equation*}
+	где $\rho$ -- радиус кривизны. Для кривой в $\mathbb{R}^3$ добавим ещё вектор $b$ для правой тройки. Таким образом получим формулы Френе:
+	\begin{equation*}
+		\frac{d \vc{\tau}}{d s} = \frac{1}{\rho} \vc{n},
+		\hspace*{1 cm}
+		\frac{d \vc{n}}{d s} = - \frac{1}{\rho} \vc{\tau} + \varkappa \vc{b},
+		\hspace*{1 cm}
+		\frac{d \vc{b}}{d s} = - \varkappa \vc{n}.
+	\end{equation*}
+\end{to_def}
+
+Таким образом сможем в компонентах трёхгранника выписать скорость и ускорение точки:
+\begin{gather*}
+   \vc{v} = \frac{d \vc{r}}{d t} = \frac{d \vc{r}}{d \sigma} \frac{d \sigma}{d t} = v_\tau \vc{\tau}
+   \\
+   \vc{w} = \frac{d \vc{v}}{d t} = \frac{d_\tau}{d t} \vc{\tau} + v_\tau \frac{d \vc{\tau}}{d \sigma} \frac{d \sigma}{d t} = \frac{d^2 \sigma}{d t^2} \vc{\tau} + \frac{v_\tau^2}{\rho} \vc{n}.
+\end{gather*}
+Как видно, ускорение точки представилось в видео $w = w_n + w_\tau $ --- \textit{нормальной} и \textit{тангенциальной} составляющей.
+
+\begin{to_lem}[Из матана]
+	Для $f_i \in  C^2 \colon U \mapsto V$, если $X$ -- касательный вектор в точке $p \in U$, то $X(f)$ можно определить как:
+	\begin{equation*}
+		X(f) = X(x^i) \frac{\partial f(p)}{\partial x^i}, \text{ а координаты этого вектора в криволинейных координатах: } X = X^i \frac{\partial}{\partial x^i}.
+	\end{equation*}
+\end{to_lem}
+
+Каждую материальную точку можем определить $\vc{r}_1, \ldots, \vc{r}_N$ -- итого $\mathbb{R}^{3N}$. Но есть некоторые ограничения вида
+\begin{equation*}
+    f_i (\vc{r}, t) = 0.
+\end{equation*}
+Вложим в фазовое пространство многообразие $M$, в котором локально всё хорошо. Тогда
+$\dim M = n$ -- число степеней свободы, а параметризация $q_1, \ldots, q_N$ -- криволинейные координаты. В каждой $A \in M$ верно, что $\dot{\vc{q}} \in TM_A$, то есть
+\begin{equation}
+    TM = \bigcup_q T_qM \ni (q, \dot{q})
+\end{equation}
+
+И такБ движение точки можно задать, если её криволинейные координаты --- известне функции $q(t)$.
+\begin{equation*}
+	\vc{r} = \vc{r}(q_1, q_2, q_3) = x \vc{i} + y \vc{j} + z \vc{k}.
+\end{equation*}
+
+\begin{to_def}
+	\textit{Коэффициентами Ламе} такие $H^i$. C их помощью удобно выразить единичные базисные векторы криволинейных координат: 
+	\begin{equation*}
+		H_i = \left|\frac{\partial \vc{r}}{\partial q^i} \right| = \sqrt{\left(\frac{\partial x}{\partial q^i}\right)^2 + \left(\frac{\partial y}{\partial q^i}\right)^2 + \left(\frac{\partial z}{\partial q^i}\right)^2}.
+		\hspace*{1 cm}
+		e^i = \frac{1}{H_i} \frac{\partial \vc{r}}{\partial q^i}.
+	\end{equation*}
+\end{to_def}
+
+Далее будем координатными векторами называть $\vc{g}_i(\vc{r}) = \frac{\partial \vc{r}}{\partial q^i}$. Разложение произвольного вектора по локальному базису имеет вид:
+\begin{equation*}
+	\vc{a} = a^i \vc{g}_i = a_j \vc{g}^j.
+\end{equation*}
+Здесь $\vc{g}^j$ --- векторы двойственного базиса к базису из $\vc{g}_i$. В двойственном же (взаимном) базисе из матана мы видели:
+\begin{equation*}
+	X(f) = d f (X) = \partial_x f,
+	\hspace*{1 cm}
+	d x^i (\frac{\partial}{\partial x^j}) = \frac{\partial x^i}{\partial x^j} = \delta_j^i,
+	\hspace*{1 cm}
+	a = a_i d x^i.
+\end{equation*}
+Таким образом получаем скорость точки и её ковариантную компоненту:
+\begin{equation*}
+	\vc{v} = \frac{d \vc{r}}{d t} = \frac{\partial \vc{r}}{\partial q^i} \frac{d q^i}{d t} = \vc{g}_i \dot{q}^i,
+	\hspace*{1 cm}
+	v^i = \vc{q}^i.
+\end{equation*}
+И для ускорения:
+\begin{equation*}
+	w_k = \left(\frac{d \vc{v}}{d t}\right)_k = \frac{(d \vc{v})_k}{d t} = g_{k j} \frac{d v^j}{d t} + \Gamma_{k i j} v^j v^i.
+\end{equation*}
+\begin{to_def}
+	\textit{Твёрдое телое} --- множество точек, расстояние между которыми не меняется: $\forall j, j, t \colon \vc{|r}_i(t) - \vc{r}_j| = \const$. 
+\end{to_def}
+
+Точка $O$ это полюс. Во-первых перенесем начало координат в $O$. Введём систему координат $O_{\xi\nu\zeta}$ связанную с телом, -- тело относительно неё не движется
+\begin{equation*}
+	 \vc{r} = \vv{OA}, \, \vc{\rho} = \vv{OA} = \const \text{ в $O_{\xi\nu\zeta}$},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \vc{r}(t) = R(t) \vc{\rho}.
+\end{equation*}
+
+\begin{wrapfigure}{r}{0.25\textwidth}
+  \begin{center}
+        \vspace{-10 mm}
+        \includegraphics[width=0.9\linewidth]{img/eu_angles.png}
+  \end{center}
+    \caption{Углы Эйлера}
+\end{wrapfigure}
+
+Ортогональность матрицы $R$ даёт возможность описать её тремя независимыми параметрами. Один из вариантов сделать это -- углы Эйлера. 
+
+Пусть начальная ПДСК $(x, y, z)$, а конечная -- $(X, Y, Z)$, при чём $xy \cap XY = ON$ -- линия узлов.
+\begin{align*}
+    1) \hspace{0.25cm}  \alpha &\colon Ox \to ON, &\text{ угол \textit{прецессии}}; \\
+    2) \hspace{0.25cm}  \beta  &\colon Oz \to OZ, &\text{ угол \textit{нутации}}; \\
+    3) \hspace{0.25cm}  \gamma &\colon OX \to ON, &\text{ угол \textit{собственного вращения}}.
+\end{align*}
+Повороты системы на эти углы называются прецессия, нутация и поворот на собственный угол (вращение). 
+
+\phantom{42}
+
+\noindent
+Матричная запись углов Эйлера:
+\begin{equation*}
+    R_Z(\alpha) = \begin{pmatrix}
+        \cos \alpha & - \sin \alpha & 0 \\
+        \sin    a & \cos\alpha & 0 \\
+        0 & 0 & 1\\
+    \end{pmatrix},
+\end{equation*}
+\begin{equation*}
+    R_X(\beta) = \begin{pmatrix}
+        1 & 0 & 0 \\
+        0 & \cos \beta & -\sin \beta \\
+        0 & \sin \beta & \cos \beta \\
+    \end{pmatrix},
+    \hspace{1cm} 
+    R_Z (\gamma) = \begin{pmatrix}
+        \cos(\gamma) & - \sin \psi & 0 \\
+        \sin \gamma & \cos \gamma & 0\\
+        0 & 0 & 1
+    \end{pmatrix}.
+\end{equation*}
+
+\begin{to_thr}[Теорема Эйлера]
+     Произвольное перемещение твердого тела, имеющего неподвижную точку, можно осуществить посредством вращения вокруг некоторой оси, проходящей через эту точку. 
+\end{to_thr}
+
+\begin{to_thr}[Теорема Шаля]
+     Самое общее перемещение твердого тела разлагается на поступательное перемещение, при котором произвольно выбранный полюс переходит из своего первоначального положения в конечное, и на вращение вокруг некоторой оси, проходящей через этот полюс. Это разложение можно совершить не единственным способом, выбирая за полюс различные точки тела; при этом направление и длина поступательного перемещения будут изменяться при выборе различных 
+полюсов, а направление оси вращения и угол поворота вокруг нее не зависят от выбора полюса. 
+\end{to_thr}
+
+\begin{to_thr}[Теорема Моцци]
+\label{thr_moz}
+     Самое общее перемещение твердого тела является винтовым перемещением.
+\end{to_thr}
+
+\begin{to_con}[Теорема Бернулли-Шаля]
+     Самое общее перемещение плоской фигуры в своей плоскости есть либо поступательное перемещение, либо вращение вокруг точки. Эта точка называется центром конечного вращения.
+\end{to_con}Проведём два вектора $\vc{r}_A, \vc{r}_O$:
+\begin{equation*}
+    \vc{r}_A = \vc{r}_O + \vc{r} = \vc{r}_O + R(t) \vc{\rho}
+    \hspace{0.5cm} \overset{d / dt}{\Rightarrow} \hspace{0.5cm} 
+    \vc{v}_A = \vc{v}_O + \dot{R} \rho = \vc{v}_O + \dot{R} R^{-1}\vc{r}
+\end{equation*}
+но,
+\begin{equation*}
+    RR\T = E, \dot{R} R\T + R \dot{R}\T = 0, \dot{R} R\T = - R \dot{R}\T,
+    (\dot{R} R^{-1})\T = - \dot{R} R^{-1}.
+\end{equation*}
+
+То есть $\dot{R} R^{-1}$ кососимметрична. Тогда пусть
+\begin{equation*}
+    \dot{R} R^{-1} = \Omega = \begin{pmatrix}
+        0 & -\omega_z & w_y \\
+        w_z & 0 & -\omega_x \\
+        -\omega_y & \omega_x & 0\\
+    \end{pmatrix}
+\end{equation*}
+Таким образом мы доказали следующую теорему.
+
+\begin{to_thr}[формула Эйлера]
+\label{eq_euler}
+    Существует единственный вектор\footnote{
+        Псевдоветор же, нет?
+    } $\vc{\omega}$, называемый \textbf{угловой скоростью тела}, с помощью которого скорость $\vc{v}$ точки тела может быть представлена в виде
+    \begin{equation*}
+        \vc{v}_A = \vc{v}_O + \vc{\omega} \times \vc{r}
+        \hspace{0.5cm} \text{--} \hspace{0.5cm} \text{\textbf{формула Эйлера}.}
+    \end{equation*}
+\end{to_thr}
+
+
+Тогда, например, при постоянном радиус векторе верно, что
+\begin{equation*}
+    \vc{v}_A = \frac{d \vc{a}}{dt} = \vc{\omega} \times \vc{a},
+    \hspace{0.5cm} \text{при условии $a = \const$}.
+\end{equation*}
+
+Можно вывести ускорение точки твёрдого тела
+\begin{align*}
+    \vc{\mathrm{w}}_A &= \vc{\mathrm{w}}_O + \frac{d \vc{\omega}}{dt} \times \vc{r} + \vc{\omega} \times \frac{d \vc{r}}{dt}, \\
+    \vc{\mathrm{w}}_A &= \vc{\mathrm{w}}_O + \vc{\varepsilon} \times \vc{r} + \vc{\omega} \times \left(\vc{\omega} \times \vc{r} \right)
+    \hspace{0.5cm} \text{--} \hspace{0.5cm} \text{\textbf{формула Ривальса},}
+\end{align*}
+где $\vc{\varepsilon} = d \vc{\omega} / d t$ -- \textit{угловое ускорение}. \subsubsection*{Тензор напряжений}
+ В недеформированном теле молекулы находятся друг с другом в механическом и тепловом равновесии. При деформировании же взаимное расположение меняется и равновесие нарушается.
+ \begin{to_def}
+ 	В результате возникают \textit{внутренние напряжения} --- силы, стремящиеся вернуть тело в равновесие, которые обуславливаются молекулярными силами, обладающими незначительным радиусом действия.
+ \end{to_def}
+
+Выделим в теле объём и рассмотрим суммарную действующую на него силу.
+\textit{С одной стороны}, эта сила может быть представлена: $\int \vc{F} d V$, для $\vc{F}$ --- силы на единицу объема.
+\textit{С другой стороны}, силы, с которыми действуют различные части объёма друг на друга не приведут к появлению никакой внешней силы.
+Поэтому искомая полная сила будет состоят из сил действующих на объём со стороны окружающих его частей тела. В силу пренебрежимой малости радиуса молекулярных сил, внешние силы будут представленны как суммы сил на каждый элемент поверхности объёма.
+\begin{to_def}
+	$\int F_i d V = \int \frac{\partial \sigma^{i k}}{\partial x^k} = \oint \sigma^{i k} d f_k$. В последнем равенстве $\sigma^{i k}$ --- \textit{тензор напряжений}(симметричный). То есть $\sigma^{i k} d f_k$ есть $i$-ая компонента силы, действующей на элемент поверхности $d \vc{f}$.
+\end{to_def}
+Так, на единичную площадку, перпендикулярную оси $x$, действуют нормальная к ней сила $\sigma_{x x}$ и тангенциальные $\sigma_{y x}$ и $\sigma_{z x}$.
+Знак силы $\sigma^{i k} d f_k$, которая является действующей на ограниченный поверхностью объём со стороны окружающих тел --- положительный. Для напряжений же извне, перед интегралом нужно поставить знак минус.
+
+\subsubsection*{Всесторонее и не только сжатие}
+При таком сжатии на каждую единицу поверхности тела действует одинаковое по величине давление $p$, направленное везде по нормали к поверхности внутрь объёма тела. 
+А на элемент $d f_i$ действует сила $-p d f_i = \sigma^{i k} d f_k$. 
+Таким образом при всестороннем сжатии тензор напряжений: $\sigma^{i k} = -p \delta^{i k}$.
+
+В общем случае ещё и диагональные элементы тензора напряжений не нуль.
+То есть, помимо нормальной силы, действуют ещё и тангенциальные <<скалывающие>> напряжения, стремящиеся сдвинуть параллельные элементы поверхности друг относительно друга.
+
+В равновесии силы внутренних напряжений должны уравновешивать друг друга, то есть:
+\begin{equation*}
+	F_i = 0
+	\hspace*{1 cm}
+	\Rightarrow
+	\hspace*{1 cm}
+	\frac{\partial \sigma^{i k}}{\partial x^k} = 0.
+\end{equation*}
+И если тело находится в поле тяжести, то в равновесии:
+\begin{equation*}
+	\vc{F} + \rho g = 0
+	\hspace*{1 cm}
+	\Rightarrow
+	\hspace*{1 cm}
+	\frac{\partial\sigma^{ i k}}{\partial x^k} + \rho g^i - 0.
+\end{equation*}
+
+\subsubsection*{Внешние силы}
+Обычно именно внешние силы вызывают деформацию, однако они будут просто входить в граничные условия к уравнениям равновесия. 
+Внешняя сила $\vc{P}$ должна компенсироваться силой $\sigma^{i k} d f_k$:
+\begin{equation*}
+	P^i d f = - \sigma^{i k} d f_k = 0
+	\hspace*{0.4 cm}
+	\Rightarrow
+	\hspace*{0.4 cm}
+	d f_k = n_k d f
+	\hspace*{0.4 cm}
+	\Rightarrow
+	\hspace*{0.4 cm}
+	\sigma^{i k} n_k = P^i,
+\end{equation*}
+где $n$ --- единичный вектор нормали к площадке. Таким образом получили условие, которое должно выполняться на всей поверхности находящегося в равновесии тела.Пусть каждой точке среды соответсвует $\xi^1, \xi^2, \xi^3$, собственно $(\xi, t)$ -- \textit{лгранжевы переменные}. \textit{Закон движения среды} в таком случае это
+\begin{equation}
+    \vc{r} (\xi, t),
+\end{equation}
+скорость же
+$$
+    \vc{v} = \frac{\partial \vc{r}(\xi, t)}{\partial t},
+    \hspace{0.5cm} 
+    \vc{\mathrm{w}} = \frac{\partial \vc{v} (\xi, t)}{\partial t},
+$$
+и так далее.
+
+Альтернативно можеем задать $(x, t)$ -- эйлерово описание. Тогда
+$$
+    \vc{v}(x, t), \vc{\mathrm{w}}(x, t) 
+    \hspace{0.5cm} \text{-- поля скоростей и ускорений.}
+$$
+
+В частности, представляя движение по шоссе, полоса 1,2,3 и участок трассы -- эйлерово описание среды.
+Если же мы будем следить за каждой машиной, то это будет лагранжево описание.\subsubsection*{Подход к деформации}
+Под влиянием приложенных внешних сил твердые тела в той или иной степени \textit{деформируются}, то есть меняют свою форму и объём.
+Рассмотрим точку деформируемого тела $\vc{r}(x^1,x^2,x^3)$, которая после деформации станет $\vc{r}'$.
+\begin{to_def}
+	$\vc{u} = \vc{r}' - \vc{r}$ --- \textit{вектор деформации}. Координаты $y^i$ смещенной точки могут быть выражены через $x^i$, таким образом $\vc{u}(x^i)$ полностью определяет деформацию тела.
+\end{to_def}
+
+Рассмотрим две близкие точки, расстояние между ними до деформации
+$d (l')^2 = (d x^1)^2 + (d x^2)^2 + (d x^3)^2$, а 
+после $d `l^2 = (d y^1)^2 + (d y^2)^2 + (d y^3)^2$.
+Записав через деформацию (здесь $u_i = g_{i k}u^k$):
+\begin{equation*}
+	d (l')^2 = (d x^i + d u_i)^2
+	\hspace*{0.4 cm}
+	\Rightarrow
+	\hspace*{0.4 cm}
+	\left(d u_i = \frac{\partial u_i}{\partial x^k} d x^k \right)
+	\hspace*{0.4 cm}
+	\Rightarrow
+	\hspace*{0.4 cm}
+	d (l')^2 = d l^2 + 2 \frac{\partial u_i}{\partial x^k} d x^i d x^k + \frac{\partial u_i}{\partial x^k} \frac{\partial u_i}{\partial x^l} d x^k d x^l.
+\end{equation*}
+Поменяем во втором члене индексы $i$ и $k$, а в третьем $i$ и $l$:
+\begin{equation*}
+	d (l')^2 = d l^2 + 2 u_{i k} d x^i d x^k,
+	\hspace*{1 cm}
+	\text{где }
+	u_{i k} = \frac{1}{2} \left(\frac{u_i}{\partial x^k} + \frac{u_k}{\partial x^i} + \frac{u_i}{\partial x^l} \frac{u_l}{\partial x^k}\right).
+\end{equation*}
+Как и всякий симметричный тензор, можно привести тензор $u_{i k}$ в каждой данной точке к главным осям. 
+Это значит, что в каждой данной точке можно выбрать такую систему координат --- главные оси тензора, --- в которой из всех компонент 
+$u_{i k}$ отличны от нуля только диагональные компоненты $u_{1 1}, u_{2 2}, u_{3 3}$.
+
+При малых же деформациях, за исключением редких случаем, и вектор деформации оказывается малым, тогда можем пренебречь последним членом в полученном нами значении для тензора деформации:
+\begin{to_def}[Тензор деформации в малом приближении]
+	\begin{equation*}
+		u_{i k} = \frac{1}{2} \left( \frac{\partial u_i}{\partial x^k} + \frac{\partial u_k}{\partial x^i}\right) .
+	\end{equation*}
+\end{to_def}
+
+\subsubsection*{Изменение объёма при деформации}
+Относительные удлинения элементов длины вдоль направлений главных осей тензора деформации с нашей точностью: $\sqrt{1 + 2 u_{i i}} - 1 \approx u_{ii}$.
+
+Малый элемент объёма тогда претерпит следующее изменение:
+\begin{equation*}
+	d V' = d V(1 + u_{1 1})(1 + u_{2 2})(1 + u_{3 3}) d V (1 + u_{1 1} + u_{2 2} + u_{3 3})
+	\hspace*{0.5 cm}
+	\Rightarrow
+	\hspace*{0.5 cm}
+	u_{i i} = \frac{d V' - d V}{d V}.
+\end{equation*}
+Для несжимаемого тела, тогда $u_{i i}$ --- сумма диагональных компонент тензора в главных осях --- нулевая. Такая деформация называется \textit{сдвигом}.
+
+\subsubsection*{Тензор скорости деформации}
+\begin{to_def}
+	\textit{Тензором скорости деформации}  назовём просто $\dot{u}_{i j} = \frac{d u_{i j} }{ d t} = \frac{1}{2}\left(\frac{\partial v_i}{\partial x^j} + \frac{\partial v_j}{\partial x ^i}\right)$.
+\end{to_def}
+Тогда рассмотрим движение элемента объёма тела во времени: $\vc{v} = \vc{v}(\vc{r} + \delta \vc{r})$, до первого члена малости:
+\begin{equation*}
+	\vc{v} = \vc{v}_0 + \frac{\partial \vc{v}}{\partial x^j} \delta x^j
+	\hspace*{0.3 cm}
+	\Rightarrow
+	\hspace*{0.3 cm}
+	\left(\vc{v}_0 = 0\right)
+	\hspace*{0.3 cm}
+	\Rightarrow
+	\hspace*{0.3 cm}
+	v_i = \frac{\partial v_i}{\partial x^j} \delta x^j = \frac{1}{2} \left(\frac{\partial v_i}{\partial x^j} + \frac{\partial v_j}{\partial x^i} \right) \delta x^j + \frac{1}{2} \left(\frac{\partial v_i}{\partial x^j} - \frac{\partial v_j}{\partial x^i} \right) \delta x^j.
+\end{equation*}
+Получаем уравнение, где с помощью замены, и вернув начальную скорость, явно можем показать, что
+\begin{to_thr}[Теорема Гельмгольца]
+	Тензор скоростей деформации можно разложить на сумму симметричного и кососимметричного:
+	\begin{equation*}
+	 	\vc{v} = \vc{v}_0 + u_{i j} \delta x^j e^i + \vc{\omega} \times \delta \vc{r}.
+	 \end{equation*} 	
+\end{to_thr} 
+
+\subsubsection*{Обобщенный закон Гука}
+
+Пусть $E$ -- модуль Юнга, $\mu$ -- коэффициент Пуассона. Тогда
+$$
+    u_{11} = \frac{\sigma_{11}}{E}, \hspace{0.5cm} 
+    u_{22} = u_{33} = - \frac{\mu}{E} \sigma_{11}.
+$$
+Перепишем это в виду
+$$
+    u_{11} = \frac{\sigma_{11}}{E}  - \frac{\mu}{E} \sigma_{22} -
+    \frac{\mu}{E} \sigma_{33} = \frac{1+\mu}{E} \sigma_{11} - \frac{\mu}{E} \tr \sigma.
+$$
+Или, в матричном виде
+$$
+    \begin{pmatrix}
+        u_{11} & 0 & 0\\
+        0 & u_{22} & 0 \\
+        0 & 0 & u_{33}
+    \end{pmatrix} =
+    \frac{1+\mu}{E} 
+    \begin{pmatrix}
+        \sigma_{11} & 0 & 0\\
+        0 & \sigma_{22} & 0 \\
+        0 & 0 & \sigma_{33}
+    \end{pmatrix} -
+    \frac{\mu}{E} \tr \sigma 
+    \begin{pmatrix}
+        1 & 0 & 0\\
+        0 & 1 & 0 \\
+        0 & 0 & 1
+    \end{pmatrix}.
+$$
+В тензорном виде
+$$
+    u_{ik} = \frac{1+\mu}{E} \sigma_{ik} - \frac{\mu}{E} \delta_{ik} \tr \sigma .
+$$
+Выразим $u$:
+$$
+    \tr u = \frac{1+\mu}{E} \tr \sigma - \frac{3\mu}{E} \tr \sigma
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \tr \sigma = \frac{E}{1-2\mu} \tr u.
+$$
+Так и получаем \textit{обобщенный закон гука}:
+\begin{equation*}
+    \sigma_{ik} = \frac{E}{1+\mu} \left[
+        u_{ik} + \frac{\mu}{1 - 2\mu} \delta_{ik} \tr u 
+    \right]
+\end{equation*}\subsubsection*{Уравнение непрерывности}
+\begin{to_def}[Предмет рассмотрения]
+	Ввиду макроскопического рассмотрения \textit{жидкости}(газы) в гидродинамике представлется как сплошная среда, то есть малый элемент объёма жидкости содержит ещё достаточно больше количество молекул, относительно межмолекулярного расстояния.
+\end{to_def}
+
+Для описания движения жидкости требуется задать распределение скорости жидкости $\vc{v} = \vc{v}(x,y,z,t)$ и какие-либо её две термодинамические величины, как, например, плотность и давление. Важно отметить, что все эти величины относятся не к отдельной частице, а к точке в пространстве в определенное время.
+
+\begin{to_thr}[Уравнение непрерывности]
+\phantom{239}
+
+\begin{proof}[$\triangle$]
+	В маленьком объёме $V_{0}$ количество жидкости есть $\int_{V_0} \rho d V$.
+	Через элемент поверхности, ограничивающей $V_0$, в единицу времени протекает $\rho \vc{v} \cdot d \vc{f}$ жидкости --- положительно или отрицательное число, в зависимости от того, вытекает или втекает жидкость соответственно.
+	Тогда приравниваем для вытекания жидкости два наших рассуждения:
+	\begin{equation*}
+		- \frac{\partial}{\partial t} \int \rho d V =  \oint \rho \vc{v} \cdot d \vc{f}
+		\hspace*{0.5 cm} 
+		\Rightarrow 
+		\hspace*{0.5 cm}
+		\int \left(\frac{\partial \rho}{\partial t} + \div \rho \vc{v}\right)d V = 0
+		\hspace*{0.5 cm}
+		\Rightarrow
+		\hspace*{0.5 cm}
+		\frac{\partial \rho}{\partial t} + \div \rho \vc{v} = 0.
+	\end{equation*}
+	Последнее следует из того, что равенство должно иметь для любого объёма, таким образом получили искомое \textit{уравнение непрерывности}.
+\end{proof}
+	
+\end{to_thr}
+
+\subsubsection*{Уравнение Эйлера}
+
+\begin{to_thr}[Уравнение Эйлера]
+\phantom{239}
+
+\begin{proof}[$\triangle$]
+	Выделим в жидкости некоторый объём, полная сила, действующая на этот объём: $- \oint p d \vc{f} = - \int \grad p d V$, где интеграл из взятого по поверхности объёма преобразуется в сам рассматриваемый объём.
+	Таким образом получили, что на единицу объёма жидкости будет действовать сила:
+	\begin{equation*}
+		\rho \frac{d \vc{v}}{d t} = - \grad p.
+	\end{equation*}
+	Однако стоящая здесь скорость определяет изменение скорости именно элемента объёма, а не точки в пространстве.
+	Запишем это изменение скорости:
+	\begin{equation*}
+		d \vc{v} 
+		=
+		 \frac{\partial \vc{v}}{\partial t} d t + \frac{\partial \vc{v}}{\partial x^i} d x^i 
+		= 
+		\frac{\partial \vc{v}}{\partial t} d t + (d \vc{r} \cdot \nabla) \vc{v}
+		\hspace*{1 cm}
+		\Rightarrow
+		\hspace*{1 cm}
+		\frac{\partial \vc{v}}{\partial t} + (\vc{v} \nabla) \vc{v} = - \frac{1}{\rho} \grad p.
+	\end{equation*}
+	Последнее и есть искомое уравнение Эйлера.
+\end{proof}
+\end{to_thr}
+
+Если же жидкость движется во внешнем поле тяжести, то, на каждый элемент объёма будет действовать сила, которая просто добавится к изначальному уравнению: 
+\begin{equation*}
+	\frac{\partial \vc{v}}{\partial t} + (\vc{v} \nabla) \vc{v} = - \frac{\nabla p}{\rho} + \vc{g}.
+\end{equation*}
+
+\subsubsection*{Уравнение Навье-Стокса}
+
+Чтобы нормально учесть вязкость, нужно поговорить про \textit{поток импульса}.
+Импульс единицы объёма жидкости есть $\rho \vc{v}$, скорость изменения его компоненты:
+\begin{equation*}
+	\frac{\partial}{\partial t} \rho v^i = \rho \frac{\partial v^i}{\partial t} + \frac{\partial \rho}{\partial t} v^i.
+\end{equation*}
+Уравнения непрерывности и Эйлера запишутся в тензорном виде:
+\begin{equation*}
+	\frac{\partial \rho}{\partial t} = - \frac{\partial (\rho v^k)}{\partial x^k},
+	\hspace*{0.5 cm}
+	\hspace*{0.5 cm}
+	\frac{\partial v^i}{\partial t} = - v^k \frac{\partial v^i}{\partial x^k} - \frac{1}{\rho} \delta^{i k} \frac{\partial p}{\partial x^k}.
+\end{equation*}
+Тогда получим:
+\begin{equation*}
+	\frac{\partial}{\partial t} \rho v^i 
+	= 
+	- \rho v^k \frac{\partial v^i}{\partial x^k} -  \delta^{i k} \frac{\partial p}{\partial x^k} - v^i \frac{\partial \rho v^k}{\partial x^k} 
+	=
+	-\delta^{i k} \frac{\partial p}{\partial x^k} - \frac{\partial}{\partial x^k} \rho v^i v^k
+	= - \frac{\partial \Pi^{i k}}{\partial x^k}.
+\end{equation*}
+\begin{to_def}
+	$\Pi^{i k} $ --- \textit{тензор плотности потока импульса}:
+	$
+		\Pi^{i k} = p \delta^{i k} + \rho v^i v^k.
+	$
+\end{to_def}
+
+Таким образом уравнение Эйлера у нас записалось в виде:
+$
+	\frac{\partial}{\partial t} \rho v^i = - \frac{\partial \Pi^{i k}}{\partial x^k}.
+$
+Поток импульса представляет собой чисто обратимый перенос импульса, связанный с просто механическим передвижением различных участков жидкости и с действующими в жидкости силами давления.
+\textit{Вязкость} (внутреннее трение) жидкости проявляется в наличии ещё дополнительного, необратимого переноса импульса из мест с большой скоростью в места с меньшей.
+
+Поэтому уравнение движения вязкой жидкости можно получить, прибавив к идеальному потоку импульса дополнительный член $\sigma^{i k}_{visc}$, определяющий такой вязкий перенос:
+$
+\Pi^{i k} = p \delta^{i k} + \rho v^i v^k - \sigma^{i k}_{visc} = - \sigma^{i k} + \rho v^i v^k.
+$
+\begin{to_def}
+	Таким образом: $\sigma^{i k} = - p \delta^{i k} + \sigma^{i k}_{visc}$ называют \textit{тензором напряжений}, а $\sigma^{i k}_{visc}$ --- вязким тензором напряжений.
+\end{to_def}
+
+Чтобы написать выражение для вязкого напряжения сделаем пару оговорок. 
+\textit{Во первых}, градиенты скорости движения участков жидкости относительно друг друга не велики, тогда $\sigma^{i k}_{visc}$ зависит лишь от первых производных скорости по координатам, линейно. \textit{Во вторых}, не зависящие от первых производных величины должны обращаться в нуль как для скорости потока $\vc{v} = \const$ и тензор должен быть нулевым. \textit{В третьих}, $\sigma^{i k}_{visc} = 0$ когда жидкость совершает целое равномерное вращение, поскольку никакого внутреннего трения тогда не будет.
+Для такого равномерного вращения с $\vc{v} = [\vc{\omega} \vc{r}]$ линейными комбинациями производных обращающимися в нуль будут: $\frac{\partial v^i}{\partial x^k} + \frac{\partial v^k}{\partial x^i}$.
+
+Это всё даёт нам мотивацию для не шибко сильных потоков несжимаемой жидкости согласится с Сэром Исааком Ньютоном, и написать тензор вязкого напряжения, как \textit{тензор скорости деформации}:
+\begin{equation*}
+	\sigma^{i k}_{visc} = \eta \left(\frac{\partial v^i}{\partial x^k} + \frac{\partial v^k}{\partial x^i}\right),
+	\hspace*{1 cm}
+	\Rightarrow
+	\hspace*{1 cm}
+	\sigma^{i k} = - p \delta^{i k} + \eta \left(\frac{\partial v^i}{\partial x^k} + \frac{\partial v^k}{\partial x^i}\right).
+\end{equation*}
+А уравнение Эйлера тогда для несжимаемой жидкости запишется:
+\begin{equation*}
+	\rho \left(\frac{\partial v^i}{\partial t} + v^k \frac{\partial v^i}{\partial x^k}\right)
+	=
+	- \delta^{i k} \frac{\partial p}{\partial x^k} + \frac{\partial}{\partial x^k} \left[\eta \left(\frac{\partial v^i}{\partial x^k} + \frac{\partial v^k}{\partial x^i}\right)\right].
+\end{equation*}
+а в более человеческом, привычном глазу, виде:
+\begin{equation*}
+	\frac{\partial \vc{v}}{\partial t} + (\vc{v} \triangle) \vc{v} = - \frac{1}{\rho} \grad p + \frac{\eta}{\rho} \Delta \vc{v}.
+\end{equation*}
+\begin{to_def}
+	Коэффициент $\eta$ называется --- \textit{динамическим коэффициентом вязкости}, а отношение $\eta/\rho = \nu$ --- \textit{кинематической вязкостью}.
+\end{to_def}
+\begin{to_def} 
     \textit{Обобщенная сила} $Q_k$ -- величина коэффициента $\partial q^k$ при вариации $\delta A$, то есть $\delta A = Q_k \delta q^k$.
 \end{to_def}
 
@@ -59,7 +596,7 @@ $
     \sum_k
     \left[
         \frac{d}{dt} \frac{\partial T}{\partial \dot{q}^k} 
-        - \frac{\partial T}{\partial q^k} - Q^k
+        - \frac{\partial T}{\partial q^k} - Q_k
     \right] \delta q^k = 0.
 \end{align*}
 Проблема остается в неголономных системах, где $\delta q^k$ не являются независимыми, получается, что уравнения Лагранжа справедливы для голономных систем.
@@ -67,11 +604,11 @@ $
 Вспоминая, что
 \begin{equation*}
     \delta  A = \sum_i \vc{F}_i \cdot \delta \vc{r}_i =
-    \sum_i \left(\vc{F}_i \cdot \frac{\partial \vc{r}_i}{\partial q^k}\right) \delta q^k =
+    \sum_i \left(\vc{F}_i \cdot \frac{\partial \vc{r}_i}{\partial q^k}\right) \delta q^k \overset{\text{\red{?}}}{=} 
     \sum_k 
     \frac{\delta A_k}{\delta q^k} \delta q^k = Q_k \delta q^k.
 \end{equation*}
-Тогда пусть $\Pi (q, t) \colon Q^k = - \partial \Pi / \partial q^k$.  Тогда
+Тогда пусть $\Pi (q, t) \colon Q_k = - \partial \Pi / \partial q^k$.  Тогда
 \begin{equation*}
     \frac{d}{dt} \frac{\partial (T-\Pi)}{\partial \dot{q}^k} - \frac{\partial (T - \Pi)}{\partial q^k}  = 0,
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
@@ -259,11 +796,300 @@ $
 В случае существования обобщенного потенциала $L$ всё так же многочлен второй степени относительно $q, \ \dot{q}$, при чём $L_2 = T_2$, так что уравнения остаются разрешимы относительно обобщенных ускорений.
 
 
+\subsubsection*{Натуральные системы}
+
+\begin{to_def} 
+    Системы, в которых силы имеют обычный $\Pi(q_i, t)$ или обобщенный $V(q^i, \dot{q}^i, t)$ потенциал, называются \textit{натуральными}. В таких системах $L = T - \Pi$.
+    Более общие системы $L(q^i, \dot{q}^i, t)$ не представимы в виде однако при выполнении условия, 
+    \begin{equation*}
+         \det \left[
+            \frac{\partial^2 L}{\partial \dot{q}^i \partial \dot{q}^k} 
+         \right] \neq 0,
+    \end{equation*}
+    то есть ненулевого гессиана лагранжиана, 
+    уравнения Лагранжа остаются разрешимы относительно обобщенных ускорений.
+\end{to_def}
+
+
+\subsubsection*{Первые интегралы \textnormal{(\red{воообще про первые интегралы читайте билет №35})}}
+
+\begin{to_def} 
+    \textit{Первым интегралом} системы дифференциальных уравнений называется функция $f(q,\ \dot{q}, \ t)$  (фазовых переменных), сохраняющая свои значения на любом решении этой системы.
+\end{to_def}
+
+\begin{to_def} 
+    Распространенным первым интегралом являются \textit{цциклические} интегралы $\partial L / \partial \dot{q}^k$. Переменная $q^k$ называется \textit{циклической}, если она не входит в выражение для $L$.  
+\end{to_def}
 
 
 
 
 
+
+\subsubsection*{Преобразование Лежандра}
+
+\begin{to_def} 
+    В уравнениях Лагранжа второго рода движения голономной системы в потенциальном поле сил, функция Лагранжа зависит от $q, \ \dot{q}, \ t$ -- \textit{переменные Лагранжа}.
+    Если в качестве параметров взять $q, \ p, \ t$, где $p_i$ -- \textit{обобщенные импульсы}\footnote{
+        Обобщенный импульс $p_i$ -- ковектор, а  не вектор!
+    }, определяемые как
+    $
+        p_i = {\partial L}/{\partial \dot{q}^i}.
+    $
+    То получим набор $q, \ p, \ t$ -- \textit{переменные Гамильтона}. 
+\end{to_def}
+
+В силу невырожденности $\partial L / (\partial \dot{q}^i \partial \dot{q}^j) = J_{p}$, то есть по \textit{теореме о неявной функции} эти равенства разрешимы относительно переменных $\dot{q}^i$. Через преобразование Лежандра естестественно ввести функцию
+\begin{equation*}
+    H(q, p, t) = p_i \dot{q}^i - L(q, \dot{q}, t),  \hspace{0.5cm} \dot{q} \equiv \dot{q}(q, p, t).
+\end{equation*}
+
+\subsubsection*{Уравнения Гамильтона}
+% Маркеев, п.149.
+
+Полный дифференциал функции Гамильтона можем выразиь двумя способами:
+\begin{equation*}
+    \left.\begin{aligned}
+        d H &= \frac{\partial H}{\partial q^i} \d q^i + \frac{\partial H}{\partial p_i} \d p_i + \frac{\partial H}{\partial t} \d t,
+        \\
+        dH &= \dot{q}^i \d p_i - \frac{\partial L}{\partial q^i} \d q^i - \frac{\partial L}{\partial t} \d t.
+    \end{aligned}\right\}
+    \hspace{0.7cm} \Rightarrow \hspace{0.7cm} 
+    \left.\begin{gathered}
+        \frac{\partial H}{\partial t} = - \frac{\partial L}{\partial t} \\
+        \frac{\partial H}{\partial p_i} = \dot{q}^i, \ \ 
+        \frac{\partial H}{\partial q^i} = - \frac{\partial L}{\partial q^i}
+    \end{gathered}\right.
+    \hspace{0.7cm} \Rightarrow \hspace{0.7cm} 
+    \left\{\begin{aligned}
+        \frac{d q^i}{d t} &= \frac{\partial H}{\partial p_i}, \\
+        \frac{d p_i}{d t} &= - \frac{\partial H}{\partial q^i}.    
+    \end{aligned}\right.
+\end{equation*}
+Эти уравнения называются \textit{уравнениями Гамильтона}, или \textit{каноническими уравнениями}.
+
+
+\subsubsection*{Физический смысл функции Гамильтона}
+
+Пусть система натуральна, тогда $L = L_2 + L_1 + L_0$, и, соответсвенно,
+\begin{equation*}
+    H = \frac{\partial L}{\partial \dot{q}^i} \dot{q}^i - L.
+\end{equation*}
+По теореме Эйлера об однородных функциях
+\begin{equation*}
+    \frac{\partial L_2}{\partial \dot{q}^i} \dot{q}^i = 2 L_2,
+    \hspace{1cm} 
+    \frac{\partial L_1}{\partial \dot{q}^i} \dot{q}^i = L_1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    H = L_2 - L_0.
+\end{equation*}
+пусть $T = T_2 + T_1 + T_0$, если силы имеют обычный потенциал $\Pi$, то $L_0 = T_0 - \Pi$, 
+\begin{equation*}
+    H = T_2 - T_0 + \Pi.
+\end{equation*}
+Если же силы имеют обобщенный потенциал $V = V_1 + V_0$, то $L_0 = T_0 - V_0$, и
+\begin{equation*}
+    H = T_2 - T_0 + V_0.
+\end{equation*}
+В случае натуральных и склерономных систем $T_1 = T_0 = 0$ и $T = T_2$, тогда $H = T + \Pi$. Т.е. для натуральных склерономных систем с обычным потенциалом сил функция Гамильтона $H$ представляет собой полную механическую энергию.
+
+\subsubsection*{Интеграл Якоби}
+
+Найдём полную производную $H$ по времени,
+\begin{equation*}
+    \frac{d H}{d t} = \frac{\partial H}{\partial q^i} \dot{q}^i + \frac{\partial H}{\partial p_i} \dot{p}_i + \frac{\partial h}{\partial t} = 
+    \frac{\partial H}{\partial q^i} \frac{\partial H}{\partial p_i} - \frac{\partial H}{\partial p_i} \frac{\partial H}{\partial q^i} + \frac{\partial H}{\partial t} = \frac{\partial H}{\partial t},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{d H}{d t} = \frac{\partial h}{\partial t}.
+\end{equation*}
+Система называется \textit{обобщенно консервативной}, если $\partial H / \partial t = 0$, т.е $H(q^i, p_i) = h$, собственно, $H$ называют \textit{обобщенной полной энергией}, а поледнее равенство -- \textit{обобщенным интегралом энергии}.
+
+
+\begin{to_def} 
+    Для натуральной системы с обычным потенциалом сил, если $\partial H/ \partial t =0$, то
+    \begin{equation*}
+         H = T_2 - T_0 + \Pi = h = \const.
+     \end{equation*} 
+     Соотноешние, где $h$ -- произвольная постоянная, называют \textit{интегралом Якоби}.
+\end{to_def}
+
+Есть и другая формулировка для интеграла Якоби голономной склерономной системы. Действительно, при $\partial L / \partial t = 0$, интеграл Якоби перейдёт в
+\begin{equation*}
+    \frac{\partial H}{\partial t} = 0,
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
+    \frac{d }{d t} \left(
+        \frac{\partial L}{\partial \dot{q}^i} \dot{q}^i
+    \right) = 0,
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
+    \frac{\partial L}{\partial \dot{q}^i} \dot{q}^i = \const.
+\end{equation*}
+
+
+
+\subsubsection*{Уравнения Уиттекера}
+
+
+Если $\partial H / \partial t = 0$, то $H(q, p) = h$, где $h = \const$ определяемая из н.у. В $2n$-мерном пространстве $q, \ p$ интеграл Якобми задаёт гиперповерхность, рассмотрим движение с $H = h$.
+
+Такое движение описывается системой с $2n-2$ уравнений, причём она может быть записана в виде канонических уравнений. Пусть $\partial H / \partial p_1 \neq 0$, тогда
+\begin{equation*}
+    p_1 = - K(q^1, \ldots, q^n, p_2, \ldots, p_n, h),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        \dot{q}^i = \frac{\partial H}{\partial p_i}, \\
+        \dot{p}_j = - \frac{\partial H}{\partial q^j}        
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{d q^j}{d q^1} = \frac{
+    \left(\dfrac{\partial H}{\partial p_j} \right)
+    }{
+    \left(\dfrac{\partial H}{\partial p_1} \right)
+    },
+    \hspace{0.5cm} 
+    \frac{d p_j}{d q^1} = - \frac{
+    \left(\dfrac{\partial H}{\partial q^j}\right)
+    }{
+    \left(\dfrac{\partial H}{\partial p_1} \right)
+    },
+\end{equation*}
+для $j = 2,\ 3,\ \ldots,\ n$. Подставляя $p_1$ получим
+\begin{align*}
+    &\frac{\partial H}{\partial q^j} - \frac{\partial H}{\partial p_1} \frac{\partial K}{\partial q^j} = 0,
+    &(j = 2, \ 3, \ \ldots, n);
+    \\
+    &\frac{\partial H}{\partial p_j} - \frac{\partial H}{\partial p_1} \frac{\partial K}{\partial p_j}  = 0,
+    &(j = 2, \ 3, \ \ldots, n).
+\end{align*}
+Допиливая до надлежащего вида, окончательно находим
+\begin{equation*}
+    \frac{d q^j}{d q^1} = \frac{\partial K}{\partial p_j},
+    \hspace{1cm} 
+    \frac{d p_j}{d q^1} = - \frac{\partial K}{\partial q^j},
+    \hspace{1cm} 
+    (j = 2, \ 3, \ \ldots, n).
+\end{equation*}
+Эти уравнения описывают движения системы при $H = h = \const$, и называются \textit{уравнениями Уиттекера}. 
+
+\subsubsection*{Уравнения Якоби}
+
+
+Уравнения Уиттекера имеют структуру уравнений Гамильтона, соответственно их можно зписать в виде уравнений типа Лагранжа, при гессиане $K$ по $p$ неравным 0. Пусть $P$ -- преобразование Лежандра функции $K$ по $p_j$ ($j = 2, \ 3,\ \ldots,\ n$). Тогда
+\begin{equation*}
+    P = P(q^2, \ldots, q^n, \tilde q^2, \ldots, \tilde q^n, q^1, h) = \sum_{j = 2}^{n} \tilde q^j p_j - K,
+\end{equation*}
+где $\tilde q^{j} = d q^j / d q^1$. Величины $p_j$ выражаются через $\tilde q^2, \ \ldots, \ \tilde q_n$ из уравнений 
+\begin{equation*}
+    \tilde q^j = \frac{\partial K}{\partial p_j}, \hspace{0.5cm} 
+    (j = 2, \ 3, \ \ldots, n),
+\end{equation*}
+т.е. из первых $n-1$ уравнений Уиттекера. При помощи функции $P$ эти уравнения могут быть записаны в эквивалентной форме:
+\begin{equation*}
+    \frac{d }{d q^1} \frac{\partial P}{\partial q_j'} - \frac{\partial P}{\partial q^j} = 0
+    \hspace{1cm} (j = 2,\ 3,\ \ldots,\ n).
+\end{equation*}
+Это уравнения типа Лагранжа, называются \textit{уравнениями Якоби}.
+
+Преобразовывая выражение для $P$ найдём, что
+\begin{equation*}
+    P = \sum_{j=2}^{n} q_j \tilde q^j + p_1 = 
+    \sum_{i=1}^{n} p_1 \tilde q_i = \frac{1}{\dot{q}^1} \sum_{i=1}^{n} p_i \dot{q}^i = \frac{1}{\dot{q}^1} (L+H).
+\end{equation*}
+Тогда в случае консервативной системы $L = T - \Pi$, $H = T + \Pi$, и
+\begin{equation*}
+    P = \frac{2T}{\dot{q}^1},
+    \hspace{0.5cm} 
+    T = \frac{1}{2} a_{ik} \dot{q}^i \dot{q}^k = (\dot{q}^1)^2 G(q^1, \ldots, q^n, \tilde q^2, \ldots, \tilde q^n),
+    \hspace{0.5cm} 
+    G = \frac{1}{2} a_{ik} \tilde q^i \tilde q^k.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \tilde q^1 = \sqrt{\frac{h-\Pi}{G} }
+\end{equation*}
+Таким образом выражение для 
+\begin{equation*}
+    P = 2 \sqrt{(h-\Pi)G }.
+\end{equation*}
+
+
+\subsubsection*{Скобки Пуассона}
+
+\begin{to_def} 
+    Пусть $u$, $v$ $\in C^2(q, p, t)$, тогда выражение
+    \begin{equation*}
+        \{u, v\}  
+        =
+        \frac{\partial u}{\partial q^i} \frac{\partial v}{\partial p_i} -
+        \frac{\partial u}{\partial p_i} \frac{\partial v}{\partial q^i}
+    \end{equation*}  
+    называют \textit{скобкой Пуассона} функций $u$ и $v$.
+\end{to_def}
+
+Вообще, можно было бы ввести алгебры Ли и показать, что пространство гладких функций $f(t, x, p)$ является алгеброй Ли относительно скобки Пуассона. Выражается это в выполнение следующих свойств:
+\begin{enumerate}
+    \item $\{y, x\} = - \{x, y\}, \ \ \forall x, y \in C^2$ (кососимметричность);
+    \item $\{\lambda_1 x_1 + \lambda_2 x_2, y\} = \lambda_1 \{x_1, y_1\} + \lambda_2 \{x_2, y\},
+    \ \ \forall \lambda_1, \lambda_2 \in \mathbb{R}
+    $ (линейность по первому аргументу);
+    \item $\{x, \{y, z\} + \{y, \{z, x\}\} + \{z, \{x, y\}\} = 0$ (тождество Якоби).
+\end{enumerate}
+
+\begin{to_def} 
+    \textit{Производной} функции $f(t, q, p)$ \textit{в силу гамильтоновой системы} в точке $(t_0, x_0, p^0)$ называется
+    \begin{equation*}
+         \frac{d f(t_0, x_0, p^0)}{d t} \overset{\mathrm{def}}{=} \frac{d }{d } 
+         \left(
+            f(t, q(t), p(t)) \big|_{t=t_0}
+         \right),
+     \end{equation*} 
+     где $q(t)$ и $p(t)$ -- решения гамилтоновой системы с н.у. $q(t_0) = q_0$ и $p(t_0) = p^0$. 
+\end{to_def}
+
+Выразим производную в силу системы через скобку Пуассоа:
+\begin{equation*}
+    \frac{d f}{d t} 
+    =
+     \frac{\partial f}{\partial t} + \frac{\partial f}{\partial q^i} \frac{d q^i}{d t} + \frac{\partial f}{\partial p_i} \frac{d p_i}{d t} 
+     =
+      \frac{\partial f}{\partial t} + \frac{\partial f}{\partial q^i} \frac{\partial H}{\partial p_i} - \frac{\partial f}{\partial p_i} \frac{\partial H}{\partial q^i} = \frac{\partial f}{\partial t} + \{H, f\},
+      \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+      \frac{d f}{d t} = \frac{\partial f}{\partial t} + \{H, f\}.
+\end{equation*}
+
+\begin{to_lem} 
+    Уравнение вида 
+    \begin{equation*}
+         \frac{d f}{d t} = \frac{\partial f}{\partial t} + \{H, f\} = 0
+     \end{equation*} 
+     является необходимым и достаточным условием того, что $f(t, q, p)$ являлась бы первым интегралом гамилтоновой системы.
+\end{to_lem}
+
+\begin{to_thr}[теорема Пуассона]
+     Если $f$ и $g$ -- два интеграла движения, то $\{f, g\} = \const$ также является интегралом движения.
+\end{to_thr}
+
+\begin{to_def} 
+    \textit{Гамильтоновым полем} для функции $f \in C^1$ называется векторное поле $\vc{f}$, определяемое формулой
+    \begin{equation*}
+        \omega[ \vc{f}(q, p), \vc{v}] = df(q, p) [\vc{v}], \ \ \forall \vc{v} \in T_{q, p},
+        \hspace{1cm} 
+        \omega = dq^i \wedge dp_i.
+    \end{equation*}
+    В координатах это выразится в 
+    \begin{equation*}
+        \vc{f} = \frac{\partial f}{\partial p_i} \frac{\partial }{\partial q^i} - \frac{\partial f}{\partial q^i} \frac{\partial }{\partial p_i}.
+    \end{equation*}
+    Более того $\vc{f}(\varphi) = \{f, \varphi\}$, где $\varphi$ -- некоторая гладкая функция.
+\end{to_def}
+
+\begin{to_thr}[о связи скобки Пуассона и скобки Ли]
+     Пусть $f, g \in C^2$. Тогда гамильтоново поле скобки пуассона $\{f, g\}$ совпадает со скобкой Ли гамильтоновых полей $\vc{g}$ и $\vc{f}$: 
+     \begin{equation*}
+         \vv{
+         \{f, g\}
+         } = [\vc{f}, \vc{g}].
+     \end{equation*}
+\end{to_thr}
+
+\subsubsection*{Пара слов от Льва Давидовича}
 
 
 \begin{to_def} 
@@ -319,7 +1145,289 @@ $
     таким образом уравнения Лагранжа выполнены. 
 \end{proof}
 
-% в первых билет засунуть конфигурационное многообразие
+\subsubsection*{Истинные и окольные пути}
+
+\begin{to_def} 
+    Совокупность траекторий, которые описаны перемещениями из начальных положений $a_\nu$ в конечные $b_\nu$, образуют \textit{истинный} (\textit{действительный, прямой}) путь системы $\gamma_\nu$.
+
+    Совокупность $\gamma_\nu'$, бесконечно близких к $\gamma_\nu$ и таких, что движение точки по кривой $\gamma_\nu'$ может происходить без нарушения связей, называют окольным путем системы.
+\end{to_def}
+
+\begin{to_def} 
+    \textit{Расширенное координатным пространство} помимо криволинейных координат $q^i$ также время $t$.
+\end{to_def}
+
+\begin{to_def} 
+    При достаточном удалении точки $A_1$ от точки $A_0$ может оказаться, что краевая задача имеет решения, соответствующие бесконечно близким прямым путям в расширенном координатном пространстве. В этом случае точки $A_0$ и $A_1$ называют \textit{сопряженными кинетическими фокусами}. 
+\end{to_def}
+
+\begin{to_lem} 
+    Положение точки на окольном пути задается, как $\vc{r}_\nu (t) + \delta \vc{r}_\nu(t)$, где $\delta \vc{r}_\nu (t_0) = 0$ и $\delta \vc{r}_\nu (t_1) = 0$. Синхронное варьирование и взятие производной по времени перестановочны. 
+\end{to_lem}
+
+\subsubsection*{Принцип Гамильтона-Остроградского}
+
+Рассмотрим прямой путь и совокупность окольных путей. Пусть $m_\nu$ -- масса точки $P_\nu$, а $\vc{F}_\nu$ -- равнодействующая \textit{активных}\footnote{
+    \red{Определение бы написать.}
+} сил, приложенных к точке. Тогда
+\begin{equation*}
+    \int_{t_0}^{t_1} \sum_{\nu=1}^{N} \vc{F}_\nu \cdot \delta \vc{r}_\nu \d t - 
+    \sum_{\nu=1}^N m_\nu \int_{t_0}^{t_1} \vc{\mathrm{w}}_\nu \cdot \delta \vc{r}_\nu \d t = 0.
+\end{equation*}
+Рассмотрим разность между значениями $T(t)$ на окольном и прямом путях
+\begin{equation*}
+    \delta T = \frac{1}{2} \sum_{\nu=1}^N m_\nu \left(
+        \dot{\vc{r}}_\nu + \delta \dot{\vc{r}}_\nu
+    \right)^2 - \frac{1}{2} \sum_{\nu=1}^N m_\nu \dot{\vc{r}}_\nu^2 = 
+    \sum_{\nu=1}^N m_\nu \dot{\vc{r}}_\nu \cdot \delta \dot{\vc{r}}_\nu,
+\end{equation*} 
+таким образом
+\begin{equation*}
+     \int_{t_0}^{t_1} \delta T \d t = \sum_{\nu=1}^N  m_\nu \int_{t_0}^{t_1} \dot{\vc{r}}_\nu \cdot d \delta \vc{r}_\nu = \sum_{\nu=1}^N m_\nu \dot{\vc{r}}_\nu \cdot \delta \vc{r}_\nu 
+    \bigg|_{t_0}^{t_1} - \sum_{\nu=1}^N m_\nu \int_{t_0}^{t_1} \vc{\mathrm{w}}_\nu \cdot \delta \vc{r}_\nu \d t = 
+    - \sum_{\nu=1}^N  m_\nu \int_{t_0}^{t_1} \vc{\mathrm{w}}_\nu \cdot \partial \vc{r}_\nu \d t.
+\end{equation*}
+Таким образом мы пришли к следующей теореме:
+
+\begin{to_thr}[принцип Гамильтона-Остроградского]
+     Если величины $\delta \vc{r}_\nu (t)$ соответствуют синхронному варьированию прямого пути и $\delta \vc{r}_\nu (t_0) = \delta \vc{r}_\nu (t_1) = 0$ тогда и только тогда, когда
+     \begin{equation*}
+         \int_{t_0}^{t_1} \left(
+            \delta T + \sum_{\nu=1}^N \vc{F}_\nu \cdot \delta \vc{r}_\nu
+         \right) \d t = 0.
+     \end{equation*}
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+    Хотелось бы также показать, что из принципа Гамильтона-Остроградского вытекает уравнения Лагранжа второго рода:
+\begin{equation*}
+    \left\{\begin{aligned}
+        \sum_{\nu=1}^N \vc{F}_\nu \cdot \delta \vc{r}_\nu = Q_i \delta q^i \\
+        \delta T = \frac{\partial T}{\partial q^i} \delta q^i + \frac{\partial T}{\partial \dot{q}^i} \delta \dot{q}^i
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \int_{t_0}^{t_1} \sum_{\nu=1}^N 
+    \left[
+        \frac{\partial T}{\partial \dot{q}^i} \delta \dot{q}^i + \left(
+            \frac{\partial T}{\partial q^i} + Q_i
+        \right) \delta q^i
+    \right] \d t = 0.
+\end{equation*}
+Интегрируя по частям находим, что
+\begin{equation*}
+    \int_{t_0}^{t_1} \frac{\partial T}{\partial \dot{q}^i} \delta \dot{q}^i \d t 
+    = 
+    \int_{t_0}^{t_1} \frac{\partial T}{\partial \dot{q}^i} d \delta q^i 
+    = 
+    \frac{\partial }{\partial \dot{q}^i} \delta q^i \bigg|_{t_0}^{t_1} 
+    - \int_{t_0}^{t_1} \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} \delta q^i \d t 
+    = 
+    - \int_{t_0}^{t_1} \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} \delta q^i \d t.
+\end{equation*}
+Таким образом приходим к равенству вида
+\begin{equation*}
+    \int_{t_0}^{t_1} \left(
+        \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} - \frac{\partial T}{\partial q^i} - Q_i
+    \right) \delta q^i \d t = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} - \frac{\partial T}{\partial q^k} = Q_k.
+\end{equation*}
+Следовательно принцип Гамильтона-Остроградского может быть положен в основу динамики голономных систем.
+\end{proof}
+
+
+
+\subsubsection*{Принцип Гамильтона-Остроградского для систем в потенциальном поле сил}
+
+В потенциальном поле сил верно, что
+\begin{equation*}
+    \sum_{\nu=1}^N \vc{F}_\nu \cdot \delta \vc{r}_\nu = - \delta \Pi,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \int_{t_0}^{t_1} (\delta T - \delta \Pi) \d t = 0,
+    \hspace{0.5cm} \overset{L = T - \Pi}{\Rightarrow}  \hspace{0.5cm} 
+    \int_{t_0}^{t_1} \delta L \d t = 0.
+\end{equation*}
+
+\begin{to_def} 
+    \textit{Действием по Гамильтону} для голономных систем называется интеграл вида
+    \begin{equation*}
+        S = \int_{t_0}^{t_1} L \d t.
+    \end{equation*}
+\end{to_def}
+
+\begin{to_thr}[Принцип Гамильтона-Остроградского v2]
+     Для голономной системы в случае существования потенциала сил среди всех путей выделяется прямой путь тем, что для него $\delta S = 0$.
+\end{to_thr}
+
+
+
+\subsubsection*{Экстремальное свойство действия по Гамильтону}
+\begin{to_thr}[принцип наименьшего действия]
+    В окрестности, достаточно малой, чтобы отсутствовали кинетические фокусы, действие по Гамильтону на прямом пути будет наименьшим, по сравнению с окольными, проходимыми за то же время.
+\end{to_thr}
+
+
+\begin{proof}[$\triangle$]
+    Пусть $[af]$ и $[ac]$ действие на двух различных путях системы. Для их разности имеем
+    \begin{equation*}
+        [ac]-[af]
+        =
+        \int_{t_0}^{t_1} \sum_{\nu=1}^N \left(
+            m_\nu \vc{v}_\nu \cdot \delta \dot{\vc{r}}_\nu - \frac{\partial \Pi}{\partial \vc{r}_\nu} \cdot \delta \vc{r}_\nu
+        \right) \d t 
+        =
+        \sum_{\nu=1}^N  m_\nu \vc{v}_\nu (t) \cdot \delta \vc{r}_\nu (t) 
+        + 
+        \int_{t_0}^{t_1} \sum_{\nu=1}^N (\vc{F}_\nu - m_\nu \vc{\mathrm{w}}_\nu) \cdot \delta \vc{r}_\nu \d t.
+    \end{equation*}
+    где $\vc{v}_\nu$ и $\partial |pi / \partial \vc{r}_\nu$ вычисляются по $a_\nu f_\nu$.
+    Учитывая общее уравнение динамики, это соотношение можно переписать в виде
+    \begin{equation*}
+        [ac]-[af] = \sum_{\nu=1}^N m_\nu v_\nu(f) \cos \alpha_\nu \delta s_\nu,
+    \end{equation*}
+    где $\alpha_\nu$ -- угол между $v_\nu$ и $\delta \vc{r}_\nu$, а $\delta s_\nu$ -- длина $f_\nu c_\nu$.
+    \red{Опуская некоторые выкладки,} можем теперь получить, что $S_{\text{ок}} > S_{\text{пр}}$.
+\end{proof} 
+
+
+
+\begin{to_def} 
+    Рассмотрим голономную (обобщенно) консервативную систему. Рассмотрим движение в $n$-мерном координатном пространстве. Рассмотрим прямые и окольные пути такие, что $H = h = \const$. При таком \textit{изоэнергетическом варьировании} $t_1-t_0$ не обязательно одинаково для прямого и окольного пуию     
+\end{to_def}
+
+\subsubsection*{Принцип Мюпертюи-Лагранжа}
+
+При заданной $h$ уравнения движения могут быть записаны в форме Якоби, они также будут иметь форму уравнений Лагранжа, где $L \to P$, $t \to q_1$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% в первых билет засунуть конфигурационное многообразие\subsection*{Решение задачи}
+
+
+Составим матрицу $C$, записав в её столбцах координаты векторов $f_1, f_2, f_3$:
+\begin{equation*}
+    C = \begin{pmatrix}
+        -3 & 1 & -2 \\
+        1 & -2 & 1 \\
+        2 & 3 & -1 \\
+    \end{pmatrix}.
+\end{equation*}
+Вычислим определитель этой матрицы
+\begin{equation*}
+    \det C = \begin{vmatrix}
+        -3 & 1 & -2 \\
+        1 & -2 & 1 \\
+        2 & 3 & -1 \\
+    \end{vmatrix} = 
+    \begin{vmatrix}
+        0 & -5 & 1 \\
+        1 & -2 & 1 \\
+        0 & 7 & -3 \\
+    \end{vmatrix} = 
+    1 \cdot (-1)^{(2+1)} \begin{vmatrix}
+        -5 & 1\\
+        7 & -3 \\
+    \end{vmatrix} = -8.
+\end{equation*}
+Так как $\det C \neq 0$, то векторы $\vc{f}_1, \ \vc{f}_2, \ \vc{f}_3$ линейно независимы, а потому могут быть приняты в качестве базиса в $\mathbb{R}^3$. Матрица $C$ невырождена, а потому имеет обратную $C^{-1}$. Найдём её:
+\begin{align*}
+    &A_1^1 = \begin{vmatrix}
+        -2 & 1 \\
+        3 & -1 \\
+    \end{vmatrix}, \  
+    A_1^2 = - \begin{vmatrix}
+        1 & -2 \\
+        3 & -1 \\
+    \end{vmatrix}, \  
+    A_1^3 = - \begin{vmatrix}
+        1 & -2 \\
+        -2 & 1
+    \end{vmatrix}, \  
+    A_2^1 = - \begin{vmatrix}
+        1 & 1 \\
+        2 & -1
+    \end{vmatrix}, \  \
+    A_2^2 = \begin{vmatrix}
+        -3 & -2 \\
+        2 & -1 \\
+    \end{vmatrix}; 
+    \\
+    &A_2^3 = \begin{vmatrix}
+        -3 & -2 \\
+        1 & 1 \\
+    \end{vmatrix}, \  
+    A_3^1 = - \begin{vmatrix}
+        1 & -2 \\
+        2 & 3 \\
+    \end{vmatrix}, \  
+    A_3^2 = - \begin{vmatrix}
+        -3 & 1 \\
+        2 & 3
+    \end{vmatrix}, \  
+    \ \; \, A_3^3 = - \begin{vmatrix}
+        -3 & 1 \\
+        1 & -2
+    \end{vmatrix}.
+\end{align*}
+Таким образом находим обратную матрицу
+\begin{equation*}
+    C^{-1} = \frac{1}{8} \begin{pmatrix}
+        1 & 5 & 3 \\
+        -3 & -7 & -1 \\
+        -7 & -11 & -5 \\
+    \end{pmatrix}.
+\end{equation*}
+В таком случае новые координаты $y_1, \ y_2, \ y_3$ вектора $\vc{x}$:
+\begin{equation*}
+    \begin{pmatrix}
+        y_1 \\
+        y_2 \\
+        y_3 \\
+    \end{pmatrix} = 
+    \frac{1}{8} \begin{pmatrix}
+        1 & 5 & 3 \\
+        -3 & -7 & -1 \\
+        -7 & -11 & -5 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        -3 \\
+        -2 \\
+        7 \\
+    \end{pmatrix} =
+    \frac{1}{8} 
+    \begin{pmatrix}
+        -3-10+21 \\
+        9+11 - 7 \\
+        21 + 22 - 35 \\
+    \end{pmatrix} = 
+    \frac{1}{8} 
+    \begin{pmatrix}
+        8 \\
+        16 \\
+        8
+    \end{pmatrix} =
+    \begin{pmatrix}
+        1 \\ 2 \\ 1
+    \end{pmatrix}.
+\end{equation*}
 \definecolor{grey}{HTML}{666666}
 \definecolor{linkcolor}{HTML}{0000CC}
 \definecolor{urlcolor}{HTML}{006600}
@@ -373,6 +1481,8 @@ $
 
 
 \newcommand{\set}[2]{{#1}^{1}, \ldots, {#1}^{#2}}
+
+\catcode`\^ = 13 \def^#1{\sp{#1}{}}
 \newtheorem{to_thr}{Thr}[subsection]
 \newtheorem{to_suj}[to_thr]{Suj}
 \newtheorem{to_lem}[to_thr]{Lem}
@@ -445,6 +1555,26 @@ $
 
 \input{settings/heading}
 
+\sbsnum{1}{Кинематика точки}
+\input{parts/01.tex}
+
+\sbsnum{2}{Описание движения твёрдого тела}
+\input{parts/02.tex}
+
+\sbsnum{3}{Приложения к твердому телу}
+\input{parts/03.tex}
+
+\sbsnum{22}{Сплошная среда и её напряжение}
+\input{parts/22.tex}
+
+\sbsnum{23}{Перемещение сплошной среды}
+\input{parts/23.tex}
+
+\sbsnum{24}{Тензоры деформаций и перемещений}
+\input{parts/24.tex}
+
+\sbsnum{25}{Элементы гидродинамики}
+\input{parts/25.tex}
 
 \sbsnum{31}{Уравнение Лагранжа второго рода}
 \input{parts/31.tex}
@@ -458,9 +1588,22 @@ $
 \sbsnum{34}{Обобщенный потенциал и первые интегралы лагранжевых систем}
 \input{parts/34.tex}
 
+\sbsnum{35}{Гамильтонов формализм, уравнения и интеграл Якоби}
+\input{parts/35.tex}
 
-% \sbsnum{36}{Принцип наименьшего действия}
-% \input{parts/36.tex}\newcommand{\dmat}[4]{
+\sbsnum{36}{Принцип наименьшего действия}
+\input{parts/36_1.tex}
+\input{parts/36_2.tex}
+
+
+
+\sbsnum{40}{принцип Мюпертюи-Лагранжа}
+\input{parts/40.tex}
+
+
+% \sbsnum{41}{Принцип Якоби и геодезические линии в координатном пространстве}
+% \input{parts/41.tex}
+\newcommand{\dmat}[4]{
   \ifthenelse{
     \equal{#1}{3}
   }{
