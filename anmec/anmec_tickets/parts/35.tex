@@ -166,13 +166,98 @@
     P = \sum_{j=2}^{n} q_j \tilde q^j + p_1 = 
     \sum_{i=1}^{n} p_1 \tilde q_i = \frac{1}{\dot{q}^1} \sum_{i=1}^{n} p_i \dot{q}^i = \frac{1}{\dot{q}^1} (L+H).
 \end{equation*}
-Тогда в случае консервативной системы $L = T - \Pi$, $H = T + \Pi$, и\footnote{
-    \red{Пара выражений в выводе опущены.}
-}
+Тогда в случае консервативной системы $L = T - \Pi$, $H = T + \Pi$, и
 \begin{equation*}
     P = \frac{2T}{\dot{q}^1},
+    \hspace{0.5cm} 
+    T = \frac{1}{2} a_{ik} \dot{q}^i \dot{q}^k = (\dot{q}^1)^2 G(q^1, \ldots, q^n, \tilde q^2, \ldots, \tilde q^n),
+    \hspace{0.5cm} 
+    G = \frac{1}{2} a_{ik} \tilde q^i \tilde q^k.
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
-    P = 2 \sqrt{(h-\Pi) G}.
+    \tilde q^1 = \sqrt{\frac{h-\Pi}{G} }
+\end{equation*}
+Таким образом выражение для 
+\begin{equation*}
+    P = 2 \sqrt{(h-\Pi)G }.
 \end{equation*}
 
-\red{ДОПИСАТЬ!}
+
+\subsubsection*{Скобки Пуассона}
+
+\begin{to_def} 
+    Пусть $u$, $v$ $\in C^2(q, p, t)$, тогда выражение
+    \begin{equation*}
+        \{u, v\}  
+        =
+        \frac{\partial u}{\partial q^i} \frac{\partial v}{\partial p_i} -
+        \frac{\partial u}{\partial p_i} \frac{\partial v}{\partial q^i}
+    \end{equation*}  
+    называют \textit{скобкой Пуассона} функций $u$ и $v$.
+\end{to_def}
+
+Вообще, можно было бы ввести алгебры Ли и показать, что пространство гладких функций $f(t, x, p)$ является алгеброй Ли относительно скобки Пуассона. Выражается это в выполнение следующих свойств:
+\begin{enumerate}
+    \item $\{y, x\} = - \{x, y\}, \ \ \forall x, y \in C^2$ (кососимметричность);
+    \item $\{\lambda_1 x_1 + \lambda_2 x_2, y\} = \lambda_1 \{x_1, y_1\} + \lambda_2 \{x_2, y\},
+    \ \ \forall \lambda_1, \lambda_2 \in \mathbb{R}
+    $ (линейность по первому аргументу);
+    \item $\{x, \{y, z\} + \{y, \{z, x\}\} + \{z, \{x, y\}\} = 0$ (тождество Якоби).
+\end{enumerate}
+
+\begin{to_def} 
+    \textit{Производной} функции $f(t, q, p)$ \textit{в силу гамильтоновой системы} в точке $(t_0, x_0, p^0)$ называется
+    \begin{equation*}
+         \frac{d f(t_0, x_0, p^0)}{d t} \overset{\mathrm{def}}{=} \frac{d }{d } 
+         \left(
+            f(t, q(t), p(t)) \big|_{t=t_0}
+         \right),
+     \end{equation*} 
+     где $q(t)$ и $p(t)$ -- решения гамилтоновой системы с н.у. $q(t_0) = q_0$ и $p(t_0) = p^0$. 
+\end{to_def}
+
+Выразим производную в силу системы через скобку Пуассоа:
+\begin{equation*}
+    \frac{d f}{d t} 
+    =
+     \frac{\partial f}{\partial t} + \frac{\partial f}{\partial q^i} \frac{d q^i}{d t} + \frac{\partial f}{\partial p_i} \frac{d p_i}{d t} 
+     =
+      \frac{\partial f}{\partial t} + \frac{\partial f}{\partial q^i} \frac{\partial H}{\partial p_i} - \frac{\partial f}{\partial p_i} \frac{\partial H}{\partial q^i} = \frac{\partial f}{\partial t} + \{H, f\},
+      \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+      \frac{d f}{d t} = \frac{\partial f}{\partial t} + \{H, f\}.
+\end{equation*}
+
+\begin{to_lem} 
+    Уравнение вида 
+    \begin{equation*}
+         \frac{d f}{d t} = \frac{\partial f}{\partial t} + \{H, f\} = 0
+     \end{equation*} 
+     является необходимым и достаточным условием того, что $f(t, q, p)$ являлась бы первым интегралом гамилтоновой системы.
+\end{to_lem}
+
+\begin{to_thr}[теорема Пуассона]
+     Если $f$ и $g$ -- два интеграла движения, то $\{f, g\} = \const$ также является интегралом движения.
+\end{to_thr}
+
+\begin{to_def} 
+    \textit{Гамильтоновым полем} для функции $f \in C^1$ называется векторное поле $\vc{f}$, определяемое формулой
+    \begin{equation*}
+        \omega[ \vc{f}(q, p), \vc{v}] = df(q, p) [\vc{v}], \ \ \forall \vc{v} \in T_{q, p},
+        \hspace{1cm} 
+        \omega = dq^i \wedge dp_i.
+    \end{equation*}
+    В координатах это выразится в 
+    \begin{equation*}
+        \vc{f} = \frac{\partial f}{\partial p_i} \frac{\partial }{\partial q^i} - \frac{\partial f}{\partial q^i} \frac{\partial }{\partial p_i}.
+    \end{equation*}
+    Более того $\vc{f}(\varphi) = \{f, \varphi\}$, где $\varphi$ -- некоторая гладкая функция.
+\end{to_def}
+
+\begin{to_thr}[о связи скобки Пуассона и скобки Ли]
+     Пусть $f, g \in C^2$. Тогда гамильтоново поле скобки пуассона $\{f, g\}$ совпадает со скобкой Ли гамильтоновых полей $\vc{g}$ и $\vc{f}$: 
+     \begin{equation*}
+         \vv{
+         \{f, g\}
+         } = [\vc{f}, \vc{g}].
+     \end{equation*}
+\end{to_thr}
+
