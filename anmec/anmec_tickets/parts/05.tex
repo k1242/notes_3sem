@@ -1,0 +1,66 @@
+\subsubsection*{Сложение мгновенных вращений вокруг пересекающихся осей}
+Пусть тело мгновенно вращается с $\vc{\omega}_1 $ относительно $O_1 x_1 y_1 z_1$, которая сама вращается с $\vc{\omega}_2$ относительно $O_a X Y Z$
+Предположим, что оси вращений пересекаются в точке $A$, которая тогда обладает нулевой скоростью. Тогда наше сложное движение представляется как вращения с каким-то $\vc{\Omega}$ по оси через $A$. 
+
+Для произвольной точки $P$ тела:
+\begin{equation*}
+	\vc{v}^a = \vc{\omega}_1 \times \overrightarrow{A P} + \vc{\omega}_2 \times \overrightarrow{A P} = (\vc{\omega}_1 + \vc{\omega}_2) \times \overrightarrow{A P}.
+\end{equation*}
+С другой стороны:
+\begin{equation*}
+	\vc{v}^a = \vc{\Omega} \times \overrightarrow{A P}
+	\hspace*{1 cm}
+	\Rightarrow
+	\hspace*{1 cm}
+	\vc{\Omega} = \vc{\omega}_1 + \vc{\omega}_2.
+\end{equation*}
+Результат выкладок выше можно обобщить и на $n$ таких вращений.
+
+\subsubsection*{Параллельные оси и пара вращений}
+Если же $\vc{\omega}_1$ и $\vc{\omega}_2$ не пересекаются --- параллельны, то рассмотрим точки лежащие в перпендикулярной к этом скоростям плоскости.
+Тогда пусть прямая, по которой пересекается эта плоскость с плоскостью, в которой лежат скорости --- $A B$. На $A B$ есть точка $C$, которая остаётся неподвижной:
+\begin{equation*}
+	\vc{v}_C = 0 = \vc{\omega}_1 \times \overrightarrow{A C} + \vc{\omega}_2 \times \overrightarrow{B C}
+	\hspace*{0.4 cm}
+	\Rightarrow
+	\hspace*{0.4 cm}
+	\omega_1 AC = \omega_2 BC,
+	\hspace*{1 cm}
+	\vc{\Omega} = \vc{\omega}_1 + \vc{\omega}_2.
+\end{equation*}
+ 
+\begin{to_def}
+	\textit{Пара вращений} --- совокупность двух мгновенных вращений вокруг параллельных осей с равными по модулю, но противоположными по направлению угловыми скоростями.
+\end{to_def}
+\begin{to_def}
+	Плоскость в которой лежат $\vc{\omega}_1$ и $\vc{\omega}_2$ (пара) называют \textit{плоскостью пары}.
+\end{to_def}
+\begin{to_def}
+	Расстояние между векторами пары $d$ называют \textit{плечо пары}. А $\vc{d} \times \vc{\omega}_2$ --- \textit{момент пары}.
+\end{to_def}
+Тело участвующее в паре вращений движется в итоге поступательно:
+\begin{equation*}
+	\vc{v} = \vc{\omega}_1 \times \overrightarrow{AP} + \vc{\omega}_2 \times \overrightarrow {B P} = \overrightarrow {A P} \times \vc{\omega}_2 - \overrightarrow {B P} \vc{\omega}_2 = \vc{d} \times \vc{\omega}.
+\end{equation*}
+
+\subsubsection*{Кинематические уравнения Эйлера}
+\begin{to_def}
+	Кинематическими уравнениями Эйлера называют следующую систему:
+	\begin{equation*}
+		\vc{\omega} = \begin{pmatrix}
+			p \\ q \\ r
+		\end{pmatrix}_{O xyz}
+		\hspace*{1 cm}
+		\leadsto
+		\hspace*{1 cm}
+		\left\{\begin{aligned}
+			&p = \dot{\psi} \sin \theta \sin \varphi + \dot{\theta} \cos \varphi
+			\\
+			&q = \dot{\psi} \sin \theta \cos \varphi - \dot{\theta} \sin \varphi
+			\\
+			&r = \dot{\psi} \cos \theta + \dot{\varphi}
+		\end{aligned}\right.
+	\end{equation*}
+ 
+\end{to_def}
+ 
