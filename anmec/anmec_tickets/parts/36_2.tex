@@ -1,0 +1,146 @@
+\subsubsection*{Истинные и окольные пути}
+
+\begin{to_def} 
+    Совокупность траекторий, которые описаны перемещениями из начальных положений $a_\nu$ в конечные $b_\nu$, образуют \textit{истинный} (\textit{действительный, прямой}) путь системы $\gamma_\nu$.
+
+    Совокупность $\gamma_\nu'$, бесконечно близких к $\gamma_\nu$ и таких, что движение точки по кривой $\gamma_\nu'$ может происходить без нарушения связей, называют окольным путем системы.
+\end{to_def}
+
+\begin{to_def} 
+    \textit{Расширенное координатным пространство} помимо криволинейных координат $q^i$ также время $t$.
+\end{to_def}
+
+\begin{to_def} 
+    При достаточном удалении точки $A_1$ от точки $A_0$ может оказаться, что краевая задача имеет решения, соответствующие бесконечно близким прямым путям в расширенном координатном пространстве. В этом случае точки $A_0$ и $A_1$ называют \textit{сопряженными кинетическими фокусами}. 
+\end{to_def}
+
+\begin{to_lem} 
+    Положение точки на окольном пути задается, как $\vc{r}_\nu (t) + \delta \vc{r}_\nu(t)$, где $\delta \vc{r}_\nu (t_0) = 0$ и $\delta \vc{r}_\nu (t_1) = 0$. Синхронное варьирование и взятие производной по времени перестановочны. 
+\end{to_lem}
+
+\subsubsection*{Принцип Гамильтона-Остроградского}
+
+Рассмотрим прямой путь и совокупность окольных путей. Пусть $m_\nu$ -- масса точки $P_\nu$, а $\vc{F}_\nu$ -- равнодействующая \textit{активных}\footnote{
+    \red{Определение бы написать.}
+} сил, приложенных к точке. Тогда
+\begin{equation*}
+    \int_{t_0}^{t_1} \sum_{\nu=1}^{N} \vc{F}_\nu \cdot \delta \vc{r}_\nu \d t - 
+    \sum_{\nu=1}^N m_\nu \int_{t_0}^{t_1} \vc{\mathrm{w}}_\nu \cdot \delta \vc{r}_\nu \d t = 0.
+\end{equation*}
+Рассмотрим разность между значениями $T(t)$ на окольном и прямом путях
+\begin{equation*}
+    \delta T = \frac{1}{2} \sum_{\nu=1}^N m_\nu \left(
+        \dot{\vc{r}}_\nu + \delta \dot{\vc{r}}_\nu
+    \right)^2 - \frac{1}{2} \sum_{\nu=1}^N m_\nu \dot{\vc{r}}_\nu^2 = 
+    \sum_{\nu=1}^N m_\nu \dot{\vc{r}}_\nu \cdot \delta \dot{\vc{r}}_\nu,
+\end{equation*} 
+таким образом
+\begin{equation*}
+     \int_{t_0}^{t_1} \delta T \d t = \sum_{\nu=1}^N  m_\nu \int_{t_0}^{t_1} \dot{\vc{r}}_\nu \cdot d \delta \vc{r}_\nu = \sum_{\nu=1}^N m_\nu \dot{\vc{r}}_\nu \cdot \delta \vc{r}_\nu 
+    \bigg|_{t_0}^{t_1} - \sum_{\nu=1}^N m_\nu \int_{t_0}^{t_1} \vc{\mathrm{w}}_\nu \cdot \delta \vc{r}_\nu \d t = 
+    - \sum_{\nu=1}^N  m_\nu \int_{t_0}^{t_1} \vc{\mathrm{w}}_\nu \cdot \partial \vc{r}_\nu \d t.
+\end{equation*}
+Таким образом мы пришли к следующей теореме:
+
+\begin{to_thr}[принцип Гамильтона-Остроградского]
+     Если величины $\delta \vc{r}_\nu (t)$ соответствуют синхронному варьированию прямого пути и $\delta \vc{r}_\nu (t_0) = \delta \vc{r}_\nu (t_1) = 0$ тогда и только тогда, когда
+     \begin{equation*}
+         \int_{t_0}^{t_1} \left(
+            \delta T + \sum_{\nu=1}^N \vc{F}_\nu \cdot \delta \vc{r}_\nu
+         \right) \d t = 0.
+     \end{equation*}
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+    Хотелось бы также показать, что из принципа Гамильтона-Остроградского вытекает уравнения Лагранжа второго рода:
+\begin{equation*}
+    \left\{\begin{aligned}
+        \sum_{\nu=1}^N \vc{F}_\nu \cdot \delta \vc{r}_\nu = Q_i \delta q^i \\
+        \delta T = \frac{\partial T}{\partial q^i} \delta q^i + \frac{\partial T}{\partial \dot{q}^i} \delta \dot{q}^i
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \int_{t_0}^{t_1} \sum_{\nu=1}^N 
+    \left[
+        \frac{\partial T}{\partial \dot{q}^i} \delta \dot{q}^i + \left(
+            \frac{\partial T}{\partial q^i} + Q_i
+        \right) \delta q^i
+    \right] \d t = 0.
+\end{equation*}
+Интегрируя по частям находим, что
+\begin{equation*}
+    \int_{t_0}^{t_1} \frac{\partial T}{\partial \dot{q}^i} \delta \dot{q}^i \d t 
+    = 
+    \int_{t_0}^{t_1} \frac{\partial T}{\partial \dot{q}^i} d \delta q^i 
+    = 
+    \frac{\partial }{\partial \dot{q}^i} \delta q^i \bigg|_{t_0}^{t_1} 
+    - \int_{t_0}^{t_1} \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} \delta q^i \d t 
+    = 
+    - \int_{t_0}^{t_1} \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} \delta q^i \d t.
+\end{equation*}
+Таким образом приходим к равенству вида
+\begin{equation*}
+    \int_{t_0}^{t_1} \left(
+        \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} - \frac{\partial T}{\partial q^i} - Q_i
+    \right) \delta q^i \d t = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} - \frac{\partial T}{\partial q^k} = Q_k.
+\end{equation*}
+Следовательно принцип Гамильтона-Остроградского может быть положен в основу динамики голономных систем.
+\end{proof}
+
+
+
+\subsubsection*{Принцип Гамильтона-Остроградского для систем в потенциальном поле сил}
+
+В потенциальном поле сил верно, что
+\begin{equation*}
+    \sum_{\nu=1}^N \vc{F}_\nu \cdot \delta \vc{r}_\nu = - \delta \Pi,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \int_{t_0}^{t_1} (\delta T - \delta \Pi) \d t = 0,
+    \hspace{0.5cm} \overset{L = T - \Pi}{\Rightarrow}  \hspace{0.5cm} 
+    \int_{t_0}^{t_1} \delta L \d t = 0.
+\end{equation*}
+
+\begin{to_def} 
+    \textit{Действием по Гамильтону} для голономных систем называется интеграл вида
+    \begin{equation*}
+        S = \int_{t_0}^{t_1} L \d t.
+    \end{equation*}
+\end{to_def}
+
+\begin{to_thr}[Принцип Гамильтона-Остроградского v2]
+     Для голономной системы в случае существования потенциала сил среди всех путей выделяется прямой путь тем, что для него $\delta S = 0$.
+\end{to_thr}
+
+
+
+\subsubsection*{Экстремальное свойство действия по Гамильтону}
+\begin{to_thr}[принцип наименьшего действия]
+    В окрестности, достаточно малой, чтобы отсутствовали кинетические фокусы, действие по Гамильтону на прямом пути будет наименьшим, по сравнению с окольными, проходимыми за то же время.
+\end{to_thr}
+
+
+\begin{proof}[$\triangle$]
+    Пусть $[af]$ и $[ac]$ действие на двух различных путях системы. Для их разности имеем
+    \begin{equation*}
+        [ac]-[af]
+        =
+        \int_{t_0}^{t_1} \sum_{\nu=1}^N \left(
+            m_\nu \vc{v}_\nu \cdot \delta \dot{\vc{r}}_\nu - \frac{\partial \Pi}{\partial \vc{r}_\nu} \cdot \delta \vc{r}_\nu
+        \right) \d t 
+        =
+        \sum_{\nu=1}^N  m_\nu \vc{v}_\nu (t) \cdot \delta \vc{r}_\nu (t) 
+        + 
+        \int_{t_0}^{t_1} \sum_{\nu=1}^N (\vc{F}_\nu - m_\nu \vc{\mathrm{w}}_\nu) \cdot \delta \vc{r}_\nu \d t.
+    \end{equation*}
+    где $\vc{v}_\nu$ и $\partial |pi / \partial \vc{r}_\nu$ вычисляются по $a_\nu f_\nu$.
+    Учитывая общее уравнение динамики, это соотношение можно переписать в виде
+    \begin{equation*}
+        [ac]-[af] = \sum_{\nu=1}^N m_\nu v_\nu(f) \cos \alpha_\nu \delta s_\nu,
+    \end{equation*}
+    где $\alpha_\nu$ -- угол между $v_\nu$ и $\delta \vc{r}_\nu$, а $\delta s_\nu$ -- длина $f_\nu c_\nu$.
+    \red{Опуская некоторые выкладки,} можем теперь получить, что $S_{\text{ок}} > S_{\text{пр}}$.
+\end{proof} 
+
+
+
