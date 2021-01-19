@@ -38,7 +38,7 @@
 \begin{equation*}
      \int_{t_0}^{t_1} \delta T \d t = \sum_{\nu=1}^N  m_\nu \int_{t_0}^{t_1} \dot{\vc{r}}_\nu \cdot d \delta \vc{r}_\nu = \sum_{\nu=1}^N m_\nu \dot{\vc{r}}_\nu \cdot \delta \vc{r}_\nu 
     \bigg|_{t_0}^{t_1} - \sum_{\nu=1}^N m_\nu \int_{t_0}^{t_1} \vc{\mathrm{w}}_\nu \cdot \delta \vc{r}_\nu \d t = 
-    - \sum_{\nu=1}^N  m_\nu \int_{t_0}^{t_1} \vc{\mathrm{w}}_\nu \cdot \partial \vc{r}_\nu \d t.
+    - \sum_{\nu=1}^N  m_\nu \int_{t_0}^{t_1} \vc{\mathrm{w}}_\nu \cdot \delta \vc{r}_\nu \d t.
 \end{equation*}
 Таким образом мы пришли к следующей теореме:
 
@@ -83,7 +83,7 @@
         \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} - \frac{\partial T}{\partial q^i} - Q_i
     \right) \delta q^i \d t = 0,
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
-    \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} - \frac{\partial T}{\partial q^k} = Q_k.
+    \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} - \frac{\partial T}{\partial q^i} = Q_i.
 \end{equation*}
 Следовательно принцип Гамильтона-Остроградского может быть положен в основу динамики голономных систем.
 \end{proof}

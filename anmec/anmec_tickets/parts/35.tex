@@ -11,7 +11,7 @@
     То получим набор $q, \ p, \ t$ -- \textit{переменные Гамильтона}. 
 \end{to_def}
 
-В силу невырожденности $\partial L / (\partial \dot{q}^i \partial \dot{q}^j) = J_{p}$, то есть по \textit{теореме о неявной функции} эти равенства разрешимы относительно переменных $\dot{q}^i$. Через преобразование Лежандра естестественно ввести функцию
+В силу невырожденности $\partial L / (\partial \dot{q}^i \partial \dot{q}^j) = J_{p}$, то есть по \textit{теореме о неявной функции} эти равенства разрешимы относительно переменных $\dot{q}^i$. Через преобразование Лежандра естественно ввести функцию
 \begin{equation*}
     H(q, p, t) = p_i \dot{q}^i - L(q, \dot{q}, t),  \hspace{0.5cm} \dot{q} \equiv \dot{q}(q, p, t).
 \end{equation*}
@@ -19,7 +19,7 @@
 \subsubsection*{Уравнения Гамильтона}
 % Маркеев, п.149.
 
-Полный дифференциал функции Гамильтона можем выразиь двумя способами:
+Полный дифференциал функции Гамильтона можем выразить двумя способами:
 \begin{equation*}
     \left.\begin{aligned}
         d H &= \frac{\partial H}{\partial q^i} \d q^i + \frac{\partial H}{\partial p_i} \d p_i + \frac{\partial H}{\partial t} \d t,
@@ -43,7 +43,7 @@
 
 \subsubsection*{Физический смысл функции Гамильтона}
 
-Пусть система натуральна, тогда $L = L_2 + L_1 + L_0$, и, соответсвенно,
+Пусть система натуральна, тогда $L = L_2 + L_1 + L_0$, и, соотвественно,
 \begin{equation*}
     H = \frac{\partial L}{\partial \dot{q}^i} \dot{q}^i - L.
 \end{equation*}
@@ -69,12 +69,12 @@
 
 Найдём полную производную $H$ по времени,
 \begin{equation*}
-    \frac{d H}{d t} = \frac{\partial H}{\partial q^i} \dot{q}^i + \frac{\partial H}{\partial p_i} \dot{p}_i + \frac{\partial h}{\partial t} = 
+    \frac{d H}{d t} = \frac{\partial H}{\partial q^i} \dot{q}^i + \frac{\partial H}{\partial p_i} \dot{p}_i + \frac{\partial H}{\partial t} = 
     \frac{\partial H}{\partial q^i} \frac{\partial H}{\partial p_i} - \frac{\partial H}{\partial p_i} \frac{\partial H}{\partial q^i} + \frac{\partial H}{\partial t} = \frac{\partial H}{\partial t},
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
-    \frac{d H}{d t} = \frac{\partial h}{\partial t}.
+    \frac{d H}{d t} = \frac{\partial H}{\partial t}.
 \end{equation*}
-Система называется \textit{обобщенно консервативной}, если $\partial H / \partial t = 0$, т.е $H(q^i, p_i) = h$, собственно, $H$ называют \textit{обобщенной полной энергией}, а поледнее равенство -- \textit{обобщенным интегралом энергии}.
+Система называется \textit{обобщенно консервативной}, если $\partial H / \partial t = 0$, т.е $H(q^i, p_i) = h$, собственно, $H$ называют \textit{обобщенной полной энергией}, а последнее равенство -- \textit{обобщенным интегралом энергии}.
 
 
 \begin{to_def} 
@@ -82,7 +82,7 @@
     \begin{equation*}
          H = T_2 - T_0 + \Pi = h = \const.
      \end{equation*} 
-     Соотноешние, где $h$ -- произвольная постоянная, называют \textit{интегралом Якоби}.
+     Соотношение, где $h$ -- произвольная постоянная, называют \textit{интегралом Якоби}.
 \end{to_def}
 
 Есть и другая формулировка для интеграла Якоби голономной склерономной системы. Действительно, при $\partial L / \partial t = 0$, интеграл Якоби перейдёт в
@@ -101,15 +101,15 @@
 \subsubsection*{Уравнения Уиттекера}
 
 
-Если $\partial H / \partial t = 0$, то $H(q, p) = h$, где $h = \const$ определяемая из н.у. В $2n$-мерном пространстве $q, \ p$ интеграл Якобми задаёт гиперповерхность, рассмотрим движение с $H = h$.
+Если $\partial H / \partial t = 0$, то $H(q, p) = h$, где $h = \const$ определяемая из н.у. В $2n$-мерном пространстве $q, \ p$ интеграл Якоби задаёт гиперповерхность, рассмотрим движение с $H = h$.
 
 Такое движение описывается системой с $2n-2$ уравнений, причём она может быть записана в виде канонических уравнений. Пусть $\partial H / \partial p_1 \neq 0$, тогда
 \begin{equation*}
     p_1 = - K(q^1, \ldots, q^n, p_2, \ldots, p_n, h),
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
     \left\{\begin{aligned}
-        \dot{q}^i = \frac{\partial H}{\partial p_i}, \\
-        \dot{p}_j = - \frac{\partial H}{\partial q^j}        
+        \dot{q}^i &= \frac{\partial H}{\partial p_i}, \\
+        \dot{p}_j &= - \frac{\partial H}{\partial q^j}        
     \end{aligned}\right.
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
     \frac{d q^j}{d q^1} = \frac{
@@ -145,7 +145,7 @@
 \subsubsection*{Уравнения Якоби}
 
 
-Уравнения Уиттекера имеют структуру уравнений Гамильтона, соответственно их можно зписать в виде уравнений типа Лагранжа, при гессиане $K$ по $p$ неравным 0. Пусть $P$ -- преобразование Лежандра функции $K$ по $p_j$ ($j = 2, \ 3,\ \ldots,\ n$). Тогда
+Уравнения Уиттекера имеют структуру уравнений Гамильтона, соответственно их можно записать в виде уравнений типа Лагранжа, при гессиане $K$ по $p$ неравным 0. Пусть $P$ -- преобразование Лежандра функции $K$ по $p_j$ ($j = 2, \ 3,\ \ldots,\ n$). Тогда
 \begin{equation*}
     P = P(q^2, \ldots, q^n, \tilde q^2, \ldots, \tilde q^n, q^1, h) = \sum_{j = 2}^{n} \tilde q^j p_j - K,
 \end{equation*}
@@ -212,10 +212,10 @@
             f(t, q(t), p(t)) \big|_{t=t_0}
          \right),
      \end{equation*} 
-     где $q(t)$ и $p(t)$ -- решения гамилтоновой системы с н.у. $q(t_0) = q_0$ и $p(t_0) = p^0$. 
+     где $q(t)$ и $p(t)$ -- решения гамильтоновой системы с н.у. $q(t_0) = q_0$ и $p(t_0) = p^0$. 
 \end{to_def}
 
-Выразим производную в силу системы через скобку Пуассоа:
+Выразим производную в силу системы через скобку Пуассона:
 \begin{equation*}
     \frac{d f}{d t} 
     =
@@ -231,11 +231,13 @@
     \begin{equation*}
          \frac{d f}{d t} = \frac{\partial f}{\partial t} + \{H, f\} = 0
      \end{equation*} 
-     является необходимым и достаточным условием того, что $f(t, q, p)$ являлась бы первым интегралом гамилтоновой системы.
+     является необходимым и достаточным условием того, что $f(t, q, p)$ являлась бы первым интегралом гамильтоновой системы.
 \end{to_lem}
 
 \begin{to_thr}[теорема Пуассона]
-     Если $f$ и $g$ -- два интеграла движения, то $\{f, g\} = \const$ также является интегралом движения.
+     Если $f$ и $g$ -- два интеграла движения, то $\{f, g\} = \const$ также является интегралом движения\footnote{
+         \red{Докажи!}
+     }.
 \end{to_thr}
 
 \begin{to_def} 

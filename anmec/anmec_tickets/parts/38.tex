@@ -1,0 +1,61 @@
+
+% \subsubsection*{Устойчивость равновесия}
+
+% 489 страница Маркеева
+
+\begin{to_thr}[Общее уравнение статики\footnote{
+    Если с необходимостью всё понятно, то достаточность \red{может быть доказана через уравнения Аппеля (см. п. 158, Маркеев П. А.)}.
+}]
+    Чтобы некоторое допускаемое идеальными удерживающими связями состояние равновесия системы было состоянием равновесия на интервале $t_0 \leq t \leq t_1$, необходимо и достаточно, чтобы для любого момента времени из этого интервала элементарная работа активных сил на любом виртуальном перемещении равнялась нулю, т.е. чтобы выполнялось
+    \begin{equation*}
+         \sum_{\nu=1}^N \vc{F}_\nu \cdot \delta \vc{r}_\nu = 0 
+         \hspace{1cm}
+         (t_0 \leq t \leq t_1).
+     \end{equation*} 
+     Если система является потенциальной, то уравнения примут вид
+     \begin{equation*}
+         Q_i = - \frac{\partial \Pi}{\partial q^i} = 0.
+     \end{equation*}
+\end{to_thr}
+
+
+% Далее, без ограничения общности, будем считать, что в положении равновесия $q^i = 0 \ \forall i$.
+
+% \begin{to_def} 
+%     Положение равновесия $q^1 = q^2 = \ldots = 0$ называется \textit{устойчивым}, если $\forall \varepsilon > 0$ существует такое $\delta(\varepsilon)$, что $\forall t > t_0$ выполняется
+%     \begin{equation*}
+%         |q^i (t_0) | < \delta, \hspace{0.25cm} |\dot{q}^i (t_0) | < \delta
+%         \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+%         |q^i (t) | < \varepsilon, \hspace{0.25cm} |\dot{q}^i (t) | < \varepsilon
+%     \end{equation*} 
+% \end{to_def}
+
+
+\begin{to_def} 
+    Положение равновесия $q=0$ -- \textit{устойчиво по Ляпунову}, если $\forall \varepsilon > 0 \ \ \exists \delta > 0$, такая что 
+\begin{equation}
+    \forall \ \ |q(t_0)|<\delta, \ |\dot{q}(t_0)|<\delta \colon
+    \hspace{0.5cm} 
+    |q(t)|<\varepsilon, \ |\dot{q}(t)| < \varepsilon, \hspace{0.5cm} \forall t \geq t_0.
+\end{equation}
+\end{to_def}
+
+\begin{to_def} 
+    Положение равновесия $q=0$ -- \textit{неустойчиво по Ляпунову}, если $\exists \varepsilon > 0 \ \ \forall \delta > 0$, такая что 
+\begin{equation}
+    \forall \delta > 0 \ \  \exists |q(t_0)| < \delta, \
+    |\dot{q}(t_0)| < \delta, \ \ t^* \colon \hspace{0.5cm} 
+    |q(t^*)| > \varepsilon \text{ или } |\dot{q}(t^*)| > \varepsilon.
+\end{equation}
+\end{to_def}
+
+\begin{to_thr}[Теорема Лагранжа-Дирихле]
+     Если в положении равновесия конесервативной системы $\Pi(q)$ имеет строгий локальный минимум, то это положение равновесия устойчиво.
+\end{to_thr}
+
+\begin{to_lem} 
+    При наличии гироскопических и диссипативных сил положение равновесия сохранится. 
+\end{to_lem}
+
+
+
