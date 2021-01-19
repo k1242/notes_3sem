@@ -1,0 +1,60 @@
+\subsubsection*{Уравнение Бине}
+
+
+\begin{to_def} 
+    \textit{Полем центральных сил} называется поле, в котором сила действующая на точку :
+    $
+    \vc{F}(\vc{r}) = F(r) {\vc{r}}/{r}.
+    $
+\end{to_def}
+
+Логично перейти к $(r, \varphi, \theta)$. Тогда
+$$
+    m \vc{\mathrm{w}} = F(r) \frac{\vc{r}}{r} 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        m \vc{\mathrm{w}}_r &= F(r) \\
+        m \vc{\mathrm{w}}_\varphi &= 0 \\
+        m \vc{\mathrm{w}}_\theta &= 0
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \vc{\mathrm{w}}_\theta = - r^2\ddot{\theta} - 2 r \dot{r} \dot{\theta} + r^2 \dot{\varphi}^2 \sin \theta \cos \theta  = 0,
+$$
+и, учитывая, что $\theta(0) = \pi / 2$, $\dot{\theta}(0)=0$, тогда $\theta(t)=\pi/2$, это с точки зрения диффуров. А с точки зрения физики кинетический момент сохраняется, то есть
+$$
+    \vc{\mathrm{K}}_0 = m \vc{r} \times \vc{v} = \const.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \vc{r}, \vc{v} \in \text{постоянной плоскости.}
+$$
+Тогда $\theta$ мы можем просто выбросить. 
+Приходим к системе уравнений
+\begin{equation}
+    \left\{\begin{aligned}
+        m \left( \ddot{r} - r \dot{\varphi}^2 \right) &= F(r) \\
+        m \frac{d}{dt} (r^2 \dot{\varphi}) &= 0
+    \end{aligned}\right.
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        m \left( \ddot{r} - r \dot{\varphi}^2 \right) &= F(r) \\
+        r^2 \dot{\varphi} &= \frac{\mathrm{K}_0}{m} = \const.
+    \end{aligned}\right. 
+\end{equation}
+Это, собственно, соотвествует закону Кеплера о \textit{сохранение секториальной скорости}.
+
+Первое уравнение как-то не очень, перейдём от $d/dt$ к $d/d\varphi$. Тогда $r(t) \to u(\varphi) = \frac{1}{r}$ -- \textit{переменная Бине}.
+$$
+    \dot{r} = \frac{d(1/u)}{dt} = - c u', 
+    \hspace{1cm} 
+    \ddot{r} = - c^2 u^2 u'',
+    \hspace{1cm} \Rightarrow \hspace{1cm} 
+    -c^2 u^2 u'' - c^2 u^3 = \frac{F(u)}{m}.
+$$
+Таким образом пришли к следующей теореме:
+
+\begin{to_thr}[уравнение Бине]
+    Уравнение движения материальной точки в поле центральных сил может быть записано как     
+    \begin{equation}
+    u'' + u = \frac{-F(u)}{m c^2 u^2},
+\end{equation}
+    где $u(\varphi) = 1/r$.
+\end{to_thr}

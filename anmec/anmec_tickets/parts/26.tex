@@ -1,0 +1,30 @@
+Напишем систему уравнений, соответствующую уравнениям Лагранжа первого рода:
+
+\begin{equation}
+    \sum_{\nu=1}^N \vc{a}_{\beta \nu} (\vc{r}_1, \ldots, \vc{r}_N, t) \cdot \vc{v}_\nu + a_\beta  (\vc{r}_1, \ldots, \vc{r}_N, t) = 0,
+    \hspace{0.5cm} (\beta = 1, \ldots, s)
+\end{equation}
+$$
+    f_\alpha (\vc{r}, t) = 0, \hspace{0.5cm} (\alpha = 1, \ldots, r),
+$$
+\begin{align}
+    \sum_{\nu=1}^N \frac{\partial f_\alpha}{\partial \vc{r}_\nu} \cdot d \vc{r}_\nu + \frac{\partial f_\alpha}{\partial t} d t &= 0,
+    \hspace{0.5cm} &(\alpha = 1, \ldots, r), \\
+    \sum_{\nu=1}^N \vc{a}_{\beta\nu} \cdot d \vc{r}_\nu + a_\beta d t &= 0,
+    \hspace{0.5cm} &(\beta = 1, \ldots, s).
+\end{align}
+
+
+
+Взяв выражения для виртуальных перемещений всегда можно получить силы реакции так называемым методом \textit{множителей Лагранжа}:
+\begin{equation*}
+    \sum_{\nu=1}^N \left(\vc{R}_\nu - \sum_{i = 1}^r \lambda_i \frac{\partial f_i}{\partial \vc{r}_\nu} - \sum_{j = 1}^s \mu_j \alpha_{j \nu}\right) \delta \vc{r}_\nu = 0
+    \hspace*{1 cm}
+    \Rightarrow
+    \hspace*{1 cm}
+    \vc{R}_\nu = \sum_{i = 1}^r \lambda_i \frac{\partial f_i}{\partial \vc{r}_\nu} + \sum_{j = 1}^s \mu_j \alpha_{j \nu}.
+\end{equation*}
+Полученные выражения для реакций идеальных сил через неопределенные множители Лагранжа $\lambda_i $ и $\mu_j $ можно подставить в исходное уравнение связей, получим \textit{уравнения Лагранжа первого рода}:
+\begin{equation*}
+    m_\nu \vc{w}_\nu = \vc{F}_\nu + \sum_{i = 1}^r \lambda_i \frac{\partial f_i}{\partial \vc{r}_\nu} + \sum_{j = 1}^s \mu_j \alpha_{j \nu}.
+\end{equation*}
