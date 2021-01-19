@@ -1,0 +1,91 @@
+
+Легко получить соотношение вида
+\begin{equation}
+    \sum_{i=1}^N \left(
+        \vc{F}_i - m_i \vc{\mathrm{w}}_i
+    \right) \cdot \delta \vc{r}_i = 0.
+\end{equation}
+Данное соотношение является необходимым и достаточным условием для того, чтобы движение, совместимое с идеальными связями, отвечало данной системе активных сил $\vc{F}_i$. Оно получило название \textbf{общего уравнения динамики} или \textit{дифференциальным вариационным принципом Даламбера-Лагранжа}.
+
+\begin{to_thr} [принцип Даламбера-Лагранжа]
+Верно, что
+\begin{equation*}
+    m_i \vc{\mathrm{w}}_i = \vc{F}_i + \vc{R}_i,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \sum_i \left(
+       \vc{F}_i -  m_i \vc{\mathrm{w}}_i
+    \right) \cdot \delta \vc{r}_i = 0.
+\end{equation*}
+\end{to_thr}
+
+Аналогично можно сформулировать \textit{принцип Журдена}
+\begin{equation}
+    \sum_{i=1}^N \left(
+        \vc{F}_i - m_q \vc{\mathrm{w}}_i
+    \right) \cdot \vc{v}_i = 0,
+\end{equation}
+и \textit{принцип Гаусса}:
+\begin{equation}
+    \sum_{i=1}^N \left(
+        \vc{F}_i - m_q \vc{\mathrm{w}}_i
+    \right) \cdot \vc{v}_i = 0,
+\end{equation}
+где $\delta \vc{\mathrm{w}}_i = \vc{\mathrm{w}}^*_{i_1} - \vc{\mathrm{w}}^*_{i_2}$ не обязательно малая величина. 
+
+Замечая, что $m_i = \const$, а $\vc{F}_i = \vc{F}_i (p, q)$, то последнее уравнение перепишется в виде
+\begin{equation*}
+    Z = \frac{1}{2} \sum_{i=1}^N m_i 
+    \left(
+        \vc{\mathrm{w}}_i - \frac{\vc{F}_i}{m_i} 
+    \right)^2,
+    \hspace{1cm} 
+    \delta Z = 0,
+\end{equation*}
+где величина $Z$ называется принуждением или мерой принуждения. К слову она не просто стационарна для истинных движений. 
+
+\texttt{Истинным является движение с минимальной мерой принуждения.} Другими словами \textit{несвободная система совершает движение, наиболее близкое к свободному}. 
+
+\begin{to_def} 
+    Будем считать, что $q^0 \in M$ -- \textit{точка равновесия}, если при $\dot{q}^0 \equiv \dot{q}(0) \equiv 0$ приводит к $q(t) = q^0$. 
+\end{to_def}
+
+В таком случае верен следующий принцип:
+
+\begin{to_thr}[принцип Лагранжа]
+    Для того, чтобы точка была положением равновесия на $t \in [t_1, t_2]$ необходимо и достаточно, чтобы сумма элементарных работ на $\forall$ виртуальных перемещениях всех активных сил была равна нулю.
+    \begin{equation}
+        \delta A \big|_0 = 0 
+        \hspace{0.5cm} 
+        \delta A = \sum_i \vc{F}_i \cdot \delta \vc{r}_i,
+        \hspace{0.5cm} (t\in[t_1, t_2])
+    \end{equation}
+    что является \textbf{общим уравнением статики}.
+\end{to_thr}
+
+Этот принцип можно рассматривать, как дракона с тремя головами. Вот если система \textbf{голономная}, то
+\begin{equation*}
+    \delta A = Q_i \delta q_i 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    Q_i = 0 \ \forall i.
+\end{equation*}
+Если система \textbf{консервативная}, то
+\begin{equation*}
+    Q_1 = - \frac{\partial P}{\partial q^i} 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \text{положение равновесия --- стационарная точка потенциала}.
+\end{equation*}
+Если же у нас \textbf{твёрдое тело}, тогда
+\begin{equation*}
+    \delta A = \left(
+        \vc{R}^{\text{внеш}} \cdot \vc{v}_O
+    \right) \d t + 
+    \left(
+        \vc{M}_O^{\text{внеш}} \cdot \vc{\omega}
+    \right) dt
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        \vc{R}^{\text{внеш}} &= 0 \\
+        \vc{M}^{\text{внеш}} &= 0 \\
+    \end{aligned}\right.
+\end{equation*}
+
