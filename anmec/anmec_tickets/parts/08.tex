@@ -1,0 +1,61 @@
+\subsubsection*{Работы сил системы}
+\begin{to_def}
+	Пусть $\vc{F}_\nu $ --- равнодействующая всех сил системы приложенных к точке $P_\nu$.
+	\textit{Элементарной работой}\footnote{Кто-то обозначает как $\delta A_\nu$, означает, что выражение не обязательно является дифференциалом.} $d'A_\nu$ сила $\vc{F}_\nu$ на перемещении $d \vc{r}_\nu$ называется:
+	\begin{equation*}
+		d' A_\nu = \vc{F}_\nu \cdot d \vc{r}_\nu
+		\hspace*{1 cm}
+		\Rightarrow
+		\hspace*{1 cm}
+		d' A = \sum_{\nu=1}^N \vc{F}_\nu \cdot r_\nu = d' A^{\text{ext}} + d' A^{inn}.
+	\end{equation*}
+\end{to_def}
+Пусть точка $P_\nu$ совершает конечное перемещение, и пусть $\vc{F}_\nu$ и $d \vc{r}_\nu$ могут быть выражены через один и тот же скалярный параметр t (не обязательно время). Тогда изначальное выражение для работы будет представлено в виде функции параметра $t$, умноженной на его дифференциал, и может быть проинтегрировано по дуге движения точки. Результатом интегрирования будет \textit{полная работа} $A_{\nu}$ силы $\vc{F}_{\nu}$ на рассматриваемом конечном перемещении.
+
+\subsubsection*{Элементарная работа сил к твердому телу}
+Пусть $O$ --- произвольный полюс в твёрдом теле, скорость точки $P_\nu$ относительно неподвижной системы координат: $v_\nu = \vc{v}_O + \vc{\omega}\times \vc{r}_\nu$.
+Для элементарной работы получим:
+\begin{equation*}
+	d' A = \sum_{\nu=1}^N \vc{F}_\nu \cdot (\vc{v}_O + \vc{\omega}\times \vc{r}_\nu) d t = \left(\sum_{\nu=1}^N \vc{F}_{\nu}\right) \cdot \vc{v}_O d t + \sum_{\nu=1}^N (\vc{\omega} \times \vc{r}_{\nu}) \cdot \vc{F}_\nu dt.
+\end{equation*}
+Переписав смешанное произведение, переставив $(\vc{\omega}, \vc{r}, \vc{F}) \rightarrow (\vc{r}, \vc{F}, \vc{\omega})$, заменяя $F_\nu$ на сумму внешних и внутренних получим:
+\begin{equation*}
+	d' A = \vc{R}^{ext} \cdot \vc{v}_O d t + M_O^{ext} \cdot \vc{\omega} d t,
+\end{equation*}
+где $\vc{R}^{est}$ и $M_O^{ext}$ --- главный вектор и главный момент внешних сил относительно точки $O$.
+
+\subsubsection*{Силовое полюшко}
+\begin{to_def}
+	Говорят, что в пространстве задано \textit{силовое поле}, когда на материальную точку в пространстве действует сила, зависящая от положения точки.
+\end{to_def}
+\begin{to_def}
+	Силовое поле называется \textit{потенциальным}, если $\exists U(x,y,z)\colon \vc{F}_\nu^i = \frac{\partial}{\partial x_\nu^i} U$, где $\vc{F}_\nu$ --- сила действующая на частицу.
+\end{to_def}
+\begin{to_def}
+	Функция $U$ называется \textit{силовой функцией}. Функция $\Pi = -U$ называется \textit{потенциалом}, или \textit{потенциальной энергией}, она определена до добавления аддитивной постоянной.
+\end{to_def}
+\begin{to_def}
+	Потенциальное поле называется \textit{(не)стационарным} в зависимости от того, зависит ли $\Pi$ явно от времени.
+\end{to_def}
+
+\noindent
+Элементарная работа потенциальных сил есть полный дифференциал:
+\begin{equation*}
+	d' A = \sum_{\nu=1}^N \left(\frac{\partial U}{\partial x_\nu} d x_\nu + \frac{\partial U}{\partial y_\nu} d y_\nu + \frac{\partial U}{\partial z_\nu} d z_\nu\right) = d U = -d \Pi.
+\end{equation*}
+
+\subsubsection*{Обобщённое обобщение}
+Обозначая на виртуальных перемещениях $\delta \vc{r}$ элементарную работу как $d'A = \delta A$ найдём:
+\begin{equation*}
+	\delta A = \sum_{\nu=1}^N \vc{F}_\nu \cdot \delta \vc{r}_\nu
+	=
+	\sum_{\nu=1}^N \vc{F}_\nu \cdot \sum_{j=1}^m \frac{\partial \vc{r}_\nu}{\partial q^j}\delta q^j
+	=
+	\sum_{j=1}^m
+	\underbrace{\left(\sum_{\nu=1}^N \vc{F}_\nu \cdot \frac{\partial \vc{r}_\nu }{\partial q^j}\right)}_{Q_j}
+	\delta q^j.
+\end{equation*}
+
+\begin{to_def}
+	Введено обозначение $Q_j$ --- \textit{обобщённая} \textit{сила}. Для потенциального поля: $Q_j = - \partial_j \Pi $.
+\end{to_def}

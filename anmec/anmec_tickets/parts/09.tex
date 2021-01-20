@@ -1,0 +1,62 @@
+\subsubsection*{Вводим понятия}
+\begin{to_def}
+	\textit{Центром масс} системы материальных точек $(P_\nu, \vc{r}_\nu, m_\nu)$ называется геометрическая точка $C$ пространства:
+	\begin{equation*}
+		\vc{r}_C = \frac{\sum_{\nu =1}^N m_\nu \vc{r}_\nu}{M},
+		\text{ где масса системы: }
+		M = \sum_{\nu=1}^N m_\nu.
+	\end{equation*}
+\end{to_def}
+
+\begin{to_def}
+	\textit{Количеством движения} механической системы называется вектор:
+	\begin{equation*}
+		\vc{Q} = \sum m_{\nu} \vc{v}_\nu
+		\hspace*{1 cm}
+		\leadsto
+		\hspace*{1 cm}
+		\vc{Q} = M \vc{v}_C.
+	\end{equation*}
+\end{to_def}
+
+\begin{to_def}
+	\textit{Кинетическим моментом} точки $P_\nu $ относительно центра $A$ называется: $K_{\nu A} = \vc{\rho}_\nu \times m_\nu \vc{v}_\nu$.
+\end{to_def}
+
+При изменении центра кинетический момент может измениться:
+\begin{equation*}
+	\vc{K}_B = \sum_{\nu=1}^N \vc{\rho}_{\nu B} \times m_\nu \vc{v}_\nu = \sum_{\nu=1}^N \left(\vc{\rho}_{\nu A + \overrightarrow{B A}}\right) \times m_\nu \vc{v}_\nu = \vc{K}_A + \overrightarrow{B A} \times \vc{Q}.
+\end{equation*}
+
+\subsubsection*{Движение относительно центра масс}
+Хотим установить связь между $K_A$ относительно какого-либо  центра с $K_C$ относительно центра масс.
+
+\begin{to_def}[Кенигова система координат]
+	\textit{Движение относительно центра масс} --- движение точек системы относительно поступательно движущейся системы координат с началом в центре масс системы.
+\end{to_def}
+Для кинетического момента относительно центра масс:
+\begin{equation*}
+	\vc{K}_{C_r} = \sum_{\nu=1}^N \rho_{\nu r} \times m_\nu v_{\nu r}
+	=
+	\sum_{\nu=1}^N \vc{\rho}_{\nu r} \times m_\nu (v_C + v_{\nu r}) = \left(\sum_{\nu=1}^N m_\nu \vc{\rho}_{\nu r}\right) \times \vc{v}_C + \sum_{\nu=1}^N \vc{\rho}_{\nu r} \times m_\nu \vc{v}_{\nu r}.
+\end{equation*}
+Так как центр масс находится в начале кениговой системы координат, то первое слагаемое зануляется, тогда абсолютный кинетический момент $K_C $ равен относительному центра масс $K_{C r}$.
+
+Замечая, что $\sum m_\nu\vc{v}_{\nu r} = M \vc{v}_{C r} = 0$, получаем, что кинетический момент системы в её движении относительно центра масс одинаков для всех точек пространства.
+
+\subsubsection*{Теорема об изменении количества движения}
+\begin{to_thr}
+	Производная по времени от количества движения системы равна главному вектору всех внешних сил.
+\end{to_thr}
+\begin{proof}[$\triangle$]
+	Принимая, во внимание постоянство массы каждой из точек системы, можно получить следствие из:
+	\begin{equation*}
+		\sum_{\nu=1}^N m_\nu \vc{w}_\nu 
+		=  \sum_{\nu=1}^N \vc{\rho}_{\nu r} \vc{F}_\nu^{\text{ext}} 
+ 		+ \sum_{\nu=1}^N \vc{\rho}_{\nu r} \vc{F}_\nu^{\text{inn}}
+		\hspace*{1 cm}
+		\Rightarrow
+		\hspace*{1 cm}
+		\frac{d \vc{Q}}{d t} = \vc{R}^{\text{ext}}.
+	\end{equation*}
+\end{proof}
