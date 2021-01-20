@@ -1,0 +1,28 @@
+
+Воспользуемся теоремой об изменении количества движения и момента количеста движения, спроектируем их на удобные оси:
+\begin{align*}
+    M \frac{d \vc{v}_C}{d t} + M \vc{\omega} \times \vc{v}_C = \vc{R} + \vc{F} + \vc{F}_1, \\
+    \frac{d \vc{K}_O}{d t} + \vc{\omega} \times \vc{K}_O = \vc{M}_O + \vv{OO_1} \times \vc{F}_1.
+\end{align*}
+Понимая, что $\vc{v}_C = \vc{\omega} \times \vv{OC}$ и считая $|\vv{OO_1}|=h$ получим новую систему
+\begin{equation*}
+    \left\{\begin{aligned}
+         - M y_C \ddot{\varphi} - M x_C \dot{\varphi}^2 &= R_x + F_x + F_{1x}, \\
+         M x_C \ddot{\varphi} - M y_C \dot{\varphi}^2 &= R_y + F_y + F_{1y}, \\
+         0 &= R_z + F_z + F_{1z}, \\
+     \end{aligned}\right. 
+     \hspace{1cm} 
+     \left\{\begin{aligned}
+         - J_{xz} \ddot{\varphi} + J_{yz} \dot{\varphi}^2 &= M_x - h F_{1y}, \\
+         - J_{yz} \ddot{\varphi} - J_{xz} \dot{\varphi}^2 &= M_y + h F_{1x}, \\
+         J_z \ddot{\varphi} &= M_z.
+     \end{aligned}\right.
+\end{equation*}
+
+
+
+
+
+
+
+
