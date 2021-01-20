@@ -1,7 +1,20 @@
-Пусть $\vc{r}_\nu = \vc{r}_\nu (t), \ \vc{v}_\nu = \dot{\vc{r}}_\nu(t)$, тогда для их истинности необ
+Пусть $\vc{r}_\nu = \vc{r}_\nu (t), \ \vc{v}_\nu = \dot{\vc{r}}_\nu(t)$, тогда для их истинности необходимо и достаточно
+\begin{equation*}
+    \sum_{\nu=1}^N \left(
+        \vc{F}_\nu - m_\nu \vc{\mathrm{w}}_\nu
+    \right) \cdot \delta \vc{r}_\nu = 0.
+\end{equation*}
 
 
-
+\begin{proof}[$\triangle$]
+    Пусть $\vc{r}_\nu$ отвечает истинным движениеям, тогда $\vc{F}_\nu - m_\nu \vc{\mathrm{w}}_\nu = - \vc{R}_\nu$, тогда томножив на $\vc{r}_\nu$ -- получили доказательство достаточности.
+    Докажем необходимость. Пусть $m_\nu \vc{\mathrm{w}}_\nu - \vc{F}_\nu = \vc{\Phi}_\nu$, тогда $\sum \vc{\Phi}_\nu \cdot \delta \vc{r}_\nu = 0$. Тогда 
+    \begin{equation*}
+        \vc{\Phi}_\nu = \sum_{\alpha=1}^r \gamma_\alpha \frac{\partial f}{\partial \vc{r}_\nu} 
+        + \sum_{\beta=1}^s \lambda_\beta \vc{a}_{\beta \nu}.
+    \end{equation*}
+    Подставив, получим уравнения Лагранжа, так что всё хорошо.
+\end{proof}
 
 
 
